@@ -1,0 +1,120 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+/* carousel css */
+.carousel-container {
+  max-width: 100%;
+  /* max-height: 300px; */
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  /* margin-bottom: 30px; */
+  /* background-color: #f0f0f0; */
+  background-color: #333333;
+  /* background-color: #000000; */
+}
+
+.carousel-photo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* toggle position absolute to place on photos */
+.carousel-controls {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  pointer-events: auto;
+  overflow: visible;
+}
+
+.carousel-controls span {
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.carousel-controls span:hover {
+  transform: scale(1.2);
+  color: #0085a1;
+}
+
+/* .carousel-photo {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.carousel-photo.active {
+  visibility: visible;
+  opacity: 1;
+} */
+
+/* added css for legend below */
+.custom-legend {
+  background-color: white;
+  font-size: 12px;
+  padding: 10px;
+  border: 5px solid #ffd700;
+  border-radius: 5px;
+}
+
+.legend-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.legend-color {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.legend-mini-text {
+  font-size: 10px;
+}
+
+/* shrink legend for mobile */
+@media (max-width: 768px) {
+  .custom-legend {
+    font-size: 10px;
+    padding: 5px;
+    border: 2px solid #ffd700;
+  }
+
+  .legend-mini-text {
+    font-size: 8px;
+  }
+}
+
+/* move legend to bottom-left for landscape mode */
+@media (orientation: landscape) and (max-width: 768px) {
+  .custom-legend {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+  }
+}
