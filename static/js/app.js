@@ -122,9 +122,10 @@ function createPopupContent(place) {
 
   return `
         ${carouselHTML}
-        <h3>${place.location_name}</h3>
-        <p>${place.start_date} - ${place.end_date}</p>
-        <p>${place.description}</p>
-        <p>${place.notes}</p>
+        <div class="popup-content">
+          <h3><i class="fas fa-globe"></i> ${place.location_name}</h3>
+          <p>${place.description}</p>
+          <p>${place.notes}</p>
+        </div>
     `;
 }

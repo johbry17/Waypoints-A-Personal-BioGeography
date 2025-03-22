@@ -114,7 +114,7 @@ Stores relationships between trips and locations.
 
 ---
 
-## **8. PictureLocation Table**
+## **8. PictureLocation Table** (&#191;Optional?)
 
 Stores relationships between pictures and locations.
 
@@ -125,7 +125,17 @@ Stores relationships between pictures and locations.
 
 ---
 
-<!-- ## **4. Marker Clustering Data**
+<!-- ## PictureOrder Table (&#191;Optional?)
+
+CREATE TABLE PictureOrder (
+    picture_id INTEGER REFERENCES Pictures(picture_id),
+    context TEXT CHECK(context IN ('overview', 'location')), -- Defines reel type
+    order INTEGER,
+    PRIMARY KEY (picture_id, context)
+); -->
+
+
+<!-- ## **Marker Clustering Data**
 Helps optimize the map by grouping markers into clusters based on zoom levels.
 
 | Column Name    | Data Type | Description |

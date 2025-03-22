@@ -9,10 +9,60 @@ html {
   height: 100%;
 }
 
-/* carousel css */
+/* popup */
+.leaflet-popup-content {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.2;
+  padding: 10px;
+}
+
+/* popup background and border */
+.leaflet-popup-content-wrapper {
+  background-color: #f9f9f9;
+  border: 2px solid #008A51; /* match marker fill */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* popup arrow tip */
+.leaflet-popup-tip {
+  background-color: #008A51;
+}
+
+
+/* popup animation */
+.leaflet-popup-content-wrapper {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.popup-content h3 {
+  font-size: 16px;
+  margin: 0 0 5px;
+  color: #008A51;
+}
+
+.popup-content p {
+  font-size: 12px;
+  color: #555555;
+}
+
+/* popup carousel css */
 .carousel-container {
   /* may need to set width */
-  width: 300px;
+  /* width: 300px; */
   max-width: 100%;
   /* max-height: 300px; */
   height: 50vh;
@@ -23,7 +73,7 @@ html {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  /* margin-bottom: 30px; */
+  margin-bottom: 20px;
   /* background-color: #f0f0f0; */
   background-color: #333333;
   /* background-color: #000000; */
@@ -38,7 +88,7 @@ html {
   position: relative;
 }
 
-/* toggle position absolute to place on photos */
+/* position: absolute to place controls on photos */
 .carousel-controls {
   position: absolute;
   bottom: 10px;
