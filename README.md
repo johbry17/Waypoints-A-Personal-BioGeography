@@ -7,6 +7,6 @@ This started as a place to store my photos and, in the spirit of data visualizat
 
 It's rapidly turning into a biography of life highlights.
 
-Also, surprisingly, it's turned into a data engineering project. I envisioned plunking down a few markers with a pop-up carousel of photos, but the scope creep has begun.
+And, to my surprise, it has turned into quite the little data engineering project. I envisioned plunking down a few markers with a pop-up carousel of photos, but the scope creep has begun. I had no idea I would be building a SQL database. See here:
 
 - [Evolving sketch of project](data_dictionary.md)
