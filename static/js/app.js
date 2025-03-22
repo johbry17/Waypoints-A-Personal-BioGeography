@@ -69,8 +69,17 @@ function createMap(markers) {
 }
 
 function addMarker(place) {
+  // set radius based on importance
+  const radius = place.importance * 2;
+
   // create marker for each place
-  let marker = L.marker([place.lat, place.lng]);
+  let marker = L.circleMarker([place.lat, place.lng], {
+    radius: radius,
+    color: "#FFB400", // border color
+    fillColor: "#008A51", // fill color
+    fillOpacity: 0.6, // fill opacity
+    weight: 3, // border thickness
+  });
 
   // create popup for each marker
   marker.bindPopup(createPopupContent(place));

@@ -437,22 +437,6 @@
     "lng": 115.2622931,
     "start_date": "06-2002",
     "end_date": "07-2002",
-    "photo_album": "",
-    "photos": [],
-    "description": "Bali, round one",
-    "notes": "Talked my way into a grad school psychology course",
-    "importance": 10,
-    "visit_type": "school",
-    "duration_days": "",
-    "estimated": ""
-  },
-  {
-    "id": 7,
-    "location_name": "Bali, 2",
-    "lat": -8.5068977,
-    "lng": 115.2622931,
-    "start_date": "08-2005",
-    "end_date": "09-2005",
     "photo_album": "Bali",
     "photos": [
       "001.jpg",
@@ -487,15 +471,15 @@
       "DSCN0222.JPG",
       "DSCN0261.JPG"
     ],
-    "description": "Bali, round two",
-    "notes": "",
-    "importance": 5,
-    "visit_type": "friends",
+    "description": "Bali, round one",
+    "notes": "Talked my way into a grad school psychology course",
+    "importance": 7,
+    "visit_type": "school",
     "duration_days": "",
     "estimated": ""
   },
   {
-    "id": 8,
+    "id": 7,
     "location_name": "Beijing, China",
     "lat": 40.190632,
     "lng": 116.412144,
@@ -511,7 +495,7 @@
     "estimated": ""
   },
   {
-    "id": 9,
+    "id": 8,
     "location_name": "Cape Town",
     "lat": -33.9288301,
     "lng": 18.4172197,
@@ -527,7 +511,7 @@
     "estimated": ""
   },
   {
-    "id": 10,
+    "id": 9,
     "location_name": "Namibia",
     "lat": -18.99133055,
     "lng": 15.74605506,
@@ -543,7 +527,7 @@
     "estimated": ""
   },
   {
-    "id": 11,
+    "id": 10,
     "location_name": "Machu Picchu",
     "lat": -13.16442195,
     "lng": -72.5450851,
@@ -559,7 +543,7 @@
     "estimated": ""
   },
   {
-    "id": 12,
+    "id": 11,
     "location_name": "Machu Picchu, Round Two",
     "lat": -13.16442195,
     "lng": -72.5450851,
@@ -575,7 +559,7 @@
     "estimated": ""
   },
   {
-    "id": 13,
+    "id": 12,
     "location_name": "The Netherlands",
     "lat": 51.0120795,
     "lng": 5.8384433,
@@ -585,13 +569,13 @@
     "photos": [],
     "description": "High School Study Abroad near Maastricht",
     "notes": "I was really good at 12th grade econ in Dutch",
-    "importance": 8,
+    "importance": 10,
     "visit_type": "school",
     "duration_days": "",
     "estimated": ""
   },
   {
-    "id": 14,
+    "id": 13,
     "location_name": "U.K.",
     "lat": 51.4893335,
     "lng": -0.1440550845,
@@ -607,7 +591,7 @@
     "estimated": ""
   },
   {
-    "id": 15,
+    "id": 14,
     "location_name": "Scotland",
     "lat": 55.9533456,
     "lng": -3.1883749,
@@ -623,7 +607,7 @@
     "estimated": ""
   },
   {
-    "id": 16,
+    "id": 15,
     "location_name": "Baja",
     "lat": 23.4453627,
     "lng": -109.4240213,
@@ -639,7 +623,7 @@
     "estimated": ""
   },
   {
-    "id": 17,
+    "id": 16,
     "location_name": "Kaua'i, Maui",
     "lat": 22.05038375,
     "lng": -159.5588624,
@@ -655,7 +639,7 @@
     "estimated": ""
   },
   {
-    "id": 18,
+    "id": 17,
     "location_name": "Istanbul",
     "lat": 41.006381,
     "lng": 28.9758715,
@@ -671,7 +655,7 @@
     "estimated": ""
   },
   {
-    "id": 19,
+    "id": 18,
     "location_name": "Las Vegas",
     "lat": 36.2533896,
     "lng": -115.2794366,
@@ -687,7 +671,7 @@
     "estimated": ""
   },
   {
-    "id": 20,
+    "id": 19,
     "location_name": "Lake Tahoe",
     "lat": 39.0885405,
     "lng": -120.0503528,
@@ -703,7 +687,7 @@
     "estimated": "TRUE"
   },
   {
-    "id": 21,
+    "id": 20,
     "location_name": "San Francisco",
     "lat": 37.7792588,
     "lng": -122.4193286,
@@ -719,55 +703,7 @@
     "estimated": "TRUE"
   },
   {
-    "id": 22,
-    "location_name": "Puerto Rico",
-    "lat": 18.38423905,
-    "lng": -66.05343997,
-    "start_date": "10-2015",
-    "end_date": "10-2015",
-    "photo_album": "",
-    "photos": [],
-    "description": "Rincon, etc",
-    "notes": "",
-    "importance": 3,
-    "visit_type": "friends",
-    "duration_days": "",
-    "estimated": ""
-  },
-  {
-    "id": 23,
-    "location_name": "Puerto Rico",
-    "lat": 18.38423905,
-    "lng": -66.05343997,
-    "start_date": "02-2023",
-    "end_date": "02-2023",
-    "photo_album": "",
-    "photos": [],
-    "description": "San Juan",
-    "notes": "",
-    "importance": 3,
-    "visit_type": "friends",
-    "duration_days": "",
-    "estimated": ""
-  },
-  {
-    "id": 24,
-    "location_name": "Puerto Rico",
-    "lat": 18.38423905,
-    "lng": -66.05343997,
-    "start_date": "01-2024",
-    "end_date": "01-2024",
-    "photo_album": "",
-    "photos": [],
-    "description": "San Juan",
-    "notes": "The San Sebastian Street Festival! My last great party",
-    "importance": 5,
-    "visit_type": "friends",
-    "duration_days": "",
-    "estimated": ""
-  },
-  {
-    "id": 25,
+    "id": 21,
     "location_name": "Puerto Rico",
     "lat": 18.38423905,
     "lng": -66.05343997,
@@ -783,155 +719,7 @@
     "estimated": ""
   },
   {
-    "id": 26,
-    "location_name": "St John, USVI",
-    "lat": 18.3308212,
-    "lng": -64.7944809,
-    "start_date": "11-2021",
-    "end_date": "11-2021",
-    "photo_album": "STJ",
-    "photos": [
-      "Caneel.JPG",
-      "P6210116.JPG",
-      "Deported from Tortola.JPG",
-      "P6260128.JPG",
-      "DSCN1896.JPG",
-      "P6270135.JPG",
-      "P1010009.JPG",
-      "P6270142.JPG",
-      "P1010281.JPG",
-      "P6270149.JPG",
-      "P1010292.JPG",
-      "P6270162.JPG",
-      "P1010310.JPG",
-      "P6280170.JPG",
-      "P1010314.JPG",
-      "P6280171.JPG",
-      "P1100307.JPG",
-      "P6280175.JPG",
-      "P1110076.JPG",
-      "P6280176.JPG",
-      "P1140325.JPG",
-      "P6280177.JPG",
-      "P1140326.JPG",
-      "P6290183.JPG",
-      "P1140328.JPG",
-      "P7020015.JPG",
-      "P1140331.JPG",
-      "P7020018.JPG",
-      "P1140334.JPG",
-      "P7020019.JPG",
-      "P1140336.JPG",
-      "P7020021.JPG",
-      "P1140337.JPG",
-      "P7020022.JPG",
-      "P1220346.JPG",
-      "P7020026.JPG",
-      "P1220357.JPG",
-      "P7030028.JPG",
-      "P1220361.JPG",
-      "P7040032.JPG",
-      "P2190086.JPG",
-      "P7040191.JPG",
-      "P2190118.JPG",
-      "P7040193.JPG",
-      "P2190132.JPG",
-      "P7040196.JPG",
-      "P3020151.JPG",
-      "P7040214.JPG",
-      "P3020164.JPG",
-      "P7040230.JPG",
-      "P3070169.JPG",
-      "P7040239.JPG",
-      "P3070171.JPG",
-      "P7040240.JPG",
-      "P3070175.JPG",
-      "P7050034.JPG",
-      "P3070179.JPG",
-      "P7050035.JPG",
-      "P3070183.JPG",
-      "P7050036.JPG",
-      "P3090185.JPG",
-      "P7050039.JPG",
-      "P3090186.JPG",
-      "P7050040.JPG",
-      "P3100190.JPG",
-      "P7050041.JPG",
-      "P3150197.JPG",
-      "P7050042.JPG",
-      "P3240371.JPG",
-      "P7050043.JPG",
-      "P3240372.JPG",
-      "P7050254.JPG",
-      "P3240374.JPG",
-      "P7050255.JPG",
-      "P4020200.JPG",
-      "P7050256.JPG",
-      "P4040214.JPG",
-      "P7050257.JPG",
-      "P4040215.JPG",
-      "P7050259.JPG",
-      "P4040217.JPG",
-      "P7050263.JPG",
-      "P4040218.JPG",
-      "P7060050.JPG",
-      "P4070233.JPG",
-      "P7060265.JPG",
-      "P4080246.JPG",
-      "P7060278.JPG",
-      "P4080250.JPG",
-      "P7070278.JPG",
-      "P4080255.JPG",
-      "P7080057.JPG",
-      "P4080257.JPG",
-      "P7080060.JPG",
-      "P4080258.JPG",
-      "P7080061.JPG",
-      "P4230018.JPG",
-      "P7080063.JPG",
-      "P4230026.JPG",
-      "P7080064.JPG",
-      "P4230027.JPG",
-      "P7080070.JPG",
-      "P4230030.JPG",
-      "P7080075.JPG",
-      "P4250263.JPG",
-      "P7110092.JPG",
-      "P4290036.JPG",
-      "P7110093.JPG",
-      "P4290039.JPG",
-      "P7110095.JPG",
-      "P4300042.JPG",
-      "P7110096.JPG",
-      "P4300043.JPG",
-      "P7110098.JPG",
-      "P5200056.JPG",
-      "P7110099.JPG",
-      "P6100058.JPG",
-      "P7130108.JPG",
-      "P6100059.JPG",
-      "PB190286.JPG",
-      "P6120062.JPG",
-      "PB190288.JPG",
-      "P6120063.JPG",
-      "PB240067.JPG",
-      "P6120071.JPG",
-      "STJ Photomosaic.jpg",
-      "P6210082.JPG",
-      "Tia & Rather Pregnant Angela.JPG",
-      "P6210084.JPG",
-      "T'ug Life.JPG",
-      "P6210094.JPG"
-    ],
-    "description": "Birthday party in the islands",
-    "notes": "Brought a large group to fiesta for my birthday",
-    "importance": 7,
-    "visit_type": "friends, family",
-    "duration_days": "",
-    "estimated": ""
-  },
-  {
-    "id": 27,
+    "id": 22,
     "location_name": "Belize",
     "lat": 17.7395148,
     "lng": -88.03368671,
@@ -947,7 +735,7 @@
     "estimated": ""
   },
   {
-    "id": 28,
+    "id": 23,
     "location_name": "Guatemala",
     "lat": 16.9131737,
     "lng": -89.9296189,
@@ -963,7 +751,7 @@
     "estimated": ""
   },
   {
-    "id": 29,
+    "id": 24,
     "location_name": "Grenada, Nicaragua",
     "lat": 12.1192425,
     "lng": -86.2453463,
@@ -979,7 +767,7 @@
     "estimated": ""
   },
   {
-    "id": 30,
+    "id": 25,
     "location_name": "San Salvador",
     "lat": 13.6989939,
     "lng": -89.1914249,
@@ -995,7 +783,7 @@
     "estimated": ""
   },
   {
-    "id": 31,
+    "id": 26,
     "location_name": "Nicaragua",
     "lat": 11.4983864,
     "lng": -85.62553996,
@@ -1011,7 +799,7 @@
     "estimated": ""
   },
   {
-    "id": 32,
+    "id": 27,
     "location_name": "Bocas del Toro",
     "lat": 9.26847485,
     "lng": -81.99322425,
@@ -1027,7 +815,7 @@
     "estimated": ""
   },
   {
-    "id": 33,
+    "id": 28,
     "location_name": "BriBri",
     "lat": 9.5170692,
     "lng": -82.9562336,
@@ -1043,7 +831,7 @@
     "estimated": ""
   },
   {
-    "id": 34,
+    "id": 29,
     "location_name": "Mexico City",
     "lat": 19.3207722,
     "lng": -99.15146775,
@@ -1059,7 +847,7 @@
     "estimated": ""
   },
   {
-    "id": 35,
+    "id": 30,
     "location_name": "Mayan Riviera",
     "lat": 20.429647,
     "lng": -87.6529306,
@@ -1075,7 +863,7 @@
     "estimated": ""
   },
   {
-    "id": 36,
+    "id": 31,
     "location_name": "Brussels",
     "lat": 50.8465573,
     "lng": 4.351697,
@@ -1091,7 +879,7 @@
     "estimated": ""
   },
   {
-    "id": 37,
+    "id": 32,
     "location_name": "Paris",
     "lat": 48.8534951,
     "lng": 2.3483915,
@@ -1107,7 +895,7 @@
     "estimated": ""
   },
   {
-    "id": 38,
+    "id": 33,
     "location_name": "Montreal",
     "lat": 45.5031824,
     "lng": -73.5698065,
@@ -1123,7 +911,7 @@
     "estimated": "TRUE"
   },
   {
-    "id": 39,
+    "id": 34,
     "location_name": "New York",
     "lat": 40.7127281,
     "lng": -74.0060152,
@@ -1139,7 +927,7 @@
     "estimated": "TRUE"
   },
   {
-    "id": 40,
+    "id": 35,
     "location_name": "Philadelphia",
     "lat": 39.9527237,
     "lng": -75.1635262,
@@ -1155,7 +943,7 @@
     "estimated": ""
   },
   {
-    "id": 41,
+    "id": 36,
     "location_name": "Boston",
     "lat": 42.3554334,
     "lng": -71.060511,
@@ -1171,7 +959,7 @@
     "estimated": ""
   },
   {
-    "id": 42,
+    "id": 37,
     "location_name": "Chicago",
     "lat": 41.8755616,
     "lng": -87.6244212,
@@ -1187,7 +975,7 @@
     "estimated": ""
   },
   {
-    "id": 43,
+    "id": 38,
     "location_name": "Washington, DC",
     "lat": 38.8950368,
     "lng": -77.0365427,
