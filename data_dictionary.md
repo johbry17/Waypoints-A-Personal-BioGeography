@@ -4,59 +4,124 @@
 
 This document defines the structure and purpose of the datasets used in the Global Waypoints project.
 
+![ERD](./resources/ERD.png)
+
 ---
 
-## **1. Main Waypoints Table**
+## **1. Overview Table**
 Stores details about locations visited, including time spent and general descriptions.
 
-| Column Name       | Data Type | Description |
-|------------------|----------|-------------|
-| `id`            | Integer  | Unique identifier for each waypoint |
-| `location_name` | String   | Name of the place (e.g., "Bali, Indonesia") |
-| `lat`           | Float    | Latitude coordinate |
-| `lng`           | Float    | Longitude coordinate |
-| `start_date`    | Date     | Approximate or exact arrival date (`YYYY-MM`) |
-| `end_date`      | Date     | Approximate or exact departure date (`YYYY-MM`) |
-| `duration_days` | Integer  | Estimated time spent (if exact dates unavailable) |
-| `visit_type`    | String   | Purpose of visit (e.g., Work, Study, Solo Travel, Family) |
-| `photo_album`  | String   | Link or reference to an associated photo album |
-| `photos` | String | Link or reference to an associated list of photos |
-| `description` | String | Short summary or story about this location |
-| `notes`         | Text     | Additional details or memories from the visit |
-| `importance` | Integer (1-10) | Scale of location's importance |
-| `estimated` | Boolean | Indicated uncertainty in date |
+| Column Name      | Data Type  | Description |
+|-----------------|-----------|-------------|
+| `id`           | Integer PK | Unique identifier for each waypoint |
+| `name`         | TEXT       | Name of the waypoint or place |
+| `lat`          | Float      | Latitude coordinate |
+| `lng`          | Float      | Longitude coordinate |
+| `start_date`   | Date       | Approximate or exact arrival date |
+| `end_date`     | Date       | Approximate or exact departure date |
+| `duration_days`| Integer    | Estimated time spent in days |
+| `visit_type`   | TEXT       | Purpose of visit (e.g., Work, Study, Solo Travel) |
+| `photo_album`  | TEXT       | Link or reference to an associated photo album |
+| `photos`       | TEXT       | Links or references to associated photos |
+| `description`  | TEXT       | Short summary or story about this location |
+| `notes`        | TEXT       | Additional details or memories from the visit |
+| `importance`   | Integer    | Scale of location's importance (1-10) |
+| `estimated`    | Boolean    | Indicates uncertainty in date |
+---
+
+## **2. Pictures Table**
+Stores image details for locations and events.
+
+| Column Name     | Data Type  | Description |
+|----------------|-----------|-------------|
+| `picture_id`   | Integer PK | Unique identifier for each picture |
+| `file_name`    | TEXT       | Name of the picture file |
+| `file_location`| TEXT       | Storage location of the picture |
+| `picture_name` | TEXT       | Name or title of the picture |
+| `caption`      | TEXT       | Caption or description of the picture |
+| `overview_id`  | Integer FK | Links to the `Overview` table |
+| `location_id`  | Integer FK | Links to the `Location` table |
 
 ---
 
-## **2. Travel Routes Table**
+## **3. Location Table**
+Stores geographic details of visited locations.
+
+| Column Name     | Data Type  | Description |
+|----------------|-----------|-------------|
+| `location_id`  | Integer PK | Unique identifier for each location |
+| `name`         | TEXT       | Name of the location |
+| `lat`          | Float      | Latitude coordinate |
+| `lng`          | Float      | Longitude coordinate |
+| `overview_id`  | Integer FK | Links to the `Overview` table |
+
+---
+
+
+## **4. Routes Table**
 Stores transportation details between locations.
 
-| Column Name     | Data Type | Description |
-|----------------|----------|-------------|
-| `route_id`     | Integer  | Unique identifier for each travel route |
-| `start_lat`    | Float    | Starting location latitude |
-| `start_lng`    | Float    | Starting location longitude |
-| `end_lat`      | Float    | Ending location latitude |
-| `end_lng`      | Float    | Ending location longitude |
-| `transport_mode` | String | Mode of travel (e.g., Plane, Train, Car, Boat) |
-| `travel_date`  | Date     | Approximate or exact date of travel (`YYYY-MM`) |
-| `usage_tags`   | String   | Tags for routes used multiple times (e.g., "2017, 2022") |
+| Column Name         | Data Type  | Description |
+|--------------------|-----------|-------------|
+| `route_id`        | Integer PK | Unique identifier for each travel route |
+| `start_location_id`| Integer FK | Starting location reference |
+| `end_location_id`  | Integer FK | Ending location reference |
+| `transport_mode`   | TEXT       | Mode of travel (e.g., Plane, Train, Car) |
+| `travel_date`      | Date       | Approximate or exact date of travel |
+| `usage_tags`       | TEXT       | Tags for multiple route usage (e.g., "2017, 2022") |
 
 ---
 
-## **3. Activity Table**
+## **5. Activity Table**
 Logs special activities like hiking routes, road trips, or unique experiences.
 
-| Column Name     | Data Type | Description |
-|----------------|----------|-------------|
-| `activity_id`  | Integer  | Unique identifier for each activity |
-| `location_name`| String   | Name of the location where activity took place |
-| `lat`         | Float    | Latitude coordinate |
-| `lng`         | Float    | Longitude coordinate |
-| `activity_type` | String | Type of activity (e.g., Hiking, Snorkeling, Museum Visit) |
-| `route_path`   | String  | Polyline or waypoints for mapped activities |
-| `description` | String | Short summary or story about this location |
-| `notes`        | Text    | Additional details about the activity |
+| Column Name     | Data Type  | Description |
+|----------------|-----------|-------------|
+| `activity_id`  | Integer PK | Unique identifier for each activity |
+| `trip_id`      | Integer FK | Links to the `Trip` table |
+| `location_id`  | Integer FK | Reference to the location where activity took place |
+| `activity_type`| TEXT       | Type of activity (e.g., Hiking, Museum Visit) |
+| `route_path`   | TEXT       | Polyline or waypoints for mapped activities |
+| `description`  | TEXT       | Short summary or story about this location |
+| `notes`        | TEXT       | Additional details about the activity |
+
+---
+
+## **6. Trip Table**
+
+Stores details about multi-location trips.
+
+| Column Name      | Data Type  | Description |
+|-----------------|-----------|-------------|
+| `trip_id`      | Integer PK | Unique identifier for each trip |
+| `trip_name`    | TEXT       | Name of the trip |
+| `trip_description` | TEXT   | Brief description of the trip |
+| `trip_start_date`  | DateTime | Start date of the trip |
+| `trip_end_date`    | DateTime | End date of the trip |
+| `overview_id`  | Integer FK | Links to the `Overview` table |
+
+---
+
+## **7. TripLocation Table**
+
+Stores relationships between trips and locations.
+
+| Column Name    | Data Type  | Description |
+|--------------|-----------|-------------|
+| `trip_id`   | Integer FK | Links to the `Trip` table |
+| `location_id`| Integer FK | Links to the `Location` table |
+| `sequence`  | Integer    | Order of locations in the trip |
+
+---
+
+## **8. PictureLocation Table**
+
+Stores relationships between pictures and locations.
+
+| Column Name    | Data Type  | Description |
+|--------------|-----------|-------------|
+| `picture_id` | Integer FK | Links to the `Pictures` table |
+| `location_id`| Integer FK | Links to the `Location` table |
 
 ---
 

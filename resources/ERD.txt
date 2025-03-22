@@ -1,0 +1,75 @@
+Overview
+--
+id Integer PK
+name TEXT
+lat Float
+lng Float
+start_date Date
+end_date Date
+duration_days Integer
+visit_type TEXT
+photo_album TEXT
+photos TEXT
+description TEXT
+notes Text
+importance Integer
+estimated Boolean
+
+Pictures
+--
+picture_id int PK
+file_name TEXT
+file_location TEXT
+picture_name TEXT
+caption TEXT
+overview_id int FK - Overview.id
+location_id int FK - Location.location_id
+
+Location
+--
+location_id int PK
+name TEXT
+lat float
+lng float
+overview_id int FK - Overview.id
+
+Routes
+--
+route_id Integer PK
+start_location_id int FK - Location.location_id
+end_location_id int FK - Location.location_id
+transport_mode TEXT
+travel_date Date
+usage_tags TEXT
+
+
+Activity
+--
+activity_id Integer PK
+location_id int FK >- Location.location_id
+activity_type TEXT
+route_path TEXT
+description TEXT
+notes Text
+
+Trip
+--
+trip_id int PK
+trip_name TEXT
+trip_description TEXT
+trip_start_date datetime
+trip_end_date datetime
+overview_id int FK - Overview.id
+
+TripLocation
+------------
+trip_id INT FK - Trip.trip_id
+location_id INT FK - Location.location_id
+(trip_id location_id) PK
+sequence int
+
+PictureLocation
+---------------
+picture_id INT FK - Pictures.picture_id
+location_id INT FK - Location.location_id
+(picture_id, location_id) PK
