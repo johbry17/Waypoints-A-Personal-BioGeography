@@ -432,12 +432,12 @@
   },
   {
     "id": 6,
-    "location_name": "Bali",
+    "location_name": "Bali, Round 2",
     "lat": -8.5068977,
     "lng": 115.2622931,
     "start_date": "06-2002",
     "end_date": "07-2002",
-    "photo_album": "Bali",
+    "photo_album": "Bali_Round_2",
     "photos": [
       "001.jpg",
       "002.jpg",
@@ -471,8 +471,8 @@
       "DSCN0222.JPG",
       "DSCN0261.JPG"
     ],
-    "description": "Bali, round one",
-    "notes": "Talked my way into a grad school psychology course",
+    "description": "Bali, round two",
+    "notes": "Thoroughly enchanted by my first visit, I had to return",
     "importance": 7,
     "visit_type": "school",
     "duration_days": "",
@@ -649,7 +649,7 @@
     "photos": [],
     "description": "Long layover at the meeting of continents",
     "notes": "",
-    "importance": 3,
+    "importance": 1,
     "visit_type": "solo",
     "duration_days": "",
     "estimated": ""
@@ -677,11 +677,13 @@
     "lng": -120.0503528,
     "start_date": "02-1996",
     "end_date": "02-1996",
-    "photo_album": "",
-    "photos": [],
+    "photo_album": "Lake_Tahoe",
+    "photos": [
+      "Tahoe_ski_trip.jpg"
+    ],
     "description": "Family ski trip",
     "notes": "I didn't know what powder was like until this.",
-    "importance": 2,
+    "importance": 1,
     "visit_type": "family",
     "duration_days": "",
     "estimated": "TRUE"
@@ -697,7 +699,7 @@
     "photos": [],
     "description": "Great town",
     "notes": "Multiple trips to see friends",
-    "importance": 4,
+    "importance": 3,
     "visit_type": "friends",
     "duration_days": "",
     "estimated": "TRUE"
