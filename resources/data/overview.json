@@ -432,54 +432,151 @@
   },
   {
     "id": 6,
-    "location_name": "Bali, Round 2",
+    "location_name": "Bali",
     "lat": -8.5068977,
     "lng": 115.2622931,
     "start_date": "06-2002",
     "end_date": "07-2002",
-    "photo_album": "Bali_Round_2",
+    "photo_album": "Bali",
     "photos": [
-      "001.jpg",
-      "002.jpg",
-      "003.jpg",
-      "Bryan w bird 2.jpg",
-      "DSCN0075.JPG",
-      "DSCN0077.JPG",
-      "DSCN0080.JPG",
-      "DSCN0090.JPG",
-      "DSCN0091.JPG",
-      "DSCN0098.JPG",
-      "DSCN0114.JPG",
-      "DSCN0122.JPG",
-      "DSCN0133.JPG",
-      "DSCN0135.JPG",
-      "DSCN0138.JPG",
-      "DSCN0140.JPG",
-      "DSCN0142.JPG",
-      "DSCN0148.JPG",
-      "DSCN0151.JPG",
-      "DSCN0154.JPG",
-      "DSCN0174.JPG",
-      "DSCN0183.JPG",
-      "DSCN0184.JPG",
-      "DSCN0186.JPG",
-      "DSCN0190.JPG",
-      "DSCN0193.JPG",
-      "DSCN0198.JPG",
-      "DSCN0200.JPG",
-      "DSCN0217.JPG",
-      "DSCN0222.JPG",
-      "DSCN0261.JPG"
+      "1671949034510-c23c49cb-a8b1-452b-8592-f8fce63d2929_.jpg",
+      "1671949393161-a668ecfe-098f-4129-9ac3-128eaa3cb50d_.jpg",
+      "1671949561910-8374b3af-af15-44c3-9e38-8cd8f3ef3a18_.jpg",
+      "1671950073951-bd261a31-6bb4-4293-81e3-0f625419150c_.jpg",
+      "1671950187084-38399df7-7585-41f7-be3f-10812c7a8503_.jpg",
+      "1671950256518-f7a97f8b-1817-49c2-b45e-481ede7f56e8.jpg",
+      "1671950288074-005a8053-8ce1-4d85-a0a1-6bcbfb5ee0b7.jpg",
+      "1671950334436-32cec47c-0d1e-4296-8344-a137d2d9d62d_.jpg",
+      "1671950592427-c0a58340-fca6-4dd2-9391-4c452e6d446a_.jpg",
+      "1671950641967-52949b2f-c862-4cf4-a4fc-e94cbc5816d2.jpg",
+      "1671950831609-c844b30b-52fa-4df1-8630-49af5d03fcb3.jpg",
+      "1671950914724-6978b235-a52f-4cdf-b427-335246cfeaa8_.jpg",
+      "1671951487529-fcadc88b-2dc2-4728-a647-39f753305511_.jpg",
+      "1671951537685-24be6a70-fb9c-4ec5-be93-40771741ac99.jpg",
+      "1671951703510-0127b83b-9866-45dc-bbe6-fa14b1d4ac6e.jpg",
+      "1671952115089-949a66ca-b259-4cde-a775-14b476ad189e_.jpg",
+      "1671952422850-fe755c0a-31a1-4eae-8277-04a1d635293e.jpg",
+      "1671952508804-03c3501b-4711-45da-8493-9d38f801b822_.jpg",
+      "1671952563580-3d68b2c3-3f0b-4653-bdd5-21b2a84087dc.jpg",
+      "1671952634346-bc547e1d-8af6-4e83-9dcd-18a9dac546b2.jpg",
+      "1671952828640-47866935-53c7-4897-a2cf-912536cce365_.jpg",
+      "1671952930927-39ee7b12-d32c-4c50-a248-d26786fe956d.jpg",
+      "1671953028627-40eb6466-f000-46f1-ba02-6ed04cc1f20d_.jpg",
+      "1671953119239-626ffb2d-68a9-4fa0-ad16-31d3e51b3097_.jpg",
+      "1671953222976-f7580560-a639-4f05-8926-41bcc560cb5a_.jpg",
+      "1671954382965-12e295a3-6f94-4e51-8f10-12d77a8f78e8_.jpg",
+      "1671954492993-2a646d90-4f1a-4b93-a8b0-3d702aff6292.jpg",
+      "1671954537943-022e4d3a-33fb-45e8-af6e-4b924259fcbc_.jpg",
+      "1671954923056-24d53c5d-9db4-4317-a93c-017ba7dff9fb_.jpg",
+      "1671955095490-f2ecf27b-f322-44db-8cc4-646e7854c998.jpg",
+      "1671955222882-b9cef5c6-37df-4bb0-b71f-e71518eab38a.jpg",
+      "1671955299845-f787ae55-a64b-47b6-8be3-cc64fb66d054_.jpg",
+      "1671955724309-bb184f1f-bb94-4126-b7d1-68ace68b4fcf_.jpg",
+      "1671955863995-168f81c8-4a8c-4441-b394-92f478e8cf87_.jpg",
+      "1671990751863-e96421bb-ac5c-4f67-82ef-eb3dd605afd3.jpg",
+      "1671990844038-5a3addc4-6adc-4e68-b47d-6a122f35fed1_.jpg",
+      "1671991117244-97318162-acc2-4d78-9629-98828553c172_.jpg",
+      "1671991260712-ebffbbd4-075c-48c5-9dba-6b5856b79585_.jpg",
+      "1671991477680-64e977a2-e08a-42cc-8132-0b5099d53c10_.jpg",
+      "1671991523626-28d7b51d-94ad-4cfb-abe3-ffaf0c46d0d1_.jpg",
+      "1671992551820-a8db433e-08ff-4897-8ae7-fa3ec99a8698_.jpg",
+      "1671993145917-b6b20fe1-08bc-422e-b440-8ea4bbcb4def_.jpg",
+      "1671995280898-539ad81e-9676-4bec-bfd6-2645d8966e3d_.jpg",
+      "1671996149319-ec9b23b6-e28d-4f60-88b1-78753c54c0a8_.jpg",
+      "1671997377380-2e5a0399-dd73-4c1f-9101-2d929c007980.jpg",
+      "1671997453357-ac6275cb-62b9-4d56-aa94-ad8b9152bbba_.jpg",
+      "1671997568881-fc3efc66-2621-46df-a772-c02e2c41e40b.jpg",
+      "1671997599005-2dd87d39-9904-49e9-92a3-126f59f3b7d4.jpg"
     ],
-    "description": "Bali, round two",
-    "notes": "Thoroughly enchanted by my first visit, I had to return",
-    "importance": 7,
+    "description": "Bali, round one",
+    "notes": "As a freshman, I talked my way into a graduate-level psychology course. My global curiosity fully cemented on this trip, and I never looked back.",
+    "importance": 5,
     "visit_type": "school",
     "duration_days": "",
     "estimated": ""
   },
   {
     "id": 7,
+    "location_name": "Bali, Round 2",
+    "lat": -8.16305115,
+    "lng": 115.022464,
+    "start_date": "06-2002",
+    "end_date": "07-2002",
+    "photo_album": "Bali_Round_2",
+    "photos": [
+      "001 1 DSCN0193.JPG",
+      "001 1 DSCN0198.JPG",
+      "001 Bryan w bird 2.jpg",
+      "001 DSCN0077.JPG",
+      "001 DSCN0080.JPG",
+      "001 DSCN0090.JPG",
+      "001 DSCN0091.JPG",
+      "001 DSCN0122.JPG",
+      "001 DSCN0133.JPG",
+      "001 DSCN0135.JPG",
+      "001 DSCN0138.JPG",
+      "001 DSCN0140.JPG",
+      "001 DSCN0142.JPG",
+      "001 DSCN0146scan.jpg",
+      "001 DSCN0147scan.jpg",
+      "001 DSCN0148.JPG",
+      "001 DSCN0149scan.jpg",
+      "001 DSCN0150scan.jpg",
+      "001 DSCN0151.JPG",
+      "001 DSCN0154.JPG",
+      "001 DSCN0155scan.jpg",
+      "001 DSCN0174.JPG",
+      "001 DSCN0183.JPG",
+      "001 DSCN0184.JPG",
+      "001 DSCN0186.JPG",
+      "001 DSCN0190.JPG",
+      "001 DSCN0200.JPG",
+      "001 DSCN0217.JPG",
+      "001 DSCN0222.JPG",
+      "001 DSCN0261.JPG",
+      "002-DSCN0075.JPG",
+      "1672086634886-02b65941-ef58-4942-98b2-b73a2f14ceef_.jpg",
+      "1672087354505-389e3572-f3bb-40e9-ab41-c422dc7ca5ee.jpg",
+      "1672088666014-e0a4e86f-fa9e-43e6-9b0e-8cb778d00dd6.jpg",
+      "1672088832505-f0c238ea-b381-4efd-8882-95af1928d717_.jpg",
+      "1672088991539-28e0f530-ba45-4a29-89b8-3e8cc0593a0e_.jpg",
+      "1672089089306-a33d6912-16ac-45ec-9bf9-b0b76e14f26d_.jpg",
+      "1672089136711-b68cb06a-cc39-4f86-804f-bcf51263311a_.jpg",
+      "1672089304591-92352758-267d-4c83-bdba-b408aba2c535.jpg",
+      "1672089378999-b24a2e58-507c-4e22-be44-0cd4c74a196c.jpg",
+      "1672089607812-3d26cee7-d0c1-4216-ac67-36c25eb6912d_.jpg",
+      "1672110561112-9713818a-6aaf-4203-8299-e6ed436a0b9f_.jpg",
+      "1672110659624-4cf8e67d-eb86-4460-b5ea-6e0a4f8c23d7_.jpg",
+      "1672110978570-54821b4c-3f4a-4b47-a318-74380d84aa04_.jpg",
+      "1672111075560-aa3051b0-9f81-4334-9706-9a6872ece3de.jpg",
+      "1672111515954-60ba0cbb-ec67-4cc1-94b2-96b80b870c6c_.jpg",
+      "1672111663120-8bcead86-5bdf-40c7-873b-2f15a2da7cb1.jpg",
+      "1672116834943-6afb1535-68cf-498b-b500-21f2c4b2073e.jpg",
+      "1672116870455-117515e6-5bc0-48b6-acb0-5f25947eea6b_.jpg",
+      "1672116910548-a269566f-6733-4e82-a975-fa1501dbafcd_.jpg",
+      "1672116966688-07e304b9-7a8c-48f1-8b58-cc0f1b8a7842_.jpg",
+      "1672117012860-701dee20-0625-46be-b3c7-95cca1b1ab4c.jpg",
+      "1672117251369-d7aba332-4cad-48eb-ab1d-a9643395f4ba_.jpg",
+      "1672117471212-abb98837-dbc8-4725-ab79-6e5214ceac13.jpg",
+      "1672117699499-3763a1bf-1df2-4e75-ac08-ac78ee710d3f_.jpg",
+      "1672117792559-1770f7c8-273b-4a74-ad92-301229c5602b.jpg",
+      "1672117874268-be6b1fdb-3353-4749-aca2-4d71eaca9505_.jpg",
+      "1672119570711-51cc737a-2341-4b71-8f29-456e8c182c98_.jpg",
+      "1672124409998-9e735b06-f959-4ece-9d2c-e9a0a7478411.jpg",
+      "1672124585752-cfd13a3f-669b-47b7-b62a-a596d0273495.jpg",
+      "DSCN0098.JPG",
+      "DSCN0114.JPG",
+      "DSCN0262scan.jpg"
+    ],
+    "description": "Bali, round two",
+    "notes": "Thoroughly enchanted by my first visit, I had to return",
+    "importance": 3,
+    "visit_type": "friend",
+    "duration_days": "",
+    "estimated": ""
+  },
+  {
+    "id": 8,
     "location_name": "Beijing, China",
     "lat": 40.190632,
     "lng": 116.412144,
@@ -495,7 +592,7 @@
     "estimated": ""
   },
   {
-    "id": 8,
+    "id": 9,
     "location_name": "Cape Town",
     "lat": -33.9288301,
     "lng": 18.4172197,
@@ -506,12 +603,12 @@
     "description": "The CELTA that Covid canceled",
     "notes": "Lockdown in a foreign country during a global pandemic. Evacuated by the State Department.",
     "importance": 10,
-    "visit_type": "school, work",
+    "visit_type": "school",
     "duration_days": "",
     "estimated": ""
   },
   {
-    "id": 9,
+    "id": 10,
     "location_name": "Namibia",
     "lat": -18.99133055,
     "lng": 15.74605506,
@@ -527,7 +624,7 @@
     "estimated": ""
   },
   {
-    "id": 10,
+    "id": 11,
     "location_name": "Machu Picchu",
     "lat": -13.16442195,
     "lng": -72.5450851,
@@ -543,7 +640,7 @@
     "estimated": ""
   },
   {
-    "id": 11,
+    "id": 12,
     "location_name": "Machu Picchu, Round Two",
     "lat": -13.16442195,
     "lng": -72.5450851,
@@ -559,7 +656,7 @@
     "estimated": ""
   },
   {
-    "id": 12,
+    "id": 13,
     "location_name": "The Netherlands",
     "lat": 51.0120795,
     "lng": 5.8384433,
@@ -575,7 +672,7 @@
     "estimated": ""
   },
   {
-    "id": 13,
+    "id": 14,
     "location_name": "U.K.",
     "lat": 51.4893335,
     "lng": -0.1440550845,
@@ -591,7 +688,7 @@
     "estimated": ""
   },
   {
-    "id": 14,
+    "id": 15,
     "location_name": "Scotland",
     "lat": 55.9533456,
     "lng": -3.1883749,
@@ -607,7 +704,7 @@
     "estimated": ""
   },
   {
-    "id": 15,
+    "id": 16,
     "location_name": "Baja",
     "lat": 23.4453627,
     "lng": -109.4240213,
@@ -623,7 +720,7 @@
     "estimated": ""
   },
   {
-    "id": 16,
+    "id": 17,
     "location_name": "Kaua'i, Maui",
     "lat": 22.05038375,
     "lng": -159.5588624,
@@ -639,7 +736,7 @@
     "estimated": ""
   },
   {
-    "id": 17,
+    "id": 18,
     "location_name": "Istanbul",
     "lat": 41.006381,
     "lng": 28.9758715,
@@ -655,7 +752,7 @@
     "estimated": ""
   },
   {
-    "id": 18,
+    "id": 19,
     "location_name": "Las Vegas",
     "lat": 36.2533896,
     "lng": -115.2794366,
@@ -671,7 +768,7 @@
     "estimated": ""
   },
   {
-    "id": 19,
+    "id": 20,
     "location_name": "Lake Tahoe",
     "lat": 39.0885405,
     "lng": -120.0503528,
@@ -689,7 +786,7 @@
     "estimated": "TRUE"
   },
   {
-    "id": 20,
+    "id": 21,
     "location_name": "San Francisco",
     "lat": 37.7792588,
     "lng": -122.4193286,
@@ -705,7 +802,7 @@
     "estimated": "TRUE"
   },
   {
-    "id": 21,
+    "id": 22,
     "location_name": "Puerto Rico",
     "lat": 18.38423905,
     "lng": -66.05343997,
@@ -721,7 +818,7 @@
     "estimated": ""
   },
   {
-    "id": 22,
+    "id": 23,
     "location_name": "Belize",
     "lat": 17.7395148,
     "lng": -88.03368671,
@@ -737,7 +834,7 @@
     "estimated": ""
   },
   {
-    "id": 23,
+    "id": 24,
     "location_name": "Guatemala",
     "lat": 16.9131737,
     "lng": -89.9296189,
@@ -753,7 +850,7 @@
     "estimated": ""
   },
   {
-    "id": 24,
+    "id": 25,
     "location_name": "Grenada, Nicaragua",
     "lat": 12.1192425,
     "lng": -86.2453463,
@@ -769,7 +866,7 @@
     "estimated": ""
   },
   {
-    "id": 25,
+    "id": 26,
     "location_name": "San Salvador",
     "lat": 13.6989939,
     "lng": -89.1914249,
@@ -785,7 +882,7 @@
     "estimated": ""
   },
   {
-    "id": 26,
+    "id": 27,
     "location_name": "Nicaragua",
     "lat": 11.4983864,
     "lng": -85.62553996,
@@ -801,7 +898,7 @@
     "estimated": ""
   },
   {
-    "id": 27,
+    "id": 28,
     "location_name": "Bocas del Toro",
     "lat": 9.26847485,
     "lng": -81.99322425,
@@ -817,7 +914,7 @@
     "estimated": ""
   },
   {
-    "id": 28,
+    "id": 29,
     "location_name": "BriBri",
     "lat": 9.5170692,
     "lng": -82.9562336,
@@ -833,7 +930,7 @@
     "estimated": ""
   },
   {
-    "id": 29,
+    "id": 30,
     "location_name": "Mexico City",
     "lat": 19.3207722,
     "lng": -99.15146775,
@@ -849,7 +946,7 @@
     "estimated": ""
   },
   {
-    "id": 30,
+    "id": 31,
     "location_name": "Mayan Riviera",
     "lat": 20.429647,
     "lng": -87.6529306,
@@ -865,7 +962,7 @@
     "estimated": ""
   },
   {
-    "id": 31,
+    "id": 32,
     "location_name": "Brussels",
     "lat": 50.8465573,
     "lng": 4.351697,
@@ -881,7 +978,7 @@
     "estimated": ""
   },
   {
-    "id": 32,
+    "id": 33,
     "location_name": "Paris",
     "lat": 48.8534951,
     "lng": 2.3483915,
@@ -897,7 +994,7 @@
     "estimated": ""
   },
   {
-    "id": 33,
+    "id": 34,
     "location_name": "Montreal",
     "lat": 45.5031824,
     "lng": -73.5698065,
@@ -913,7 +1010,7 @@
     "estimated": "TRUE"
   },
   {
-    "id": 34,
+    "id": 35,
     "location_name": "New York",
     "lat": 40.7127281,
     "lng": -74.0060152,
@@ -929,7 +1026,7 @@
     "estimated": "TRUE"
   },
   {
-    "id": 35,
+    "id": 36,
     "location_name": "Philadelphia",
     "lat": 39.9527237,
     "lng": -75.1635262,
@@ -945,7 +1042,7 @@
     "estimated": ""
   },
   {
-    "id": 36,
+    "id": 37,
     "location_name": "Boston",
     "lat": 42.3554334,
     "lng": -71.060511,
@@ -961,7 +1058,7 @@
     "estimated": ""
   },
   {
-    "id": 37,
+    "id": 38,
     "location_name": "Chicago",
     "lat": 41.8755616,
     "lng": -87.6244212,
@@ -977,7 +1074,7 @@
     "estimated": ""
   },
   {
-    "id": 38,
+    "id": 39,
     "location_name": "Washington, DC",
     "lat": 38.8950368,
     "lng": -77.0365427,

@@ -6,7 +6,9 @@ fetch("../../resources/data/overview.json")
     return response.json();
   })
   .then((data) => {
-    let markers = L.featureGroup(data.map(addMarker));
+    // toggle between marker clusters and markers
+    // let markers = createMarkerCluster(data); // create marker clusters
+    let markers = L.featureGroup(data.map(addMarker)); // create markers
     createMap(markers);
   });
 
@@ -68,7 +70,48 @@ function createMap(markers) {
   mainMap.attributionControl.setPosition("bottomleft");
 }
 
+// // optional function to add marker clusters
+// function createMarkerCluster(data) {
+//   let markerCluster = L.markerClusterGroup({
+//     spiderfyOnMaxZoom: true,
+//     showCoverageOnHover: false,
+//     spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" },
+//     maxClusterRadius: 50,
+//     zoomToBoundsOnClick: true,
+//   });
+
+//   // add markers to the cluster group
+//   data.forEach((place) => {
+//     let marker = addMarker(place);
+//     markerCluster.addLayer(marker);
+//   });
+
+//   return markerCluster;
+// }
+
+// function to add markers to map
 function addMarker(place) {
+  // // conditional for "school"
+  // if (place.visit_type === "school") {
+  //   // custom school icon
+  //   let schoolIcon = L.divIcon({
+  //     className: "custom-icon",
+  //     html: '<i class="fas fa-graduation-cap fa-2x" style="color:#4CAF50"></i>',
+  //     iconSize: [30, 30],
+  //     iconAnchor: [15, 30],
+  //   });
+
+  //   // create school marker
+  //   let marker = L.marker([place.lat, place.lng], {
+  //     icon: schoolIcon,
+  //   });
+
+  //   // create popup
+  //   marker.bindPopup(createPopupContent(place));
+
+  //   return marker; // return school marker
+  // }
+
   // set radius based on importance
   const radius = place.importance * 2;
 
