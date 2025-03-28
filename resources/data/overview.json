@@ -1006,7 +1006,7 @@
       "original_ee67a3ee-9310-40b7-81de-a0aa8682f715_PXL_20221018_142405526.jpg"
     ],
     "description": "The Sacred Valley and Lake Titicaca",
-    "notes": "Brought a bunch of friends and family along on this one",
+    "notes": "Brought a bunch of friends and family along on this one. Ollantaytambo remains one of my favorite towns. Sets a very high bar for train rides.",
     "importance": 5,
     "visit_type": "friends, family",
     "estimated": false
@@ -1359,10 +1359,15 @@
     "lng": -122.4193286,
     "start_date": 2007,
     "end_date": 2007,
-    "photo_album": "",
-    "photos": [],
+    "photo_album": "San_Francisco",
+    "photos": [
+      "IMG_0488.JPG",
+      "P6250017.JPG",
+      "P6250018.JPG",
+      "P6250039.JPG"
+    ],
     "description": "Great town",
-    "notes": "Multiple trips to see friends",
+    "notes": "",
     "importance": 3,
     "visit_type": "friends",
     "estimated": false
@@ -1374,10 +1379,12 @@
     "lng": -66.05343997,
     "start_date": "02-2024",
     "end_date": "03-2024",
-    "photo_album": "",
-    "photos": [],
-    "description": "San Juan",
-    "notes": "Visited my final Virgin Island, Culebra",
+    "photo_album": "Puerto_Rico",
+    "photos": [
+      "Puerto Rico Old San Juan.jpg"
+    ],
+    "description": "Old San Juan and the Spanish Virgin Islands",
+    "notes": "Somehow, years after living in the Caribbean, I ended up with a DC outpost back in the Caribbean. Gringo go home",
     "importance": 3,
     "visit_type": "friends",
     "estimated": false
@@ -1884,10 +1891,21 @@
     "lng": -75.1635262,
     "start_date": "10-2020",
     "end_date": "10-2020",
-    "photo_album": "",
-    "photos": [],
+    "photo_album": "Philly",
+    "photos": [
+      "001-PXL_20250212_190235272.jpg",
+      "002-PXL_20220923_162712043.NIGHT.jpg",
+      "002-PXL_20220923_162744657.NIGHT.jpg",
+      "003-PXL_20220924_021001568.NIGHT.jpg",
+      "IMG_3666.jpg",
+      "IMG_3683.jpg",
+      "IMG_3686.jpg",
+      "PXL_20220923_165655825.MP.jpg",
+      "PXL_20220923_165724760.MP.jpg",
+      "PXL_20220923_170202327.jpg"
+    ],
     "description": "",
-    "notes": "Love this town. I need to visit my cousins more often.",
+    "notes": "Love this town. The Eagles, Poe's Raven, Eastern State Penitentiary, and Rodin. I need to visit my cousins more often.",
     "importance": 2,
     "visit_type": "friends, family",
     "estimated": false
