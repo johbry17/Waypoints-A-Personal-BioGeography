@@ -24,6 +24,7 @@ html {
   border: 2px solid #008A51; /* match marker fill */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* min-width: clamp(200px, 80vw, 300px); */
 }
 
 /* popup arrow tip */
@@ -79,10 +80,25 @@ html {
   /* background-color: #000000; */
 }
 
+/* @media (max-width: 768px) {
+  .carousel-container {
+    height: 70vh;
+    max-height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: auto;
+    max-height: 300px;
+  }
+} */
+
 .carousel-photo {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;
+  object-fit: contain; /* contain to maintain aspect ratio */
+  object-position: center; /* center to keep the image centered */
   display: block;
   margin: 0 auto;
   position: relative;
