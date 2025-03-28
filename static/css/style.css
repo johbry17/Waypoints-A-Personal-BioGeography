@@ -63,7 +63,7 @@ html {
 /* popup carousel css */
 .carousel-container {
   /* may need to set width */
-  /* width: 300px; */
+  width: 300px;
   max-width: 100%;
   /* max-height: 300px; */
   height: 50vh;
@@ -94,7 +94,7 @@ html {
   }
 } */
 
-.carousel-photo {
+.carousel-photo, .carousel-video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain; /* contain to maintain aspect ratio */

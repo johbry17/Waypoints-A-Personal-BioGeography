@@ -1,5 +1,6 @@
 // carousel for multiple photos, with controls
 function displayMultiplePhotos(photoSet, carouselId) {
+  // get carousel elements
   const carouselDiv = document.querySelector(`#${carouselId} .carousel-photos`);
   const prevButton = document.querySelector(`#${carouselId} #prev-button`);
   const playPauseButton = document.querySelector(
@@ -7,7 +8,7 @@ function displayMultiplePhotos(photoSet, carouselId) {
   );
   const nextButton = document.querySelector(`#${carouselId} #next-button`);
 
-  // clear previous photos
+  // clear previous photo
   carouselDiv.innerHTML = "";
 
   // for empty photo set
@@ -16,48 +17,77 @@ function displayMultiplePhotos(photoSet, carouselId) {
     return;
   }
 
-  // add photos
-  photoSet.forEach((src, index) => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.classList.add("carousel-photo");
-    img.style.display = index === 0 ? "block" : "none";
-    carouselDiv.appendChild(img);
-  });
-
-  // initialize variables
+  // declare variables
   let index = 0;
-  let intervalId;
-  const imgElements = carouselDiv.querySelectorAll(".carousel-photo");
+  let intervalId = null;
   let isPlaying = true;
 
-  // rotate through photos
-  function showNextPhoto() {
-    imgElements[index].style.display = "none";
-    index = (index + 1) % photoSet.length;
-    imgElements[index].style.display = "block";
-  }
-  // function showNextPhoto() {
-  //     imgElements[index].classList.remove("active");
-  //     index = (index + 1) % photoSet.length;
-  //     imgElements[index].classList.add("active");
-  //   }
+  // add photos or videos to carousel
+  const imgElements = photoSet.map((src, i) => {
+    // create video or image element based on file type
+    const element = src.endsWith(".mp4")
+      ? document.createElement("video")
+      : document.createElement("img");
 
-  // go back through photos
-  function showPrevPhoto() {
+    // set attributes for video or image
+    element.src = src;
+    element.classList.add(
+      src.endsWith(".mp4") ? "carousel-video" : "carousel-photo"
+    );
+    element.style.display = i === 0 ? "block" : "none";
+
+    // add controls, autoplay, mute to videos
+    if (element.tagName === "VIDEO") {
+      element.controls = true;
+      element.autoplay = true;
+      element.muted = true;
+    }
+
+    // add photo or video to carousel
+    carouselDiv.appendChild(element);
+    return element;
+  });
+
+  function showMedia(indexToShow) {
+    // turn off previous photo or video
     imgElements[index].style.display = "none";
-    index = (index - 1 + photoSet.length) % photoSet.length;
+    if (imgElements[index].tagName === "VIDEO") imgElements[index].pause();
+
+    // turn on new photo or video
+    index = indexToShow;
     imgElements[index].style.display = "block";
+
+    // if video, autoplay, pause interval, restart interval on video end
+    if (imgElements[index].tagName === "VIDEO") {
+      imgElements[index].play();
+      clearInterval(intervalId);
+      imgElements[index].onended = () => {
+        if (isPlaying) startCarousel();
+      };
+    } else {
+      // if image, restart interval
+      if (isPlaying) {
+        clearInterval(intervalId); // clear any previous interval
+        startCarousel();
+      }
+    }
   }
-  // function showPrevPhoto() {
-  //     imgElements[index].classList.remove("active");
-  //     index = (index - 1 + photoSet.length) % photoSet.length;
-  //     imgElements[index].classList.add("active");
-  //   }
+
+  // increment index, show next photo or video
+  function showNext() {
+    const nextIndex = (index + 1) % photoSet.length;
+    showMedia(nextIndex);
+  }
+
+  // decrement index, show previous photo or video
+  function showPrev() {
+    const prevIndex = (index - 1 + photoSet.length) % photoSet.length;
+    showMedia(prevIndex);
+  }
 
   // play carousel, set interval, change button to pause
   function startCarousel() {
-    intervalId = setInterval(showNextPhoto, 5000);
+    intervalId = setInterval(showNext, 5000); // 5 seconds
     playPauseButton.innerHTML = `
         <i class="fas fa-circle fa-stack-2x"></i>
         <i class="fas fa-pause fa-stack-1x fa-inverse"></i>
@@ -73,29 +103,26 @@ function displayMultiplePhotos(photoSet, carouselId) {
       `;
   }
 
-  // initial play
-  startCarousel();
+  // toggle play/pause state
+  function togglePlayPause() {
+    if (isPlaying) stopCarousel();
+    else startCarousel();
+    isPlaying = !isPlaying;
+  }
 
-  // add event listeners
+  // add event listeners to buttons
   prevButton.addEventListener("click", () => {
-    stopCarousel(); // stop interval to avoid conflicts
-    showPrevPhoto();
-    if (isPlaying) startCarousel(); // restart if carousel was playing
+    stopCarousel();
+    showPrev();
   });
 
   nextButton.addEventListener("click", () => {
-    stopCarousel(); // stop interval to avoid conflicts
-    showNextPhoto();
-    if (isPlaying) startCarousel(); // restart if carousel was playing
+    stopCarousel();
+    showNext();
   });
 
-  playPauseButton.addEventListener("click", (event) => {
-    event.stopPropagation(); // otherwise it closes the popup
-    if (isPlaying) {
-      stopCarousel();
-    } else {
-      startCarousel();
-    }
-    isPlaying = !isPlaying;
-  });
+  playPauseButton.addEventListener("click", togglePlayPause);
+
+  // initial play
+  startCarousel();
 }
