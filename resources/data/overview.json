@@ -1128,10 +1128,13 @@
     "lng": -0.1440550845,
     "start_date": "10-1995",
     "end_date": "10-1995",
-    "photo_album": "",
-    "photos": [],
-    "description": "London, Edinburh, Wales, Bath",
-    "notes": "My first international adventure (besides Montreal)",
+    "photo_album": "UK",
+    "photos": [
+      "0_1671826773079-1ce79bae-034a-471b-86eb-9752406c0c14.jpg",
+      "1671826122464-85a24aa0-03a7-48ce-948b-6fbe3e0ed284.jpg"
+    ],
+    "description": "Edinburgh, Wales, Bath, London",
+    "notes": "My first international trip, besides Montreal. Steeped in Tolkien, Braveheart, and Arthurian legend, I immediately fell in love with the U.K., especially Edinburgh (A castle! In the center of town!)",
     "importance": 3,
     "visit_type": "family",
     "estimated": false
@@ -1444,7 +1447,7 @@
     ],
     "description": "Great town",
     "notes": "",
-    "importance": 3,
+    "importance": 2,
     "visit_type": "friends",
     "estimated": false
   },
@@ -1879,7 +1882,7 @@
     ],
     "description": "",
     "notes": "Fell in love with Salvador Dali's artwork on this high school art class jaunt to Brussels",
-    "importance": 2,
+    "importance": 1,
     "visit_type": "school",
     "estimated": false
   },
@@ -1912,7 +1915,7 @@
     ],
     "description": "Notre Dame!",
     "notes": "Art class filed trip to Paris. Is there anything more stereotypical for a European high school study abroad? My art teacher was pretty badass. Lost my keys under the Eiffel Tower and snuck a picture of the Mona Lisa",
-    "importance": 3,
+    "importance": 1,
     "visit_type": "school",
     "estimated": false
   },
@@ -1927,7 +1930,7 @@
     "photos": [],
     "description": "",
     "notes": "Closest major city to my childhood",
-    "importance": 4,
+    "importance": 2,
     "visit_type": "friends, family",
     "estimated": false
   },
