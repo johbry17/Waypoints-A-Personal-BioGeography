@@ -202,7 +202,7 @@ function addLegend() {
       <h4>Border Color</h4>
       <div><i class="fas fa-home home-icon" style="color: #FF5733;"></i> Residence</div>
       <div><i class="fas fa-graduation-cap" style="color: #FFB400;"></i> Academic</div>
-      <div><span class="legend-color" style="background-color: #4CAF50;"></span> Other</div>
+      <div><i class="fas fa-globe" style="color: #4CAF50;"></i> Other</div>
       <p>Markers scaled<br>by life impact</p>
     `;
     return div;

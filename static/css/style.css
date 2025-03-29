@@ -154,14 +154,6 @@ html {
   text-decoration: underline;
 }
 
-.legend-color {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  border-radius: 50%;
-  margin-right: 8px;
-}
-
 .legend-mini-text {
   font-size: 10px;
 }
