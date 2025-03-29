@@ -1,23 +1,49 @@
-fetch("../../resources/data/overview.json")
-  .then((response) => {
+// Description: JavaScript code for the map application
+
+// This code fetches data from JSON and CSV files, processes it, and creates a map with markers and popups using Leaflet.js
+// It also includes functionality for displaying a photo carousel in popups, adding legends, and handling different map layers
+// It uses the PapaParse library for CSV parsing and Leaflet.js for map rendering
+// It also handles international date line crossing by tripling markers
+
+// fetch data from JSON and CSV files
+Promise.all([
+  fetch("../../resources/data/overview.json").then((response) => {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     return response.json();
-  })
-  .then((data) => {
-    // triple markers to handle international date line crossing
-    const tripledData = tripledMarkers(data);
+  }),
+  fetch("../../resources/data/Activity.csv").then((response) =>
+    response.text()
+  ),
+  fetch("../../resources/data/Location.csv").then((response) =>
+    response.text()
+  ),
+])
+  .then(([overviewData, activityCsv, locationCsv]) => {
+    // parse CSV data
+    const activityData = Papa.parse(activityCsv, { header: true }).data;
+    const locationData = Papa.parse(locationCsv, { header: true }).data;
 
-    // create markers and map
+    // triple markers to handle international date line crossing
+    const tripledData = tripledMarkers(overviewData);
+
+    // create overlayMarkers for the map
     let markers = L.featureGroup(tripledData.map(addMarker));
-    // for initial map zoom level
-    const originalBounds = L.featureGroup(data.map(addMarker)).getBounds();
-    createMap(markers, originalBounds);
+    const originalBounds = L.featureGroup(
+      overviewData.map(addMarker)
+    ).getBounds();
+    const activities = addActivityMarkers(activityData, locationData);
+
+    // pass to createMap
+    createMap(markers, originalBounds, activities);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
   });
 
 // function to create base maps and layers
-function createMap(markers, originalBounds) {
+function createMap(markers, originalBounds, activities) {
   // create base layer
   let satMap = L.esri.basemapLayer("Imagery");
 
@@ -33,6 +59,7 @@ function createMap(markers, originalBounds) {
   // ...and overlay maps
   let overlayMaps = {
     Markers: markers,
+    Activities: activities,
   };
 
   // create map
@@ -71,6 +98,8 @@ function createMap(markers, originalBounds) {
 
   // set Leaflet attribution control to bottom left
   mainMap.attributionControl.setPosition("bottomleft");
+
+  return mainMap;
 }
 
 // triples markers for crossing the international date line
@@ -78,19 +107,26 @@ function tripledMarkers(data) {
   const tripledData = [];
 
   data.forEach((place) => {
+    // ensure lng and lat are numbers
+    // avoid concatenation of strings
+    const lng = parseFloat(place.lng);
+    const lat = parseFloat(place.lat);
+
     // add original marker
-    tripledData.push(place);
+    tripledData.push({ ...place, lng, lat });
 
     // add longitude + 360
     tripledData.push({
       ...place,
-      lng: place.lng + 360,
+      lng: lng + 360,
+      lat,
     });
 
     // add longitude - 360
     tripledData.push({
       ...place,
-      lng: place.lng - 360,
+      lng: lng - 360,
+      lat,
     });
   });
 
@@ -173,7 +209,10 @@ function createPopupContent(place) {
   carouselContainer.id = `carousel-${place.id}`;
 
   // check if there are photos
-  let carouselHTML = place.photos && place.photos.length > 0 ? carouselContainer.outerHTML :  `
+  let carouselHTML =
+    place.photos && place.photos.length > 0
+      ? carouselContainer.outerHTML
+      : `
         <div class="no-photos">
           <p>No photos available</p>
         </div>
@@ -224,4 +263,72 @@ function addLegend() {
   };
 
   return legend;
+}
+
+// icon mapping for activity overlay
+const activityIcons = {
+  skiing: "fa-skiing",
+  snorkeling: "fa-water",
+  whitewater_rafting: "fa-ship",
+  hiking: "fa-hiking",
+  paragliding: "fa-parachute-box",
+  kayaking: "fa-kayak",
+};
+
+function addActivityMarkers(activityData, locationData) {
+  // create layer for activity markers
+  const activityLayer = L.layerGroup();
+
+  // get location details for each activity
+  const activityWithLocations = activityData
+    .map((activity) => {
+      const location = locationData.find(
+        (loc) => loc.location_id === activity.location_id
+      );
+      return location
+        ? {
+            ...activity,
+            lat: location.lat,
+            lng: location.lng,
+            location_name: location.name,
+          }
+        : null;
+    })
+    .filter(Boolean); // remove any null locations
+
+  // tripled the markers for international date line crossing
+  const tripledActivities = tripledMarkers(activityWithLocations);
+
+  // add markers to the activity layer
+  tripledActivities.forEach((activity) => {
+    // assign icon based on activity type
+    const iconClass = activityIcons[activity.activity_type] || "fa-map-marker";
+
+    // create icon
+    const activityIcon = L.divIcon({
+      html: `<i class="fas ${iconClass}" style="color: #007BFF; font-size: 1.5em;"></i>`,
+      className: "activity-icon",
+      iconSize: [20, 20],
+      iconAnchor: [10, 10],
+    });
+
+    // create marker
+    const marker = L.marker([activity.lat, activity.lng], {
+      icon: activityIcon,
+    });
+
+    // add popup
+    marker.bindPopup(`
+        <div>
+          <h4>${activity.location_name}</h4>
+          <p><b>Activity:</b> ${activity.activity_type.replace("_", " ")}</p>
+          <p>${activity.description || "No description available."}</p>
+        </div>
+      `);
+
+    // add marker to activity layer
+    activityLayer.addLayer(marker);
+  });
+
+  return activityLayer;
 }
