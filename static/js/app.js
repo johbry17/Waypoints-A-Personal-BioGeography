@@ -48,23 +48,23 @@ function createMap(markers) {
     })
     .addTo(mainMap);
 
-  // // call function to add legend to map
-  // let legendToggle = addLegend();
-  // legendToggle.addTo(mainMap);
+  // call function to add legend to map
+  let legendToggle = addLegend();
+  legendToggle.addTo(mainMap);
 
-  // // remove legend if earthquake layer toggled off
-  // mainMap.on("overlayremove", function (eventLayer) {
-  //   if (eventLayer.name === "Markers") {
-  //     mainMap.removeControl(legendToggle);
-  //   }
-  // });
+  // remove legend if marker layer toggled off
+  mainMap.on("overlayremove", function (eventLayer) {
+    if (eventLayer.name === "Markers") {
+      mainMap.removeControl(legendToggle);
+    }
+  });
 
-  // // add legend if earthquake layer toggled on
-  // mainMap.on("overlayadd", function (eventLayer) {
-  //   if (eventLayer.name === "Markers") {
-  //     legendToggle.addTo(mainMap);
-  //   }
-  // });
+  // add legend if marker layer toggled on
+  mainMap.on("overlayadd", function (eventLayer) {
+    if (eventLayer.name === "Markers") {
+      legendToggle.addTo(mainMap);
+    }
+  });
 
   // set Leaflet attribution control to bottom left
   mainMap.attributionControl.setPosition("bottomleft");
@@ -186,4 +186,22 @@ function createPopupContent(place) {
     ${carouselContainer.outerHTML}
     ${popupContent}
   `;
+}
+
+function addLegend() {
+  const legend = L.control({ position: "bottomright" });
+
+  legend.onAdd = function () {
+    const div = L.DomUtil.create("div", "custom-legend");
+    div.innerHTML = `
+      <h4>Border Color</h4>
+      <div><span class="legend-color" style="background-color: #FF0000;"></span> Residence</div>
+      <div><span class="legend-color" style="background-color: #4CAF50;"></span> Academic</div>
+      <div><span class="legend-color" style="background-color: #FFB400;"></span> Other</div>
+      <p>Markers scaled<br>by life impact</p>
+    `;
+    return div;
+  };
+
+  return legend;
 }
