@@ -48,26 +48,25 @@ function displayMultiplePhotos(photoSet, carouselId) {
     return element;
   });
 
-  function showMedia(indexToShow) {
+  function showMedia(newIndex) {
     // turn off previous photo or video
     imgElements[index].style.display = "none";
     if (imgElements[index].tagName === "VIDEO") imgElements[index].pause();
 
     // turn on new photo or video
-    index = indexToShow;
+    index = newIndex;
     imgElements[index].style.display = "block";
+    clearInterval(intervalId); // clear any previous interval
 
-    // if video, autoplay, pause interval, restart interval on video end
+    // if video, autoplay, restart interval on video end
     if (imgElements[index].tagName === "VIDEO") {
       imgElements[index].play();
-      clearInterval(intervalId);
       imgElements[index].onended = () => {
         if (isPlaying) startCarousel();
       };
     } else {
       // if image, restart interval
       if (isPlaying) {
-        clearInterval(intervalId); // clear any previous interval
         startCarousel();
       }
     }
@@ -104,7 +103,11 @@ function displayMultiplePhotos(photoSet, carouselId) {
   }
 
   // toggle play/pause state
-  function togglePlayPause() {
+  function togglePlayPause(event) {
+    // prevent event from propagating to parent elements
+    // (or else hitting pause closes the popup)
+    event.stopPropagation();
+
     if (isPlaying) stopCarousel();
     else startCarousel();
     isPlaying = !isPlaying;
@@ -121,7 +124,7 @@ function displayMultiplePhotos(photoSet, carouselId) {
     showNext();
   });
 
-  playPauseButton.addEventListener("click", togglePlayPause);
+  playPauseButton.addEventListener("click", (event) => togglePlayPause(event));
 
   // initial play
   startCarousel();

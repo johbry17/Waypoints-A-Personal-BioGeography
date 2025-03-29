@@ -19,14 +19,13 @@ Stores details about locations visited, including time spent and general descrip
 | `lng`          | Float      | Longitude coordinate |
 | `start_date`   | Date       | Approximate or exact arrival date |
 | `end_date`     | Date       | Approximate or exact departure date |
-| `duration_days`| Integer    | Estimated time spent in days |
-| `visit_type`   | TEXT       | Purpose of visit (e.g., Work, Study, Solo Travel) |
 | `photo_album`  | TEXT       | Link or reference to an associated photo album |
 | `photos`       | TEXT       | Links or references to associated photos |
 | `description`  | TEXT       | Short summary or story about this location |
 | `notes`        | TEXT       | Additional details or memories from the visit |
-| `importance`   | Integer    | Scale of location's importance (1-10) |
-| `estimated`    | Boolean    | Indicates uncertainty in date |
+| `importance`   | Integer    | Scale of location's admittedly subjective importance to biography (1-10) |
+| `visit_type`   | TEXT       | Purpose of visit (e.g., home, work, school, friends, family, solo) |
+| `duration_days`| Integer    | Estimated time spent in days |
 ---
 
 ## **2. Pictures Table**
