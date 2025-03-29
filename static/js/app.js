@@ -172,6 +172,13 @@ function createPopupContent(place) {
   );
   carouselContainer.id = `carousel-${place.id}`;
 
+  // check if there are photos
+  let carouselHTML = place.photos && place.photos.length > 0 ? carouselContainer.outerHTML :  `
+        <div class="no-photos">
+          <p>No photos available</p>
+        </div>
+      `;
+
   // add school icon if visit_type was academic, including D.C. and Vermont
   const schoolIcon =
     place.visit_type === "school" ||
@@ -196,7 +203,7 @@ function createPopupContent(place) {
 
   // return photo carousel and popup content
   return `
-    ${carouselContainer.outerHTML}
+    ${carouselHTML}
     ${popupContent}
   `;
 }
