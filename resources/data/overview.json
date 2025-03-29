@@ -574,7 +574,7 @@
     ],
     "description": "",
     "notes": "From the Green Mountain State to the Evergreen State. Spent about half of my undergrad here. I dare you to Google the school mascot, the geoduck. The Olympic peninsula truly looks like a fairyland of Nature. Something about the Old Growth.",
-    "importance": 7,
+    "importance": 6,
     "visit_type": "school",
     "duration_days": "",
     "home": "TRUE"
@@ -2124,7 +2124,7 @@
     "importance": 1,
     "visit_type": "family",
     "duration_days": "",
-    "home": ""
+    "home": "TRUE"
   },
   {
     "id": 39,
@@ -2366,7 +2366,7 @@
     "importance": 1,
     "visit_type": "home",
     "duration_days": "",
-    "home": ""
+    "home": "TRUE"
   },
   {
     "id": 45,

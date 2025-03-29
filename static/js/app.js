@@ -94,7 +94,7 @@ function addMarker(place) {
   const isEducational = place.visit_type === "school";
 
   // set marker color based on visit type
-  const markerColor = isEducational ? "#4CAF50" : "#FFB400"; // green for school, yellow for others
+  const markerColor = isEducational ? "#FFB400" : "#4CAF50"; // green for school, yellow for others
 
   // set radius based on importance
   const radius = place.importance * 2;
@@ -172,10 +172,15 @@ function createPopupContent(place) {
       ? '<i class="fas fa-graduation-cap school-icon"></i>'
       : "";
 
+  // add home icon if it was a residence
+  const homeIcon = place.home
+    ? '<i class="fas fa-home home-icon" style="color: #FF5733;"></i>'
+    : "";
+
   // add popup text
   const popupContent = `
     <div class="popup-content">
-      <h3><i class="fas fa-globe"></i> ${schoolIcon} ${place.location_name}</h3>
+      <h3><i class="fas fa-globe"></i> ${homeIcon} ${schoolIcon} ${place.location_name}</h3>
       <p>${place.description}</p>
       <p>${place.notes}</p>
     </div>
@@ -195,9 +200,9 @@ function addLegend() {
     const div = L.DomUtil.create("div", "custom-legend");
     div.innerHTML = `
       <h4>Border Color</h4>
-      <div><span class="legend-color" style="background-color: #FF0000;"></span> Residence</div>
-      <div><span class="legend-color" style="background-color: #4CAF50;"></span> Academic</div>
-      <div><span class="legend-color" style="background-color: #FFB400;"></span> Other</div>
+      <div><i class="fas fa-home home-icon" style="color: #FF5733;"></i> Residence</div>
+      <div><i class="fas fa-graduation-cap" style="color: #FFB400;"></i> Academic</div>
+      <div><span class="legend-color" style="background-color: #4CAF50;"></span> Other</div>
       <p>Markers scaled<br>by life impact</p>
     `;
     return div;
