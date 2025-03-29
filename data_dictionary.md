@@ -6,6 +6,8 @@ This document defines the structure and purpose of the datasets used in the Glob
 
 ![ERD](./resources/ERD.png)
 
+Note: the location_name is turning into the primary key on its own. 
+
 ---
 
 ## **1. Overview Table**
@@ -50,14 +52,13 @@ Stores geographic details of visited locations.
 | Column Name     | Data Type  | Description |
 |----------------|-----------|-------------|
 | `location_id`  | Integer PK | Unique identifier for each location |
-| `name`         | TEXT       | Name of the location |
-| `country` | TEXT | Country of location |
+| `name`         | TEXT       | Name of the location, matches to Activity Table |
+| `location` | TEXT | Location, formatted for use in geocoding lat/lng |
 | `lat`          | Float      | Latitude coordinate |
 | `lng`          | Float      | Longitude coordinate |
 | `overview_id`  | Integer FK | Links to the `Overview` table |
 
 ---
-
 
 ## **4. Routes Table**
 Stores transportation details between locations.
@@ -81,7 +82,8 @@ Logs special activities like hiking routes, road trips, or unique experiences.
 | `activity_id`  | Integer PK | Unique identifier for each activity |
 | `trip_id`      | Integer FK | Links to the `Trip` table |
 | `location_id`  | Integer FK | Reference to the location where activity took place |
-| `activity_type`| TEXT       | Type of activity (e.g., Hiking, Museum Visit) |
+| `location_name` | TEXT | Name, matches to Location Table |
+| `activity_type`| TEXT       | Type of activity (e.g., Hiking, Snorkeling) |
 | `route_path`   | TEXT       | Polyline or waypoints for mapped activities |
 | `description`  | TEXT       | Short summary or story about this location |
 | `notes`        | TEXT       | Additional details about the activity |
