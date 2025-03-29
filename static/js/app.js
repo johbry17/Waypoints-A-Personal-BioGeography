@@ -127,10 +127,16 @@ function addMarker(place) {
   }
 
   // tooltip for hover
-  marker.bindTooltip("Click for more info", {
-    permanent: false,
-    direction: "top",
-  });
+  marker.bindTooltip(
+    `<div style="text-align: center;">
+      <b>${place.location_name}</b><br>
+      Click for more info
+     </div>`,
+    {
+      permanent: false,
+      direction: "top",
+    }
+  );
 
   // create popup for each marker
   marker.bindPopup(createPopupContent(place));
@@ -147,55 +153,6 @@ function addMarker(place) {
   return marker;
 }
 
-// function addMarker(place) {
-//   let marker;
-
-//   // if visit is educational
-//   if (place.visit_type === "school") {
-//     // custom icon for educational visits
-//     const schoolIcon = L.divIcon({
-//       className: "custom-icon",
-//       html: '<i class="fas fa-graduation-cap fa-2x" style="color:#FFB400"></i>',
-//       iconSize: [30, 30],
-//       iconAnchor: [15, 30],
-//     });
-
-//     // marker with custom icon
-//     marker = L.marker([place.lat, place.lng], {
-//       icon: schoolIcon,
-//     });
-//   } else {
-//     // default circle marker for other visits
-//     const radius = place.importance * 2;
-//     marker = L.circleMarker([place.lat, place.lng], {
-//       radius: radius,
-//       color: "#FFB400", // border color
-//       fillColor: "#008A51", // fill color
-//       fillOpacity: 0.6, // fill opacity
-//       weight: 3, // border thickness
-//     });
-//   }
-
-//     // tooltip for hover
-//     marker.bindTooltip("Click for more info", {
-//       permanent: false,
-//       direction: "top",
-//     });
-
-//   // popup for marker
-//   marker.bindPopup(createPopupContent(place));
-
-//   // initialize carousel on popup open
-//   marker.on("popupopen", () => {
-//     const photoSet = place.photos.map(
-//       (photo) => `static/images/${place.photo_album}/${photo}`
-//     );
-//     displayMultiplePhotos(photoSet, `carousel-${place.id}`);
-//   });
-
-//   return marker;
-// }
-
 function createPopupContent(place) {
   // clone carousel template
   const template = document.querySelector("#carousel-template");
@@ -207,13 +164,13 @@ function createPopupContent(place) {
   );
   carouselContainer.id = `carousel-${place.id}`;
 
-  // add school icon if visit_type was academic
+  // add school icon if visit_type was academic, including D.C. and Vermont
   const schoolIcon =
-  place.visit_type === "school" ||
-  place.location_name === "Washington, D.C." ||
-  place.location_name === "Vermont"
-    ? '<i class="fas fa-graduation-cap school-icon"></i>'
-    : "";
+    place.visit_type === "school" ||
+    place.location_name === "Washington, D.C." ||
+    place.location_name === "Vermont"
+      ? '<i class="fas fa-graduation-cap school-icon"></i>'
+      : "";
 
   // add popup text
   const popupContent = `
