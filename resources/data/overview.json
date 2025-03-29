@@ -171,7 +171,8 @@
     "notes": "Study abroad with the University of Minnesota Studies in International Development. Hardest culture shock of my life. Reframed my entire outlook on Life while getting a crash course in how the world really works.",
     "importance": 10,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": "TRUE"
   },
   {
     "id": 2,
@@ -322,7 +323,8 @@
     "notes": "Moved to St John sight unseen and made a life for myself. Stayed three years. I gamble well. Two-thirds of the island is National Park, a paradise of hiking, snorkeling, and bouldering. I recommend boat trips, dinghy days, and island hopping the BVI.",
     "importance": 10,
     "visit_type": "home",
-    "estimated": false
+    "duration_days": "",
+    "home": "TRUE"
   },
   {
     "id": 3,
@@ -422,7 +424,8 @@
     "notes": "Studied Natural Resources and Sustainable Development, focused on comparing the science and policy approaches of the United States and Costa Rica as case studies for global possibilities. Went to school with a small group of people from all over the world - Europe, East Africa, East Asia, Latin America, etc. ",
     "importance": 10,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": "TRUE"
   },
   {
     "id": 4,
@@ -532,7 +535,8 @@
     "notes": "",
     "importance": 10,
     "visit_type": "home",
-    "estimated": false
+    "duration_days": "",
+    "home": "TRUE"
   },
   {
     "id": 5,
@@ -572,7 +576,8 @@
     "notes": "From the Green Mountain State to the Evergreen State. Spent about half of my undergrad here. I dare you to Google the school mascot, the geoduck. The Olympic peninsula truly looks like a fairyland of Nature. Something about the Old Growth.",
     "importance": 7,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": "TRUE"
   },
   {
     "id": 6,
@@ -636,7 +641,8 @@
     "notes": "Freshman me talked my way into a graduate-level psychology course. My global curiosity fully cemented on this trip. Closest I've ever come to a spiritual identity. Made me the greatest non-practicing advocate of meditation. Good hiking.",
     "importance": 6,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 7,
@@ -715,7 +721,8 @@
     "notes": "My college girlfriend had to see this really cool place I'd been to",
     "importance": 3,
     "visit_type": "friend",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 8,
@@ -771,7 +778,8 @@
     "notes": "Somebody got a grant to take a bunch of high school students to China. First exposure to radically different way of living (hell, my rural Vermont self had barely been to the City). Changed my life forever",
     "importance": 6,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 9,
@@ -858,7 +866,8 @@
     "notes": "Came for the CELTA. Stayed for the COVID. Evacuated by the State Department. I love Cape Town. Top tier city. Where else can you take a bus to phenomenal hiking?",
     "importance": 7,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 10,
@@ -952,7 +961,8 @@
     "notes": "With a capstone safari in Etosha. Road trip, Cape Town to almost the Angolan border. Reclaiming the trip that the covid pandemic stole. The desert has its own beauty",
     "importance": 5,
     "visit_type": "solo",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 11,
@@ -1006,7 +1016,8 @@
     "notes": "Surprised my parents at the foot of Machu Picchu. There were hiking in on the Salkantay trek with friends. Enlisting the aid of a few devious confederates, I showed up at the last minute",
     "importance": 5,
     "visit_type": "family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 12,
@@ -1166,7 +1177,8 @@
     "notes": "Brought a bunch of friends and family along on this one. Ollantaytambo remains one of my favorite towns. Sets a very high bar for train rides.",
     "importance": 5,
     "visit_type": "friends, family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 13,
@@ -1198,9 +1210,10 @@
     ],
     "description": "Limbricht, the Netherlands, near Maastricht",
     "notes": "From the Dutch I got a love of cheese, coffee, and bicycles. High school study abroad. First class art education. My comprehension of econ in Dutch left room for improvement. Amsterdam is great, but the other Dutch cities are also highly recommended.",
-    "importance": 8,
+    "importance": 7,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": "TRUE"
   },
   {
     "id": 14,
@@ -1218,7 +1231,8 @@
     "notes": "My first international trip, besides Montreal. Steeped in Tolkien, Braveheart, and Arthurian legend, I immediately fell in love with the U.K., especially Edinburgh (A castle! In the center of town!)",
     "importance": 3,
     "visit_type": "family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 15,
@@ -1327,7 +1341,8 @@
     "notes": "Edinburgh is one of my favorite cities in the world. And the road trip through the HIghlands goes down in the record books",
     "importance": 6,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 16,
@@ -1381,7 +1396,8 @@
     "notes": "Met up with my parents and their friends in southern Baja. Never made it to Cabo, funnily",
     "importance": 4,
     "visit_type": "family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 17,
@@ -1412,7 +1428,8 @@
     "notes": "A trip sadly marred by family tragedy - Stateside, grandma was dying",
     "importance": 3,
     "visit_type": "family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 18,
@@ -1436,7 +1453,8 @@
     "notes": "Long layover at the meeting of continents. Great first impression. Lovely city. Cats run the place",
     "importance": 1,
     "visit_type": "solo",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 19,
@@ -1461,7 +1479,8 @@
     "notes": "My first conference working as an event specialist. February of 2020. My last conference working as an event specialist. Great people-watching",
     "importance": 1,
     "visit_type": "work",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 20,
@@ -1478,7 +1497,8 @@
     "notes": "I didn't know what powder was like until this.",
     "importance": 1,
     "visit_type": "family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 21,
@@ -1510,7 +1530,8 @@
     "notes": "Mighty fine trees out there. And cheesy tourist traps. The quintessential Americana road trip.",
     "importance": 2,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 22,
@@ -1530,7 +1551,8 @@
     "notes": "",
     "importance": 2,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 23,
@@ -1547,7 +1569,8 @@
     "notes": "Somehow, years after living in the Caribbean, I ended up with a DC outpost back in the Caribbean. Gringo go home",
     "importance": 3,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 24,
@@ -1562,7 +1585,8 @@
     "notes": "",
     "importance": 1,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 25,
@@ -1611,7 +1635,8 @@
     "notes": "Costa Rica through Nicaragua and Honduras, ferry to Belize. Belmopan and Caye Caulker. To Guatemala: Tikal, Flores, Antigua, Lago Atitlan, Xela, and Volcan Tajumulco. Back to Costa Rica through San Salvador and Granada.",
     "importance": 4,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 26,
@@ -1626,7 +1651,8 @@
     "notes": "Returning from a looooong road trip. At night, joined a very Latino Catholic celebration of the beatification of Pope John Paul II. The next morning, overheard the cab driver discussing the - breaking news - death of Osama Bin Laden, quite confusion-inducing for my limited Spanish listening comprehension",
     "importance": 1,
     "visit_type": "solo",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 27,
@@ -1641,7 +1667,8 @@
     "notes": "Spent an afternoon in San Salvador watching, of all things, the wedding of Prince William and Kate Middleton",
     "importance": 1,
     "visit_type": "solo",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 28,
@@ -1707,7 +1734,8 @@
     "notes": "Quick trip with friends through southern Nicaragua.",
     "importance": 4,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 29,
@@ -1732,7 +1760,8 @@
     "notes": "Panama. I really like this border crossing. Nice islands.",
     "importance": 4,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 30,
@@ -1800,7 +1829,8 @@
     "notes": "Field trip investigating the implementation of the UN Declaration on the Rights of Indigenous Peoples in BriBri territory along the Costa Rica / Panama border",
     "importance": 5,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 31,
@@ -1888,7 +1918,8 @@
     "notes": "Delightful loooong weekend with friends. One of my favorite cities in the world",
     "importance": 6,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 32,
@@ -1948,7 +1979,8 @@
     "notes": "Reserva de la Bi\u00f3sfera Sian Ka'an, UNESCO World Heritage Site. Also a Wonder of the World, but... Sian Ka'an. Magic.",
     "importance": 3,
     "visit_type": "solo",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 33,
@@ -1965,7 +1997,8 @@
     "notes": "Fell in love with Salvador Dali's artwork on this high school art class jaunt to Brussels",
     "importance": 1,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 34,
@@ -1998,7 +2031,8 @@
     "notes": "Art class filed trip to Paris. Is there anything more stereotypical for a European high school study abroad? My art teacher was pretty badass. Lost my keys under the Eiffel Tower and snuck a picture of the Mona Lisa",
     "importance": 1,
     "visit_type": "school",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 35,
@@ -2013,7 +2047,8 @@
     "notes": "Closest major city to my childhood",
     "importance": 2,
     "visit_type": "friends, family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 36,
@@ -2042,7 +2077,8 @@
     "notes": "My favorite thing to do is walk across the Brooklyn Bridge at dawn, as the city wakes up",
     "importance": 4,
     "visit_type": "friends, family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 37,
@@ -2068,7 +2104,8 @@
     "notes": "Love this town. The Eagles, Poe's Raven, Eastern State Penitentiary, and Rodin. Philly. I need to visit my cousins more often.",
     "importance": 2,
     "visit_type": "friends, family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 38,
@@ -2086,11 +2123,12 @@
     "notes": "Congrats! Gold Star. You found the baby pics.",
     "importance": 1,
     "visit_type": "family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 39,
-    "location_name": "Washington, DC",
+    "location_name": "Washington, D.C.",
     "lat": 38.8950368,
     "lng": -77.0365427,
     "start_date": "08-2010",
@@ -2143,7 +2181,8 @@
     "notes": "Moved to DC for grad school at American University. Stayed for the people, intellectual stimulation, and small-town neighborly feeling (short buildings and abundant green spaces - for a country boy, feeling the sunlight pays huge mental health dividends)",
     "importance": 10,
     "visit_type": "home",
-    "estimated": false
+    "duration_days": "",
+    "home": "TRUE"
   },
   {
     "id": 40,
@@ -2196,7 +2235,8 @@
     "notes": "Simpler times, but sadly already well on the road to our current political polarization",
     "importance": 1,
     "visit_type": "friends",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 41,
@@ -2239,7 +2279,8 @@
     "notes": "Rented a villa with a bunch of friends and family. Hell of a birthday party.",
     "importance": 3,
     "visit_type": "friends, family",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 42,
@@ -2277,7 +2318,8 @@
     "notes": "Not sure why I'm making these embarassing, blackmail-worthy photos available",
     "importance": 2,
     "visit_type": "home",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 43,
@@ -2307,7 +2349,8 @@
     "notes": "",
     "importance": 2,
     "visit_type": "home",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 44,
@@ -2322,7 +2365,8 @@
     "notes": "First years. Fuzzy, warm memories of Gandma and Grandpa's house",
     "importance": 1,
     "visit_type": "home",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   },
   {
     "id": 45,
@@ -2337,6 +2381,7 @@
     "notes": "Latitude 0\u00b0 N, Longitude 0\u00b0 E",
     "importance": "",
     "visit_type": "",
-    "estimated": false
+    "duration_days": "",
+    "home": ""
   }
 ]

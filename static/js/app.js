@@ -91,37 +91,45 @@ function createMap(markers) {
 
 // function to add markers to map
 function addMarker(place) {
-  // // conditional for "school"
-  // if (place.visit_type === "school") {
-  //   // custom school icon
-  //   let schoolIcon = L.divIcon({
-  //     className: "custom-icon",
-  //     html: '<i class="fas fa-graduation-cap fa-2x" style="color:#4CAF50"></i>',
-  //     iconSize: [30, 30],
-  //     iconAnchor: [15, 30],
-  //   });
+  const isEducational = place.visit_type === "school";
 
-  //   // create school marker
-  //   let marker = L.marker([place.lat, place.lng], {
-  //     icon: schoolIcon,
-  //   });
-
-  //   // create popup
-  //   marker.bindPopup(createPopupContent(place));
-
-  //   return marker; // return school marker
-  // }
+  // set marker color based on visit type
+  const markerColor = isEducational ? "#4CAF50" : "#FFB400"; // green for school, yellow for others
 
   // set radius based on importance
   const radius = place.importance * 2;
 
   // create marker for each place
-  let marker = L.circleMarker([place.lat, place.lng], {
+  let mainMarker = L.circleMarker([place.lat, place.lng], {
     radius: radius,
-    color: "#FFB400", // border color
-    fillColor: "#008A51", // fill color
-    fillOpacity: 0.6, // fill opacity
-    weight: 3, // border thickness
+    color: markerColor,
+    fillColor: "#008A51",
+    fillOpacity: 0.6,
+    weight: 3,
+  });
+
+  // if "home" marker
+  if (place.home) {
+    // extra border ring for home markers
+    const homeRing = L.circleMarker([place.lat, place.lng], {
+      radius: radius + 1, // slightly larger radius for the ring
+      color: "#FF0000",
+      fillColor: "transparent",
+      fillOpacity: 0,
+      weight: 4,
+    });
+
+    // group main marker and home ring
+    marker = L.featureGroup([homeRing, mainMarker]);
+  } else {
+    // for non-home markers
+    marker = mainMarker;
+  }
+
+  // tooltip for hover
+  marker.bindTooltip("Click for more info", {
+    permanent: false,
+    direction: "top",
   });
 
   // create popup for each marker
@@ -139,19 +147,78 @@ function addMarker(place) {
   return marker;
 }
 
+// function addMarker(place) {
+//   let marker;
+
+//   // if visit is educational
+//   if (place.visit_type === "school") {
+//     // custom icon for educational visits
+//     const schoolIcon = L.divIcon({
+//       className: "custom-icon",
+//       html: '<i class="fas fa-graduation-cap fa-2x" style="color:#FFB400"></i>',
+//       iconSize: [30, 30],
+//       iconAnchor: [15, 30],
+//     });
+
+//     // marker with custom icon
+//     marker = L.marker([place.lat, place.lng], {
+//       icon: schoolIcon,
+//     });
+//   } else {
+//     // default circle marker for other visits
+//     const radius = place.importance * 2;
+//     marker = L.circleMarker([place.lat, place.lng], {
+//       radius: radius,
+//       color: "#FFB400", // border color
+//       fillColor: "#008A51", // fill color
+//       fillOpacity: 0.6, // fill opacity
+//       weight: 3, // border thickness
+//     });
+//   }
+
+//     // tooltip for hover
+//     marker.bindTooltip("Click for more info", {
+//       permanent: false,
+//       direction: "top",
+//     });
+
+//   // popup for marker
+//   marker.bindPopup(createPopupContent(place));
+
+//   // initialize carousel on popup open
+//   marker.on("popupopen", () => {
+//     const photoSet = place.photos.map(
+//       (photo) => `static/images/${place.photo_album}/${photo}`
+//     );
+//     displayMultiplePhotos(photoSet, `carousel-${place.id}`);
+//   });
+
+//   return marker;
+// }
+
 function createPopupContent(place) {
   // clone carousel template
   const template = document.querySelector("#carousel-template");
   const carouselElement = template.content.cloneNode(true);
 
   // set ID for photo carousel
-  const carouselContainer = carouselElement.querySelector(".carousel-container");
+  const carouselContainer = carouselElement.querySelector(
+    ".carousel-container"
+  );
   carouselContainer.id = `carousel-${place.id}`;
+
+  // add school icon if visit_type was academic
+  const schoolIcon =
+  place.visit_type === "school" ||
+  place.location_name === "Washington, D.C." ||
+  place.location_name === "Vermont"
+    ? '<i class="fas fa-graduation-cap school-icon"></i>'
+    : "";
 
   // add popup text
   const popupContent = `
     <div class="popup-content">
-      <h3><i class="fas fa-globe"></i> ${place.location_name}</h3>
+      <h3><i class="fas fa-globe"></i> ${schoolIcon} ${place.location_name}</h3>
       <p>${place.description}</p>
       <p>${place.notes}</p>
     </div>

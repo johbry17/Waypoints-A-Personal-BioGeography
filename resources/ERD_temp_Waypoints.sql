@@ -8,16 +8,16 @@ CREATE TABLE "Overview" (
     "name" TEXT   NOT NULL,
     "lat" Float   NOT NULL,
     "lng" Float   NOT NULL,
-    "start_date" Date   NOT NULL,
-    "end_date" Date   NOT NULL,
-    "duration_days" Integer   NOT NULL,
-    "visit_type" TEXT   NOT NULL,
-    "photo_album" TEXT   NOT NULL,
-    "photos" TEXT   NOT NULL,
-    "description" TEXT   NOT NULL,
-    "notes" Text   NOT NULL,
-    "importance" Integer   NOT NULL,
-    "estimated" Boolean   NOT NULL,
+    "start_date" Date,
+    "end_date" Date,
+    "duration_days" Integer,
+    "visit_type" TEXT,
+    "photo_album" TEXT,
+    "photos" TEXT,
+    "description" TEXT,
+    "notes" TEXT,
+    "importance" Integer,
+    "home" Boolean,
     CONSTRAINT "pk_Overview" PRIMARY KEY (
         "id"
      )
@@ -39,9 +39,10 @@ CREATE TABLE "Pictures" (
 CREATE TABLE "Location" (
     "location_id" int   NOT NULL,
     "name" TEXT   NOT NULL,
+    "country" TEXT   NOT NULL,
     "lat" float   NOT NULL,
     "lng" float   NOT NULL,
-    "overview_id" int   NOT NULL,
+    "overview_id" int,
     CONSTRAINT "pk_Location" PRIMARY KEY (
         "location_id"
      )
@@ -63,9 +64,9 @@ CREATE TABLE "Activity" (
     "activity_id" Integer   NOT NULL,
     "location_id" int   NOT NULL,
     "activity_type" TEXT   NOT NULL,
-    "route_path" TEXT   NOT NULL,
-    "description" TEXT   NOT NULL,
-    "notes" Text   NOT NULL,
+    "route_path" TEXT,
+    "description" TEXT,
+    "notes" TEXT,
     CONSTRAINT "pk_Activity" PRIMARY KEY (
         "activity_id"
      )

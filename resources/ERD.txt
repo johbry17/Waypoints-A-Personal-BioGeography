@@ -13,7 +13,7 @@ photos TEXT
 description TEXT
 notes Text
 importance Integer
-estimated Boolean
+home Boolean
 
 Pictures
 --
@@ -29,6 +29,7 @@ Location
 --
 location_id int PK
 name TEXT
+country TEXT
 lat float
 lng float
 overview_id int FK - Overview.id

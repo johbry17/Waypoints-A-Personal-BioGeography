@@ -9,6 +9,11 @@ html {
   height: 100%;
 }
 
+.school-icon {
+  text-align: center;
+  color:#FFB400
+}
+
 /* popup */
 .leaflet-popup-content {
   font-family: Arial, sans-serif;

@@ -26,6 +26,7 @@ Stores details about locations visited, including time spent and general descrip
 | `importance`   | Integer    | Scale of location's admittedly subjective importance to biography (1-10) |
 | `visit_type`   | TEXT       | Purpose of visit (e.g., home, work, school, friends, family, solo) |
 | `duration_days`| Integer    | Estimated time spent in days |
+| `home` | Boolean | If I lived there for an extended period of time |
 ---
 
 ## **2. Pictures Table**
@@ -50,6 +51,7 @@ Stores geographic details of visited locations.
 |----------------|-----------|-------------|
 | `location_id`  | Integer PK | Unique identifier for each location |
 | `name`         | TEXT       | Name of the location |
+| `country` | TEXT | Country of location |
 | `lat`          | Float      | Latitude coordinate |
 | `lng`          | Float      | Longitude coordinate |
 | `overview_id`  | Integer FK | Links to the `Overview` table |
