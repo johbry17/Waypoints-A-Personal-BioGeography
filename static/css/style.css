@@ -6,27 +6,9 @@ html {
   width: 100%;
   height: 100%;
   /* background-color: #333333; */
-  background: url('../images/eclipse_banner.jpg') repeat-y top center;
+  background: url("../images/eclipse_banner.jpg") repeat-y top center;
   /* background-size: 100vw; */
   background-size: cover;
-}
-
-/* school icon */
-.school-icon {
-  text-align: center;
-  color: #ffb400;
-}
-
-/* home icon */
-.home-icon {
-  text-align: center;
-  color: #FF5733;
-}
-
-/* globe icon */
-.globe-icon {
-  text-align: center;
-  color: #008A51;
 }
 
 /* popup */
@@ -197,19 +179,37 @@ html {
   }
 }
 
-  /* activity icon, with transition smoothing */
-  .activity-icon-stack .fa-circle {
-    color: #0085A1;
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
+/* school icon */
+.school-icon {
+  text-align: center;
+  color: #ffb400;
+}
 
-  /* on hover, slightly expand and change color */
-  .activity-icon-stack:hover .fa-circle {
-    transform: scale(1.2);
-    color: #005f73;
-  }
+/* home icon */
+.home-icon {
+  text-align: center;
+  color: #ff5733;
+}
 
-  /* shrink inner icon */
-  .activity-icon-stack .fa-stack-1x {
-    font-size: 0.8em;
-  }
+/* globe icon */
+.globe-icon {
+  text-align: center;
+  color: #008a51;
+}
+
+/* activity icon, with transition smoothing */
+.activity-icon-stack .fa-circle {
+  color: #0085a1;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* on hover, slightly expand and change color */
+.activity-icon-stack:hover .fa-circle {
+  transform: scale(1.2);
+  color: #005f73;
+}
+
+/* shrink activity inner icon */
+.activity-icon-stack .fa-stack-1x {
+  font-size: 0.8em;
+}
