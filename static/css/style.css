@@ -17,6 +17,18 @@ html {
   color: #ffb400;
 }
 
+/* home icon */
+.home-icon {
+  text-align: center;
+  color: #FF5733;
+}
+
+/* globe icon */
+.globe-icon {
+  text-align: center;
+  color: #008A51;
+}
+
 /* popup */
 .leaflet-popup-content {
   font-family: Arial, sans-serif;
