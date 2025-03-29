@@ -184,3 +184,20 @@ html {
     z-index: 1000;
   }
 }
+
+  /* activity icon, with transition smoothing */
+  .activity-icon-stack .fa-circle {
+    color: #0085A1;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  /* on hover, slightly expand and change color */
+  .activity-icon-stack:hover .fa-circle {
+    transform: scale(1.2);
+    color: #005f73;
+  }
+
+  /* shrink inner icon */
+  .activity-icon-stack .fa-stack-1x {
+    font-size: 0.8em;
+  }

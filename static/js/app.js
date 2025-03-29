@@ -267,12 +267,12 @@ function addLegend() {
 
 // icon mapping for activity overlay
 const activityIcons = {
-  skiing: "fa-skiing",
-  snorkeling: "fa-water",
-  whitewater_rafting: "fa-ship",
-  hiking: "fa-hiking",
-  paragliding: "fa-parachute-box",
-  kayaking: "fa-kayak",
+  skiing: "fas fa-skiing",
+  snorkeling: "fas fa-swimmer",
+  whitewater_rafting: "fas fa-life-ring",
+  hiking: "fas fa-hiking",
+  paragliding: "fas fa-parachute-box",
+  kayaking: "mdi mdi-kayaking",
 };
 
 function addActivityMarkers(activityData, locationData) {
@@ -302,11 +302,23 @@ function addActivityMarkers(activityData, locationData) {
   // add markers to the activity layer
   tripledActivities.forEach((activity) => {
     // assign icon based on activity type
-    const iconClass = activityIcons[activity.activity_type] || "fa-map-marker";
+    const iconClass =
+      activityIcons[activity.activity_type.toLowerCase()] || "fa-map-marker";
+
+    // capitalize for display
+    const formattedActivityType = capitalizeWords(
+      activity.activity_type.replace("_", " ")
+    );
+
 
     // create icon
     const activityIcon = L.divIcon({
-      html: `<i class="fas ${iconClass}" style="color: #007BFF; font-size: 1.5em;"></i>`,
+      html: `
+      <span class="fa-stack fa-lg activity-icon-stack">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="${iconClass} fa-stack-1x fa-inverse"></i>
+      </span>
+    `,
       className: "activity-icon",
       iconSize: [20, 20],
       iconAnchor: [10, 10],
@@ -317,12 +329,24 @@ function addActivityMarkers(activityData, locationData) {
       icon: activityIcon,
     });
 
+    // tooltip for hover
+    marker.bindTooltip(
+      `<div style="text-align: center;">
+      <b>${activity.location_name}</b><br>
+      ${formattedActivityType}
+     </div>`,
+      {
+        permanent: false,
+        direction: "top",
+      }
+    );
+
     // add popup
     marker.bindPopup(`
         <div>
           <h4>${activity.location_name}</h4>
-          <p><b>Activity:</b> ${activity.activity_type.replace("_", " ")}</p>
-          <p>${activity.description || "No description available."}</p>
+          <p><b><i class="${iconClass}" style="color: #0085A1;"></i></b> ${formattedActivityType}</p>
+          <p>${activity.description}</p>
         </div>
       `);
 
@@ -331,4 +355,13 @@ function addActivityMarkers(activityData, locationData) {
   });
 
   return activityLayer;
+}
+
+// capitalize the first letter of each word
+function capitalizeWords(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
