@@ -29,7 +29,7 @@ Location
 --
 location_id int PK
 name TEXT
-country TEXT
+location TEXT
 lat float
 lng float
 overview_id int FK - Overview.id
@@ -47,6 +47,7 @@ usage_tags TEXT
 Activity
 --
 activity_id Integer PK
+trip_id int FK >- Trip.trip_id
 location_id int FK >- Location.location_id
 activity_type TEXT
 route_path TEXT
