@@ -6,14 +6,18 @@ fetch("../../resources/data/overview.json")
     return response.json();
   })
   .then((data) => {
-    // toggle between marker clusters and markers
-    // let markers = createMarkerCluster(data); // create marker clusters
-    let markers = L.featureGroup(data.map(addMarker)); // create markers
-    createMap(markers);
+    // triple markers to handle international date line crossing
+    const tripledData = tripledMarkers(data);
+
+    // create markers and map
+    let markers = L.featureGroup(tripledData.map(addMarker));
+    // for initial map zoom level
+    const originalBounds = L.featureGroup(data.map(addMarker)).getBounds();
+    createMap(markers, originalBounds);
   });
 
 // function to create base maps and layers
-function createMap(markers) {
+function createMap(markers, originalBounds) {
   // create base layer
   let satMap = L.esri.basemapLayer("Imagery");
 
@@ -27,23 +31,22 @@ function createMap(markers) {
     Firefly: L.esri.basemapLayer("ImageryFirefly"),
   };
   // ...and overlay maps
-  let maps = {
+  let overlayMaps = {
     Markers: markers,
   };
 
-  // create map with center, zoom, initial layers
+  // create map
   let mainMap = L.map("map", {
-    // center: [0, -60],
-    // zoom: 3,
     layers: [satMap, markers],
     // loads data when crossing the international date line
     worldCopyJump: true,
   });
-  mainMap.fitBounds(markers.getBounds()); // fit map to markers
+  // set initial map zoom level and bounds
+  mainMap.fitBounds(originalBounds);
 
   // create toggle for map layers
   L.control
-    .layers(baseMap, maps, {
+    .layers(baseMap, overlayMaps, {
       // collapsed: false,
     })
     .addTo(mainMap);
@@ -70,31 +73,36 @@ function createMap(markers) {
   mainMap.attributionControl.setPosition("bottomleft");
 }
 
-// // optional function to add marker clusters
-// function createMarkerCluster(data) {
-//   let markerCluster = L.markerClusterGroup({
-//     spiderfyOnMaxZoom: true,
-//     showCoverageOnHover: false,
-//     spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" },
-//     maxClusterRadius: 50,
-//     zoomToBoundsOnClick: true,
-//   });
+// triples markers for crossing the international date line
+function tripledMarkers(data) {
+  const tripledData = [];
 
-//   // add markers to the cluster group
-//   data.forEach((place) => {
-//     let marker = addMarker(place);
-//     markerCluster.addLayer(marker);
-//   });
+  data.forEach((place) => {
+    // add original marker
+    tripledData.push(place);
 
-//   return markerCluster;
-// }
+    // add longitude + 360
+    tripledData.push({
+      ...place,
+      lng: place.lng + 360,
+    });
+
+    // add longitude - 360
+    tripledData.push({
+      ...place,
+      lng: place.lng - 360,
+    });
+  });
+
+  return tripledData;
+}
 
 // function to add markers to map
 function addMarker(place) {
-  const isEducational = place.visit_type === "school";
+  const isAcademic = place.visit_type === "school";
 
   // set marker color based on visit type
-  const markerColor = isEducational ? "#FFB400" : "#4CAF50"; // green for school, yellow for others
+  const markerColor = isAcademic ? "#FFB400" : "#4CAF50"; // yellow for school, green for others
 
   // set radius based on importance
   const radius = place.importance * 2;
@@ -110,7 +118,7 @@ function addMarker(place) {
 
   // if "home" marker
   if (place.home) {
-    // extra border ring for home markers
+    // extra red border ring for home markers
     const homeRing = L.circleMarker([place.lat, place.lng], {
       radius: radius + 1, // slightly larger radius for the ring
       color: "#FF0000",
