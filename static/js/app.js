@@ -140,35 +140,26 @@ function addMarker(place) {
 }
 
 function createPopupContent(place) {
-  const carouselHTML =
-    place.photos && place.photos.length > 0
-      ? `
-            <div class="carousel-container" id="carousel-${place.id}">
-                <div class="carousel-photos"></div>
-                <div class="carousel-controls">
-                    <span id="prev-button" class="fa-stack fa-lg">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fas fa-chevron-left fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span id="play-pause-button" class="fa-stack fa-lg">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fas fa-pause fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span id="next-button" class="fa-stack fa-lg">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fas fa-chevron-right fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-            </div>
-        `
-      : "<p>No photos available</p>";
+  // clone carousel template
+  const template = document.querySelector("#carousel-template");
+  const carouselElement = template.content.cloneNode(true);
 
+  // set ID for photo carousel
+  const carouselContainer = carouselElement.querySelector(".carousel-container");
+  carouselContainer.id = `carousel-${place.id}`;
+
+  // add popup text
+  const popupContent = `
+    <div class="popup-content">
+      <h3><i class="fas fa-globe"></i> ${place.location_name}</h3>
+      <p>${place.description}</p>
+      <p>${place.notes}</p>
+    </div>
+  `;
+
+  // return photo carousel and popup content
   return `
-        ${carouselHTML}
-        <div class="popup-content">
-          <h3><i class="fas fa-globe"></i> ${place.location_name}</h3>
-          <p>${place.description}</p>
-          <p>${place.notes}</p>
-        </div>
-    `;
+    ${carouselContainer.outerHTML}
+    ${popupContent}
+  `;
 }

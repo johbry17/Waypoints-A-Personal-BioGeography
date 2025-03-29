@@ -25,12 +25,34 @@
     <!-- main CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css" />
   </head>
-
   <body>
-    
+
+
     <!-- map div - the entire body of the page -->
     <div id="map"></div>
 
+
+
+    <!-- photo carousel for popups -->
+    <template id="carousel-template">
+      <div class="carousel-container">
+        <div class="carousel-photos"></div>
+        <div class="carousel-controls">
+          <span id="prev-button" class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-chevron-left fa-stack-1x fa-inverse"></i>
+          </span>
+          <span id="play-pause-button" class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-pause fa-stack-1x fa-inverse"></i>
+          </span>
+          <span id="next-button" class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-chevron-right fa-stack-1x fa-inverse"></i>
+          </span>
+        </div>
+      </div>
+    </template>
 
 
     <!-- Font Awesome Icons -->
@@ -57,5 +79,6 @@
     ></script>
     <!-- Main JavaScript -->
     <script type="text/javascript" src="static/js/app.js"></script>
+
   </body>
 </html>
