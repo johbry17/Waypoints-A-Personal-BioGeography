@@ -162,8 +162,27 @@ const activityIcons = {
 
 // add activity markers
 function addActivityMarkers(activityData, locationData) {
+
+  // !! toggle between marker and cluster layer !!
   // create layer for activity markers
-  const activityLayer = L.layerGroup();
+  // const activityLayer = L.layerGroup();
+  // create marker cluster layer for activities
+  const activityLayer = L.markerClusterGroup({
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+    spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" }, // never used
+    maxClusterRadius: 20, // max cluster radius in pixels
+    zoomToBoundsOnClick: true,
+    iconCreateFunction: (cluster) => {
+      const count = cluster.getChildCount(); // number of markers in cluster
+      return L.divIcon({
+        html: `<div class="custom-cluster-icon">${count}</div>`,
+        className: "custom-cluster",
+        iconSize: [25, 25],
+      });
+    },
+  });
+
   // get location details for each activity
   const activityWithLocations = mapActivityLocations(
     activityData,
@@ -240,4 +259,23 @@ function capitalizeWords(str) {
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
+}
+
+// optional function to add marker clusters
+function createMarkerCluster(data) {
+  let markerCluster = L.markerClusterGroup({
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+    spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" },
+    maxClusterRadius: 50, // max cluster radius in pixels
+    zoomToBoundsOnClick: true,
+  });
+
+  // add markers to the cluster group
+  data.forEach((place) => {
+    let marker = addMarker(place);
+    markerCluster.addLayer(marker);
+  });
+
+  return markerCluster;
 }
