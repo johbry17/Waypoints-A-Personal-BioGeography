@@ -1,3 +1,14 @@
+// create initial markers and get bounds for initial map view
+function createMarkers(data) {
+  // triple markers to handle international date line crossing
+  const tripledData = tripledMarkers(data);
+  return L.featureGroup(tripledData.map(addMarker));
+}
+
+function createBounds(data) {
+  return L.featureGroup(data.map(addMarker)).getBounds();
+}
+
 // triple markers for international date line crossing
 function tripledMarkers(data) {
   return data.flatMap((place) => {
@@ -11,17 +22,6 @@ function tripledMarkers(data) {
       { ...place, lng: lng - 360, lat },
     ];
   });
-}
-
-// create initial markers and get bounds for initial map view
-function createMarkers(data) {
-  // triple markers to handle international date line crossing
-  const tripledData = tripledMarkers(data);
-  return L.featureGroup(tripledData.map(addMarker));
-}
-
-function createBounds(data) {
-  return L.featureGroup(data.map(addMarker)).getBounds();
 }
 
 // add markers to the map, with tooltip and popup
@@ -122,6 +122,7 @@ function createPopupContent(place) {
     place.photos && place.photos.length > 0
       ? carouselContainer.outerHTML
       : `<div class="no-photos"><p>No photos available</p></div>`;
+  //   : "";
 
   // set border and arrow tip color by popup type
   const borderColor = isActivity ? "#0085a1" : "#008a51";
@@ -146,6 +147,18 @@ function createPopupContent(place) {
         </div>
     `;
 }
+
+//////////////////////////////////////////////////////////
+
+// icon mapping for activity overlay
+const activityIcons = {
+  skiing: "fas fa-skiing",
+  snorkeling: "fas fa-swimmer",
+  whitewater_rafting: "fas fa-life-ring",
+  hiking: "fas fa-hiking",
+  paragliding: "fas fa-parachute-box",
+  kayaking: "mdi mdi-kayaking",
+};
 
 // add activity markers
 function addActivityMarkers(activityData, locationData) {
@@ -201,6 +214,8 @@ function mapActivityLocations(activityData, locationData) {
     .filter(Boolean);
 }
 
+////////////////////////////////////////////////////////////
+
 // add legend
 function addLegend() {
   const legend = L.control({ position: "bottomright" });
@@ -226,13 +241,3 @@ function capitalizeWords(str) {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 }
-
-// icon mapping for activity overlay
-const activityIcons = {
-  skiing: "fas fa-skiing",
-  snorkeling: "fas fa-swimmer",
-  whitewater_rafting: "fas fa-life-ring",
-  hiking: "fas fa-hiking",
-  paragliding: "fas fa-parachute-box",
-  kayaking: "mdi mdi-kayaking",
-};
