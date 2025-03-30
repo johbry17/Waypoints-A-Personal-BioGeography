@@ -49,6 +49,15 @@ function createCircleMarker(place) {
     weight: 3,
   });
 
+  // hover effect
+  mainMarker.on('mouseover', function() {
+    this.setStyle({ radius: radius * 1.2, fillOpacity: 0.8 });
+  });
+
+  mainMarker.on('mouseout', function() {
+    this.setStyle({ radius, fillOpacity: 0.6 });
+  });
+
   // add home ring if it was a residence
   if (place.home) {
     const homeRing = L.circleMarker([place.lat, place.lng], {
@@ -182,7 +191,8 @@ function addActivityMarkers(activityData, locationData) {
       return L.divIcon({
         html: `<div class="custom-cluster-icon">${count}</div>`,
         className: "custom-cluster",
-        iconSize: [25, 25],
+        // iconSize: [25, 25],
+        iconSize: null, // seems to offset the icon a bit from the main markers
       });
     },
   });
