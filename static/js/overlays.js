@@ -78,7 +78,12 @@ function createTooltipContent(place) {
 function initializePhotoCarousel(marker, place) {
   marker.on("popupopen", () => {
     if (place.photos && place.photos.length > 0) {
-      const photoSet = place.photos.map(
+      // ensure `photos` is an array
+      const photos = Array.isArray(place.photos)
+        ? place.photos
+        : [place.photos];
+      // create photo paths
+      const photoSet = photos.map(
         (photo) => `static/images/${place.photo_album}/${photo}`
       );
       displayMultiplePhotos(photoSet, `carousel-${place.id}`);
@@ -162,7 +167,6 @@ const activityIcons = {
 
 // add activity markers
 function addActivityMarkers(activityData, locationData) {
-
   // !! toggle between marker and cluster layer !!
   // create layer for activity markers
   // const activityLayer = L.layerGroup();
