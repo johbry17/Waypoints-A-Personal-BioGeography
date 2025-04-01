@@ -24,7 +24,7 @@ The goal is to create an interactive map that showcases life’s highlights, com
 
 This project uses **Leaflet.js** for map rendering and overlays, and integrates data from various sources, including APIs, CSV files, and custom datasets.
 
-## Features
+### Features
 
 - **Interactive Map**: Pan, zoom, and explore a map with custom markers and overlays.
 - **Photo Popups**: Click on markers to view a carousel of photos associated with the location.
@@ -32,6 +32,19 @@ This project uses **Leaflet.js** for map rendering and overlays, and integrates 
 - **Custom Icons and Legends**: Markers are color-coded and icon-based for easy identification of event types.
 - **Data Integration**: Combines data from APIs, CSV files, and custom datasets to populate the map dynamically.
 - **Responsive Design**: Works seamlessly across devices and screen sizes.
+
+### History
+
+- **Concept**: Drafted the initial idea and designed the database structure.
+- **Map Development**: Built the map with base layers and added marker overlays.
+- **Data Integration**: Pulled data from APIs, converted to CSV, and added photos.
+- **Customization**: Color-coded and icon-based markers for life events. Added a legend.
+- **Activity Layers**: Created location and activity datasets. Automated data filling for markers.
+- **Deployment**: Tested and deployed on GitHub Pages. Restructured the repository for `/docs` format.
+- **Optimization**: Forcibly removed old `static/images` folder from Git history to reduce repository size.
+
+
+> - **Current Status**: Integrating polylines for hiking trails and adding a new map layer using data from [Overpass Turbo](https://overpass-turbo.eu/) and [OpenStreetMap](https://www.openstreetmap.org/).
 
 ## Usage
 
@@ -58,19 +71,6 @@ The website is hosted on GitHub Pages and can be accessed [here](https://johbry1
 
 ![Entity Relationship Diagram](./resources/images/ERD.png)
 
-## History
-
-- **Concept**: Drafted the initial idea and designed the database structure.
-- **Map Development**: Built the map with base layers and added marker overlays.
-- **Data Integration**: Pulled data from APIs, converted to CSV, and added photos.
-- **Customization**: Color-coded and icon-based markers for life events. Added a legend.
-- **Activity Layers**: Created location and activity datasets. Automated data filling for markers.
-- **Deployment**: Tested and deployed on GitHub Pages. Restructured the repository for `/docs` format.
-- **Optimization**: Forcibly removed old `static/images` folder from Git history to reduce repository size.
-
-
-> - **Current Status**: Integrating polylines for hiking trails and adding a new map layer using data from [Overpass Turbo](https://overpass-turbo.eu/) and [OpenStreetMap](https://www.openstreetmap.org/).
-
 ## References
 
 - [Leaflet.js Documentation](https://leafletjs.com/)
@@ -80,7 +80,7 @@ The website is hosted on GitHub Pages and can be accessed [here](https://johbry1
 ## Licenses
 
 - **Code**: The code in this repository is licensed under the [MIT License](LICENSE).
-- **Images**: All images in this repository are protected under copyright law and are not licensed for use. They may not be copied, modified, or distributed without explicit written permission from the owner.
+- **Images**: All images in this repository are protected under copyright law and are not licensed for use. They may not be copied, modified, or distributed without explicit written permission from the owner.  See [images license](LICENSE_IMAGES) for details.
 
 ### Disclaimer
 
