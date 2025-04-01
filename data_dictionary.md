@@ -4,7 +4,7 @@
 
 This document defines the structure and purpose of the datasets used in the Global Waypoints project.
 
-![ERD](./resources/ERD.png)
+![ERD](./tools/ERD.png)
 
 Note: the location_name is turning into the primary key on its own. 
 
@@ -87,6 +87,8 @@ Logs special activities like hiking routes, road trips, or unique experiences.
 | `route_path`   | TEXT       | Polyline or waypoints for mapped activities |
 | `description`  | TEXT       | Short summary or story about this location |
 | `notes`        | TEXT       | Additional details about the activity |
+| `photo_album`  | TEXT       | Link or reference to an associated photo album |
+| `photos`       | TEXT       | Links or references to associated photos |
 
 ---
 
