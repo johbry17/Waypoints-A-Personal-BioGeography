@@ -80,8 +80,12 @@ function createMap(markers, originalBounds, activities) {
     }
   });
 
-  // set Leaflet attribution control to bottom left
+  // add copyright and place Leaflet attribution control
   mainMap.attributionControl.setPosition("bottomleft");
+  const currentYear = new Date().getFullYear(); 
+  mainMap.attributionControl.addAttribution(
+    `&copy; ${currentYear} Bryan Johns. All rights reserved. Images may not be used without explicit permission.`
+  );
 }
 
 // creates base maps

@@ -2,9 +2,9 @@
 
 - [Link to README.md](README.md)
 
-This document defines the structure and purpose of the datasets used in the Global Waypoints project.
+This document defines the structure and purpose of the datasets used in the Global Waypoints project, modeled after a SQL database.
 
-![ERD](./tools/ERD.png)
+![ERD](./resources/images/ERD.png)
 
 Note: the location_name is turning into the primary key on its own. 
 
@@ -16,7 +16,7 @@ Stores details about locations visited, including time spent and general descrip
 | Column Name      | Data Type  | Description |
 |-----------------|-----------|-------------|
 | `id`           | Integer PK | Unique identifier for each waypoint |
-| `name`         | TEXT       | Name of the waypoint or place |
+| `location_name`         | TEXT       | Name of the waypoint or place |
 | `lat`          | Float      | Latitude coordinate |
 | `lng`          | Float      | Longitude coordinate |
 | `start_date`   | Date       | Approximate or exact arrival date |
@@ -27,8 +27,8 @@ Stores details about locations visited, including time spent and general descrip
 | `notes`        | TEXT       | Additional details or memories from the visit |
 | `importance`   | Integer    | Scale of location's admittedly subjective importance to biography (1-10) |
 | `visit_type`   | TEXT       | Purpose of visit (e.g., home, work, school, friends, family, solo) |
-| `duration_days`| Integer    | Estimated time spent in days |
 | `home` | Boolean | If I lived there for an extended period of time |
+| `duration_days`| Integer    | Estimated time spent in days |
 ---
 
 ## **2. Pictures Table**
@@ -181,7 +181,7 @@ Helps optimize the map by grouping markers into clusters based on zoom levels.
 
 ### **Notes**
 - This structure is flexible. If new columns are needed, they can be added without breaking existing data.
-- The data is stored in **Google Sheets**, but exported as JSON for use in the map.
+- The data is stored in **Google Sheets**, but exported as JSON and CSV for use in the map.
 
 ---
 
