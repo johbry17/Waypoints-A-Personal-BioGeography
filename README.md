@@ -74,6 +74,8 @@ The website is hosted on GitHub Pages and can be accessed [here](https://johbry1
 ## References
 
 - [Leaflet.js Documentation](https://leafletjs.com/)
+- [Overpass API Documentation](https://wiki.openstreetmap.org/wiki/Overpass_API)
+- [Nominatim Documentation](https://nominatim.org/release-docs/latest/)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [MIT License](https://opensource.org/licenses/MIT)
 
