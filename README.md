@@ -20,3 +20,5 @@ Built map and base layers.
 Added marker and popups overlay. Created Overview data for markers. Pulled from API to csv. Sifted through and added photos. Color-coded and icon-ed markers for life events. Added legend.
 
 Activity overlay. Created location and activity data. Write Activity.location_name and Activity.activity_type, coded to auto-fill (mostly) location.id, lat, lng, activity.id, activity.location_id.
+
+Tested deploying on GitHub Pages. Restructured repo to match '/docs' format. Forcibly removed old static/images.
