@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="static/css/style.css" />
   </head>
   <body>
+    
     <!-- welcome modal -->
     <div id="welcome-modal" class="modal">
       <div class="modal-content">
@@ -41,15 +42,14 @@
           <h2>A Personal BioGeography</h2>
         </div>
         <div class="modal-body">
-          <p>Welcome to my map of memories! This is an evolving project that captures the experiences and influences that have shaped me.</p>
-          <p>Feel free to toggle layers, pan, zoom, and explore the map. If multiple markers overlap, zooming in or toggling layers can help. Videos can be unmuted for a richer experience. If you encounter any bugs, please let me know!</p>
-          <p>This map is deeply personal—a way to share my journey and, perhaps, bore you with my vacation photos! It’s a collection of memories that reflect the places and moments that have left an impact on me.</p>
-          <p>One thing I’ve noticed: shorter trips often result in more coherent photo narratives. The longer I stay in a place, the fewer photos I take, and the less structured the story becomes. Someday, I’ll add captions and organize the photos better.</p>
-          <p>The next phase of this project is to include travel routes—hikes, train rides, road trips, and more. Stay tuned!</p>
-          <p>Thank you to everyone who has shared these experiences with me. I hope you enjoy exploring this map as much as I’ve enjoyed creating it!</p>
+          <p>Welcome to my map of memories! It captures some of the experiences and places that have shaped me, while nurturing some deep contemplation and self-reflection. It's also an excellent way to bore you with my vacation photos.</p>
+          <p>Feel free to toggle layers, pan, zoom, and explore. I welcome feedback, good, bad, and ugly.</p>
+          <!-- <p>Short trips often tell better stories. The longer I stay somewhere, the fewer photos I take, and the less coherent the narrative becomes.</p> -->
+          <!-- <p><b>Under construction:</b> Travel routes (hikes, trains, road trips, etc.) are coming soon.</p> -->
+          <p>Heartfelt thanks to everyone who has shared these experiences with me!</p>
         </div>
         <div class="modal-footer">
-          <p>Tap / click anywhere to continue</p>
+          <p><i class="fas fa-hand-pointer"></i><br>Tap / click to continue</p>
         </div>
       </div>
     </div>
@@ -58,13 +58,13 @@
     <div id="map"></div>
 
     <!-- legend div -->
-     <!-- original legend is hidden, used for cloning onto map -->
+    <!-- original legend is hidden, used for cloning onto map -->
     <div id="map-legend" class="custom-legend">
       <h4>Border Color</h4>
       <div><i class="fas fa-home home-icon"></i> Residence</div>
       <div><i class="fas fa-graduation-cap school-icon"></i> Academic</div>
       <div><i class="fas fa-globe globe-icon"></i> Other</div>
-      <p>Markers scaled<br />by life impact</p>
+      <p>Markers scaled<br>by life impact</p>
     </div>
 
     <!-- photo carousel for popups -->
