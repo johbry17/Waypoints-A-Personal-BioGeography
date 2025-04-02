@@ -256,7 +256,9 @@ function addLegend() {
   const legend = L.control({ position: "bottomright" });
   legend.onAdd = () => {
     const legendElement = document.getElementById("map-legend");
-    return legendElement.cloneNode(true); // clone legend to avoid removing it from the DOM
+    const clonedLegend = legendElement.cloneNode(true); // clone hidden legend
+    clonedLegend.style.display = "block"; // display cloned legend
+    return clonedLegend;
   };
   return legend;
 }

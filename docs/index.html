@@ -16,16 +16,49 @@
     <!-- Leaflet marker cluster CSS -->
     <link rel="stylesheet" href="static/css/MarkerCluster.css" />
     <link rel="stylesheet" href="static/css/MarkerCluster.Default.css" />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- Material Design Icons -->
+    <link
+      href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
     <!-- favicon -->
     <link rel="icon" href="static/images/favicon.ico" type="image/ico" />
     <!-- main CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css" />
   </head>
   <body>
+    <!-- welcome modal -->
+    <div id="welcome-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="fas fa-map-marked-alt modal-icon"></i>
+          <h1>Waypoints</h1>
+          <h2>A Personal BioGeography</h2>
+        </div>
+        <div class="modal-body">
+          <p>Welcome to my map of memories! This is an evolving project that captures the experiences and influences that have shaped me.</p>
+          <p>Feel free to toggle layers, pan, zoom, and explore the map. If multiple markers overlap, zooming in or toggling layers can help. Videos can be unmuted for a richer experience. If you encounter any bugs, please let me know!</p>
+          <p>This map is deeply personal—a way to share my journey and, perhaps, bore you with my vacation photos! It’s a collection of memories that reflect the places and moments that have left an impact on me.</p>
+          <p>One thing I’ve noticed: shorter trips often result in more coherent photo narratives. The longer I stay in a place, the fewer photos I take, and the less structured the story becomes. Someday, I’ll add captions and organize the photos better.</p>
+          <p>The next phase of this project is to include travel routes—hikes, train rides, road trips, and more. Stay tuned!</p>
+          <p>Thank you to everyone who has shared these experiences with me. I hope you enjoy exploring this map as much as I’ve enjoyed creating it!</p>
+        </div>
+        <div class="modal-footer">
+          <p>Tap / click anywhere to continue</p>
+        </div>
+      </div>
+    </div>
+
     <!-- map div - the entire body of the page -->
     <div id="map"></div>
 
     <!-- legend div -->
+     <!-- original legend is hidden, used for cloning onto map -->
     <div id="map-legend" class="custom-legend">
       <h4>Border Color</h4>
       <div><i class="fas fa-home home-icon"></i> Residence</div>
@@ -55,16 +88,6 @@
       </div>
     </template>
 
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <!-- Material Design Icons -->
-    <link
-      href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css"
-      rel="stylesheet"
-    />
     <!-- Leaflet -->
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

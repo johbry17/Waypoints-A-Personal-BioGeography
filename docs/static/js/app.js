@@ -30,6 +30,13 @@ function handleFetchResponseCSV(response) {
 
 // initialize map
 function initializeMap() {
+  // welcome modal
+  const modal = document.getElementById("welcome-modal");
+  modal.style.display = "flex"; // toggle modal display on / off
+  modal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
   fetchData()
     .then(([overviewData, activityCsv, locationCsv]) => {
       // parse CSV data
@@ -82,7 +89,7 @@ function createMap(markers, originalBounds, activities) {
 
   // add copyright and place Leaflet attribution control
   mainMap.attributionControl.setPosition("bottomleft");
-  const currentYear = new Date().getFullYear(); 
+  const currentYear = new Date().getFullYear();
   mainMap.attributionControl.addAttribution(
     `&copy; ${currentYear} Bryan Johns. All rights reserved. Images may not be used without explicit permission.`
   );
