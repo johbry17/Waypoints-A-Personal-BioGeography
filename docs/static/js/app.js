@@ -147,5 +147,39 @@ function addLegend() {
   return legend;
 }
 
+document.addEventListener("click", (event) => {
+  // check if clicked element is fullscreen button
+  if (event.target.closest("#fullscreen-button")) {
+    const carouselContainer = document.querySelector(".carousel-container"); // entire carousel container
+
+    if (document.fullscreenElement) {
+      // if in fullscreen, exit fullscreen
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen(); // Safari
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen(); // IE/Edge
+      }
+    } else {
+      // if not, enter fullscreen
+      if (carouselContainer.requestFullscreen) {
+        carouselContainer.requestFullscreen();
+      } else if (carouselContainer.webkitRequestFullscreen) {
+        carouselContainer.webkitRequestFullscreen(); // Safari
+      } else if (carouselContainer.msRequestFullscreen) {
+        carouselContainer.msRequestFullscreen(); // IE/Edge
+      }
+    }
+  }
+});
+
+// // exit fullscreen mode when pressing the "Escape" key
+// document.addEventListener("fullscreenchange", () => {
+//   if (!document.fullscreenElement) {
+//     console.log("Exited fullscreen mode");
+//   }
+// });
+
 // start everything - initialize the map
 initializeMap();

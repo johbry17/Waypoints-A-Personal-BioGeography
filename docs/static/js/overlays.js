@@ -260,7 +260,7 @@ function capitalizeWords(str) {
     .join(" ");
 }
 
-// optional function to add marker clusters
+// optional function to add marker clusters for activity markers
 function createMarkerCluster(data) {
   let markerCluster = L.markerClusterGroup({
     spiderfyOnMaxZoom: true,
