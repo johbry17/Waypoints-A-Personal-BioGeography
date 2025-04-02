@@ -148,9 +148,11 @@ function addLegend() {
 }
 
 document.addEventListener("click", (event) => {
+  const fullscreenButton = document.querySelector("#fullscreen-button");
+  const carouselContainer = document.querySelector(".carousel-container"); // entire carousel container
   // check if clicked element is fullscreen button
   if (event.target.closest("#fullscreen-button")) {
-    const carouselContainer = document.querySelector(".carousel-container"); // entire carousel container
+    // const carouselContainer = document.querySelector(".carousel-container"); // entire carousel container
 
     if (document.fullscreenElement) {
       // if in fullscreen, exit fullscreen
@@ -161,6 +163,11 @@ document.addEventListener("click", (event) => {
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen(); // IE/Edge
       }
+      carouselContainer.classList.remove("fullscreen"); // Remove fullscreen class
+      fullscreenButton.innerHTML = `
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-expand fa-stack-1x fa-inverse"></i>
+      `;
     } else {
       // if not, enter fullscreen
       if (carouselContainer.requestFullscreen) {
@@ -170,6 +177,11 @@ document.addEventListener("click", (event) => {
       } else if (carouselContainer.msRequestFullscreen) {
         carouselContainer.msRequestFullscreen(); // IE/Edge
       }
+      carouselContainer.classList.add("fullscreen"); // Add fullscreen class
+      fullscreenButton.innerHTML = `
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-compress fa-stack-1x fa-inverse"></i>
+      `;
     }
   }
 });

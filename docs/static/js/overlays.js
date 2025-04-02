@@ -135,7 +135,7 @@ function createPopupContent(place) {
   const carouselHTML =
     place.photos && place.photos.length > 0
       ? carouselContainer.outerHTML
-      : `<div class="no-photos"><p>No photos available</p></div>`;
+      : `<div class="no-photos"><p><i class="fas fa-camera"></i> No photos available</p></div>`;
   //   : "";
 
   // set border and arrow tip color by popup type

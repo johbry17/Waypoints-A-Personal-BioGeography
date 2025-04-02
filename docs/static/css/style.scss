@@ -61,7 +61,7 @@ body, html, #map {
       h2 {
         font-size: 1.2rem;
         color: $text-color;
-        margin: 0;
+        margin: 20;
       }
 
       .modal-icon {
@@ -75,6 +75,18 @@ body, html, #map {
       font-size: 1rem;
       color: $text-color;
       line-height: 1.2;
+
+      .modal-body-icon {
+        font-size: 1.5rem;
+        // color: $primary-color;
+        margin-top: 10px;
+      }
+
+      .fa-stack .mdi {
+        vertical-align: middle; 
+        position: relative;
+        color: rgba(249, 249, 249, 0.8);
+      }
 
       p {
         margin-bottom: 15px;
