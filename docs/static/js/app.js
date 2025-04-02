@@ -37,6 +37,7 @@ function initializeMap() {
     modal.style.display = "none";
   });
 
+  // get data and call functions to create map and layers
   fetchData()
     .then(([overviewData, activityCsv, locationCsv]) => {
       // parse CSV data
@@ -69,6 +70,9 @@ function createMap(markers, originalBounds, activities) {
   // set initial map zoom level and bounds, add controls
   mainMap.fitBounds(originalBounds);
   L.control.layers(baseMaps, overlayMaps).addTo(mainMap);
+
+  // add map reset button
+  addResetButton(mainMap, originalBounds);
 
   // add legend, with toggle
   const legend = addLegend();
@@ -105,6 +109,42 @@ function createBaseMaps() {
     Grayscale: L.esri.basemapLayer("Gray"),
     Firefly: L.esri.basemapLayer("ImageryFirefly"),
   };
+}
+
+// button to reset map to original bounds
+function addResetButton(map, initialBounds) {
+  const resetControl = L.control({ position: "topleft" });
+
+  resetControl.onAdd = () => {
+    const button = L.DomUtil.create("button", "reset-map-button");
+    button.innerHTML = '<i class="mdi mdi-refresh"></i>'; // refresh icon
+    button.title = "Return map to global view"; // tooltip text
+
+    // prevent map interactions when clicking the button
+    L.DomEvent.disableClickPropagation(button);
+
+    // event listener to reset map
+    button.addEventListener("click", () => {
+      map.fitBounds(initialBounds); // reset to initial bounds
+    });
+
+    return button;
+  };
+
+  resetControl.addTo(map); // add to map
+}
+
+
+// add legend
+function addLegend() {
+  const legend = L.control({ position: "bottomright" });
+  legend.onAdd = () => {
+    const legendElement = document.getElementById("map-legend");
+    const clonedLegend = legendElement.cloneNode(true); // clone hidden legend
+    clonedLegend.style.display = "block"; // display cloned legend
+    return clonedLegend;
+  };
+  return legend;
 }
 
 // start everything - initialize the map

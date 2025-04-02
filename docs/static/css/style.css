@@ -69,6 +69,26 @@ body, html, #map {
   margin: 0;
 }
 
+.reset-map-button {
+  background-color: #008a51;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s;
+}
+.reset-map-button i {
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.reset-map-button:hover {
+  background-color: #005f73;
+}
+
 .hover-tooltip-content {
   text-align: center;
 }

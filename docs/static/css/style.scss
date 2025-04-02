@@ -95,6 +95,29 @@ body, html, #map {
   }
 }
 
+// reset map button
+.reset-map-button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: $box-shadow;
+  transition: background-color $transition-duration;
+
+  i {
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  }
+
+  &:hover {
+    background-color: $activity-hover-color;
+  }
+}
+
 // hover tooltip styling
 .hover-tooltip-content {
   text-align: center;

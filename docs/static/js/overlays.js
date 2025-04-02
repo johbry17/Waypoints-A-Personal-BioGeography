@@ -251,18 +251,6 @@ function mapActivityLocations(activityData, locationData) {
 
 ////////////////////////////////////////////////////////////
 
-// add legend
-function addLegend() {
-  const legend = L.control({ position: "bottomright" });
-  legend.onAdd = () => {
-    const legendElement = document.getElementById("map-legend");
-    const clonedLegend = legendElement.cloneNode(true); // clone hidden legend
-    clonedLegend.style.display = "block"; // display cloned legend
-    return clonedLegend;
-  };
-  return legend;
-}
-
 // utility functions
 function capitalizeWords(str) {
   return str
