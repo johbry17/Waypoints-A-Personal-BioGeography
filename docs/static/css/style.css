@@ -7,6 +7,10 @@ body, html, #map {
   background-size: cover;
 }
 
+.hover-tooltip-content {
+  text-align: center;
+}
+
 h4 {
   color: #FF8C00;
 }
@@ -23,15 +27,15 @@ h4 {
   background-color: #f9f9f9;
   border: 2px solid #008a51;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   overflow-y: auto;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.6);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
@@ -49,7 +53,7 @@ h4 {
 }
 
 .popup-content p {
-  font-size: 12px;
+  font-size: 13px;
   color: black;
 }
 
@@ -66,6 +70,7 @@ h4 {
   border-radius: 10px;
   margin-bottom: 20px;
   background-color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .carousel-container .carousel-photo, .carousel-container .carousel-video {
   max-width: 100%;
@@ -84,7 +89,7 @@ h4 {
   margin: 0 10px;
   cursor: pointer;
   font-size: 20px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s, color 0.3s;
 }
 .carousel-container .carousel-controls span:hover {
   transform: scale(1.2);
@@ -98,6 +103,7 @@ h4 {
   border: 5px solid #ffd700;
   border-radius: 5px;
   color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .custom-legend h4 {
   font-weight: bold;
@@ -128,6 +134,7 @@ h4 {
 }
 .globe-icon, .home-icon, .school-icon {
   text-align: center;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .school-icon {
@@ -144,7 +151,7 @@ h4 {
 
 .activity-icon-stack .fa-circle, .activity-icon-stack {
   color: #0085a1;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: transform 0.3s, color 0.3s;
 }
 .activity-icon-stack .fa-circle:hover .fa-circle, .activity-icon-stack:hover .fa-circle {
   transform: scale(1.2);
@@ -165,8 +172,8 @@ h4 {
   font-weight: bold;
   width: 25px;
   height: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, color 0.3s;
 }
 .custom-cluster:hover {
   background-color: #005f73;

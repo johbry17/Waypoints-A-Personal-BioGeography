@@ -76,7 +76,7 @@ function createCircleMarker(place) {
 // tooltip for hover
 function createTooltipContent(place) {
   return `
-      <div style="text-align: center;">
+      <div class="hover-tooltip-content">
         <b>${place.location_name}</b><br>
         Click for more info
       </div>
@@ -152,9 +152,11 @@ function createPopupContent(place) {
         </style>
         ${carouselHTML}
         <div class="popup-content">
-            <h3>${icons} ${
-    iconClass ? `<i class="${iconClass} activity-icon-stack"></i>` : ""
-  } ${place.location_name}</h3>
+            <h3>
+              ${icons}
+              ${iconClass ? `<i class="${iconClass} activity-icon-stack"></i>` : ""}
+              ${place.location_name}
+            </h3>
             <h4>${formattedActivityType}</h4>
             <p>${place.description || ""}</p>
             <p>${place.notes || ""}</p>
@@ -253,15 +255,8 @@ function mapActivityLocations(activityData, locationData) {
 function addLegend() {
   const legend = L.control({ position: "bottomright" });
   legend.onAdd = () => {
-    const div = L.DomUtil.create("div", "custom-legend");
-    div.innerHTML = `
-        <h4>Border Color</h4>
-        <div><i class="fas fa-home home-icon"></i> Residence</div>
-        <div><i class="fas fa-graduation-cap school-icon"></i> Academic</div>
-        <div><i class="fas fa-globe globe-icon"></i> Other</div>
-        <p>Markers scaled<br>by life impact</p>
-      `;
-    return div;
+    const legendElement = document.getElementById("map-legend");
+    return legendElement.cloneNode(true); // clone legend to avoid removing it from the DOM
   };
   return legend;
 }

@@ -64,19 +64,19 @@ function createMap(markers, originalBounds, activities) {
   L.control.layers(baseMaps, overlayMaps).addTo(mainMap);
 
   // add legend, with toggle
-  const legendToggle = addLegend();
-  legendToggle.addTo(mainMap);
+  const legend = addLegend();
+  legend.addTo(mainMap);
 
   // event listeners for legend toggling
   mainMap.on("overlayremove", (eventLayer) => {
     if (eventLayer.name === "Markers") {
-      mainMap.removeControl(legendToggle);
+      mainMap.removeControl(legend);
     }
   });
 
   mainMap.on("overlayadd", (eventLayer) => {
     if (eventLayer.name === "Markers") {
-      legendToggle.addTo(mainMap);
+      legend.addTo(mainMap);
     }
   });
 
