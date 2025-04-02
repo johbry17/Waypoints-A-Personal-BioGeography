@@ -95,6 +95,23 @@ body, html, #map {
   }
 }
 
+// leaflet control layers
+.leaflet-control-layers {
+  label,
+  input[type="radio"] {
+    cursor: pointer;
+
+    &:hover {
+      color: $activity-color;
+    }
+  }
+
+  input[type="radio"]:checked,
+  input[type="checkbox"]:checked {
+    accent-color: $activity-color;
+  }
+}
+
 // reset map button
 .reset-map-button {
   background-color: $primary-color;

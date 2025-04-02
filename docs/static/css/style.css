@@ -69,6 +69,19 @@ body, html, #map {
   margin: 0;
 }
 
+.leaflet-control-layers label,
+.leaflet-control-layers input[type=radio] {
+  cursor: pointer;
+}
+.leaflet-control-layers label:hover,
+.leaflet-control-layers input[type=radio]:hover {
+  color: #0085a1;
+}
+.leaflet-control-layers input[type=radio]:checked,
+.leaflet-control-layers input[type=checkbox]:checked {
+  accent-color: #0085a1;
+}
+
 .reset-map-button {
   background-color: #008a51;
   color: white;
