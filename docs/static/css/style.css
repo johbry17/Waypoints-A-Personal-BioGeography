@@ -50,22 +50,30 @@ body, html, #map {
   color: #008a51;
   margin-bottom: 10px;
 }
-.modal .modal-content .modal-body {
+.modal .modal-content #modal-body {
   font-size: 1rem;
   color: #333333;
   line-height: 1.2;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
-.modal .modal-content .modal-body .modal-body-icon {
+.modal .modal-content #modal-body .modal-body-icon {
   font-size: 1.5rem;
+  color: #003366;
   margin-top: 10px;
 }
-.modal .modal-content .modal-body .fa-stack .mdi {
+.modal .modal-content #modal-body .fa-stack .mdi {
   vertical-align: middle;
   position: relative;
-  color: rgba(249, 249, 249, 0.8);
+  color: #008a51;
 }
-.modal .modal-content .modal-body p {
+.modal .modal-content #modal-body p {
   margin-bottom: 15px;
+}
+.modal .modal-content #modal-body #modal-text {
+  font-size: 0.8em;
+  font-style: italic;
+  color: #495057;
 }
 .modal .modal-content .modal-footer {
   font-size: 0.9rem;

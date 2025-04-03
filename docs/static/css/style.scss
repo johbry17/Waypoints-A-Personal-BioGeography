@@ -71,25 +71,33 @@ body, html, #map {
       }
     }
 
-    .modal-body {
+    #modal-body {
       font-size: 1rem;
       color: $text-color;
       line-height: 1.2;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
 
       .modal-body-icon {
         font-size: 1.5rem;
-        // color: $primary-color;
+        color: #003366;
         margin-top: 10px;
       }
 
       .fa-stack .mdi {
         vertical-align: middle; 
         position: relative;
-        color: rgba(249, 249, 249, 0.8);
+        color: $primary-color;
       }
 
       p {
         margin-bottom: 15px;
+      }
+
+      #modal-text {
+        font-size: 0.8em;
+        font-style: italic;
+        color: #495057;
       }
     }
 

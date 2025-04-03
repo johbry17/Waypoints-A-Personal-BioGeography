@@ -34,6 +34,14 @@ function initializeMap() {
   // welcome modal
   const modal = document.getElementById("welcome-modal");
   modal.style.display = "flex"; // toggle modal display on / off
+    // wait for modal to display, then fade-in text
+  document.addEventListener("DOMContentLoaded", () => {
+    const modalText = document.getElementById("modal-body");
+    setTimeout(() => {
+      modalText.style.opacity = "1"; // trigger fade-in
+    }, 500); // delay to sync with modal appearance
+  });
+  // close modal on click
   modal.addEventListener("click", () => {
     modal.style.display = "none";
   });
