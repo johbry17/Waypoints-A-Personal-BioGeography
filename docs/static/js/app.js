@@ -33,7 +33,7 @@ function handleFetchResponseCSV(response) {
 function initializeMap() {
   // welcome modal
   const modal = document.getElementById("welcome-modal");
-  // modal.style.display = "flex"; // toggle modal display on / off
+  modal.style.display = "flex"; // toggle modal display on / off
   modal.addEventListener("click", () => {
     modal.style.display = "none";
   });
@@ -46,6 +46,7 @@ function initializeMap() {
       const activityData = Papa.parse(activityCsv, { header: true }).data;
       const locationData = Papa.parse(locationCsv, { header: true }).data;
       const routeData = Papa.parse(routesCsv, { header: true, skipEmptyLines: true, }).data;
+      // routeData throws an error if the csv's last empty line is not skipped
 
       // create overlayMarkers for the map
       const markers = createMarkers(overviewData);
