@@ -59,7 +59,7 @@ function initializeMap() {
 function createMap(markers, originalBounds, activities) {
   // define layers
   const baseMaps = createBaseMaps();
-  const overlayMaps = { Markers: markers, Activities: activities };
+  const overlayMaps = { Waypoints: markers, Activities: activities };
 
   // create map
   const mainMap = L.map("map", {
@@ -80,13 +80,13 @@ function createMap(markers, originalBounds, activities) {
 
   // event listeners for legend toggling
   mainMap.on("overlayremove", (eventLayer) => {
-    if (eventLayer.name === "Markers") {
+    if (eventLayer.name === "Waypoints") {
       mainMap.removeControl(legend);
     }
   });
 
   mainMap.on("overlayadd", (eventLayer) => {
-    if (eventLayer.name === "Markers") {
+    if (eventLayer.name === "Waypoints") {
       legend.addTo(mainMap);
     }
   });

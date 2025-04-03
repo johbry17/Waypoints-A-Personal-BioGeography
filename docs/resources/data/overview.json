@@ -1340,7 +1340,7 @@
     ],
     "description": "Lads trip to visit a true Lady of the nobility",
     "notes": "Edinburgh is one of my favorite cities in the world. And the road trip through the HIghlands goes down in the record books",
-    "importance": 6,
+    "importance": 5,
     "visit_type": "friends",
     "home": "",
     "duration_days": ""
@@ -1395,7 +1395,7 @@
     ],
     "description": "Cabo Pulmo, Todos Santos, & La Paz",
     "notes": "Met up with my parents and their friends in southern Baja. Never made it to Cabo, funnily",
-    "importance": 4,
+    "importance": 3,
     "visit_type": "family",
     "home": "",
     "duration_days": ""
@@ -1634,7 +1634,7 @@
     ],
     "description": "Epic Central American Semana Santa Road Trip",
     "notes": "Costa Rica through Nicaragua and Honduras, ferry to Belize. Belmopan and Caye Caulker. To Guatemala: Tikal, Flores, Antigua, Lago Atitlan, Xela, and Volcan Tajumulco. Back to Costa Rica through San Salvador and Granada.",
-    "importance": 4,
+    "importance": 3,
     "visit_type": "friends",
     "home": "",
     "duration_days": ""
@@ -1733,7 +1733,7 @@
     ],
     "description": "",
     "notes": "Quick trip with friends through southern Nicaragua.",
-    "importance": 4,
+    "importance": 3,
     "visit_type": "friends",
     "home": "",
     "duration_days": ""
@@ -1759,7 +1759,7 @@
     ],
     "description": "",
     "notes": "Panama. I really like this border crossing. Nice islands.",
-    "importance": 4,
+    "importance": 3,
     "visit_type": "friends",
     "home": "",
     "duration_days": ""
@@ -1917,7 +1917,7 @@
     ],
     "description": "",
     "notes": "Delightful loooong weekend with friends. One of my favorite cities in the world",
-    "importance": 6,
+    "importance": 5,
     "visit_type": "friends",
     "home": "",
     "duration_days": ""

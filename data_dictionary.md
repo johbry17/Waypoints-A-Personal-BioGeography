@@ -67,7 +67,9 @@ Stores transportation details between locations.
 |--------------------|-----------|-------------|
 | `route_id`        | Integer PK | Unique identifier for each travel route |
 | `start_location_id`| Integer FK | Starting location reference |
+| `start_location` | TEXT | Route start location name |
 | `end_location_id`  | Integer FK | Ending location reference |
+| `end_location` | TEXT | Route end location name |
 | `transport_mode`   | TEXT       | Mode of travel (e.g., Plane, Train, Car) |
 | `travel_date`      | Date       | Approximate or exact date of travel |
 | `usage_tags`       | TEXT       | Tags for multiple route usage (e.g., "2017, 2022") |
