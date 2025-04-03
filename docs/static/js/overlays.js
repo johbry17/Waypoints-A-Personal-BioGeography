@@ -24,6 +24,8 @@ function tripledMarkers(data) {
   });
 }
 
+//////////////////////////////////////////////////////////
+
 // add markers to the map, with tooltip and popup
 function addMarker(place) {
   const marker = createCircleMarker(place);
@@ -72,6 +74,8 @@ function createCircleMarker(place) {
 
   return mainMarker;
 }
+
+//////////////////////////////////////////////////////////
 
 // tooltip for hover
 function createTooltipContent(place) {
@@ -249,7 +253,7 @@ function mapActivityLocations(activityData, locationData) {
     .filter(Boolean);
 }
 
-////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
 
 // utility functions
 function capitalizeWords(str) {
@@ -277,4 +281,96 @@ function createMarkerCluster(data) {
   });
 
   return markerCluster;
+}
+
+//////////////////////////////////////////////////////////
+
+function createRouteLayers(routeData) {
+  // sublayers for each route type
+  const hikingLayer = L.layerGroup();
+  const boatLayer = L.layerGroup();
+  const trainLayer = L.layerGroup();
+  const autoLayer = L.layerGroup();
+  const planeLayer = L.layerGroup();
+
+  // load polylines for each route type
+  routeData.forEach(route => {
+    // get file path for geoJSON
+    const filePath = `resources/geojson/${route.filename}`;
+    
+    // fetch route data from GeoJSON
+    fetch(filePath)
+      .then(response => response.json())
+      .then(geojson => {
+        // assign color and dashArray based on transport mode
+        const { color, dashArray } = getRouteStyle(route.transport_mode);
+        // set style for the route polyline
+        const polyline = L.geoJSON(geojson, {
+          color: color,
+          weight: 3,
+          opacity: 0.8,
+          dashArray: dashArray,
+          lineCap: 'butt',
+        });
+
+        // add routes to respective layers
+        switch (route.transport_mode) {
+          case "hike":
+            hikingLayer.addLayer(polyline);
+            break;
+          case "boat":
+            boatLayer.addLayer(polyline);
+            break;
+          case "train":
+            trainLayer.addLayer(polyline);
+            break;
+          case "auto":
+            autoLayer.addLayer(polyline);
+            break;
+          case "plane":
+            planeLayer.addLayer(polyline);
+            break;
+        }
+      })
+      .catch(error => console.error(`Failed to load GeoJSON file: ${route.filename}`, error));
+  });
+
+  // create parent layer for routes, add all sublayers
+  const routeLayer = L.layerGroup([
+    hikingLayer,
+    boatLayer,
+    trainLayer,
+    autoLayer,
+    planeLayer,
+  ]);
+
+  return {
+    routeLayer,
+    sublayers: {
+      Planes: planeLayer,
+      Trains: trainLayer,
+      Automobiles: autoLayer,
+      Boats: boatLayer,
+      Hikes: hikingLayer,      
+    },
+  };
+}
+
+// assign color and shape based on transport mode
+function getRouteStyle(routeType) {
+  switch (routeType) {
+    case "hike":
+      // return { color: "#228B22", dashArray: "5, 10" }; // dashed green
+      return { color: "red", dashArray: null };
+    case "boat":
+      return { color: "#1E90FF", dashArray: "1, 15" }; // dotted blue
+    case "train":
+      return { color: "#8B0000", dashArray: "10, 5, 2, 5" }; // dash-dot red
+    case "auto":
+      return { color: "#FF8C00", dashArray: null }; // solid orange
+    case "plane":
+      return { color: "#9400D3", dashArray: "20, 10" }; // long dashed purple
+    default:
+      return { color: "#000000", dashArray: null }; // solid black line default
+  }
 }

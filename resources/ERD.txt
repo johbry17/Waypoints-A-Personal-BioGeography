@@ -37,11 +37,10 @@ overview_id int FK - Overview.id
 Routes
 --
 route_id Integer PK
-start_location_id int FK - Location.location_id
 start_location TEXT
-end_location_id int FK - Location.location_id
 end_location TEXT
 transport_mode TEXT
+filename TEXT
 travel_date Date
 usage_tags TEXT
 

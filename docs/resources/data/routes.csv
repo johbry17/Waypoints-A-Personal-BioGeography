@@ -1,0 +1,4 @@
+route_id,start_location,end_location,transport_mode,filename,travel_date,usage_tags
+927c618b-50dd-4346-9b80-f6796249ca7a,Table Mountain,Table Mountain,hike,table_mountain.geojson,,
+9cff77b5-2385-4e16-bdd6-779f14d72d9c,Mt Mansfield,Mt Mansfield,hike,mansfield.geojson,,
+a6fa73cb-907c-422d-a8e8-15f8f113b143,St John,St John,hike,stj.geojson,,
