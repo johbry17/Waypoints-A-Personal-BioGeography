@@ -155,7 +155,7 @@ document.addEventListener("click", (event) => {
     // const carouselContainer = document.querySelector(".carousel-container"); // entire carousel container
 
     if (document.fullscreenElement) {
-      // if in fullscreen, exit fullscreen
+      // if in fullscreen, exit fullscreen, change button to enter fullscreen
       if (document.exitFullscreen) {
         document.exitFullscreen();
       } else if (document.webkitExitFullscreen) {
@@ -163,13 +163,13 @@ document.addEventListener("click", (event) => {
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen(); // IE/Edge
       }
-      carouselContainer.classList.remove("fullscreen"); // Remove fullscreen class
+      carouselContainer.classList.remove("fullscreen");
       fullscreenButton.innerHTML = `
         <i class="fas fa-circle fa-stack-2x"></i>
         <i class="fas fa-expand fa-stack-1x fa-inverse"></i>
       `;
     } else {
-      // if not, enter fullscreen
+      // if not, enter fullscreen, change button to exit fullscreen
       if (carouselContainer.requestFullscreen) {
         carouselContainer.requestFullscreen();
       } else if (carouselContainer.webkitRequestFullscreen) {
@@ -177,7 +177,7 @@ document.addEventListener("click", (event) => {
       } else if (carouselContainer.msRequestFullscreen) {
         carouselContainer.msRequestFullscreen(); // IE/Edge
       }
-      carouselContainer.classList.add("fullscreen"); // Add fullscreen class
+      carouselContainer.classList.add("fullscreen");
       fullscreenButton.innerHTML = `
         <i class="fas fa-circle fa-stack-2x"></i>
         <i class="fas fa-compress fa-stack-1x fa-inverse"></i>
