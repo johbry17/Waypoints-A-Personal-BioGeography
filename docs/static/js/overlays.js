@@ -203,13 +203,7 @@ function addActivityMarkers(activityData) {
     },
   });
 
-  // get location details for each activity
-  // const activityWithLocations = mapActivityLocations(
-  //   activityData,
-  //   locationData
-  // );
   // // tripled the markers for international date line crossing
-  // const tripledActivities = tripledMarkers(activityWithLocations);
   const tripledActivities = tripledMarkers(activityData);
 
   // add markers to the activity layer
@@ -233,55 +227,6 @@ function addActivityMarkers(activityData) {
   });
 
   return activityLayer;
-}
-
-// // map activities to their respective location data
-// function mapActivityLocations(activityData, locationData) {
-//   return activityData
-//     .map((activity) => {
-//       const location = locationData.find(
-//         (loc) => loc.location_id === activity.location_id
-//       );
-//       return location
-//         ? {
-//             ...activity,
-//             lat: parseFloat(location.lat),
-//             lng: parseFloat(location.lng),
-//             location_name: location.name,
-//           }
-//         : null;
-//     })
-//     .filter(Boolean);
-// }
-
-//////////////////////////////////////////////////////////
-
-// utility functions
-function capitalizeWords(str) {
-  return str
-    .toLowerCase()
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-}
-
-// optional function to add marker clusters for activity markers
-function createMarkerCluster(data) {
-  let markerCluster = L.markerClusterGroup({
-    spiderfyOnMaxZoom: true,
-    showCoverageOnHover: false,
-    spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" },
-    maxClusterRadius: 50, // max cluster radius in pixels
-    zoomToBoundsOnClick: true,
-  });
-
-  // add markers to the cluster group
-  data.forEach((place) => {
-    let marker = addMarker(place);
-    markerCluster.addLayer(marker);
-  });
-
-  return markerCluster;
 }
 
 //////////////////////////////////////////////////////////
@@ -374,4 +319,34 @@ function getRouteStyle(routeType) {
     default:
       return { color: "#000000", dashArray: null }; // solid black line default
   }
+}
+
+//////////////////////////////////////////////////////////
+
+// utility functions
+function capitalizeWords(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+// optional function to add marker clusters for activity markers
+function createMarkerCluster(data) {
+  let markerCluster = L.markerClusterGroup({
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+    spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" },
+    maxClusterRadius: 50, // max cluster radius in pixels
+    zoomToBoundsOnClick: true,
+  });
+
+  // add markers to the cluster group
+  data.forEach((place) => {
+    let marker = addMarker(place);
+    markerCluster.addLayer(marker);
+  });
+
+  return markerCluster;
 }
