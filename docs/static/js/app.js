@@ -9,7 +9,7 @@ function fetchData() {
   return Promise.all([
     fetch("resources/data/overview.json").then(handleFetchResponseJSON),
     fetch("resources/data/activity.csv").then(handleFetchResponseCSV),
-    fetch("resources/data/location.csv").then(handleFetchResponseCSV),
+    // fetch("resources/data/location.csv").then(handleFetchResponseCSV),
     fetch("resources/data/routes.csv").then(handleFetchResponseCSV),
   ]);
 }
@@ -41,17 +41,17 @@ function initializeMap() {
   // get data and call functions to create map and layers
   fetchData()
     // .then(([overviewData, activityCsv, locationCsv]) => {
-    .then(([overviewData, activityCsv, locationCsv, routesCsv]) => {
+    .then(([overviewData, activityCsv, routesCsv]) => {
       // parse CSV data
-      const activityData = Papa.parse(activityCsv, { header: true }).data;
-      const locationData = Papa.parse(locationCsv, { header: true }).data;
+      // throws an error if the csv's last empty line is not skipped
+      const activityData = Papa.parse(activityCsv, { header: true, skipEmptyLines: true, }).data;
+      // const locationData = Papa.parse(locationCsv, { header: true }).data;
       const routeData = Papa.parse(routesCsv, { header: true, skipEmptyLines: true, }).data;
-      // routeData throws an error if the csv's last empty line is not skipped
 
       // create overlayMarkers for the map
       const markers = createMarkers(overviewData);
       const originalBounds = createBounds(overviewData);
-      const activities = addActivityMarkers(activityData, locationData);
+      const activities = addActivityMarkers(activityData);
       const routes = createRouteLayers(routeData);
 
       // pass to createMap
@@ -62,7 +62,6 @@ function initializeMap() {
 }
 
 // create map, combining base map and layers, legend toggle
-// function createMap(markers, originalBounds, activities) {
 function createMap(markers, originalBounds, activities, routes) {
   // define layers
   const baseMaps = createBaseMaps();
@@ -79,18 +78,6 @@ function createMap(markers, originalBounds, activities, routes) {
   mainMap.fitBounds(originalBounds);
   L.control.layers(baseMaps, overlayMaps).addTo(mainMap);
   routeControls = L.control.layers(null, routes.sublayers, { collapsed: false });
-
-  mainMap.on("overlayadd", (eventLayer) => {
-    if (eventLayer.name === "Routes") {
-      routeControls.addTo(mainMap);
-    }
-  });
-
-  mainMap.on("overlayremove", (eventLayer) => {
-    if (eventLayer.name === "Routes") {
-      mainMap.removeControl(routeControls);
-    }
-  });
 
   // add map reset button
   addResetButton(mainMap, originalBounds);
@@ -109,6 +96,19 @@ function createMap(markers, originalBounds, activities, routes) {
   mainMap.on("overlayadd", (eventLayer) => {
     if (eventLayer.name === "Waypoints") {
       legend.addTo(mainMap);
+    }
+  });
+  
+  // event listeners for displaying route controls
+  mainMap.on("overlayadd", (eventLayer) => {
+    if (eventLayer.name === "Routes") {
+      routeControls.addTo(mainMap);
+    }
+  });
+
+  mainMap.on("overlayremove", (eventLayer) => {
+    if (eventLayer.name === "Routes") {
+      mainMap.removeControl(routeControls);
     }
   });
 

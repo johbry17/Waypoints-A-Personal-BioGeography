@@ -1,7 +1,4 @@
 route_id,start_location,end_location,transport_mode,filename,travel_date,usage_tags
-927c618b-50dd-4346-9b80-f6796249ca7a,Table Mountain,Table Mountain,hike,table_mountain.geojson,,
-9cff77b5-2385-4e16-bdd6-779f14d72d9c,Mt Mansfield,Mt Mansfield,hike,mansfield.geojson,,
-a6fa73cb-907c-422d-a8e8-15f8f113b143,St John,St John,hike,stj.geojson,,
 accc1702-bb7f-4080-8145-30c503d88414,Jaipur,New Delhi,auto,accc1702-bb7f-4080-8145-30c503d88414.geojson,,
 9214968f-4f10-486b-acc7-561a9c3a49eb,New Delhi,Amritsar,auto,9214968f-4f10-486b-acc7-561a9c3a49eb.geojson,,
 79e36ef6-100b-493b-a587-0dac56d1416c,New Delhi,Agra,auto,79e36ef6-100b-493b-a587-0dac56d1416c.geojson,,
@@ -22,3 +19,6 @@ d8f2c60d-1d3c-491c-9519-afc97b6688e1,Jaipur,Bikaner,auto,d8f2c60d-1d3c-491c-9519
 e1cb8410-64bc-4e6f-b83c-bc02255d3a60,Udaipur,Jodhpur,auto,e1cb8410-64bc-4e6f-b83c-bc02255d3a60.geojson,,
 570fe5ae-9bab-4a28-9cfc-6ad354784dc6,Amritsar,"Manali, HImachal Pradesh",auto,570fe5ae-9bab-4a28-9cfc-6ad354784dc6.geojson,,
 dd67df4d-d1d7-4533-81fe-8b53bfe1b6aa,"Manali, HImachal Pradesh",New Delhi,auto,dd67df4d-d1d7-4533-81fe-8b53bfe1b6aa.geojson,,
+72c1e7e9-3717-4b76-8b01-64eb53691c07,Table Mountain,Table Mountain,hike,table_mountain.geojson,,
+f46ea3f0-7ac8-4633-9533-8592f662a476,Mt Mansfield,Mt Mansfield,hike,mansfield.geojson,,
+84366ba1-1206-4a45-a2ee-27f4cf174fb9,St John,St John,hike,stj.geojson,,

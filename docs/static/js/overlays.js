@@ -107,7 +107,7 @@ function initializePhotoCarousel(marker, place) {
 // popup content for each marker
 function createPopupContent(place) {
   // for activity markers, format text and icon
-  const isActivity = !!place.activity_type;
+  const isActivity = !!place.activity_type; // boolean check for activity type
   const formattedActivityType = isActivity
     ? capitalizeWords(place.activity_type.replace("_", " "))
     : "";
@@ -181,7 +181,7 @@ const activityIcons = {
 };
 
 // add activity markers
-function addActivityMarkers(activityData, locationData) {
+function addActivityMarkers(activityData) {
   // !! toggle between marker and cluster layer !!
   // create layer for activity markers
   // const activityLayer = L.layerGroup();
@@ -204,12 +204,13 @@ function addActivityMarkers(activityData, locationData) {
   });
 
   // get location details for each activity
-  const activityWithLocations = mapActivityLocations(
-    activityData,
-    locationData
-  );
-  // tripled the markers for international date line crossing
-  const tripledActivities = tripledMarkers(activityWithLocations);
+  // const activityWithLocations = mapActivityLocations(
+  //   activityData,
+  //   locationData
+  // );
+  // // tripled the markers for international date line crossing
+  // const tripledActivities = tripledMarkers(activityWithLocations);
+  const tripledActivities = tripledMarkers(activityData);
 
   // add markers to the activity layer
   tripledActivities.forEach((activity) => {
@@ -234,24 +235,24 @@ function addActivityMarkers(activityData, locationData) {
   return activityLayer;
 }
 
-// map activities to their respective location data
-function mapActivityLocations(activityData, locationData) {
-  return activityData
-    .map((activity) => {
-      const location = locationData.find(
-        (loc) => loc.location_id === activity.location_id
-      );
-      return location
-        ? {
-            ...activity,
-            lat: parseFloat(location.lat),
-            lng: parseFloat(location.lng),
-            location_name: location.name,
-          }
-        : null;
-    })
-    .filter(Boolean);
-}
+// // map activities to their respective location data
+// function mapActivityLocations(activityData, locationData) {
+//   return activityData
+//     .map((activity) => {
+//       const location = locationData.find(
+//         (loc) => loc.location_id === activity.location_id
+//       );
+//       return location
+//         ? {
+//             ...activity,
+//             lat: parseFloat(location.lat),
+//             lng: parseFloat(location.lng),
+//             location_name: location.name,
+//           }
+//         : null;
+//     })
+//     .filter(Boolean);
+// }
 
 //////////////////////////////////////////////////////////
 
