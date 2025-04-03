@@ -37,9 +37,10 @@ function initializeMap() {
   
     // wait for modal to display, then fade-in text
   document.addEventListener("DOMContentLoaded", () => {
-    const modalText = document.getElementById("modal-body");
     setTimeout(() => {
-      modalText.style.opacity = "1"; // trigger fade-in
+      document.querySelectorAll(".modal-transition").forEach((el) => {
+        el.style.opacity = "1"; // trigger fade-in
+      });
     }, 500); // delay to sync with modal appearance
   });
 

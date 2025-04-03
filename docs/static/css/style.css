@@ -53,12 +53,17 @@ body, html, #map {
   font-size: 1rem;
   color: #333333;
   line-height: 1.2;
+}
+.modal .modal-content #modal-body .modal-transition {
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 2s ease-in-out;
 }
 .modal .modal-content #modal-body .modal-body-icon {
   font-size: 1.5rem;
   color: #003366;
+}
+.modal .modal-content #modal-body .fa-stack {
+  margin-bottom: 0px;
 }
 .modal .modal-content #modal-body .fa-stack .mdi {
   vertical-align: middle;
@@ -69,6 +74,7 @@ body, html, #map {
   margin-bottom: 15px;
 }
 .modal .modal-content #modal-body #modal-text {
+  margin-top: 0px;
   font-size: 0.8em;
   font-style: italic;
   color: #495057;

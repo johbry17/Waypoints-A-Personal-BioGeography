@@ -32,7 +32,6 @@
     <link rel="stylesheet" type="text/css" href="static/css/style.css" />
   </head>
   <body>
-    
     <!-- welcome modal -->
     <div id="welcome-modal" class="modal">
       <div class="modal-content">
@@ -42,16 +41,29 @@
           <h2>A Personal BioGeography</h2>
         </div>
         <div id="modal-body">
-          <span class="fa-stack">
+          <span class="fa-stack modal-transition">
             <i class="fas fa-circle fa-stack-1x modal-body-icon"></i>
             <i class="mdi mdi-earth fa-stack-1x fa-inverse modal-body-icon"></i>
           </span>
-           <p id="modal-text">Being a haphazard assemblage of places remembered and misremembered, accompanied by winding paths, scribbled notes, and an abundance of mundane photos that, like souvenirs, are meaningful only to the person who collected them</p>
+          <p id="modal-text">
+            <span id="modal-being" style="font-size: 3em">Being</span>
+            <span class="modal-transition"
+              >a haphazard assemblage of places remembered and misremembered,
+              accompanied by winding paths, scribbled notes, and an abundance of
+              mundane photos that, like souvenirs, are meaningful only to the
+              person who collected them</span
+            >
+          </p>
         </div>
         <div class="modal-footer">
-          <p><i class="fas fa-hand-pointer"></i><br>Tap / click to continue</p>
-          <br>
-          <span style="color:#333; font-weight: normal;"><b>In Progress:</b> Constantly evolving with new features and content.</span>
+          <p>
+            <i class="fas fa-hand-pointer"></i><br />Tap / click to continue
+          </p>
+          <br />
+          <span style="color: #333; font-weight: normal"
+            ><b>In Progress:</b> Constantly evolving with new features and
+            content.</span
+          >
         </div>
       </div>
     </div>
@@ -66,7 +78,7 @@
       <div><i class="fas fa-home home-icon"></i> Residence</div>
       <div><i class="fas fa-graduation-cap school-icon"></i> Academic</div>
       <div><i class="fas fa-globe globe-icon"></i> Other</div>
-      <p>Markers scaled<br>by life imprint</p>
+      <p>Markers scaled<br />by life imprint</p>
     </div>
 
     <!-- photo carousel for popups -->
