@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "location_name": "India",
+    "name": "India",
     "lat": 26.9154576,
     "lng": 75.8189817,
     "start_date": "08-2006",
@@ -176,7 +176,7 @@
   },
   {
     "id": 2,
-    "location_name": "St John",
+    "name": "St John",
     "lat": 18.3308212,
     "lng": -64.7944809,
     "start_date": "10-2007",
@@ -328,7 +328,7 @@
   },
   {
     "id": 3,
-    "location_name": "Costa Rica",
+    "name": "Costa Rica",
     "lat": 9.91805215,
     "lng": -84.23654514,
     "start_date": "01-2011",
@@ -429,7 +429,7 @@
   },
   {
     "id": 4,
-    "location_name": "Vermont",
+    "name": "Vermont",
     "lat": 44.6119901,
     "lng": -73.0088889,
     "start_date": "09-1985",
@@ -540,7 +540,7 @@
   },
   {
     "id": 5,
-    "location_name": "Olympia, Washington",
+    "name": "Olympia, Washington",
     "lat": 47.0451022,
     "lng": -122.8950075,
     "start_date": "09-2004",
@@ -581,7 +581,7 @@
   },
   {
     "id": 6,
-    "location_name": "Bali",
+    "name": "Bali",
     "lat": -8.5068977,
     "lng": 115.2622931,
     "start_date": "06-2002",
@@ -646,7 +646,7 @@
   },
   {
     "id": 7,
-    "location_name": "Bali, Round 2",
+    "name": "Bali, Round 2",
     "lat": -8.16305115,
     "lng": 115.022464,
     "start_date": "06-2002",
@@ -726,7 +726,7 @@
   },
   {
     "id": 8,
-    "location_name": "Beijing, China",
+    "name": "Beijing, China",
     "lat": 40.190632,
     "lng": 116.412144,
     "start_date": "08-1997",
@@ -783,7 +783,7 @@
   },
   {
     "id": 9,
-    "location_name": "Cape Town",
+    "name": "Cape Town",
     "lat": -33.9288301,
     "lng": 18.4172197,
     "start_date": "02-2020",
@@ -871,7 +871,7 @@
   },
   {
     "id": 10,
-    "location_name": "Namibia",
+    "name": "Namibia",
     "lat": -18.99133055,
     "lng": 15.74605506,
     "start_date": "03-2023",
@@ -966,7 +966,7 @@
   },
   {
     "id": 11,
-    "location_name": "Machu Picchu",
+    "name": "Machu Picchu",
     "lat": -13.16442195,
     "lng": -72.5450851,
     "start_date": "10-2017",
@@ -1022,7 +1022,7 @@
   },
   {
     "id": 12,
-    "location_name": "Machu Picchu, Round Two",
+    "name": "Machu Picchu, Round Two",
     "lat": -15.8115351,
     "lng": -70.0322977,
     "start_date": "10-2022",
@@ -1183,7 +1183,7 @@
   },
   {
     "id": 13,
-    "location_name": "The Netherlands",
+    "name": "The Netherlands",
     "lat": 51.0120795,
     "lng": 5.8384433,
     "start_date": "08-1998",
@@ -1218,7 +1218,7 @@
   },
   {
     "id": 14,
-    "location_name": "U.K.",
+    "name": "U.K.",
     "lat": 51.4893335,
     "lng": -0.1440550845,
     "start_date": "10-1995",
@@ -1237,7 +1237,7 @@
   },
   {
     "id": 15,
-    "location_name": "Edinburgh and the Scottish Highlands",
+    "name": "Edinburgh and the Scottish Highlands",
     "lat": 55.9533456,
     "lng": -3.1883749,
     "start_date": "05-2022",
@@ -1347,7 +1347,7 @@
   },
   {
     "id": 16,
-    "location_name": "Baja Sur",
+    "name": "Baja Sur",
     "lat": 23.4453627,
     "lng": -109.4240213,
     "start_date": "04-2022",
@@ -1402,7 +1402,7 @@
   },
   {
     "id": 17,
-    "location_name": "Kaua'i and Maui",
+    "name": "Kaua'i and Maui",
     "lat": 22.05038375,
     "lng": -159.5588624,
     "start_date": "02-2018",
@@ -1434,7 +1434,7 @@
   },
   {
     "id": 18,
-    "location_name": "Istanbul",
+    "name": "Istanbul",
     "lat": 41.006381,
     "lng": 28.9758715,
     "start_date": "02-2020",
@@ -1459,7 +1459,7 @@
   },
   {
     "id": 19,
-    "location_name": "Las Vegas",
+    "name": "Las Vegas",
     "lat": 36.2533896,
     "lng": -115.2794366,
     "start_date": "02-2020",
@@ -1485,7 +1485,7 @@
   },
   {
     "id": 20,
-    "location_name": "Lake Tahoe",
+    "name": "Lake Tahoe",
     "lat": 39.0885405,
     "lng": -120.0503528,
     "start_date": "02-1996",
@@ -1503,7 +1503,7 @@
   },
   {
     "id": 21,
-    "location_name": "Oregon Coast and Redwoods",
+    "name": "Oregon Coast and Redwoods",
     "lat": 41.5543991,
     "lng": -124.0866197,
     "start_date": "03-2006",
@@ -1536,7 +1536,7 @@
   },
   {
     "id": 22,
-    "location_name": "San Francisco",
+    "name": "San Francisco",
     "lat": 37.7792588,
     "lng": -122.4193286,
     "start_date": 2007,
@@ -1557,7 +1557,7 @@
   },
   {
     "id": 23,
-    "location_name": "Puerto Rico",
+    "name": "Puerto Rico",
     "lat": 18.38423905,
     "lng": -66.05343997,
     "start_date": "02-2024",
@@ -1575,7 +1575,7 @@
   },
   {
     "id": 24,
-    "location_name": "Belize",
+    "name": "Belize",
     "lat": 17.7395148,
     "lng": -88.03368671,
     "start_date": "04-2011",
@@ -1591,7 +1591,7 @@
   },
   {
     "id": 25,
-    "location_name": "Guatemala",
+    "name": "Guatemala",
     "lat": 16.9131737,
     "lng": -89.9296189,
     "start_date": "04-2011",
@@ -1641,7 +1641,7 @@
   },
   {
     "id": 26,
-    "location_name": "Granada",
+    "name": "Granada",
     "lat": 11.9303801,
     "lng": -85.9535897,
     "start_date": "05-2011",
@@ -1657,7 +1657,7 @@
   },
   {
     "id": 27,
-    "location_name": "San Salvador",
+    "name": "San Salvador",
     "lat": 13.6989939,
     "lng": -89.1914249,
     "start_date": "04-2011",
@@ -1673,7 +1673,7 @@
   },
   {
     "id": 28,
-    "location_name": "Ometepe & San Juan del Sur",
+    "name": "Ometepe & San Juan del Sur",
     "lat": 11.4983864,
     "lng": -85.62553996,
     "start_date": "11-2011",
@@ -1740,7 +1740,7 @@
   },
   {
     "id": 29,
-    "location_name": "Bocas del Toro",
+    "name": "Bocas del Toro",
     "lat": 9.26847485,
     "lng": -81.99322425,
     "start_date": "12-2011",
@@ -1766,7 +1766,7 @@
   },
   {
     "id": 30,
-    "location_name": "Bribri Talamanca Indigenous Territory",
+    "name": "Bribri Talamanca Indigenous Territory",
     "lat": 9.5170692,
     "lng": -82.9562336,
     "start_date": "08-2011",
@@ -1835,7 +1835,7 @@
   },
   {
     "id": 31,
-    "location_name": "Mexico City",
+    "name": "Mexico City",
     "lat": 19.3207722,
     "lng": -99.15146775,
     "start_date": "10-2018",
@@ -1924,7 +1924,7 @@
   },
   {
     "id": 32,
-    "location_name": "The Yucatan",
+    "name": "The Yucatan",
     "lat": 20.429647,
     "lng": -87.6529306,
     "start_date": "11-2018",
@@ -1985,7 +1985,7 @@
   },
   {
     "id": 33,
-    "location_name": "Brussels",
+    "name": "Brussels",
     "lat": 50.8465573,
     "lng": 4.351697,
     "start_date": "11-1998",
@@ -2003,7 +2003,7 @@
   },
   {
     "id": 34,
-    "location_name": "Paris",
+    "name": "Paris",
     "lat": 48.8534951,
     "lng": 2.3483915,
     "start_date": "10-1998",
@@ -2037,7 +2037,7 @@
   },
   {
     "id": 35,
-    "location_name": "Montreal",
+    "name": "Montreal",
     "lat": 45.5031824,
     "lng": -73.5698065,
     "start_date": 1997,
@@ -2053,7 +2053,7 @@
   },
   {
     "id": 36,
-    "location_name": "New York",
+    "name": "New York",
     "lat": 40.7127281,
     "lng": -74.0060152,
     "start_date": 2015,
@@ -2083,7 +2083,7 @@
   },
   {
     "id": 37,
-    "location_name": "Philadelphia",
+    "name": "Philadelphia",
     "lat": 39.9527237,
     "lng": -75.1635262,
     "start_date": "10-2020",
@@ -2110,7 +2110,7 @@
   },
   {
     "id": 38,
-    "location_name": "Chicago",
+    "name": "Chicago",
     "lat": 41.8755616,
     "lng": -87.6244212,
     "start_date": 1980,
@@ -2129,7 +2129,7 @@
   },
   {
     "id": 39,
-    "location_name": "Washington, D.C.",
+    "name": "Washington, D.C.",
     "lat": 38.8950368,
     "lng": -77.0365427,
     "start_date": "08-2010",
@@ -2187,7 +2187,7 @@
   },
   {
     "id": 40,
-    "location_name": "The Rally to Restore Sanity",
+    "name": "The Rally to Restore Sanity",
     "lat": 38.88948305,
     "lng": -77.03525006,
     "start_date": "10-2010",
@@ -2241,7 +2241,7 @@
   },
   {
     "id": 41,
-    "location_name": "St John with DC",
+    "name": "St John with DC",
     "lat": 18.33560135,
     "lng": -64.75504062,
     "start_date": "10-2007",
@@ -2285,7 +2285,7 @@
   },
   {
     "id": 42,
-    "location_name": "Youth in Vermont",
+    "name": "Youth in Vermont",
     "lat": 44.4761601,
     "lng": -73.212906,
     "start_date": "09-1985",
@@ -2324,7 +2324,7 @@
   },
   {
     "id": 43,
-    "location_name": "Eclipse",
+    "name": "Eclipse",
     "lat": 44.6074269,
     "lng": -72.9741703,
     "start_date": "04-2024",
@@ -2355,7 +2355,7 @@
   },
   {
     "id": 44,
-    "location_name": "Nashville",
+    "name": "Nashville",
     "lat": 36.1622767,
     "lng": -86.7742984,
     "start_date": 1982,
@@ -2371,7 +2371,7 @@
   },
   {
     "id": 45,
-    "location_name": "Null Island",
+    "name": "Null Island",
     "lat": 0,
     "lng": 0,
     "start_date": "",

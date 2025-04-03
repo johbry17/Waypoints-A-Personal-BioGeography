@@ -81,7 +81,7 @@ function createCircleMarker(place) {
 function createTooltipContent(place) {
   return `
       <div class="hover-tooltip-content">
-        <b>${place.location_name}</b><br>
+        <b>${place.name}</b><br>
         Click for more info
       </div>
     `;
@@ -119,8 +119,8 @@ function createPopupContent(place) {
   const homeIcon = place.home ? '<i class="fas fa-home home-icon"></i>' : "";
   const schoolIcon =
     place.visit_type === "school" ||
-    place.location_name === "Washington, D.C." ||
-    place.location_name === "Vermont"
+    place.name === "Washington, D.C." ||
+    place.name === "Vermont"
       ? '<i class="fas fa-graduation-cap school-icon"></i>'
       : "";
   const icons = !isActivity
@@ -159,7 +159,7 @@ function createPopupContent(place) {
             <h3>
               ${icons}
               ${iconClass ? `<i class="${iconClass} activity-icon-stack"></i>` : ""}
-              ${place.location_name}
+              ${place.name}
             </h3>
             <h4>${formattedActivityType}</h4>
             <p>${place.description || ""}</p>
