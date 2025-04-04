@@ -31,11 +31,42 @@ function handleFetchResponseCSV(response) {
 
 // initialize map
 function initializeMap() {
-  // welcome modal
+  // call modal function
+  setupWelcomeModal();
+
+  // get data and call functions to create map and layers
+  fetchData()
+    .then(([overviewData, activityCsv, routesCsv]) => {
+      // parse CSV data
+      // throws an error if the csv's last empty line is not skipped
+      const activityData = Papa.parse(activityCsv, {
+        header: true,
+        skipEmptyLines: true,
+      }).data;
+      // const locationData = Papa.parse(locationCsv, { header: true }).data;
+      const routeData = Papa.parse(routesCsv, {
+        header: true,
+        skipEmptyLines: true,
+      }).data;
+
+      // create overlayMarkers for the map
+      const markers = createMarkers(overviewData);
+      const originalBounds = createBounds(overviewData);
+      const activities = addActivityMarkers(activityData);
+      const routes = createRouteLayers(routeData);
+
+      // pass to createMap function
+      createMap(markers, originalBounds, activities, routes);
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+}
+
+// modal
+function setupWelcomeModal() {
   const modal = document.getElementById("welcome-modal");
-  // modal.style.display = "flex"; // toggle modal display on / off
-  
-    // wait for modal to display, then fade-in text
+  modal.style.display = "flex"; // toggle modal display on / off
+
+  // wait for modal to display, then fade-in text
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       document.querySelectorAll(".modal-transition").forEach((el) => {
@@ -48,36 +79,17 @@ function initializeMap() {
   modal.addEventListener("click", () => {
     modal.style.display = "none";
   });
-
-  // get data and call functions to create map and layers
-  fetchData()
-    // .then(([overviewData, activityCsv, locationCsv]) => {
-    .then(([overviewData, activityCsv, routesCsv]) => {
-      // parse CSV data
-      // throws an error if the csv's last empty line is not skipped
-      const activityData = Papa.parse(activityCsv, { header: true, skipEmptyLines: true, }).data;
-      // const locationData = Papa.parse(locationCsv, { header: true }).data;
-      const routeData = Papa.parse(routesCsv, { header: true, skipEmptyLines: true, }).data;
-
-      // create overlayMarkers for the map
-      const markers = createMarkers(overviewData);
-      const originalBounds = createBounds(overviewData);
-      const activities = addActivityMarkers(activityData);
-      const routes = createRouteLayers(routeData);
-
-      // pass to createMap
-      // createMap(markers, originalBounds, activities);
-      createMap(markers, originalBounds, activities, routes);
-    })
-    .catch((error) => console.error("Error fetching data:", error));
 }
 
-// create map, combining base map and layers, legend toggle
+// create map, base layers and overlays, toggle legend and route controls
 function createMap(markers, originalBounds, activities, routes) {
   // define layers
   const baseMaps = createBaseMaps();
-  // const overlayMaps = { Waypoints: markers, Activities: activities };
-  const overlayMaps = { Waypoints: markers, Activities: activities, Routes: routes.routeLayer };
+  const overlayMaps = {
+    Waypoints: markers,
+    Activities: activities,
+    Routes: routes.routeLayer,
+  };
 
   // create map
   const mainMap = L.map("map", {
@@ -88,47 +100,29 @@ function createMap(markers, originalBounds, activities, routes) {
   // set initial map zoom level and bounds, add controls
   mainMap.fitBounds(originalBounds);
   L.control.layers(baseMaps, overlayMaps).addTo(mainMap);
-  routeControls = L.control.layers(null, routes.sublayers, { collapsed: false });
+  routeControls = L.control.layers(null, routes.sublayers, {
+    collapsed: false,
+  });
 
-  // add map reset button
+  // add map reset button and legend
   addResetButton(mainMap, originalBounds);
-
-  // add legend, with toggle
   const legend = addLegend();
   legend.addTo(mainMap);
 
-  // event listeners for legend toggling
-  mainMap.on("overlayremove", (eventLayer) => {
-    if (eventLayer.name === "Waypoints") {
-      mainMap.removeControl(legend);
-    }
-  });
-
-  mainMap.on("overlayadd", (eventLayer) => {
-    if (eventLayer.name === "Waypoints") {
-      legend.addTo(mainMap);
-    }
-  });
-  
-  // event listeners for displaying route controls
-  mainMap.on("overlayadd", (eventLayer) => {
-    if (eventLayer.name === "Routes") {
-      routeControls.addTo(mainMap);
-    }
-  });
-
-  mainMap.on("overlayremove", (eventLayer) => {
-    if (eventLayer.name === "Routes") {
-      mainMap.removeControl(routeControls);
-    }
-  });
+  // event listener to toggle display of legend and route controls
+  mainMap.on("overlayadd", (e) =>
+    handleOverlayAdd(e, legend, routeControls, mainMap)
+  );
+  mainMap.on("overlayremove", (e) =>
+    handleOverlayRemove(e, legend, routeControls, mainMap)
+  );
 
   // add copyright and place Leaflet attribution control
-  mainMap.attributionControl.setPosition("bottomleft");
-  const currentYear = new Date().getFullYear();
-  mainMap.attributionControl.addAttribution(
-    `&copy; ${currentYear} Bryan Johns. All rights reserved. Images may not be used without explicit permission.`
-  );
+  mainMap.attributionControl
+    .setPosition("bottomleft")
+    .addAttribution(
+      `&copy; ${new Date().getFullYear()} Bryan Johns. All rights reserved. Images may not be used without explicit permission.`
+    );
 }
 
 // creates base maps
@@ -166,7 +160,6 @@ function addResetButton(map, initialBounds) {
   resetControl.addTo(map); // add to map
 }
 
-
 // add legend
 function addLegend() {
   const legend = L.control({ position: "bottomright" });
@@ -179,12 +172,23 @@ function addLegend() {
   return legend;
 }
 
+// toggle legend and route controls on overlay add/remove
+const handleOverlayAdd = (e, legend, routeControls, map) => {
+  if (e.name === "Waypoints") legend.addTo(map);
+  if (e.name === "Routes") routeControls.addTo(map);
+};
+
+const handleOverlayRemove = (e, legend, routeControls, map) => {
+  if (e.name === "Waypoints") map.removeControl(legend);
+  if (e.name === "Routes") map.removeControl(routeControls);
+};
+
+// event listener for photo reel fullscreen button
 document.addEventListener("click", (event) => {
   const fullscreenButton = document.querySelector("#fullscreen-button");
   const carouselContainer = document.querySelector(".carousel-container"); // entire carousel container
   // check if clicked element is fullscreen button
   if (event.target.closest("#fullscreen-button")) {
-
     if (document.fullscreenElement) {
       // if in fullscreen, exit fullscreen, change button to enter fullscreen
       if (document.exitFullscreen) {
@@ -216,13 +220,6 @@ document.addEventListener("click", (event) => {
     }
   }
 });
-
-// // exit fullscreen mode when pressing the "Escape" key
-// document.addEventListener("fullscreenchange", () => {
-//   if (!document.fullscreenElement) {
-//     console.log("Exited fullscreen mode");
-//   }
-// });
 
 // start everything - initialize the map
 initializeMap();

@@ -27,7 +27,7 @@ Stores details about locations visited, including time spent and general descrip
 | `notes`        | TEXT       | Additional details or memories from the visit |
 | `importance`   | Integer    | Scale of location's admittedly subjective importance to biography (1-10) |
 | `visit_type`   | TEXT       | Purpose of visit (e.g., home, work, school, friends, family, solo) |
-| `home` | Boolean | If I lived there for an extended period of time |
+| `home` | Boolean | If I resided there for at least half a year |
 | `duration_days`| Integer    | Estimated time spent in days |
 ---
 
