@@ -130,6 +130,9 @@ function createMap(markers, originalBounds, activities, routes) {
 function createBaseMaps() {
   return {
     Satellite: L.esri.basemapLayer("Imagery"),
+    "Open Street Map": L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    ),
     "National Geographic": L.esri.basemapLayer("NationalGeographic"),
     Physical: L.esri.basemapLayer("Physical"),
     Oceans: L.esri.basemapLayer("Oceans"),
