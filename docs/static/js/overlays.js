@@ -316,12 +316,13 @@ function getRouteStyle(routeType) {
     case "boat":
       return { color: "#1E90FF", dashArray: "1, 15" }; // dotted blue
     case "train":
-      // return { color: "#8B0000", dashArray: "10, 5, 2, 5" }; // dash-dot red
-      return { color: "red", dashArray: null };
+      return { color: "#8B0000", dashArray: "10, 5, 2, 5" }; // dash-dot red
+      // return { color: "red", dashArray: null };
     case "auto":
       return { color: "#FF8C00", dashArray: null }; // solid orange
     case "plane":
       return { color: "#9400D3", dashArray: "20, 10" }; // long dashed purple
+      // return { color: "red", dashArray: null };
     default:
       return { color: "#000000", dashArray: null }; // solid black line default
   }
