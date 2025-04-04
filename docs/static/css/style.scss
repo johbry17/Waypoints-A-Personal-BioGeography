@@ -1,7 +1,7 @@
 // variables
 $background-color: #333333;
 $primary-color: #008a51;
-$highlight-color: #FF8C00;
+$highlight-color: #ff8c00;
 $text-color: #333333;
 $popup-bg-color: #f9f9f9;
 $activity-color: #0085a1;
@@ -14,7 +14,9 @@ $box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 $border-radius: 10px;
 
 // general styling
-body, html, #map {
+body,
+html,
+#map {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -48,7 +50,7 @@ body, html, #map {
     box-shadow: $box-shadow;
     overflow-y: auto; // scrollbar if content overflows height
     z-index: 1000;
-    
+
     .modal-header {
       text-align: center;
 
@@ -91,7 +93,7 @@ body, html, #map {
       }
 
       .fa-stack .mdi {
-        vertical-align: middle; 
+        vertical-align: middle;
         position: relative;
         color: $primary-color;
       }
@@ -235,7 +237,8 @@ h4 {
   box-shadow: $box-shadow;
 
   // photo or video styling
-  .carousel-photo, .carousel-video {
+  .carousel-photo,
+  .carousel-video {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain; // maintain aspect ratio
@@ -319,13 +322,23 @@ h4 {
   transition: transform $transition-duration, color $transition-duration;
 }
 
-.school-icon { @extend %icon-base; color: #ffb400; }
-.home-icon { @extend %icon-base; color: #ff5733; }
-.globe-icon { @extend %icon-base; color: $primary-color; }
+.school-icon {
+  @extend %icon-base;
+  color: #ffb400;
+}
+.home-icon {
+  @extend %icon-base;
+  color: #ff5733;
+}
+.globe-icon {
+  @extend %icon-base;
+  color: $primary-color;
+}
 
 // activity icons
 .activity-icon-stack {
-  .fa-circle, & {
+  .fa-circle,
+  & {
     color: $activity-color;
     transition: transform $transition-duration, color $transition-duration;
 

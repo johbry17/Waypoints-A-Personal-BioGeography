@@ -174,10 +174,11 @@ function createPopupContent(place) {
 const activityIcons = {
   skiing: "fas fa-skiing",
   snorkeling: "fas fa-swimmer",
-  whitewater_rafting: "fas fa-life-ring",
+  whitewater_rafting: "fas fa-water",
   hiking: "fas fa-hiking",
   paragliding: "fas fa-parachute-box",
   kayaking: "mdi mdi-kayaking",
+  tubing: "fas fa-life-ring",
 };
 
 // add activity markers
@@ -293,11 +294,11 @@ function createRouteLayers(routeData) {
   return {
     routeLayer,
     sublayers: {
-      Planes: planeLayer,
-      Trains: trainLayer,
-      Automobiles: autoLayer,
-      Boats: boatLayer,
-      Hikes: hikingLayer,      
+      '<i class="fas fa-plane"></i> Planes': planeLayer,
+      '<i class="fas fa-train"></i> Trains': trainLayer,
+      '<i class="fas fa-car"></i> Automobiles': autoLayer,
+      '<i class="fas fa-ship"></i> Boats': boatLayer,
+      '<i class="fas fa-hiking"></i> Hikes': hikingLayer,      
     },
   };
 }
