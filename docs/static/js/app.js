@@ -104,7 +104,8 @@ function createMap(markers, originalBounds, activities, routes) {
     collapsed: false,
   });
 
-  // add map reset button and legend
+  // add legend, map reset and about buttons
+  addAboutButton(mainMap);
   addResetButton(mainMap, originalBounds);
   const legend = addLegend();
   legend.addTo(mainMap);
@@ -158,6 +159,28 @@ function addResetButton(map, initialBounds) {
   };
 
   resetControl.addTo(map); // add to map
+}
+
+// add About button to map
+function addAboutButton(map) {
+    // Custom About button control
+  const aboutButton = L.control({ position: "topleft" });
+
+  aboutButton.onAdd = () =>{
+      // Create a container for the button
+      const button = L.DomUtil.create("button", "about-button");
+      button.innerHTML = `<a href="https://johbry17.github.io/portfolio/templates/waypoints.html" target="_blank" title="About">
+                                <i class="fas fa-info-circle"></i>
+                              </a>`;
+      button.title = "About"; // tooltip text
+
+      // prevent map interactions when clicking the button
+      L.DomEvent.disableClickPropagation(button);
+
+      return button;
+    },
+
+  aboutButton.addTo(map); // add to map
 }
 
 // add legend

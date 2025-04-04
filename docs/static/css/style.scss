@@ -141,26 +141,67 @@ html,
   }
 }
 
-// reset map button
-.reset-map-button {
-  background-color: $primary-color;
-  color: white;
-  border: none;
+// common styles for about and reset buttons
+.button {
+  background-color: white;
   border-radius: 5px;
-  padding: 6px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-size: 16px;
   box-shadow: $box-shadow;
   transition: background-color $transition-duration;
+  padding: 0; // ensures "About" link fills entire button
+  border: none;
+
+  i {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+// reset map button styles
+.reset-map-button {
+  @extend .button;
+  background-color: $primary-color;
+  color: white;
+  padding: 6px;
+  font-size: 16px;
 
   i {
     font-size: 20px;
-    font-weight: bold;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    color: white;
   }
 
   &:hover {
     background-color: $activity-hover-color;
+  }
+}
+
+// about button styles
+.about-button {
+  @extend .button;
+  background-color: white;
+  border: 1px solid #ccc;
+
+  a {
+    text-decoration: none; // remove link underline
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; // so link fills the button
+    height: 100%; // so link fills the button
+  }
+
+  i {
+    color: $activity-color;
   }
 }
 
