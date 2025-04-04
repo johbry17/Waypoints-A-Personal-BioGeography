@@ -253,11 +253,15 @@ function createRouteLayers(routeData) {
         const { color, dashArray } = getRouteStyle(route.transport_mode);
         // set style for the route polyline
         const polyline = L.geoJSON(geojson, {
-          color: color,
-          weight: 3,
-          opacity: 0.8,
-          dashArray: dashArray,
-          lineCap: 'butt',
+          // exclude points from the route, the map marker
+          filter: feature => feature.geometry.type !== "Point",
+          style: {
+            color: color,
+            weight: 3,
+            opacity: 0.8,
+            dashArray: dashArray,
+            lineCap: 'butt',
+          },
         });
 
         // add routes to respective layers
@@ -312,7 +316,8 @@ function getRouteStyle(routeType) {
     case "boat":
       return { color: "#1E90FF", dashArray: "1, 15" }; // dotted blue
     case "train":
-      return { color: "#8B0000", dashArray: "10, 5, 2, 5" }; // dash-dot red
+      // return { color: "#8B0000", dashArray: "10, 5, 2, 5" }; // dash-dot red
+      return { color: "red", dashArray: null };
     case "auto":
       return { color: "#FF8C00", dashArray: null }; // solid orange
     case "plane":
