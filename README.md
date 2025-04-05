@@ -2,11 +2,12 @@
 
  > **Under Active Development**
 
-A map-based visualization of life’s highlights, combining memories, events, and photos into an interactive experience. Unlike social media, this project is personal, meaningful, and entirely under my control — no algorithms, no ads, just memories. Suck it, social media!
+A map-based visualization of life’s highlights, combining memories, events, and photos into an interactive experience. Unlike social media, this project is personal, meaningful, and entirely under my control — no algorithms, no ads, just memories.
 
 ## Table of Contents
 
 - [Description](#description)
+- [Features](#features)
 - [Usage](#usage)
 - [Gallery](#gallery)
 - [References](#references)
@@ -16,35 +17,34 @@ A map-based visualization of life’s highlights, combining memories, events, an
 
 ## Description
 
-Waypoints: A GeoBiography started as a simple project to store photos and memories on a map, so I can bore my interlocuters with my vacation photos.
+Waypoints: A GeoBiography started as a simple project to store photos and memories on a map, so I can bore others with my vacation photos. It quickly evolved into a full-fledged **data engineering** and **visualization** project. Initially, I envisioned placing a few markers with photo popups, but the project expanded to include geospatial routing, hiking trail visualizations, and dynamic overlays.
 
-To my surprise, it rapidly evolved into a full-fledged data engineering and visualization project. I envisioned plunking down a few markers with a pop-up carousel of photos, but the scope creep has begun. I never anticipated diving into geospatial routing and visualizing hiking trails with polylines. Evolving sketch of the project [here](data_dictionary.md).
+Waypoints creates an **interactive map** that showcases life’s highlights, complete with photos, events, and detailed overlays.  This project combines **geospatial tools** with personal storytelling to create a unique and immersive experience.
 
-The goal is to create an interactive map that showcases life’s highlights, complete with photos, events, and detailed overlays.
+Technically, Waypoints leverages a suite of geospatial tools:
 
-This project uses **Leaflet.js** for map rendering and overlays, and integrates data from various sources, including APIs, CSV files, and custom datasets.
+- **Leaflet.js**: For rendering dynamic, interactive maps with custom markers, clustering, and polylines.
+- **Overpass API**: To query OpenStreetMap data for geographic features like hiking trails, ferry routes, and waterways.
+- **Nominatim**: For geocoding and reverse geocoding, converting locations into geographic coordinates and vice versa.
+- **OpenRouteService API**: For routing and geospatial analysis, including isochrones and multi-modal transportation routes.
+- **GeographicLib**: For precise geodesic calculations, such as great circle routes for airplane travel.
+- **GeoJSON**: As the primary format for encoding geographic data structures, enabling seamless integration with mapping libraries.
 
-### Features
+The backend, powered by **Python**, processes data from multiple sources, including APIs, Google Sheets, and CSV files. Google Sheets serves as a flexible data management layer. Data Dictionary [here](data_dictionary.md). The map includes custom markers, activity layers, and photo popups, creating an intuitive and visually rich user experience.
+
+## Features
 
 - **Interactive Map**: Pan, zoom, and explore a map with custom markers and overlays.
 - **Photo Popups**: Click on markers to view a carousel of photos associated with the location.
-- **Activity Layers**: Toggle activity-specific layers (e.g., hiking, travel) to explore categorized events.
+- **Activity Layers**: Toggle activity-specific layers (e.g., hiking, snorkeling) to explore memorable events and activities.
+- **Routes Layers**: Visualize transportation routes, such as hiking trails, ferry routes, and airplane paths, using polylines and geospatial data.
 - **Custom Icons and Legends**: Markers are color-coded and icon-based for easy identification of event types.
 - **Data Integration**: Combines data from APIs, CSV files, and custom datasets to populate the map dynamically.
 - **Responsive Design**: Works seamlessly across devices and screen sizes.
 
-### History
+<br>
 
-- **Concept**: Drafted the initial idea and designed the database structure.
-- **Map Development**: Built the map with base layers and added marker overlays.
-- **Data Integration**: Pulled data from APIs, converted to CSV, and added photos.
-- **Customization**: Color-coded and icon-based markers for life events. Added a legend.
-- **Activity Layers**: Created location and activity datasets. Automated data filling for markers.
-- **Deployment**: Tested and deployed on GitHub Pages. Restructured the repository for `/docs` format.
-- **Optimization**: Forcibly removed old `static/images` folder from Git history to reduce repository size.
-
-
-> - **Current Status**: Integrating polylines for hiking trails and adding a new map layer using data from [Overpass Turbo](https://overpass-turbo.eu/) and [OpenStreetMap](https://www.openstreetmap.org/).
+> **Current Status**: Integrating polylines for hiking trails and adding transportation routes using data from [Overpass Turbo](https://overpass-turbo.eu/) and [OpenStreetMap](https://www.openstreetmap.org/).
 
 ## Usage
 
@@ -76,6 +76,9 @@ The website is hosted on GitHub Pages and can be accessed [here](https://johbry1
 - [Leaflet.js Documentation](https://leafletjs.com/)
 - [Overpass API Documentation](https://wiki.openstreetmap.org/wiki/Overpass_API)
 - [Nominatim Documentation](https://nominatim.org/release-docs/latest/)
+- [OpenRouteService API Documentation](https://openrouteservice.org/documentation/)
+- [GeographicLib Documentation](https://geographiclib.sourceforge.io/)
+- [GeoJSON Specification](https://geojson.org/)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [MIT License](https://opensource.org/licenses/MIT)
 

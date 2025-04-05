@@ -1,7 +1,7 @@
 Overview
 --
 id Integer PK
-location_name TEXT
+name TEXT
 lat Float
 lng Float
 start_date Date
@@ -13,7 +13,6 @@ notes Text
 importance Integer
 visit_type TEXT
 home Boolean
-duration_days Integer
 
 Pictures
 --
@@ -24,6 +23,7 @@ picture_name TEXT
 caption TEXT
 overview_id int FK - Overview.id
 location_id int FK - Location.location_id
+activity_id int FK - Activity.activity_id
 
 Location
 --
@@ -44,38 +44,16 @@ filename TEXT
 travel_date Date
 usage_tags TEXT
 
-
 Activity
 --
 activity_id Integer PK
-trip_id int FK >- Trip.trip_id
-location_id int FK >- Location.location_id
-location_name TEXT
+name TEXT
+location int FK >- Location.location_id
+lat float
+lng float
 activity_type TEXT
-route_path TEXT
+route_path TEXT FK >- Routes.filename
 description TEXT
 notes Text
 photo_album TEXT
 photos TEXT
-
-Trip
---
-trip_id int PK
-trip_name TEXT
-trip_description TEXT
-trip_start_date datetime
-trip_end_date datetime
-overview_id int FK - Overview.id
-
-TripLocation
-------------
-trip_id INT FK - Trip.trip_id
-location_id INT FK - Location.location_id
-(trip_id location_id) PK
-sequence int
-
-PictureLocation
----------------
-picture_id INT FK - Pictures.picture_id
-location_id INT FK - Location.location_id
-(picture_id, location_id) PK

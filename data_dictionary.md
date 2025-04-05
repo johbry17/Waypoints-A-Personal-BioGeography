@@ -6,17 +6,18 @@ This document defines the structure and purpose of the datasets used in the Glob
 
 ![ERD](./resources/images/ERD.png)
 
-Note: the location_name is turning into the primary key on its own. 
 
----
+### **Note**
+- The data is stored in **Google Sheets**, but exported as JSON and CSV for use in the map.
 
-## **1. Overview Table**
+
+## **Overview Table**
 Stores details about locations visited, including time spent and general descriptions.
 
 | Column Name      | Data Type  | Description |
 |-----------------|-----------|-------------|
 | `id`           | Integer PK | Unique identifier for each waypoint |
-| `location_name`         | TEXT       | Name of the waypoint or place |
+| `name`         | TEXT       | Name of the waypoint or place |
 | `lat`          | Float      | Latitude coordinate |
 | `lng`          | Float      | Longitude coordinate |
 | `start_date`   | Date       | Approximate or exact arrival date |
@@ -28,25 +29,10 @@ Stores details about locations visited, including time spent and general descrip
 | `importance`   | Integer    | Scale of location's admittedly subjective importance to biography (1-10) |
 | `visit_type`   | TEXT       | Purpose of visit (e.g., home, work, school, friends, family, solo) |
 | `home` | Boolean | If I resided there for at least half a year |
-| `duration_days`| Integer    | Estimated time spent in days |
----
 
-## **2. Pictures Table**
-Stores image details for locations and events.
+<br>
 
-| Column Name     | Data Type  | Description |
-|----------------|-----------|-------------|
-| `picture_id`   | Integer PK | Unique identifier for each picture |
-| `file_name`    | TEXT       | Name of the picture file |
-| `file_location`| TEXT       | Storage location of the picture |
-| `picture_name` | TEXT       | Name or title of the picture |
-| `caption`      | TEXT       | Caption or description of the picture |
-| `overview_id`  | Integer FK | Links to the `Overview` table |
-| `location_id`  | Integer FK | Links to the `Location` table |
-
----
-
-## **3. Location Table**
+## **Location Table**
 Stores geographic details of visited locations.
 
 | Column Name     | Data Type  | Description |
@@ -58,9 +44,9 @@ Stores geographic details of visited locations.
 | `lng`          | Float      | Longitude coordinate |
 | `overview_id`  | Integer FK | Links to the `Overview` table |
 
----
+<br>
 
-## **4. Routes Table**
+## **Routes Table**
 Stores transportation details between locations.
 
 | Column Name         | Data Type  | Description |
@@ -73,17 +59,18 @@ Stores transportation details between locations.
 | `travel_date`      | Date       | Approximate or exact date of travel |
 | `usage_tags`       | TEXT       | Tags for multiple route usage (e.g., "2017, 2022") |
 
----
+<br>
 
-## **5. Activity Table**
+## **Activity Table**
 Logs special activities like hiking routes, road trips, or unique experiences.
 
 | Column Name     | Data Type  | Description |
 |----------------|-----------|-------------|
 | `activity_id`  | Integer PK | Unique identifier for each activity |
-| `trip_id`      | Integer FK | Links to the `Trip` table |
-| `location_id`  | Integer FK | Reference to the location where activity took place |
-| `location_name` | TEXT | Name, matches to Location Table |
+| `name` | TEXT | Name, matches to Location Table |
+| `location`  | Integer FK | Reference to the location where activity took place |
+| `lat`          | Float      | Latitude coordinate |
+| `lng`          | Float      | Longitude coordinate |
 | `activity_type`| TEXT       | Type of activity (e.g., Hiking, Snorkeling) |
 | `route_path`   | TEXT       | Polyline or waypoints for mapped activities |
 | `description`  | TEXT       | Short summary or story about this location |
@@ -91,9 +78,25 @@ Logs special activities like hiking routes, road trips, or unique experiences.
 | `photo_album`  | TEXT       | Link or reference to an associated photo album |
 | `photos`       | TEXT       | Links or references to associated photos |
 
----
+<br>
 
-## **6. Trip Table**
+## **Pictures Table**
+Stores image details for locations and events.
+
+| Column Name     | Data Type  | Description |
+|----------------|-----------|-------------|
+| `picture_id`   | Integer PK | Unique identifier for each picture |
+| `file_name`    | TEXT       | Name of the picture file |
+| `file_location`| TEXT       | Storage location of the picture |
+| `picture_name` | TEXT       | Name or title of the picture |
+| `caption`      | TEXT       | Caption or description of the picture |
+| `overview_id`  | Integer FK | Links to the `Overview` table |
+| `location_id`  | Integer FK | Links to the `Location` table |
+| `activity_id`  | Integer FK | Links to the `Activity` table |
+
+<!-- --- -->
+
+<!-- ## **6. Trip Table**
 
 Stores details about multi-location trips.
 
@@ -104,11 +107,11 @@ Stores details about multi-location trips.
 | `trip_description` | TEXT   | Brief description of the trip |
 | `trip_start_date`  | DateTime | Start date of the trip |
 | `trip_end_date`    | DateTime | End date of the trip |
-| `overview_id`  | Integer FK | Links to the `Overview` table |
+| `overview_id`  | Integer FK | Links to the `Overview` table | -->
 
----
+<!-- --- -->
 
-## **7. TripLocation Table**
+<!-- ## **7. TripLocation Table**
 
 Stores relationships between trips and locations.
 
@@ -116,20 +119,20 @@ Stores relationships between trips and locations.
 |--------------|-----------|-------------|
 | `trip_id`   | Integer FK | Links to the `Trip` table |
 | `location_id`| Integer FK | Links to the `Location` table |
-| `sequence`  | Integer    | Order of locations in the trip |
+| `sequence`  | Integer    | Order of locations in the trip | -->
 
----
+<!-- --- -->
 
-## **8. PictureLocation Table** (&#191;Optional?)
+<!-- ## **8. PictureLocation Table** (&#191;Optional?)
 
 Stores relationships between pictures and locations.
 
 | Column Name    | Data Type  | Description |
 |--------------|-----------|-------------|
 | `picture_id` | Integer FK | Links to the `Pictures` table |
-| `location_id`| Integer FK | Links to the `Location` table |
+| `location_id`| Integer FK | Links to the `Location` table | -->
 
----
+<!-- --- -->
 
 <!-- ## PictureOrder Table (&#191;Optional?)
 
@@ -151,39 +154,18 @@ Helps optimize the map by grouping markers into clusters based on zoom levels.
 | `center_lng`  | Float    | Longitude of the cluster center |
 | `waypoint_ids` | String  | List of waypoint `id`s in this cluster | -->
 
-## Layers
+<br>
 
-- **Markers and marker clusters** - A high-level popup containing many photos, that expands into multiple markers on zoom for towns / cities, and subdivided photos. Scale marker size like a bubble map, to reflect time stayed. Possibly add icons or color-coding (work, study, solo, family, friends).
-
-- **Transit Routes** - Planes, trains, and automobiles. And boats. Use different line styles (dashed for planes, lines for roads, dotted for trains, etc) or color coding. Use Leaflet.Geodesic or D3.js to plot curved great-circle routes between airports. Use OpenStreetMap (OSM) with routing APIs (e.g., OpenRouteService, Mapbox Directions API) to generate real road/train routes.
-
-- **Stay Duration Heat Map**
-
-- **Activity Layer** - Icons for snorkeling or hiking (map hike routes?), skiing, rafting, etc
-
----
-
-## **Handling Uncertainty**
-- `start_date` and `end_date` can be **empty or estimated**.  
-- `duration_days` is used when exact dates are unknown.  
-- A Boolean flag (`estimated: true`) could be added in the future to mark uncertain data.  
-
----
-
-## **Future Enhancements**
+## **Potential Future Enhancements**
 - Implement a **time slider** for filtering visits by year.  
 - Add a **Story Mode**, to animate the journey through time.  
 - Store **photo metadata** (e.g., GPS locations, timestamps, steps).  
 - Improve **route visualization** (e.g., following roads instead of straight lines).  
-- Add **Interactive Stats**? Countries visited, distance traveled, longest stays
+- Add **Interactive Stats** Countries visited, distance traveled, longest stays
 - Create a themed **map style** a la Indiana Jones or minimalist dark mode
 
 ---
 
-### **Notes**
-- This structure is flexible. If new columns are needed, they can be added without breaking existing data.
-- The data is stored in **Google Sheets**, but exported as JSON and CSV for use in the map.
-
----
+<br>
 
 This document will be updated as the project evolves.
