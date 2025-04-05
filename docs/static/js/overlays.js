@@ -318,7 +318,8 @@ function getRouteStyle(routeType) {
       // return { color: "#228B22", dashArray: "5, 10" }; // dashed green
       return { color: "red", dashArray: null };
     case "boat":
-      return { color: "#1E90FF", dashArray: "1, 15" }; // dotted blue
+      // return { color: "#1E90FF", dashArray: "1, 15" }; // dotted blue
+      return { color: "#1E90FF", dashArray: null }; // solid blue
     case "train":
       return { color: "#8B0000", dashArray: "10, 5, 2, 5" }; // dash-dot red
       // return { color: "red", dashArray: null };

@@ -1,0 +1,81 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-05T01:32:07Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/38283719",
+        "duration": "00:20",
+        "foot": "yes",
+        "from": "Red Hook, Saint Thomas",
+        "motor_vehicle": "no",
+        "name": "Red Hook, Saint Thomas - Cruz Bay, Saint John",
+        "route": "ferry",
+        "source": "https://www.vinow.com/travel/virgin-islands-ferry-schedules/stjohn/",
+        "to": "Cruz Bay, Saint John",
+        "toll": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -64.8495747,
+            18.3260346
+          ],
+          [
+            -64.8495589,
+            18.3259308
+          ],
+          [
+            -64.8494794,
+            18.3258474
+          ],
+          [
+            -64.8492867,
+            18.3257949
+          ],
+          [
+            -64.849019,
+            18.3257957
+          ],
+          [
+            -64.8487497,
+            18.3258118
+          ],
+          [
+            -64.8328749,
+            18.3289056
+          ],
+          [
+            -64.8104302,
+            18.333346
+          ],
+          [
+            -64.8055121,
+            18.3338825
+          ],
+          [
+            -64.8006062,
+            18.3339511
+          ],
+          [
+            -64.79934,
+            18.3337317
+          ],
+          [
+            -64.7981573,
+            18.3333414
+          ],
+          [
+            -64.7958887,
+            18.331485
+          ]
+        ]
+      },
+      "id": "way/38283719"
+    }
+  ]
+}

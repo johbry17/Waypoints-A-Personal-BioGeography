@@ -1,0 +1,82 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-05T01:35:15Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/835105193",
+        "duration": "01:15",
+        "foot": "yes",
+        "from": "Road Town, Tortola",
+        "motor_vehicle": "no",
+        "name": "Road Town, Tortola - Setting Point, Anegada",
+        "operator": "Smith's Ferry Services",
+        "route": "ferry",
+        "to": "Setting Point, Anegada",
+        "toll": "yes",
+        "website": "https://www.smithsferryservices.com"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -64.6179047,
+            18.4188449
+          ],
+          [
+            -64.6175243,
+            18.4188306
+          ],
+          [
+            -64.5872264,
+            18.4097079
+          ],
+          [
+            -64.5828491,
+            18.4088121
+          ],
+          [
+            -64.5787509,
+            18.4088652
+          ],
+          [
+            -64.5746952,
+            18.4093211
+          ],
+          [
+            -64.5245625,
+            18.4254129
+          ],
+          [
+            -64.5177604,
+            18.4277133
+          ],
+          [
+            -64.5128681,
+            18.4298305
+          ],
+          [
+            -64.5108296,
+            18.4315812
+          ],
+          [
+            -64.3807953,
+            18.721406
+          ],
+          [
+            -64.3808403,
+            18.7216418
+          ],
+          [
+            -64.3809273,
+            18.721745
+          ]
+        ]
+      },
+      "id": "way/835105193"
+    }
+  ]
+}

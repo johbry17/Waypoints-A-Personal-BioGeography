@@ -1,0 +1,46 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-05T02:32:18Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/101525175",
+        "name": "Ruta Golfito - Puerto Jiménez",
+        "route": "ferry"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.1575224,
+            8.6273473
+          ],
+          [
+            -83.170933,
+            8.6257641
+          ],
+          [
+            -83.1737654,
+            8.624279
+          ],
+          [
+            -83.2974904,
+            8.5453933
+          ],
+          [
+            -83.3038342,
+            8.542548
+          ],
+          [
+            -83.3038732,
+            8.5424976
+          ]
+        ]
+      },
+      "id": "way/101525175"
+    }
+  ]
+}

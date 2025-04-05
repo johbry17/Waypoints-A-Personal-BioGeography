@@ -1,0 +1,114 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-05T01:29:02Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/835088683",
+        "duration": "00:30",
+        "foot": "yes",
+        "from": "Cruz Bay, Saint John",
+        "motor_vehicle": "no",
+        "name": "Cruz Bay, Saint John - Great Harbour, Jost Van Dyke",
+        "oneway": "yes",
+        "opening_hours:covid19": "off",
+        "operator": "Inter Island Boat Services",
+        "phone": "340-776-6597",
+        "route": "ferry",
+        "source": "https://www.vinow.com/travel/virgin-islands-ferry-schedules/jostvandyke/",
+        "to": "Great Harbour, Jost Van Dyke",
+        "toll": "yes",
+        "website": "https://www.interislandboatservices.com/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -64.7938232,
+            18.3319811
+          ],
+          [
+            -64.79423,
+            18.3325566
+          ],
+          [
+            -64.7945893,
+            18.3328523
+          ],
+          [
+            -64.7951846,
+            18.3331154
+          ],
+          [
+            -64.7969646,
+            18.3332746
+          ],
+          [
+            -64.7979217,
+            18.3334897
+          ],
+          [
+            -64.7990561,
+            18.3340965
+          ],
+          [
+            -64.8000014,
+            18.3350193
+          ],
+          [
+            -64.8003217,
+            18.3357551
+          ],
+          [
+            -64.8002994,
+            18.3368347
+          ],
+          [
+            -64.7982777,
+            18.3551667
+          ],
+          [
+            -64.7974954,
+            18.3570102
+          ],
+          [
+            -64.7951536,
+            18.3603363
+          ],
+          [
+            -64.7517462,
+            18.4359357
+          ],
+          [
+            -64.7513385,
+            18.4370349
+          ],
+          [
+            -64.751317,
+            18.438012
+          ],
+          [
+            -64.7515689,
+            18.4402776
+          ],
+          [
+            -64.7524608,
+            18.4428956
+          ],
+          [
+            -64.752954,
+            18.4433137
+          ],
+          [
+            -64.7533082,
+            18.4433982
+          ]
+        ]
+      },
+      "id": "way/835088683"
+    }
+  ]
+}

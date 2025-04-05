@@ -1,0 +1,121 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-05T01:25:01Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/835169173",
+        "duration": "01:15",
+        "foot": "yes",
+        "from": "Cruz Bay, Saint John",
+        "motor_vehicle": "no",
+        "name": "Cruz Bay, Saint John - Spanish Town, Virign Gorda",
+        "opening_hours:covid19": "off",
+        "operator": "Inter Island Boat Services",
+        "phone": "340-201-6311",
+        "roundtrip": "no",
+        "route": "ferry",
+        "to": "Spanish Town, Virign Gorda",
+        "toll": "yes",
+        "website": "https://www.interislandboatservices.com/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -64.7938232,
+            18.3319811
+          ],
+          [
+            -64.7941531,
+            18.3325589
+          ],
+          [
+            -64.7945488,
+            18.3328963
+          ],
+          [
+            -64.7951213,
+            18.3332031
+          ],
+          [
+            -64.7969417,
+            18.3333909
+          ],
+          [
+            -64.7977844,
+            18.3335802
+          ],
+          [
+            -64.7989366,
+            18.3343366
+          ],
+          [
+            -64.7996932,
+            18.3353091
+          ],
+          [
+            -64.7999821,
+            18.3358428
+          ],
+          [
+            -64.7999611,
+            18.3374188
+          ],
+          [
+            -64.7962014,
+            18.3526032
+          ],
+          [
+            -64.7956913,
+            18.3536621
+          ],
+          [
+            -64.7947703,
+            18.3545206
+          ],
+          [
+            -64.7555145,
+            18.3743357
+          ],
+          [
+            -64.7516966,
+            18.3754411
+          ],
+          [
+            -64.6652945,
+            18.3799672
+          ],
+          [
+            -64.6606087,
+            18.3805976
+          ],
+          [
+            -64.5747826,
+            18.4071081
+          ],
+          [
+            -64.522349,
+            18.4250183
+          ],
+          [
+            -64.4427213,
+            18.4520434
+          ],
+          [
+            -64.4403373,
+            18.452568
+          ],
+          [
+            -64.4375775,
+            18.4526553
+          ]
+        ]
+      },
+      "id": "way/835169173"
+    }
+  ]
+}
