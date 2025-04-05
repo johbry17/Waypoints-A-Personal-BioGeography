@@ -249,39 +249,43 @@ function createRouteLayers(routeData) {
     fetch(filePath)
       .then(response => response.json())
       .then(geojson => {
+        // triple the routes for international date line crossing
+        const tripledGeoJSONs = tripledRoutes(geojson);
         // assign color and dashArray based on transport mode
         const { color, dashArray } = getRouteStyle(route.transport_mode);
-        // set style for the route polyline
-        const polyline = L.geoJSON(geojson, {
-          // exclude points from the route, the map marker
-          filter: feature => feature.geometry.type !== "Point",
-          style: {
-            color: color,
-            weight: 3,
-            opacity: 0.8,
-            dashArray: dashArray,
-            lineCap: 'butt',
-          },
-        });
+        // set style for the route polylines
+        tripledGeoJSONs.forEach(tripledGeoJSON => {
+          const polyline = L.geoJSON(tripledGeoJSON, {
+            // exclude points from the route, the map marker (for some train routes)
+            filter: feature => feature.geometry.type !== "Point",
+            style: {
+              color: color,
+              weight: 3,
+              opacity: 0.8,
+              dashArray: dashArray,
+              lineCap: 'butt',
+            },
+          });
 
-        // add routes to respective layers
-        switch (route.transport_mode) {
-          case "hike":
-            hikingLayer.addLayer(polyline);
-            break;
-          case "boat":
-            boatLayer.addLayer(polyline);
-            break;
-          case "train":
-            trainLayer.addLayer(polyline);
-            break;
-          case "auto":
-            autoLayer.addLayer(polyline);
-            break;
-          case "plane":
-            planeLayer.addLayer(polyline);
-            break;
-        }
+          // add routes to respective layers
+          switch (route.transport_mode) {
+            case "hike":
+              hikingLayer.addLayer(polyline);
+              break;
+            case "boat":
+              boatLayer.addLayer(polyline);
+              break;
+            case "train":
+              trainLayer.addLayer(polyline);
+              break;
+            case "auto":
+              autoLayer.addLayer(polyline);
+              break;
+            case "plane":
+              planeLayer.addLayer(polyline);
+              break;
+          }
+        });
       })
       .catch(error => console.error(`Failed to load GeoJSON file: ${route.filename}`, error));
   });
@@ -326,6 +330,31 @@ function getRouteStyle(routeType) {
     default:
       return { color: "#000000", dashArray: null }; // solid black line default
   }
+}
+
+// triple routes for international date line crossing
+function tripledRoutes(geojson) {
+  return [
+    geojson, // original route
+    shiftGeoJSON(geojson, 360), // +360 degrees
+    shiftGeoJSON(geojson, -360), // -360 degrees
+  ];
+}
+
+// shift geoJSON coordinates by longitude offset
+function shiftGeoJSON(geojson, offset) {
+  // deep copy geoJSON to avoid modifying the original
+  const shiftedGeoJSON = JSON.parse(JSON.stringify(geojson));
+  shiftedGeoJSON.features.forEach((feature) => {
+    if (feature.geometry.type === "LineString") {
+      feature.geometry.coordinates = feature.geometry.coordinates.map(([lng, lat]) => [lng + offset, lat]);
+    } else if (feature.geometry.type === "MultiLineString") {
+      feature.geometry.coordinates = feature.geometry.coordinates.map((line) =>
+        line.map(([lng, lat]) => [lng + offset, lat])
+      );
+    }
+  });
+  return shiftedGeoJSON;
 }
 
 //////////////////////////////////////////////////////////
