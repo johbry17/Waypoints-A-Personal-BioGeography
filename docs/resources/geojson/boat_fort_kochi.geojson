@@ -1,0 +1,104 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-05T09:25:12Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/25978889",
+        "bicycle": "yes",
+        "charge": "3 ₹/Foot;5₹/bicycle;10₹/motorbike;20₹/ThreeWheeler;40₹/Motorcar(upto4M);55₹/Motorcar;300₹/hgv",
+        "fee": "yes",
+        "foot": "yes",
+        "from": "Vypin",
+        "motor_vehicle": "yes",
+        "motorcycle": "no",
+        "name": "Vypin - Fortkochi RO RO",
+        "payment:cash": "only",
+        "phone": "+91-9447116268",
+        "route": "ferry",
+        "to": "Fort Kochi"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            76.2450063,
+            9.9687133
+          ],
+          [
+            76.2448964,
+            9.9724121
+          ],
+          [
+            76.2448369,
+            9.9728558
+          ],
+          [
+            76.2447989,
+            9.973133
+          ],
+          [
+            76.2445868,
+            9.9738544
+          ]
+        ]
+      },
+      "id": "way/25978889"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1007981314",
+        "foot": "yes",
+        "motor_vehicle": "yes",
+        "name": "Ernakulam - Fort Kochi - Vypin Ferry",
+        "route": "ferry"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            76.2518627,
+            9.9691296
+          ],
+          [
+            76.2578174,
+            9.9716033
+          ],
+          [
+            76.2622511,
+            9.9712493
+          ],
+          [
+            76.2622058,
+            9.9701001
+          ],
+          [
+            76.2628948,
+            9.9712017
+          ],
+          [
+            76.2723684,
+            9.9704462
+          ],
+          [
+            76.2755855,
+            9.9714304
+          ],
+          [
+            76.2778777,
+            9.9721316
+          ],
+          [
+            76.2782106,
+            9.9722775
+          ]
+        ]
+      },
+      "id": "way/1007981314"
+    }
+  ]
+}

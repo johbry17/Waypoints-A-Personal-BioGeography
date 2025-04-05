@@ -118,3 +118,6 @@ fdae1496-e9de-43f2-9845-8fcf7f63dabd,Maui Airport,Lihue Airport,plane,great_circ
 3a3c1d8a-408d-4063-8a31-91a9a7597325,JFK New York Airport,Schiphol Airport,plane,great_circle_route_116.geojson,,
 a012fe3f-cabb-4c02-be09-6e94152ec99f,JFK New York Airport,Heathrow Airport,plane,great_circle_route_117.geojson,,
 c754b4b1-4867-4a4a-8a9b-005e4882df06,"San Juan Airport, Puerto Rico",Cyril E. King Airport,plane,great_circle_route_118.geojson,,
+fa7f33af-aac3-40ea-b687-ef0825da318b,Alappuzha,Alappuzha,boat,boat_kerala_backwaters.geojson,,
+e76fb89a-99d3-4aef-b9ad-383c80e9369a,Fort Cochin,Fort Cochin,boat,boat_fort_kochi.geojson,,
+5be7b04f-c141-48e8-b2a1-6555a316d624,Istanbul,Istanbul,boat,boat_istanbul.geojson,,
