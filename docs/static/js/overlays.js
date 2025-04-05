@@ -179,6 +179,7 @@ const activityIcons = {
   paragliding: "fas fa-parachute-box",
   kayaking: "mdi mdi-kayaking",
   tubing: "fas fa-life-ring",
+  meditation: "mdi mdi-meditation",
 };
 
 // add activity markers
