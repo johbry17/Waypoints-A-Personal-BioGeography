@@ -64,7 +64,7 @@ function initializeMap() {
 // modal
 function setupWelcomeModal() {
   const modal = document.getElementById("welcome-modal");
-  modal.style.display = "flex"; // toggle modal display on / off
+  // modal.style.display = "flex"; // toggle modal display on / off
 
   // wait for modal to display, then fade-in text
   document.addEventListener("DOMContentLoaded", () => {

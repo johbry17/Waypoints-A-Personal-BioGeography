@@ -252,7 +252,7 @@ function createRouteLayers(routeData) {
         // triple the routes for international date line crossing
         const tripledGeoJSONs = tripledRoutes(geojson);
         // assign color and dashArray based on transport mode
-        const { color, dashArray } = getRouteStyle(route.transport_mode);
+        const { color, dashArray, weight } = getRouteStyle(route.transport_mode);
         // set style for the route polylines
         tripledGeoJSONs.forEach(tripledGeoJSON => {
           const polyline = L.geoJSON(tripledGeoJSON, {
@@ -260,10 +260,11 @@ function createRouteLayers(routeData) {
             filter: feature => feature.geometry.type !== "Point",
             style: {
               color: color,
-              weight: 3,
+              weight: weight,
               opacity: 0.8,
               dashArray: dashArray,
-              lineCap: 'butt',
+              lineCap: 'round',
+              lineJoin: "round", 
             },
           });
 
@@ -304,7 +305,7 @@ function createRouteLayers(routeData) {
     sublayers: {
       '<i class="fas fa-plane"></i> Planes': planeLayer,
       '<i class="fas fa-train"></i> Trains': trainLayer,
-      '<i class="fas fa-car"></i> Automobiles': autoLayer,
+      '<i class="fas fa-car"></i> Autos': autoLayer,
       '<i class="fas fa-ship"></i> Boats': boatLayer,
       '<i class="fas fa-hiking"></i> Hikes': hikingLayer,      
     },
@@ -315,21 +316,22 @@ function createRouteLayers(routeData) {
 function getRouteStyle(routeType) {
   switch (routeType) {
     case "hike":
-      // return { color: "#228B22", dashArray: "5, 10" }; // dashed green
-      return { color: "red", dashArray: null };
+      // return { color: "#228B22", dashArray: "5, 5", weight: 4 }; // dashed green
+      // return { color: "#32CD32", dashArray: null, weight: 4 }; // solid lime green
+      return { color: "#228B22", dashArray: null, weight: 4 }; // solid green
     case "boat":
-      // return { color: "#1E90FF", dashArray: "1, 15" }; // dotted blue
-      return { color: "#1E90FF", dashArray: null }; // solid blue
+      return { color: "#1E90FF", dashArray: "1, 4", weight: 4 }; // dotted blue
+      // return { color: "#1E90FF", dashArray: null, weight: 4 }; // solid blue
     case "train":
-      return { color: "#8B0000", dashArray: "10, 5, 2, 5" }; // dash-dot red
-      // return { color: "red", dashArray: null };
+      // return { color: "#8B0000", dashArray: "10, 5, 2, 5", weight: 4 }; // dash-dot red
+      return { color: "#8B0000", dashArray: "1, 6", weight: 4 };
     case "auto":
-      return { color: "#FF8C00", dashArray: null }; // solid orange
+      return { color: "#FF8C00", dashArray: null, weight: 2 }; // solid orange
     case "plane":
-      return { color: "#9400D3", dashArray: "20, 10" }; // long dashed purple
-      // return { color: "red", dashArray: null };
+      return { color: "#00FFFF", dashArray: "20, 10", weight: 1.5 }; // long dashed cyan
+      // return { color: "#FFD700", dashArray: "20, 10", weight: 1.5 }; // long dashed yellow
     default:
-      return { color: "#000000", dashArray: null }; // solid black line default
+      return { color: "#000000", dashArray: null, weight: 2 }; // solid black line default
   }
 }
 
