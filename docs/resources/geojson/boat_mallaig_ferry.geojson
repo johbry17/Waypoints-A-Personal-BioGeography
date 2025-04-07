@@ -1,0 +1,96 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-07T05:45:49Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/4904837",
+        "bicycle": "yes",
+        "duration": "00:25",
+        "foot": "yes",
+        "from": "Mallaig",
+        "motor_vehicle": "yes",
+        "name": "Mallaig - Armadale",
+        "name:gd": "Malaig - Armadal",
+        "network": "Caledonian MacBrayne",
+        "network:short": "CalMac",
+        "network:wikidata": "Q1026582",
+        "operator": "Caledonian MacBrayne",
+        "operator:short": "CalMac",
+        "operator:wikidata": "Q1026582",
+        "route": "ferry",
+        "source": "GPS",
+        "to": "Armadale"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -5.8945336,
+            57.0648673
+          ],
+          [
+            -5.8934313,
+            57.0652689
+          ],
+          [
+            -5.8913412,
+            57.0660481
+          ],
+          [
+            -5.8891954,
+            57.0661414
+          ],
+          [
+            -5.8844747,
+            57.0650681
+          ],
+          [
+            -5.8780374,
+            57.0618481
+          ],
+          [
+            -5.8664503,
+            57.0548471
+          ],
+          [
+            -5.8575239,
+            57.0481715
+          ],
+          [
+            -5.8463659,
+            57.0385062
+          ],
+          [
+            -5.8334054,
+            57.0262693
+          ],
+          [
+            -5.8241357,
+            57.016131
+          ],
+          [
+            -5.8234938,
+            57.0132854
+          ],
+          [
+            -5.8244417,
+            57.007839
+          ],
+          [
+            -5.8246615,
+            57.0075332
+          ],
+          [
+            -5.8263986,
+            57.0073105
+          ]
+        ]
+      },
+      "id": "way/4904837"
+    }
+  ]
+}
