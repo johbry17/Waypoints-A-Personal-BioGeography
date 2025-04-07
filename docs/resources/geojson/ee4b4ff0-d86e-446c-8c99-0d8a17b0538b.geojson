@@ -1,0 +1,80 @@
+{
+    "type": "FeatureCollection",
+    "bbox": [
+        75.7912,
+        26.894545,
+        75.7912,
+        26.894545
+    ],
+    "features": [
+        {
+            "bbox": [
+                75.7912,
+                26.894545,
+                75.7912,
+                26.894545
+            ],
+            "type": "Feature",
+            "properties": {
+                "segments": [
+                    {
+                        "distance": 0.0,
+                        "duration": 0.0,
+                        "steps": [
+                            {
+                                "distance": 0.0,
+                                "duration": 0.0,
+                                "type": 11,
+                                "instruction": "Head east",
+                                "name": "-",
+                                "way_points": [
+                                    0,
+                                    0
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "way_points": [
+                    0,
+                    0
+                ],
+                "summary": {}
+            },
+            "geometry": {
+                "coordinates": [
+                    [
+                        75.7912,
+                        26.894545
+                    ]
+                ],
+                "type": "LineString"
+            }
+        }
+    ],
+    "metadata": {
+        "attribution": "openrouteservice.org | OpenStreetMap contributors",
+        "service": "routing",
+        "timestamp": 1744009191881,
+        "query": {
+            "coordinates": [
+                [
+                    75.791307,
+                    26.894497
+                ],
+                [
+                    75.791307,
+                    26.894497
+                ]
+            ],
+            "profile": "driving-car",
+            "profileName": "driving-car",
+            "format": "geojson"
+        },
+        "engine": {
+            "version": "9.1.1",
+            "build_date": "2025-03-14T11:07:03Z",
+            "graph_date": "2025-03-31T15:18:10Z"
+        }
+    }
+}
