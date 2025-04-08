@@ -1,0 +1,156 @@
+{
+    "type": "FeatureCollection",
+    "bbox": [
+        -87.439607,
+        20.194286,
+        -87.431951,
+        20.206153
+    ],
+    "features": [
+        {
+            "bbox": [
+                -87.439607,
+                20.194286,
+                -87.431951,
+                20.206153
+            ],
+            "type": "Feature",
+            "properties": {
+                "segments": [
+                    {
+                        "distance": 1647.2,
+                        "duration": 199.7,
+                        "steps": [
+                            {
+                                "distance": 1479.5,
+                                "duration": 177.5,
+                                "type": 11,
+                                "instruction": "Head northeast on Carretera Bocapaila",
+                                "name": "Carretera Bocapaila",
+                                "way_points": [
+                                    0,
+                                    7
+                                ]
+                            },
+                            {
+                                "distance": 82.3,
+                                "duration": 9.9,
+                                "type": 1,
+                                "instruction": "Turn right onto Privada Playa Maya",
+                                "name": "Privada Playa Maya",
+                                "way_points": [
+                                    7,
+                                    8
+                                ]
+                            },
+                            {
+                                "distance": 85.4,
+                                "duration": 12.3,
+                                "type": 0,
+                                "instruction": "Turn left",
+                                "name": "-",
+                                "way_points": [
+                                    8,
+                                    10
+                                ]
+                            },
+                            {
+                                "distance": 0.0,
+                                "duration": 0.0,
+                                "type": 10,
+                                "instruction": "Arrive at your destination, on the right",
+                                "name": "-",
+                                "way_points": [
+                                    10,
+                                    10
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "way_points": [
+                    0,
+                    10
+                ],
+                "summary": {
+                    "distance": 1647.2,
+                    "duration": 199.7
+                }
+            },
+            "geometry": {
+                "coordinates": [
+                    [
+                        -87.439607,
+                        20.194286
+                    ],
+                    [
+                        -87.438945,
+                        20.195263
+                    ],
+                    [
+                        -87.435924,
+                        20.199774
+                    ],
+                    [
+                        -87.435455,
+                        20.200541
+                    ],
+                    [
+                        -87.435137,
+                        20.201173
+                    ],
+                    [
+                        -87.434853,
+                        20.201854
+                    ],
+                    [
+                        -87.434588,
+                        20.202582
+                    ],
+                    [
+                        -87.43342,
+                        20.206153
+                    ],
+                    [
+                        -87.432664,
+                        20.205945
+                    ],
+                    [
+                        -87.432421,
+                        20.206152
+                    ],
+                    [
+                        -87.431951,
+                        20.206021
+                    ]
+                ],
+                "type": "LineString"
+            }
+        }
+    ],
+    "metadata": {
+        "attribution": "openrouteservice.org | OpenStreetMap contributors",
+        "service": "routing",
+        "timestamp": 1744072797279,
+        "query": {
+            "coordinates": [
+                [
+                    -87.439798,
+                    20.1944
+                ],
+                [
+                    -87.43188,
+                    20.20592
+                ]
+            ],
+            "profile": "driving-car",
+            "profileName": "driving-car",
+            "format": "geojson"
+        },
+        "engine": {
+            "version": "9.1.1",
+            "build_date": "2025-03-14T11:07:03Z",
+            "graph_date": "2025-03-31T15:18:10Z"
+        }
+    }
+}

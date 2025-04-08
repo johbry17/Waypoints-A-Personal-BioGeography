@@ -1,0 +1,33 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-87.5620943, 20.0666756],
+                    [-87.591398, 20.0637322]
+                ]
+            },
+            "properties": {
+                "name": "Manual Connection Across Laguna Chunyaxche",
+                "description": "Manually drawn line to connect two disconnected routes."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-87.5936704, 20.0662254],
+                    [-87.607977, 20.0756072]
+                ]
+            },
+            "properties": {
+                "name": "Second Manual Connection",
+                "description": "Another manually drawn line to connect additional routes."
+            }
+        }
+    ]
+}
