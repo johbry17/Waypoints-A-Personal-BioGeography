@@ -29,6 +29,8 @@ Stores details about locations visited, including time spent and general descrip
 | `importance`   | Integer    | Scale of location's admittedly subjective importance to biography (1-10) |
 | `visit_type`   | TEXT       | Purpose of visit (e.g., home, work, school, friends, family, solo) |
 | `home` | Boolean | If I resided there for at least half a year |
+| `zoomBounds`   | TEXT       | Bounding box for the location, formatted as `[[southwestLat, southwestLng], [northeastLat, northeastLng]]` (Optional) |
+| `zoomLevel` | Integer    | Default zoom level for the map when focusing on this location (Optional) |
 
 <br>
 

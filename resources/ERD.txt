@@ -13,6 +13,8 @@ notes Text
 importance Integer
 visit_type TEXT
 home Boolean
+zoomBounds TEXT
+zoomLevel Int
 
 Pictures
 --
