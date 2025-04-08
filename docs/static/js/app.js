@@ -4,6 +4,11 @@
 // It includes functionality for displaying a photo carousel in popups, adding legends, and handling different map layers.
 // It uses the PapaParse library for CSV parsing and Leaflet.js for map rendering, and handles international date line crossing by tripling markers.
 
+// global constants, for zooming from popups
+const placeData = {};
+let routeLayer;
+let mainMap;
+
 // fetch data from JSON and CSV files
 function fetchData() {
   return Promise.all([
@@ -92,7 +97,8 @@ function createMap(markers, originalBounds, activities, routes) {
   };
 
   // create map
-  const mainMap = L.map("map", {
+  // declared in global scope to access in popup zoom function
+  mainMap = L.map("map", {
     layers: [baseMaps.Satellite, markers],
     worldCopyJump: true,
   });

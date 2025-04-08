@@ -205,6 +205,112 @@ html,
   }
 }
 
+// legend
+#map-legend {
+  display: none; // hide initial legend
+}
+
+.custom-legend {
+  background-color: white;
+  font-size: 12px;
+  padding: 10px 10px 0;
+  border: 5px solid $legend-border-color;
+  border-radius: 5px;
+  color: $text-color;
+  box-shadow: $box-shadow;
+
+  h4 {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    text-decoration: underline;
+  }
+
+  .legend-mini-text {
+    font-size: 10px;
+  }
+}
+
+// mobile responsive legend
+@media (max-width: 768px) {
+  .custom-legend {
+    font-size: 10px;
+    padding: 5px;
+    border: 2px solid $legend-border-color;
+  }
+
+  .legend-mini-text {
+    font-size: 8px;
+  }
+}
+
+// move legend to bottom-left for landscape orientation on mobile devices
+@media (orientation: landscape) and (max-width: 768px) {
+  .custom-legend {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+  }
+}
+
+// icons
+%icon-base {
+  text-align: center;
+  transition: transform $transition-duration, color $transition-duration;
+}
+
+.school-icon {
+  @extend %icon-base;
+  color: #ffb400;
+}
+.home-icon {
+  @extend %icon-base;
+  color: #ff5733;
+}
+.globe-icon {
+  @extend %icon-base;
+  color: $primary-color;
+}
+
+// activity icons
+.activity-icon-stack {
+  .fa-circle,
+  & {
+    color: $activity-color;
+    transition: transform $transition-duration, color $transition-duration;
+
+    &:hover .fa-circle {
+      transform: $icon-hover-transform;
+      color: $activity-hover-color;
+    }
+  }
+
+  .fa-stack-1x {
+    font-size: 0.8em;
+  }
+}
+
+// activity cluster icons
+.custom-cluster {
+  background-color: $activity-color;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  width: 25px;
+  height: 25px;
+  box-shadow: $box-shadow;
+  transition: transform $transition-duration, color $transition-duration;
+
+  &:hover {
+    background-color: $activity-hover-color;
+    transform: $icon-hover-transform;
+  }
+}
+
 // hover tooltip styling
 .hover-tooltip-content {
   text-align: center;
@@ -309,108 +415,33 @@ h4 {
   }
 }
 
-// legend
-#map-legend {
-  display: none; // hide initial legend
-}
-
-.custom-legend {
-  background-color: white;
-  font-size: 12px;
-  padding: 10px 10px 0;
-  border: 5px solid $legend-border-color;
-  border-radius: 5px;
-  color: $text-color;
-  box-shadow: $box-shadow;
-
-  h4 {
-    font-weight: bold;
-    margin: 0 0 10px 0;
-    text-decoration: underline;
-  }
-
-  .legend-mini-text {
-    font-size: 10px;
-  }
-}
-
-// mobile responsive legend
-@media (max-width: 768px) {
-  .custom-legend {
-    font-size: 10px;
-    padding: 5px;
-    border: 2px solid $legend-border-color;
-  }
-
-  .legend-mini-text {
-    font-size: 8px;
-  }
-}
-
-// move legend to bottom-left for landscape orientation on mobile devices
-@media (orientation: landscape) and (max-width: 768px) {
-  .custom-legend {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    z-index: 1000;
-  }
-}
-
-// icons
-%icon-base {
-  text-align: center;
-  transition: transform $transition-duration, color $transition-duration;
-}
-
-.school-icon {
-  @extend %icon-base;
-  color: #ffb400;
-}
-.home-icon {
-  @extend %icon-base;
-  color: #ff5733;
-}
-.globe-icon {
-  @extend %icon-base;
-  color: $primary-color;
-}
-
-// activity icons
-.activity-icon-stack {
-  .fa-circle,
-  & {
-    color: $activity-color;
-    transition: transform $transition-duration, color $transition-duration;
-
-    &:hover .fa-circle {
-      transform: $icon-hover-transform;
-      color: $activity-hover-color;
-    }
-  }
-
-  .fa-stack-1x {
-    font-size: 0.8em;
-  }
-}
-
-// activity cluster icons
-.custom-cluster {
-  background-color: $activity-color;
+.zoom-button {
+  background-color: $primary-color;
   color: white;
-  border-radius: 50%;
+  border: none; // remove default border
+  border-radius: $border-radius;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
-  width: 25px;
-  height: 25px;
+  gap: 5px; // spacing between icon and text
   box-shadow: $box-shadow;
-  transition: transform $transition-duration, color $transition-duration;
+  transition: background-color $transition-duration, transform $transition-duration;
 
+  i {
+    font-size: 14px;
+  }
+
+  // on hover, slightly enlarge and change background color
   &:hover {
     background-color: $activity-hover-color;
     transform: $icon-hover-transform;
+  }
+
+  // slightly shrink button on click
+  &:active {
+    transform: scale(0.95);
   }
 }

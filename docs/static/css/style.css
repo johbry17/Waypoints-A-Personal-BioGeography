@@ -158,6 +158,94 @@ html,
   color: #0085a1;
 }
 
+#map-legend {
+  display: none;
+}
+
+.custom-legend {
+  background-color: white;
+  font-size: 12px;
+  padding: 10px 10px 0;
+  border: 5px solid #ffd700;
+  border-radius: 5px;
+  color: #333333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.custom-legend h4 {
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  text-decoration: underline;
+}
+.custom-legend .legend-mini-text {
+  font-size: 10px;
+}
+
+@media (max-width: 768px) {
+  .custom-legend {
+    font-size: 10px;
+    padding: 5px;
+    border: 2px solid #ffd700;
+  }
+  .legend-mini-text {
+    font-size: 8px;
+  }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+  .custom-legend {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+  }
+}
+.globe-icon, .home-icon, .school-icon {
+  text-align: center;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.school-icon {
+  color: #ffb400;
+}
+
+.home-icon {
+  color: #ff5733;
+}
+
+.globe-icon {
+  color: #008a51;
+}
+
+.activity-icon-stack .fa-circle, .activity-icon-stack {
+  color: #0085a1;
+  transition: transform 0.3s, color 0.3s;
+}
+.activity-icon-stack .fa-circle:hover .fa-circle, .activity-icon-stack:hover .fa-circle {
+  transform: scale(1.2);
+  color: #005f73;
+}
+.activity-icon-stack .fa-stack-1x {
+  font-size: 0.8em;
+}
+
+.custom-cluster {
+  background-color: #0085a1;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  width: 25px;
+  height: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, color 0.3s;
+}
+.custom-cluster:hover {
+  background-color: #005f73;
+  transform: scale(1.2);
+}
+
 .hover-tooltip-content {
   text-align: center;
 }
@@ -248,92 +336,30 @@ h4 {
   color: #0085a1;
 }
 
-#map-legend {
-  display: none;
-}
-
-.custom-legend {
-  background-color: white;
-  font-size: 12px;
-  padding: 10px 10px 0;
-  border: 5px solid #ffd700;
-  border-radius: 5px;
-  color: #333333;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.custom-legend h4 {
-  font-weight: bold;
-  margin: 0 0 10px 0;
-  text-decoration: underline;
-}
-.custom-legend .legend-mini-text {
-  font-size: 10px;
-}
-
-@media (max-width: 768px) {
-  .custom-legend {
-    font-size: 10px;
-    padding: 5px;
-    border: 2px solid #ffd700;
-  }
-  .legend-mini-text {
-    font-size: 8px;
-  }
-}
-@media (orientation: landscape) and (max-width: 768px) {
-  .custom-legend {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    z-index: 1000;
-  }
-}
-.globe-icon, .home-icon, .school-icon {
-  text-align: center;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.school-icon {
-  color: #ffb400;
-}
-
-.home-icon {
-  color: #ff5733;
-}
-
-.globe-icon {
-  color: #008a51;
-}
-
-.activity-icon-stack .fa-circle, .activity-icon-stack {
-  color: #0085a1;
-  transition: transform 0.3s, color 0.3s;
-}
-.activity-icon-stack .fa-circle:hover .fa-circle, .activity-icon-stack:hover .fa-circle {
-  transform: scale(1.2);
-  color: #005f73;
-}
-.activity-icon-stack .fa-stack-1x {
-  font-size: 0.8em;
-}
-
-.custom-cluster {
-  background-color: #0085a1;
+.zoom-button {
+  background-color: #008a51;
   color: white;
-  border-radius: 50%;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
-  width: 25px;
-  height: 25px;
+  gap: 5px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s, color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
-.custom-cluster:hover {
+.zoom-button i {
+  font-size: 14px;
+}
+.zoom-button:hover {
   background-color: #005f73;
   transform: scale(1.2);
+}
+.zoom-button:active {
+  transform: scale(0.95);
 }
 
 /*# sourceMappingURL=style.css.map */

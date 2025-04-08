@@ -1,8 +1,18 @@
 // create initial markers and get bounds for initial map view
 function createMarkers(data) {
+  // store place data globally for zoomToArea function
+  data.forEach((place) => {
+    const key = place.id;
+    placeData[key] = place;
+  });
+
   // triple markers to handle international date line crossing
   const tripledData = tripledMarkers(data);
   return L.featureGroup(tripledData.map(addMarker));
+  // can experiment with marker clusters here
+  // but the homeRing is treated as a separate marker
+  // triggering spiderfy and cascading muck-ups with createBounds, blah blah blah
+  // return createMarkerCluster(tripledData);
 }
 
 function createBounds(data) {
@@ -52,11 +62,11 @@ function createCircleMarker(place) {
   });
 
   // hover effect
-  mainMarker.on('mouseover', function() {
+  mainMarker.on("mouseover", function () {
     this.setStyle({ radius: radius * 1.2, fillOpacity: 0.8 });
   });
 
-  mainMarker.on('mouseout', function() {
+  mainMarker.on("mouseout", function () {
     this.setStyle({ radius, fillOpacity: 0.6 });
   });
 
@@ -142,6 +152,13 @@ function createPopupContent(place) {
       : `<div class="no-photos"><p><i class="fas fa-camera"></i> No photos available</p></div>`;
   //   : "";
 
+  const placeId = place.activity_id || place.id;
+  const zoomButton = `
+  <button class="zoom-button" onclick="zoomToArea('${placeId}')">
+    <i class="fas fa-search-plus"></i> Zoom
+  </button>
+`;
+
   // set border and arrow tip color by popup type
   const borderColor = isActivity ? "#0085a1" : "#008a51";
 
@@ -158,9 +175,14 @@ function createPopupContent(place) {
         <div class="popup-content">
             <h3>
               ${icons}
-              ${iconClass ? `<i class="${iconClass} activity-icon-stack"></i>` : ""}
+              ${
+                iconClass
+                  ? `<i class="${iconClass} activity-icon-stack"></i>`
+                  : ""
+              }
               ${place.name}
             </h3>
+            ${zoomButton}
             <h4>${formattedActivityType}</h4>
             <p>${place.description || ""}</p>
             <p>${place.notes || ""}</p>
@@ -184,6 +206,12 @@ const activityIcons = {
 
 // add activity markers
 function addActivityMarkers(activityData) {
+  // store place data globally for zoomToArea function
+  activityData.forEach((place) => {
+    const key = place.activity_id;
+    placeData[key] = place;
+  });
+
   // !! toggle between marker and cluster layer !!
   // create layer for activity markers
   // const activityLayer = L.layerGroup();
@@ -242,30 +270,32 @@ function createRouteLayers(routeData) {
   const planeLayer = L.layerGroup();
 
   // load polylines for each route type
-  routeData.forEach(route => {
+  routeData.forEach((route) => {
     // get file path for geoJSON
     const filePath = `resources/geojson/${route.filename}`;
-    
+
     // fetch route data from GeoJSON
     fetch(filePath)
-      .then(response => response.json())
-      .then(geojson => {
+      .then((response) => response.json())
+      .then((geojson) => {
         // triple the routes for international date line crossing
         const tripledGeoJSONs = tripledRoutes(geojson);
         // assign color and dashArray based on transport mode
-        const { color, dashArray, weight } = getRouteStyle(route.transport_mode);
+        const { color, dashArray, weight } = getRouteStyle(
+          route.transport_mode
+        );
         // set style for the route polylines
-        tripledGeoJSONs.forEach(tripledGeoJSON => {
+        tripledGeoJSONs.forEach((tripledGeoJSON) => {
           const polyline = L.geoJSON(tripledGeoJSON, {
             // exclude points from the route, the map marker (for some train routes)
-            filter: feature => feature.geometry.type !== "Point",
+            filter: (feature) => feature.geometry.type !== "Point",
             style: {
               color: color,
               weight: weight,
               opacity: 0.8,
               dashArray: dashArray,
-              lineCap: 'round',
-              lineJoin: "round", 
+              lineCap: "round",
+              lineJoin: "round",
             },
           });
 
@@ -289,11 +319,13 @@ function createRouteLayers(routeData) {
           }
         });
       })
-      .catch(error => console.error(`Failed to load GeoJSON file: ${route.filename}`, error));
+      .catch((error) =>
+        console.error(`Failed to load GeoJSON file: ${route.filename}`, error)
+      );
   });
 
   // create parent layer for routes, add all sublayers
-  const routeLayer = L.layerGroup([
+  routeLayer = L.layerGroup([
     hikingLayer,
     boatLayer,
     trainLayer,
@@ -308,7 +340,7 @@ function createRouteLayers(routeData) {
       '<i class="fas fa-train"></i> Trains': trainLayer,
       '<i class="fas fa-car"></i> Autos': autoLayer,
       '<i class="fas fa-ship"></i> Boats': boatLayer,
-      '<i class="fas fa-hiking"></i> Hikes': hikingLayer,      
+      '<i class="fas fa-hiking"></i> Hikes': hikingLayer,
     },
   };
 }
@@ -322,7 +354,7 @@ function getRouteStyle(routeType) {
       return { color: "#228B22", dashArray: null, weight: 4 }; // solid green
     case "boat":
       return { color: "#1E90FF", dashArray: "1, 4", weight: 4 }; // dotted blue
-      // return { color: "#1E90FF", dashArray: null, weight: 4 }; // solid blue
+    // return { color: "#1E90FF", dashArray: null, weight: 4 }; // solid blue
     case "train":
       // return { color: "#8B0000", dashArray: "10, 5, 2, 5", weight: 4 }; // dash-dot red
       return { color: "#8B0000", dashArray: "1, 6", weight: 4 };
@@ -330,7 +362,7 @@ function getRouteStyle(routeType) {
       return { color: "#FF8C00", dashArray: null, weight: 2 }; // solid orange
     case "plane":
       return { color: "#00FFFF", dashArray: "20, 10", weight: 1.5 }; // long dashed cyan
-      // return { color: "#FFD700", dashArray: "20, 10", weight: 1.5 }; // long dashed yellow
+    // return { color: "#FFD700", dashArray: "20, 10", weight: 1.5 }; // long dashed yellow
     default:
       return { color: "#000000", dashArray: null, weight: 2 }; // solid black line default
   }
@@ -351,7 +383,9 @@ function shiftGeoJSON(geojson, offset) {
   const shiftedGeoJSON = JSON.parse(JSON.stringify(geojson));
   shiftedGeoJSON.features.forEach((feature) => {
     if (feature.geometry.type === "LineString") {
-      feature.geometry.coordinates = feature.geometry.coordinates.map(([lng, lat]) => [lng + offset, lat]);
+      feature.geometry.coordinates = feature.geometry.coordinates.map(
+        ([lng, lat]) => [lng + offset, lat]
+      );
     } else if (feature.geometry.type === "MultiLineString") {
       feature.geometry.coordinates = feature.geometry.coordinates.map((line) =>
         line.map(([lng, lat]) => [lng + offset, lat])
@@ -389,4 +423,45 @@ function createMarkerCluster(data) {
   });
 
   return markerCluster;
+}
+
+function zoomToArea(placeId) {
+  // retrieve place object from global data
+  const place = placeData[placeId];
+  if (!place) {
+    console.error("Place not found for ID:", placeId);
+    return;
+  }
+
+  // close any open popup before zooming
+  mainMap.closePopup();
+
+  // if activity with route_path, zoom to the lat/lng of the place
+  if (place.activity_type && place.route_path) {
+    mainMap.setView([place.lat, place.lng], 12);
+    ensureRouteLayer();
+  } else if (place.zoomBounds) {
+    // zoom to bounds if defined
+    mainMap.fitBounds(place.zoomBounds);
+    ensureRouteLayer();
+  } else if (place.zoomLevel) {
+    // zoom to specified zoom level if defined
+    mainMap.setView(
+      [place.lat, place.lng],
+      place.zoomLevel || 12 // default zoom level
+    );
+    ensureRouteLayer();
+  } else if (place.lat && place.lng) {
+    // fallback: zoom to lat/lng, no routeLayer toggle
+    mainMap.setView([place.lat, place.lng], 12);
+  } else {
+    console.error("No valid data to zoom to for this place:", place);
+  }
+}
+
+// helper function to ensure routeLayer is added to the map on zoom
+function ensureRouteLayer() {
+  if (!mainMap.hasLayer(routeLayer)) {
+    routeLayer.addTo(mainMap);
+  }
 }
