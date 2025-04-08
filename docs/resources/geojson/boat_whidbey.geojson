@@ -1,0 +1,69 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-08T04:04:43Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/5901929",
+        "alt_name": "State Highway 525",
+        "bicycle": "yes",
+        "dog": "yes",
+        "duration": "00:20",
+        "foot": "yes",
+        "motor_vehicle": "yes",
+        "motorcar": "yes",
+        "name": "Mukilteo-Clinton Ferry",
+        "network": "Washington State Ferries",
+        "network:wikidata": "Q3500373",
+        "network:wikipedia": "en:Washington State Ferries",
+        "operator": "Washington State Ferries",
+        "ref": "WA 525",
+        "reservation": "no",
+        "route": "ferry",
+        "wheelchair": "yes",
+        "wikidata": "Q113264620"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.2970394,
+            47.9506698
+          ],
+          [
+            -122.297046,
+            47.9506805
+          ],
+          [
+            -122.2974391,
+            47.9512642
+          ],
+          [
+            -122.3129035,
+            47.9566973
+          ],
+          [
+            -122.3216786,
+            47.9624262
+          ],
+          [
+            -122.3418559,
+            47.9708996
+          ],
+          [
+            -122.3472999,
+            47.972965
+          ],
+          [
+            -122.349369,
+            47.9747922
+          ]
+        ]
+      },
+      "id": "way/5901929"
+    }
+  ]
+}
