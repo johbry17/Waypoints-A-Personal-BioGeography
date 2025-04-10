@@ -36,6 +36,12 @@ function displayMultiplePhotos(photoSet, carouselId) {
     );
     element.style.display = i === 0 ? "block" : "none";
 
+    // lazy loading for images
+    // only works for images, not videos
+    if (element.tagName === "IMG") {
+      element.loading = "lazy";
+    }
+
     // add controls, autoplay, mute to videos
     if (element.tagName === "VIDEO") {
       element.controls = true;

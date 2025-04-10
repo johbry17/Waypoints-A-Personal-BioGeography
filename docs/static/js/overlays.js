@@ -406,25 +406,7 @@ function capitalizeWords(str) {
     .join(" ");
 }
 
-// optional function to add marker clusters for activity markers
-function createMarkerCluster(data) {
-  let markerCluster = L.markerClusterGroup({
-    spiderfyOnMaxZoom: true,
-    showCoverageOnHover: false,
-    spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" },
-    maxClusterRadius: 50, // max cluster radius in pixels
-    zoomToBoundsOnClick: true,
-  });
-
-  // add markers to the cluster group
-  data.forEach((place) => {
-    let marker = addMarker(place);
-    markerCluster.addLayer(marker);
-  });
-
-  return markerCluster;
-}
-
+// for popup's zoom button
 function zoomToArea(placeId) {
   // retrieve place object from global data
   const place = placeData[placeId];
@@ -464,4 +446,23 @@ function ensureRouteLayer() {
   if (!mainMap.hasLayer(routeLayer)) {
     routeLayer.addTo(mainMap);
   }
+}
+
+// optional function to add marker clusters for activity markers
+function createMarkerCluster(data) {
+  let markerCluster = L.markerClusterGroup({
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+    spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" },
+    maxClusterRadius: 50, // max cluster radius in pixels
+    zoomToBoundsOnClick: true,
+  });
+
+  // add markers to the cluster group
+  data.forEach((place) => {
+    let marker = addMarker(place);
+    markerCluster.addLayer(marker);
+  });
+
+  return markerCluster;
 }
