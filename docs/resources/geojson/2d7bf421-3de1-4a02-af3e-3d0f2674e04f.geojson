@@ -18,8 +18,8 @@
             "properties": {
                 "segments": [
                     {
-                        "distance": 1303722.0,
-                        "duration": 51608.1,
+                        "distance": 1303722.1,
+                        "duration": 51610.6,
                         "steps": [
                             {
                                 "distance": 233.4,
@@ -242,14 +242,25 @@
                                 ]
                             },
                             {
-                                "distance": 511107.3,
-                                "duration": 18838.4,
+                                "distance": 19083.2,
+                                "duration": 960.7,
                                 "type": 12,
                                 "instruction": "Keep left onto I 80",
                                 "name": "I 80",
                                 "way_points": [
                                     1577,
-                                    4588
+                                    1682
+                                ]
+                            },
+                            {
+                                "distance": 492024.1,
+                                "duration": 17880.2,
+                                "type": 12,
+                                "instruction": "Keep left onto I 80",
+                                "name": "I 80",
+                                "way_points": [
+                                    1682,
+                                    4589
                                 ]
                             },
                             {
@@ -259,8 +270,8 @@
                                 "instruction": "Keep right onto I 80",
                                 "name": "I 80",
                                 "way_points": [
-                                    4588,
-                                    4633
+                                    4589,
+                                    4634
                                 ]
                             },
                             {
@@ -270,8 +281,8 @@
                                 "instruction": "Keep right onto I 80",
                                 "name": "I 80",
                                 "way_points": [
-                                    4633,
-                                    4645
+                                    4634,
+                                    4646
                                 ]
                             },
                             {
@@ -281,8 +292,8 @@
                                 "instruction": "Keep right onto I 80",
                                 "name": "I 80",
                                 "way_points": [
-                                    4645,
-                                    7527
+                                    4646,
+                                    7530
                                 ]
                             },
                             {
@@ -292,8 +303,8 @@
                                 "instruction": "Keep left onto Chicago Skyway, I 90",
                                 "name": "Chicago Skyway, I 90",
                                 "way_points": [
-                                    7527,
-                                    7700
+                                    7530,
+                                    7703
                                 ]
                             },
                             {
@@ -303,8 +314,8 @@
                                 "instruction": "Keep right",
                                 "name": "-",
                                 "way_points": [
-                                    7700,
-                                    7707
+                                    7703,
+                                    7710
                                 ]
                             },
                             {
@@ -314,8 +325,8 @@
                                 "instruction": "Turn right onto North Damen Avenue",
                                 "name": "North Damen Avenue",
                                 "way_points": [
-                                    7707,
-                                    7730
+                                    7710,
+                                    7733
                                 ]
                             },
                             {
@@ -325,8 +336,8 @@
                                 "instruction": "Continue straight onto North Damen Avenue",
                                 "name": "North Damen Avenue",
                                 "way_points": [
-                                    7730,
-                                    7816
+                                    7733,
+                                    7819
                                 ]
                             },
                             {
@@ -336,8 +347,8 @@
                                 "instruction": "Turn right onto West Foster Avenue, US 41",
                                 "name": "West Foster Avenue, US 41",
                                 "way_points": [
-                                    7816,
-                                    7827
+                                    7819,
+                                    7830
                                 ]
                             },
                             {
@@ -347,8 +358,8 @@
                                 "instruction": "Turn left onto North Ravenswood Avenue",
                                 "name": "North Ravenswood Avenue",
                                 "way_points": [
-                                    7827,
-                                    7850
+                                    7830,
+                                    7853
                                 ]
                             },
                             {
@@ -358,8 +369,8 @@
                                 "instruction": "Turn left onto West Peterson Avenue, US 14",
                                 "name": "West Peterson Avenue, US 14",
                                 "way_points": [
-                                    7850,
-                                    7851
+                                    7853,
+                                    7854
                                 ]
                             },
                             {
@@ -369,8 +380,8 @@
                                 "instruction": "Turn right onto North Ravenswood Avenue",
                                 "name": "North Ravenswood Avenue",
                                 "way_points": [
-                                    7851,
-                                    7952
+                                    7854,
+                                    7955
                                 ]
                             },
                             {
@@ -380,8 +391,8 @@
                                 "instruction": "Turn left onto Lake Street",
                                 "name": "Lake Street",
                                 "way_points": [
-                                    7952,
-                                    7954
+                                    7955,
+                                    7957
                                 ]
                             },
                             {
@@ -391,8 +402,8 @@
                                 "instruction": "Turn right onto Asbury Avenue",
                                 "name": "Asbury Avenue",
                                 "way_points": [
-                                    7954,
-                                    7956
+                                    7957,
+                                    7959
                                 ]
                             },
                             {
@@ -402,8 +413,8 @@
                                 "instruction": "Turn left",
                                 "name": "-",
                                 "way_points": [
-                                    7956,
-                                    7958
+                                    7959,
+                                    7961
                                 ]
                             },
                             {
@@ -413,8 +424,8 @@
                                 "instruction": "Arrive at your destination, on the left",
                                 "name": "-",
                                 "way_points": [
-                                    7958,
-                                    7958
+                                    7961,
+                                    7961
                                 ]
                             }
                         ]
@@ -422,11 +433,11 @@
                 ],
                 "way_points": [
                     0,
-                    7958
+                    7961
                 ],
                 "summary": {
-                    "distance": 1303722.0,
-                    "duration": 51608.1
+                    "distance": 1303722.1,
+                    "duration": 51610.6
                 }
             },
             "geometry": {
@@ -6924,8 +6935,8 @@
                         41.03246
                     ],
                     [
-                        -75.312246,
-                        41.038998
+                        -75.312173,
+                        41.038688
                     ],
                     [
                         -75.312471,
@@ -18336,16 +18347,20 @@
                         41.183703
                     ],
                     [
-                        -80.523449,
-                        41.183481
+                        -80.523791,
+                        41.183316
                     ],
                     [
-                        -80.524232,
-                        41.183094
+                        -80.524468,
+                        41.182968
                     ],
                     [
-                        -80.524735,
-                        41.182817
+                        -80.525469,
+                        41.182392
+                    ],
+                    [
+                        -80.527119,
+                        41.181408
                     ],
                     [
                         -80.530254,
@@ -18392,12 +18407,12 @@
                         41.177083
                     ],
                     [
-                        -80.538831,
-                        41.177027
+                        -80.539139,
+                        41.177012
                     ],
                     [
-                        -80.539574,
-                        41.176995
+                        -80.540312,
+                        41.176981
                     ],
                     [
                         -80.543261,
@@ -24825,7 +24840,15 @@
                     ],
                     [
                         -84.980127,
-                        41.73556
+                        41.735564
+                    ],
+                    [
+                        -84.981037,
+                        41.735577
+                    ],
+                    [
+                        -84.981149,
+                        41.735579
                     ],
                     [
                         -84.986088,
@@ -24840,12 +24863,12 @@
                         41.735631
                     ],
                     [
-                        -84.993692,
-                        41.735682
+                        -84.993599,
+                        41.73569
                     ],
                     [
-                        -84.994218,
-                        41.735692
+                        -84.994279,
+                        41.735696
                     ],
                     [
                         -84.995814,
@@ -24856,12 +24879,12 @@
                         41.735717
                     ],
                     [
-                        -84.999963,
-                        41.735741
+                        -84.999941,
+                        41.735749
                     ],
                     [
-                        -85.000913,
-                        41.735748
+                        -85.00094,
+                        41.735755
                     ],
                     [
                         -85.002431,
@@ -30004,8 +30027,8 @@
                         41.65382
                     ],
                     [
-                        -87.515258,
-                        41.655081
+                        -87.515186,
+                        41.654882
                     ],
                     [
                         -87.515688,
@@ -32275,7 +32298,7 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1743753131898,
+        "timestamp": 1744271265237,
         "query": {
             "coordinates": [
                 [
@@ -32294,7 +32317,7 @@
         "engine": {
             "version": "9.1.1",
             "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "graph_date": "2025-04-07T14:38:47Z"
         }
     }
 }
