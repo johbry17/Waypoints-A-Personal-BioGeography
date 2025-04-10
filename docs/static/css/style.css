@@ -336,6 +336,25 @@ h4 {
   color: #0085a1;
 }
 
+.carousel-container.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  overflow: visible !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-container.fullscreen .carousel-photo,
+.carousel-container.fullscreen .carousel-video {
+  aspect-ratio: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  object-position: center;
+}
+
 .zoom-button {
   background-color: #008a51;
   color: white;
