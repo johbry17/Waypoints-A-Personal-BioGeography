@@ -1,0 +1,80 @@
+{
+    "type": "FeatureCollection",
+    "bbox": [
+        115.220028,
+        -8.668311,
+        115.220028,
+        -8.668311
+    ],
+    "features": [
+        {
+            "bbox": [
+                115.220028,
+                -8.668311,
+                115.220028,
+                -8.668311
+            ],
+            "type": "Feature",
+            "properties": {
+                "segments": [
+                    {
+                        "distance": 0.0,
+                        "duration": 0.0,
+                        "steps": [
+                            {
+                                "distance": 0.0,
+                                "duration": 0.0,
+                                "type": 11,
+                                "instruction": "Head east",
+                                "name": "-",
+                                "way_points": [
+                                    0,
+                                    0
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "way_points": [
+                    0,
+                    0
+                ],
+                "summary": {}
+            },
+            "geometry": {
+                "coordinates": [
+                    [
+                        115.220028,
+                        -8.668311
+                    ]
+                ],
+                "type": "LineString"
+            }
+        }
+    ],
+    "metadata": {
+        "attribution": "openrouteservice.org | OpenStreetMap contributors",
+        "service": "routing",
+        "timestamp": 1744355371758,
+        "query": {
+            "coordinates": [
+                [
+                    115.220027,
+                    -8.668324
+                ],
+                [
+                    115.220027,
+                    -8.668324
+                ]
+            ],
+            "profile": "driving-car",
+            "profileName": "driving-car",
+            "format": "geojson"
+        },
+        "engine": {
+            "version": "9.1.1",
+            "build_date": "2025-03-14T11:07:03Z",
+            "graph_date": "2025-04-07T14:38:47Z"
+        }
+    }
+}

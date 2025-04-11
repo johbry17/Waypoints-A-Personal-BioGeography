@@ -1,0 +1,254 @@
+{
+    "type": "FeatureCollection",
+    "bbox": [
+        114.56919,
+        -8.141545,
+        114.581558,
+        -8.136788
+    ],
+    "features": [
+        {
+            "bbox": [
+                114.56919,
+                -8.141545,
+                114.581558,
+                -8.136788
+            ],
+            "type": "Feature",
+            "properties": {
+                "segments": [
+                    {
+                        "distance": 1737.6,
+                        "duration": 232.0,
+                        "steps": [
+                            {
+                                "distance": 347.4,
+                                "duration": 14.7,
+                                "type": 11,
+                                "instruction": "Head west",
+                                "name": "-",
+                                "way_points": [
+                                    0,
+                                    9
+                                ]
+                            },
+                            {
+                                "distance": 717.9,
+                                "duration": 86.1,
+                                "type": 13,
+                                "instruction": "Keep right",
+                                "name": "-",
+                                "way_points": [
+                                    9,
+                                    15
+                                ]
+                            },
+                            {
+                                "distance": 266.0,
+                                "duration": 31.9,
+                                "type": 1,
+                                "instruction": "Turn right onto Jalan Mimpi",
+                                "name": "Jalan Mimpi",
+                                "way_points": [
+                                    15,
+                                    19
+                                ]
+                            },
+                            {
+                                "distance": 153.2,
+                                "duration": 36.8,
+                                "type": 0,
+                                "instruction": "Turn left onto Jalan Pura Segara",
+                                "name": "Jalan Pura Segara",
+                                "way_points": [
+                                    19,
+                                    20
+                                ]
+                            },
+                            {
+                                "distance": 253.1,
+                                "duration": 62.5,
+                                "type": 1,
+                                "instruction": "Turn right onto Jalan Pura Segara",
+                                "name": "Jalan Pura Segara",
+                                "way_points": [
+                                    20,
+                                    29
+                                ]
+                            },
+                            {
+                                "distance": 0.0,
+                                "duration": 0.0,
+                                "type": 10,
+                                "instruction": "Arrive at Jalan Pura Segara, straight ahead",
+                                "name": "-",
+                                "way_points": [
+                                    29,
+                                    29
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "way_points": [
+                    0,
+                    29
+                ],
+                "summary": {
+                    "distance": 1737.6,
+                    "duration": 232.0
+                }
+            },
+            "geometry": {
+                "coordinates": [
+                    [
+                        114.581558,
+                        -8.140878
+                    ],
+                    [
+                        114.581414,
+                        -8.140857
+                    ],
+                    [
+                        114.581191,
+                        -8.140845
+                    ],
+                    [
+                        114.580797,
+                        -8.140853
+                    ],
+                    [
+                        114.580358,
+                        -8.14092
+                    ],
+                    [
+                        114.579696,
+                        -8.141116
+                    ],
+                    [
+                        114.579223,
+                        -8.141291
+                    ],
+                    [
+                        114.578627,
+                        -8.141511
+                    ],
+                    [
+                        114.578595,
+                        -8.141521
+                    ],
+                    [
+                        114.578515,
+                        -8.141545
+                    ],
+                    [
+                        114.577981,
+                        -8.141273
+                    ],
+                    [
+                        114.57757,
+                        -8.141064
+                    ],
+                    [
+                        114.577148,
+                        -8.140849
+                    ],
+                    [
+                        114.576696,
+                        -8.140682
+                    ],
+                    [
+                        114.57589,
+                        -8.140481
+                    ],
+                    [
+                        114.572335,
+                        -8.139576
+                    ],
+                    [
+                        114.572321,
+                        -8.139295
+                    ],
+                    [
+                        114.5723,
+                        -8.138897
+                    ],
+                    [
+                        114.572268,
+                        -8.138167
+                    ],
+                    [
+                        114.572252,
+                        -8.137185
+                    ],
+                    [
+                        114.570865,
+                        -8.137079
+                    ],
+                    [
+                        114.570798,
+                        -8.136993
+                    ],
+                    [
+                        114.57071,
+                        -8.13681
+                    ],
+                    [
+                        114.570682,
+                        -8.136788
+                    ],
+                    [
+                        114.570613,
+                        -8.136795
+                    ],
+                    [
+                        114.570389,
+                        -8.136958
+                    ],
+                    [
+                        114.570238,
+                        -8.137146
+                    ],
+                    [
+                        114.570077,
+                        -8.137313
+                    ],
+                    [
+                        114.569293,
+                        -8.137919
+                    ],
+                    [
+                        114.56919,
+                        -8.137999
+                    ]
+                ],
+                "type": "LineString"
+            }
+        }
+    ],
+    "metadata": {
+        "attribution": "openrouteservice.org | OpenStreetMap contributors",
+        "service": "routing",
+        "timestamp": 1744364441060,
+        "query": {
+            "coordinates": [
+                [
+                    114.5816,
+                    -8.1406
+                ],
+                [
+                    114.5691902,
+                    -8.1379993
+                ]
+            ],
+            "profile": "driving-car",
+            "profileName": "driving-car",
+            "format": "geojson"
+        },
+        "engine": {
+            "version": "9.1.1",
+            "build_date": "2025-03-14T11:07:03Z",
+            "graph_date": "2025-04-07T14:38:47Z"
+        }
+    }
+}

@@ -1,0 +1,58 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-04-11T09:33:08Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/200945726",
+        "is_in": "West Bali,Bali,Indonesia",
+        "route": "ferry"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            114.5691902,
+            -8.1379993
+          ],
+          [
+            114.5687124,
+            -8.1382831
+          ],
+          [
+            114.5604404,
+            -8.1375641
+          ],
+          [
+            114.5598007,
+            -8.1372626
+          ],
+          [
+            114.5596282,
+            -8.1365367
+          ],
+          [
+            114.559741,
+            -8.1321813
+          ],
+          [
+            114.5595393,
+            -8.1309242
+          ],
+          [
+            114.5590098,
+            -8.1298618
+          ],
+          [
+            114.5268661,
+            -8.0964908
+          ]
+        ]
+      },
+      "id": "way/200945726"
+    }
+  ]
+}
