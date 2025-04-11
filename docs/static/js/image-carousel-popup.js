@@ -1,3 +1,6 @@
+// Description: This file contains the code for displaying a carousel of images or videos in a popup.
+// It includes functions to create the carousel, display the media, and handle play/pause and prev/next functionality.
+
 // carousel for multiple photos, with controls
 function displayMultiplePhotos(photoSet, carouselId) {
   // get carousel elements

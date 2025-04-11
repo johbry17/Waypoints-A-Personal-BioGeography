@@ -1,3 +1,5 @@
+// Description: This file contains functions to create and manage map overlays, including markers, routes, and popups.
+
 // create initial markers and get bounds for initial map view
 function createMarkers(data) {
   // store place data globally for zoomToArea function
