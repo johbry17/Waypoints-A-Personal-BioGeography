@@ -144,7 +144,7 @@ db3b864b-ec75-424d-b164-4c82c66478ac,"Independence, Belize","Belmopan, Belize",a
 ab5e4037-7fc8-4f38-8b0a-246ccb199479,"Belmopan, Belize","Belize City, Belize",auto,ab5e4037-7fc8-4f38-8b0a-246ccb199479.geojson,,
 7371bcdf-0dfc-4c54-9bfd-9d731310819a,"Belize City, Belize","Caye Caulker, Belize",boat,boat_belize_city_caye_caulker.geojson,,
 c44fadfb-fede-4a0b-a80c-0ca2a54ff9d7,"Belize City, Belize","Flores, Guatemala",auto,c44fadfb-fede-4a0b-a80c-0ca2a54ff9d7.geojson,,
-0b9f5795-9044-4eae-9800-3af0377d812c,"Flores, Guatemala",Zocotzal,auto,0b9f5795-9044-4eae-9800-3af0377d812c.geojson,,
+0b9f5795-9044-4eae-9800-3af0377d812c,"Flores, Guatemala",Tikal,auto,0b9f5795-9044-4eae-9800-3af0377d812c.geojson,,
 d02c1df7-cc7a-4e95-8307-484ef78c32ac,"Flores, Guatemala","Guatemala City, Guatemala",auto,d02c1df7-cc7a-4e95-8307-484ef78c32ac.geojson,,
 ff6d6205-2d7d-4d87-be21-4918caef743c,"Guatemala City, Guatemala","Antigua, Guatemala",auto,ff6d6205-2d7d-4d87-be21-4918caef743c.geojson,,
 0de81549-a3fb-4c9f-bede-0ffbfbea9132,"Antigua, Guatemala","Lago Atitlan, Guatemala",auto,0de81549-a3fb-4c9f-bede-0ffbfbea9132.geojson,,
@@ -261,3 +261,4 @@ e84782a5-c23a-451c-97e9-d092e3ec5137,"Kalalau Trail, Kauai","Kalalau Trail, Kaua
 54cc7227-b5af-4411-a6ab-39302984ae8b,Kauai,Kauai,boat,boat_kauai.geojson,,
 3d88b83c-1bc9-4281-b58d-5ef82ddfc402,Cruz Bay,"West End, Tortola",boat,boat_stj_west_end_tortola.geojson,,
 60fba8c7-95df-4ba3-bee7-6b68d5dc7b63,Rio Pacuare,Rio Pacuare,boat,boat_pacuare.geojson,,
+704e0981-657c-4d57-9817-d7e84e725ab9,Hout Bay,Duiker Island,boat,boat_hout.geojson,,
