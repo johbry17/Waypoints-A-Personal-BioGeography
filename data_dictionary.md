@@ -58,8 +58,8 @@ Stores transportation details between locations.
 | `end_location` | TEXT | Route end name |
 | `transport_mode`   | TEXT       | Mode of travel (e.g., Plane, Train, Car) |
 | `filename` | TEXT | Name of geojson file containing route polylines |
-| `travel_date`      | Date       | Approximate or exact date of travel |
-| `usage_tags`       | TEXT       | Tags for multiple route usage (e.g., "2017, 2022") |
+<!-- | `travel_date`      | Date       | Approximate or exact date of travel |
+| `usage_tags`       | TEXT       | Tags for multiple route usage (e.g., "2017, 2022") | -->
 
 <br>
 
@@ -74,7 +74,7 @@ Logs special activities like hiking routes, road trips, or unique experiences.
 | `lat`          | Float      | Latitude coordinate |
 | `lng`          | Float      | Longitude coordinate |
 | `activity_type`| TEXT       | Type of activity (e.g., Hiking, Snorkeling) |
-| `route_path`   | TEXT       | Polyline or waypoints for mapped activities |
+| `route_path`   | TEXT       | Polyline or waypoints for mapped activities (Optional) |
 | `description`  | TEXT       | Short summary or story about this location |
 | `notes`        | TEXT       | Additional details about the activity |
 | `photo_album`  | TEXT       | Link or reference to an associated photo album |
@@ -162,7 +162,6 @@ Helps optimize the map by grouping markers into clusters based on zoom levels.
 - Implement a **time slider** for filtering visits by year.  
 - Add a **Story Mode**, to animate the journey through time.  
 - Store **photo metadata** (e.g., GPS locations, timestamps, steps).  
-- Improve **route visualization** (e.g., following roads instead of straight lines).  
 - Add **Interactive Stats** Countries visited, distance traveled, longest stays
 - Create a themed **map style** a la Indiana Jones or minimalist dark mode
 

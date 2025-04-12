@@ -28,6 +28,7 @@ Technically, Waypoints leverages a suite of geospatial tools:
 - **Nominatim**: For geocoding and reverse geocoding, converting locations into geographic coordinates and vice versa.
 - **OpenRouteService API**: For routing and geospatial analysis, including isochrones and multi-modal transportation routes.
 - **GeographicLib**: For precise geodesic calculations, such as great circle routes for airplane travel.
+- **geojson.io**: Used to manually draw and edit custom boat and ferry routes, and export them as GeoJSON files.
 - **GeoJSON**: As the primary format for encoding geographic data structures, enabling seamless integration with mapping libraries.
 
 The backend, powered by **Python**, processes data from multiple sources, including APIs, Google Sheets, and CSV files. Google Sheets serves as a flexible data management layer. Data Dictionary [here](data_dictionary.md). The map includes custom markers, activity layers, and photo popups, creating an intuitive and visually rich user experience.
@@ -78,6 +79,7 @@ The website is hosted on GitHub Pages and can be accessed [here](https://johbry1
 - [Nominatim Documentation](https://nominatim.org/release-docs/latest/)
 - [OpenRouteService API Documentation](https://openrouteservice.org/documentation/)
 - [GeographicLib Documentation](https://geographiclib.sourceforge.io/)
+- [geojson.io](https://geojson.io/)
 - [GeoJSON Specification](https://geojson.org/)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [MIT License](https://opensource.org/licenses/MIT)
