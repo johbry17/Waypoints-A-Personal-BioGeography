@@ -2,8 +2,54 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2025-04-05T02:27:09Z",
+  "timestamp": "2025-04-12T09:01:45Z",
   "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/83589227",
+        "name": "Ruta Sierpe - Bahía Drake",
+        "route": "ferry"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.6667795,
+            8.6905398
+          ],
+          [
+            -83.6668932,
+            8.6908524
+          ],
+          [
+            -83.6669576,
+            8.6911666
+          ],
+          [
+            -83.666904,
+            8.6917287
+          ],
+          [
+            -83.661325,
+            8.7053779
+          ],
+          [
+            -83.6537719,
+            8.7401615
+          ],
+          [
+            -83.651712,
+            8.7533954
+          ],
+          [
+            -83.6481071,
+            8.7691736
+          ]
+        ]
+      },
+      "id": "way/83589227"
+    },
     {
       "type": "Feature",
       "properties": {

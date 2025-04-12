@@ -1,9 +1,9 @@
 activity_id,name,location,lat,lng,activity_type,route_path,description,notes,photo_album,photos
 0c39a14a-6cdf-4525-afba-71df9e6a13ef,Jay Peak,Jay Peak,44.9242294,-72.5256931,skiing,,,,,
 a19730a9-0b4e-4495-ac12-3953076c45bc,"North Shore, St John","North Shore, St John",18.3648379,-64.7436297,snorkeling,,,,,
-81b604f5-4eb3-4d4a-ad60-97edcd43768c,Rio Pacuare,Rio Pacuare,9.9428498,-83.5347444,whitewater_rafting,,,,,
+81b604f5-4eb3-4d4a-ad60-97edcd43768c,Rio Pacuare,Rio Pacuare,9.950833,-83.545868,whitewater_rafting,boat_pacuare.geojson,,,,
 c6c0cc70-8d00-4297-ba82-47aff8260f5e,Mt Washington,Mt Washington,44.2704946,-71.3033045,hiking,,,,,
-d97f3dbd-3ec6-47ef-a5e8-758ecd1b741a,Cerro Chirripo,Cerro Chirripo,9.4843073,-83.4885816,hiking,hike_chirripo.geojson,,,,
+d97f3dbd-3ec6-47ef-a5e8-758ecd1b741a,Cerro Chirripo,Cerro Chirripo,9.491428,-83.491665,hiking,hike_chirripo.geojson,,,,
 2cf57391-7925-4c70-a488-a3604c596f19,Corcovado,Corcovado,8.548,-83.586,hiking,hike_corcovado.geojson,,,,
 e1187797-ac10-45e8-856f-0ff70aad7982,Ometepe,Ometepe,11.5390087,-85.6225811,hiking,,,"True to form, I hiked this volcano in flip-flops. The guide's consternation gave way to grudging respect",,
 7200b974-3244-49a7-9164-85a8981d63e4,Volcan Tajumulco,Volcan Tajumulco,15.0430989,-91.903608,hiking,,,,,
