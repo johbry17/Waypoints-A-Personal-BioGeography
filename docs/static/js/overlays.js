@@ -326,8 +326,8 @@ function createRouteLayers(routeData) {
       );
   });
 
-  // create parent layer for routes, add all sublayers
-  const routeLayer = L.layerGroup(Object.values(layers));
+  // assign parent layer to global constant (for popup zoom), add all sublayers
+  routeLayer = L.layerGroup(Object.values(layers));
   return {
     routeLayer,
     sublayers: {
