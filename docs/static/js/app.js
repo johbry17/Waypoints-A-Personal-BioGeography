@@ -41,6 +41,7 @@ function handleFetchResponseCSV(response) {
 function initializeMap() {
   // call modal function
   setupWelcomeModal();
+  setupAboutModal();
 
   // get data and call functions to create map and layers
   fetchData()
@@ -175,27 +176,106 @@ function addResetButton(map, initialBounds) {
 
 // add About button to map
 function addAboutButton(map) {
-    // Custom About button control
   const aboutButton = L.control({ position: "topleft" });
 
-  aboutButton.onAdd = () =>{
-      // Create a container for the button
-      const button = L.DomUtil.create("button", "about-button");
-      button.innerHTML = `<a href="https://johbry17.github.io/portfolio/templates/waypoints.html" target="_blank" title="About">
-                                <i class="fas fa-info-circle"></i>
-                              </a>`;
-      button.title = "About"; // tooltip text
+  aboutButton.onAdd = () => {
+    const button = L.DomUtil.create("button", "about-button");
+    button.innerHTML = `<i class="fas fa-info-circle"></i>`;
+    button.title = "About";
+    button.onclick = openModal;
+    L.DomEvent.disableClickPropagation(button);
+    return button;
+  };
 
-      // prevent map interactions when clicking the button
-      L.DomEvent.disableClickPropagation(button);
-
-      return button;
-    },
-
-  aboutButton.addTo(map); // add to map
+  aboutButton.addTo(map);
 }
 
-// add legend
+// opens the about modal
+function openModal() {
+  // close welcome modal if open
+  const welcomeModal = document.getElementById("welcome-modal");
+  if (welcomeModal && welcomeModal.style.display === "flex") {
+    welcomeModal.style.display = "none";
+  }
+
+  // display about modal, add route legend styles
+  document.getElementById("aboutModal").style.display = "flex";
+  applyLegendStyles(routeStyles);
+}
+
+// // closes the about modal with the 'X' button
+// function closeModal() {
+//   document.getElementById("aboutModal").style.display = "none";
+// }
+
+// closes modal when clicking outside of the modal content
+function setupAboutModal() {
+  const modal = document.getElementById("aboutModal");
+
+  // Close modal on click
+  modal.addEventListener("click", (event) => {
+    // Ensure only clicks outside the modal content close it
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
+function applyLegendStyles(routeStyles) {
+  const legendItems = document.querySelectorAll(".custom-legend-item");
+
+  legendItems.forEach((item) => {
+    const routeType = item.getAttribute("data-route");
+    const style = routeStyles[routeType] || routeStyles.default;
+
+    // color the icon
+    const icon = item.querySelector(".custom-legend-icon");
+    if (icon) {
+      icon.style.color = style.color;
+    }
+
+    // create, color, and dash style the line
+    const lineContainer = item.querySelector(".custom-legend-line");
+    if (lineContainer) {
+      // clear any existing content
+      lineContainer.innerHTML = "";
+
+      // create SVG element
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("width", "100%");
+      svg.setAttribute("height", "10");
+      svg.setAttribute("viewBox", "0 0 100 10");
+
+      // create the line
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", "0");
+      line.setAttribute("y1", "5");
+      line.setAttribute("x2", "100");
+      line.setAttribute("y2", "5");
+      line.setAttribute("stroke", style.color);
+      line.setAttribute("stroke-width", style.weight);
+      if (style.dashArray) {
+        line.setAttribute("stroke-dasharray", style.dashArray);
+      }
+
+      // append the line to the SVG
+      svg.appendChild(line);
+
+      // append the SVG to the line container
+      lineContainer.appendChild(svg);
+    }
+  });
+}
+
+// sets the copyright year in the About modal
+document.addEventListener("DOMContentLoaded", () => {
+  const yearElement = document.getElementById("current-year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+});
+
+// add main map legend
 function addLegend() {
   const legend = L.control({ position: "bottomright" });
   legend.onAdd = () => {

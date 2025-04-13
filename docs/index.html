@@ -71,7 +71,6 @@
           </p> -->
           </p>
         </div>
-
         <div class="modal-footer">
           <p>
             <i class="fas fa-hand-pointer"></i><br />Tap / click to continue
@@ -95,7 +94,7 @@
       <div><i class="fas fa-home home-icon"></i> Residence</div>
       <div><i class="fas fa-graduation-cap school-icon"></i> Academic</div>
       <div><i class="fas fa-globe globe-icon"></i> Other</div>
-      <p>Markers scaled<br>by life imprint</p>
+      <p>Markers scaled<br />by life imprint</p>
     </div>
 
     <!-- photo carousel for popups -->
@@ -122,6 +121,146 @@
         </div>
       </div>
     </template>
+
+    <!-- About modal -->
+    <div id="aboutModal" class="modal">
+      <div class="modal-content">
+        <!-- <span class="close-button" onclick="closeModal()">&times;</span> -->
+        <div class="modal-header">
+          <h1>About</h1>
+          <span class="fa-stack modal-transition">
+            <i class="fas fa-circle fa-stack-1x modal-body-icon"></i>
+            <i class="mdi mdi-earth fa-stack-1x fa-inverse modal-body-icon"></i>
+          </span>
+        </div>
+
+        <div id="route-legend" class="custom-legend">
+          <h4 class="custom-legend-text">Route Legend</h4>
+          <div class="custom-legend-item" data-route="plane">
+            <i class="fas fa-plane custom-legend-icon"></i>
+            <span class="custom-legend-text">Planes</span>
+            <div class="custom-legend-line"></div>
+          </div>
+          <div class="custom-legend-item" data-route="train">
+            <i class="fas fa-train custom-legend-icon"></i>
+            <span class="custom-legend-text">Trains</span>
+            <div class="custom-legend-line"></div>
+          </div>
+          <div class="custom-legend-item" data-route="auto">
+            <i class="fas fa-car custom-legend-icon"></i>
+            <span class="custom-legend-text">Automobiles</span>
+            <div class="custom-legend-line"></div>
+          </div>
+          <div class="custom-legend-item" data-route="boat">
+            <i class="fas fa-ship custom-legend-icon"></i>
+            <span class="custom-legend-text">Boats</span>
+            <div class="custom-legend-line"></div>
+          </div>
+          <div class="custom-legend-item" data-route="hike">
+            <i class="fas fa-hiking custom-legend-icon"></i>
+            <span class="custom-legend-text">Hikes</span>
+            <div class="custom-legend-line"></div>
+          </div>
+        </div>
+
+        <p>
+          Check out my
+          <a
+            href="https://johbry17.github.io/portfolio/templates/waypoints.html"
+            target="_blank"
+            >portfolio</a
+          >
+          for more details.
+        </p>
+        <p>
+          I like maps. I like photos. And I like building things that challenge
+          me. This project was all three.
+        </p>
+        <p>
+          What I thought would be a straightforward photo map turned into a wild
+          goose chase through the digital backwaters of the internet. I spent
+          countless hours gathering routes — by road, rail, boat, and foot —
+          finding or generating GeoJSON's, even drawing some by hand when all
+          else failed.
+        </p>
+        <p>
+          Though this is more a data visualization than a deep analysis, a few
+          patterns emerged. The longer I live somewhere, the fewer pictures I
+          tend to take. Long-term stays result in chaotic, sparse photo reels.
+          Short trips, by contrast, often tell a story—photos ordered almost
+          chronologically, capturing a clearer narrative.
+        </p>
+        <p>
+          There are lots of animals, a few kids, not many selfies. I take too
+          few photos of the people who matter. But when they are in the frame,
+          the energy changes. The trips feel warmer, more memorable.
+        </p>
+        <p>
+          One day, I hope to live abroad again. Until then, this project has
+          been a meaningful way to revisit old memories and explore my travels
+          in a new way. Really get some mileage out of these memories. I hope
+          you enjoy exploring it as much as I did creating it.
+        </p>
+
+        <h3>How It Was Built</h3>
+        <p>
+          <a href="https://www.openstreetmap.org/" target="_blank"
+            >OpenStreetMap</a
+          >
+          – Base map and reference data.
+        </p>
+        <p>
+          <a href="https://openrouteservice.org/" target="_blank"
+            >OpenRouteService</a
+          >
+          – Auto-generated road routes between destinations.
+        </p>
+        <p>
+          <a href="https://overpass-turbo.eu/" target="_blank"
+            >Overpass Turbo</a
+          >
+          – Extracted hiking trails, railways, and ferry routes from OSM.
+        </p>
+        <p>
+          <a href="https://www.npmjs.com/package/geodesic" target="_blank"
+            >Geodesic</a
+          >
+          – Created great circle paths for flights.
+        </p>
+        <p>
+          <a href="https://geojson.io/" target="_blank">geojson.io</a> –
+          Manually drew custom GeoJSON routes when data was missing.
+        </p>
+        <p>
+          <a href="https://nominatim.openstreetmap.org/" target="_blank"
+            >Nominatim</a
+          >
+          – Used to geocode coordinates and name locations.
+        </p>
+        <p>
+          <a href="https://leafletjs.com/" target="_blank">Leaflet</a> –
+          JavaScript library for interactive maps.
+        </p>
+        <p>
+          Last but not least, a few epic marathons of ruthlessly sorting through
+          thousands of photos. What began with good intentions soon became a
+          Sisyphean task of brutal, lightning-round photo culling frenzies —
+          like speed-dating with my past, swiping left on blurry sunsets.
+        </p>
+
+        <span class="fa-stack modal-transition">
+          <i class="fas fa-circle fa-stack-1x modal-body-icon"></i>
+          <i class="mdi mdi-earth fa-stack-1x fa-inverse modal-body-icon"></i>
+        </span>
+        <p>
+          &copy; <span id="current-year">2025</span> Bryan Johns. All rights
+          reserved. All images are protected under copyright law. They may not
+          be copied, modified, or distributed without explicit written
+          permission. If you appear in any of the photos and would like them
+          removed, please contact me at bryan.johns.official@gmail.com.
+        </p>
+      </div>
+    </div>
 
     <!-- Leaflet -->
     <script

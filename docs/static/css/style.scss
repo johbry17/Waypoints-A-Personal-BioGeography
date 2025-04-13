@@ -44,13 +44,33 @@ html,
     padding: 20px;
     border: 3px solid $primary-color;
     border-radius: $border-radius;
+    box-shadow: $box-shadow;
     text-align: center;
     max-width: 600px;
     width: 80%;
-    box-shadow: $box-shadow;
+    max-height: 80vh;
     overflow-y: auto; // scrollbar if content overflows height
-    z-index: 1000;
+    z-index: 1001;
 
+    // // 'X' close button
+    // .close-button {
+    //   position: absolute;
+    //   top: 10px;
+    //   right: 10px;
+    //   color: #aaa;
+    //   float: right;
+    //   font-size: 28px;
+    //   font-weight: bold;
+    //   cursor: pointer;
+    // }
+
+    // .close-button:hover,
+    // .close-button:focus {
+    //   color: black;
+    //   text-decoration: none;
+    // }
+
+    // modal header
     .modal-header {
       text-align: center;
 
@@ -72,6 +92,7 @@ html,
       }
     }
 
+    // modal body
     #modal-body {
       font-size: 1rem;
       color: $text-color;
@@ -110,6 +131,7 @@ html,
       }
     }
 
+    // modal footer
     .modal-footer {
       font-size: 0.9rem;
       color: $activity-color;
@@ -223,11 +245,45 @@ html,
     font-weight: bold;
     margin: 0 0 10px 0;
     text-decoration: underline;
+    // color: $activity-color;
+    color: $primary-color;
   }
 
   .legend-mini-text {
     font-size: 10px;
   }
+
+  .custom-legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    vertical-align: middle; 
+  }
+
+  .custom-legend-icon {
+    margin-right: 8px;
+    font-size: 16px;
+    vertical-align: middle; 
+  }
+
+  .custom-legend-text {
+    margin-right: 8px;
+    font-size: 12px; // match text size to icon size
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  .custom-legend-line {
+    flex-grow: 1;
+    height: 12px; // match heght of text for vertical alignment
+    margin-left: 0;
+  }
+}
+
+// limit route legend width
+#route-legend {
+  margin: 0 auto;
+  max-width: 150px;
 }
 
 // mobile responsive legend
@@ -243,9 +299,9 @@ html,
   }
 }
 
-// move legend to bottom-left for landscape orientation on mobile devices
+// move map legend to bottom-left for landscape orientation on mobile devices
 @media (orientation: landscape) and (max-width: 768px) {
-  .custom-legend {
+  #map-legend {
     position: fixed;
     bottom: 10px;
     left: 10px;
@@ -451,7 +507,8 @@ h4 {
   justify-content: center;
   gap: 5px; // spacing between icon and text
   box-shadow: $box-shadow;
-  transition: background-color $transition-duration, transform $transition-duration;
+  transition: background-color $transition-duration,
+    transform $transition-duration;
 
   i {
     font-size: 14px;
