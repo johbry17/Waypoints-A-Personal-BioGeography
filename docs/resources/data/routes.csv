@@ -127,7 +127,7 @@ a41706a9-ce89-4d3d-8dcd-2374682e7c8c,"Lincoln City, OR","Crescent City, CA",auto
 a566bafe-02e3-4367-ad77-a007a0617184,Edinburgh,Stirling,auto,a566bafe-02e3-4367-ad77-a007a0617184.geojson
 e314d2c3-8c23-497f-bd72-eb22123aaf6a,Stirling,"Mallaig, UK",auto,e314d2c3-8c23-497f-bd72-eb22123aaf6a.geojson
 b3e3e70a-4379-4558-94b6-670f7fa2bd3a,"Mallaig, UK","Fort William, UK",auto,b3e3e70a-4379-4558-94b6-670f7fa2bd3a.geojson
-6299c7a1-4f85-4dfe-8756-c8072b99d6f5,"Mallaig, UK",Inverness,auto,6299c7a1-4f85-4dfe-8756-c8072b99d6f5.geojson
+6299c7a1-4f85-4dfe-8756-c8072b99d6f5,"Fort William, UK",Alltsigh,auto,6299c7a1-4f85-4dfe-8756-c8072b99d6f5.geojson
 c048b615-7f61-41c9-a9d7-e1f5d41bca54,Kyle of Lochalsh,Garrafad,auto,c048b615-7f61-41c9-a9d7-e1f5d41bca54.geojson
 dd52c565-17e0-4437-a6ab-ebcd6fff364d,Kyle of Lochalsh,Rubha Phoil,auto,dd52c565-17e0-4437-a6ab-ebcd6fff364d.geojson
 aca22bf2-4129-4d8b-95a6-587cd0f94264,"Mallaig, UK",Isle of Skye,boat,boat_mallaig_ferry.geojson
@@ -272,3 +272,4 @@ e84782a5-c23a-451c-97e9-d092e3ec5137,"Kalalau Trail, Kauai","Kalalau Trail, Kaua
 bbf89ef7-7cca-4d12-b86d-120777a6af95,Agra,Raipur,train,train_agra_raipur.geojson
 8e28a6bf-ab2d-413a-9199-7abbeb4a40fc,Visapkhapatnam,Visakhapatnam,train,train_visakhapatnam.geojson
 f17e580a-d9ca-491a-aefa-3e5ce962be91,Jaipur,Sawai Madhopur,train,train_jaipur_mumbai_line.geojson
+d0ca0888-102f-41fc-8066-7777b42f35e5,Alltsigh,Inverness,auto,d0ca0888-102f-41fc-8066-7777b42f35e5.geojson
