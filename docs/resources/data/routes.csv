@@ -207,7 +207,7 @@ eb8da18f-39ec-4c3f-b58e-cdff0e3339fd,"Minero Núm. 1, 23210 El Triunfo, B.C.S., 
 c7627250-b8d7-41d0-b4e4-cdb1f43d7281,"La Paz, Mexico","Isla Lobos, B.C.S., Mexico",boat,boat_baja_espiritu_santo.geojson
 44f0dad1-36d4-4737-9e54-fc85eed80bd3,"Cabo Pulmo, Mexico","Cabo Pulmo, Mexico",hike,hike_cabo_pulmo.geojson
 92075b2b-709e-42a7-89fc-1b56ec351879,Olympic Hot Springs,Olympic Hot Springs,hike,hike_olympic_hot_springs.geojson
-516ff302-47ee-435d-9ed6-975f273a29d0,Olympia,Elwha,auto,516ff302-47ee-435d-9ed6-975f273a29d0.geojson
+516ff302-47ee-435d-9ed6-975f273a29d0,Olympia,Madison Falls Ranger Station,auto,516ff302-47ee-435d-9ed6-975f273a29d0.geojson
 fd36624b-79ff-4538-a77f-599b8772e65e,Olympia,"Ocean Park, WA",auto,fd36624b-79ff-4538-a77f-599b8772e65e.geojson
 c1ca3860-784d-4ed7-9272-28649b755230,Olympia,"MQJ8+V5 Anglin, Washington",auto,c1ca3860-784d-4ed7-9272-28649b755230.geojson
 b393c484-8e0b-46f2-941a-92c5814cfe4c,Mukilteo,Whidbey,boat,boat_whidbey.geojson
@@ -273,3 +273,4 @@ bbf89ef7-7cca-4d12-b86d-120777a6af95,Agra,Raipur,train,train_agra_raipur.geojson
 8e28a6bf-ab2d-413a-9199-7abbeb4a40fc,Visapkhapatnam,Visakhapatnam,train,train_visakhapatnam.geojson
 f17e580a-d9ca-491a-aefa-3e5ce962be91,Jaipur,Sawai Madhopur,train,train_jaipur_mumbai_line.geojson
 d0ca0888-102f-41fc-8066-7777b42f35e5,Alltsigh,Inverness,auto,d0ca0888-102f-41fc-8066-7777b42f35e5.geojson
+d2d650a7-0048-4357-832e-4e09b909f6e4,Seattle,Mukilteo Ferry Terminal,auto,d2d650a7-0048-4357-832e-4e09b909f6e4.geojson
