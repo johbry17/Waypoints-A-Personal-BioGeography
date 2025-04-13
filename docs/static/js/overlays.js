@@ -263,62 +263,62 @@ function addActivityMarkers(activityData) {
 
 //////////////////////////////////////////////////////////
 
+// centralized route styles
+const routeStyles = {
+  hike: { color: "#228B22", dashArray: null, weight: 4 }, // solid green
+  boat: { color: "#1E90FF", dashArray: "1, 4", weight: 4 }, // dotted blue
+  train: { color: "#8B0000", dashArray: "1, 6", weight: 4 }, // dashed red
+  auto: { color: "#FF8C00", dashArray: null, weight: 2 }, // solid orange
+  // plane: { color: "#00FFFF", dashArray: "20, 10", weight: 1.5 }, // long dashed cyan
+  // plane: { color: "#FFD700", dashArray: "20, 10", weight: 1.5 }, // long dashed yellow
+  // plane: { color: "#00FFFF", dashArray: "10, 5, 2, 5", weight: 1.5 }, // dash-dot cyan
+  plane: { color: "#FFD700", dashArray: "10, 5, 2, 5", weight: 1.5 }, // dash-dot yellow
+  default: { color: "#000000", dashArray: null, weight: 2 }, // solid black
+};
+
+// assign color and shape based on transport mode
+function getRouteStyle(routeType) {
+  return routeStyles[routeType] || routeStyles.default;
+}
+
 function createRouteLayers(routeData) {
   // sublayers for each route type
-  const hikingLayer = L.layerGroup();
-  const boatLayer = L.layerGroup();
-  const trainLayer = L.layerGroup();
-  const autoLayer = L.layerGroup();
-  const planeLayer = L.layerGroup();
+  const layers = {
+    hike: L.layerGroup(),
+    boat: L.layerGroup(),
+    train: L.layerGroup(),
+    auto: L.layerGroup(),
+    plane: L.layerGroup(),
+  };
 
   // load polylines for each route type
   routeData.forEach((route) => {
-    // get file path for geoJSON
+    // get file path for geoJSON and fetch data
     const filePath = `resources/geojson/${route.filename}`;
-
-    // fetch route data from GeoJSON
     fetch(filePath)
       .then((response) => response.json())
       .then((geojson) => {
         // triple the routes for international date line crossing
         const tripledGeoJSONs = tripledRoutes(geojson);
-        // assign color and dashArray based on transport mode
-        const { color, dashArray, weight } = getRouteStyle(
-          route.transport_mode
-        );
+        // get color, weight, and dashArray based on transport mode
+        const style = getRouteStyle(route.transport_mode);
         // set style for the route polylines
         tripledGeoJSONs.forEach((tripledGeoJSON) => {
           const polyline = L.geoJSON(tripledGeoJSON, {
             // exclude points from the route, the map marker (for some train routes)
             filter: (feature) => feature.geometry.type !== "Point",
             style: {
-              color: color,
-              weight: weight,
+              color: style.color,
+              weight: style.weight,
               opacity: 0.8,
-              dashArray: dashArray,
+              dashArray: style.dashArray,
               lineCap: "round",
               lineJoin: "round",
             },
           });
 
           // add routes to respective layers
-          switch (route.transport_mode) {
-            case "hike":
-              hikingLayer.addLayer(polyline);
-              break;
-            case "boat":
-              boatLayer.addLayer(polyline);
-              break;
-            case "train":
-              trainLayer.addLayer(polyline);
-              break;
-            case "auto":
-              autoLayer.addLayer(polyline);
-              break;
-            case "plane":
-              planeLayer.addLayer(polyline);
-              break;
-          }
+          layers[route.transport_mode]?.addLayer(polyline);
         });
       })
       .catch((error) =>
@@ -327,47 +327,17 @@ function createRouteLayers(routeData) {
   });
 
   // create parent layer for routes, add all sublayers
-  routeLayer = L.layerGroup([
-    hikingLayer,
-    boatLayer,
-    trainLayer,
-    autoLayer,
-    planeLayer,
-  ]);
-
+  const routeLayer = L.layerGroup(Object.values(layers));
   return {
     routeLayer,
     sublayers: {
-      '<i class="fas fa-plane"></i> Planes': planeLayer,
-      '<i class="fas fa-train"></i> Trains': trainLayer,
-      '<i class="fas fa-car"></i> Autos': autoLayer,
-      '<i class="fas fa-ship"></i> Boats': boatLayer,
-      '<i class="fas fa-hiking"></i> Hikes': hikingLayer,
+      '<i class="fas fa-plane"></i>': layers.plane,
+      '<i class="fas fa-train"></i>': layers.train,
+      '<i class="fas fa-car"></i>': layers.auto,
+      '<i class="fas fa-ship"></i>': layers.boat,
+      '<i class="fas fa-hiking"></i>': layers.hike,
     },
   };
-}
-
-// assign color and shape based on transport mode
-function getRouteStyle(routeType) {
-  switch (routeType) {
-    case "hike":
-      // return { color: "#228B22", dashArray: "5, 5", weight: 4 }; // dashed green
-      // return { color: "#32CD32", dashArray: null, weight: 4 }; // solid lime green
-      return { color: "#228B22", dashArray: null, weight: 4 }; // solid green
-    case "boat":
-      return { color: "#1E90FF", dashArray: "1, 4", weight: 4 }; // dotted blue
-    // return { color: "#1E90FF", dashArray: null, weight: 4 }; // solid blue
-    case "train":
-      // return { color: "#8B0000", dashArray: "10, 5, 2, 5", weight: 4 }; // dash-dot red
-      return { color: "#8B0000", dashArray: "1, 6", weight: 4 };
-    case "auto":
-      return { color: "#FF8C00", dashArray: null, weight: 2 }; // solid orange
-    case "plane":
-      return { color: "#00FFFF", dashArray: "20, 10", weight: 1.5 }; // long dashed cyan
-    // return { color: "#FFD700", dashArray: "20, 10", weight: 1.5 }; // long dashed yellow
-    default:
-      return { color: "#000000", dashArray: null, weight: 2 }; // solid black line default
-  }
 }
 
 // triple routes for international date line crossing
