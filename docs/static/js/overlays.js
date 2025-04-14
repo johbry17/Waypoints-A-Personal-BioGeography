@@ -124,7 +124,7 @@ function createPopupContent(place) {
     ? capitalizeWords(place.activity_type.replace("_", " "))
     : "";
   const iconClass = isActivity
-    ? activityIcons[place.activity_type.toLowerCase()] || "fa-map-marker"
+    ? activityIcons[place.activity_type.toLowerCase()] || "fas fa-map-marker"
     : "";
 
   // regular marker icons, if applicable
@@ -204,6 +204,7 @@ const activityIcons = {
   kayaking: "mdi mdi-kayaking",
   tubing: "fas fa-life-ring",
   meditation: "mdi mdi-meditation",
+  safari: "fas fa-binoculars",
 };
 
 // add activity markers
@@ -243,7 +244,7 @@ function addActivityMarkers(activityData) {
     const marker = L.marker([activity.lat, activity.lng], {
       icon: L.divIcon({
         html: `<span class="fa-stack fa-lg activity-icon-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="${
-          activityIcons[activity.activity_type.toLowerCase()] || "fa-map-marker"
+          activityIcons[activity.activity_type.toLowerCase()] || "fas fa-map-marker"
         } fa-stack-1x fa-inverse"></i></span>`,
         className: "activity-icon",
         iconSize: [20, 20],
