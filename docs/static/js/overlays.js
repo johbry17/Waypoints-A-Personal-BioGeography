@@ -121,7 +121,7 @@ function createPopupContent(place) {
   // for activity markers, format text and icon
   const isActivity = !!place.activity_type; // boolean check for activity type
   const formattedActivityType = isActivity
-    ? capitalizeWords(place.activity_type.replace("_", " "))
+    ? capitalizeWords(place.activity_type)
     : "";
   const iconClass = isActivity
     ? activityIcons[place.activity_type.toLowerCase()] || "fas fa-map-marker"
@@ -198,7 +198,7 @@ function createPopupContent(place) {
 const activityIcons = {
   skiing: "fas fa-skiing",
   snorkeling: "fas fa-swimmer",
-  whitewater_rafting: "fas fa-water",
+  "whitewater rafting": "fas fa-water",
   hiking: "fas fa-hiking",
   paragliding: "fas fa-parachute-box",
   kayaking: "mdi mdi-kayaking",
@@ -242,11 +242,16 @@ function addActivityMarkers(activityData) {
 
   // add markers to the activity layer
   tripledActivities.forEach((activity) => {
+    const iconClass =
+      activityIcons[
+        activity.activity_type.toLowerCase() || "fas fa-map-marker"
+      ];
     const marker = L.marker([activity.lat, activity.lng], {
       icon: L.divIcon({
-        html: `<span class="fa-stack fa-lg activity-icon-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="${
-          activityIcons[activity.activity_type.toLowerCase()] || "fas fa-map-marker"
-        } fa-stack-1x fa-inverse"></i></span>`,
+        html: `<span class="fa-stack fa-lg activity-icon-stack">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="${iconClass} fa-stack-1x fa-inverse"></i>
+        </span>`,
         className: "activity-icon",
         iconSize: [20, 20],
         iconAnchor: [10, 10],
