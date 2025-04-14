@@ -274,3 +274,6 @@ bbf89ef7-7cca-4d12-b86d-120777a6af95,Agra,Raipur,train,train_agra_raipur.geojson
 f17e580a-d9ca-491a-aefa-3e5ce962be91,Jaipur,Sawai Madhopur,train,train_jaipur_mumbai_line.geojson
 d0ca0888-102f-41fc-8066-7777b42f35e5,Alltsigh,Inverness,auto,d0ca0888-102f-41fc-8066-7777b42f35e5.geojson
 d2d650a7-0048-4357-832e-4e09b909f6e4,Seattle,Mukilteo Ferry Terminal,auto,d2d650a7-0048-4357-832e-4e09b909f6e4.geojson
+6e5f95e9-8d96-4d16-b2b3-a015f8ebbfbb,Ometepe,Ometepe,hike,hike_ometepe.geojson
+2328d12c-6cd0-442d-a9d9-54d4b376e48a,Volcan Tajumulco,Volcan Tajumulco,hike,hike_tajumulco.geojson
+2b9f5d1b-dbde-4a3f-a4df-675f09d6fae4,"Manzanillo, Costa Rica","Manzanillo, Costa Rica",hike,hike_costa_rica_manzanillo.geojson
