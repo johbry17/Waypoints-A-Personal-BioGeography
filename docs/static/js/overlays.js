@@ -204,7 +204,8 @@ const activityIcons = {
   kayaking: "mdi mdi-kayaking",
   tubing: "fas fa-life-ring",
   meditation: "mdi mdi-meditation",
-  safari: "fas fa-binoculars",
+  safari: "fas fa-paw",
+  "scenic flight": "mdi mdi-airplane",
 };
 
 // add activity markers

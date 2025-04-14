@@ -1,18 +1,18 @@
 {
     "type": "FeatureCollection",
     "bbox": [
-        17.148102,
-        -26.484428,
-        17.148102,
-        -26.484428
+        15.803792,
+        -24.491386,
+        15.803792,
+        -24.491386
     ],
     "features": [
         {
             "bbox": [
-                17.148102,
-                -26.484428,
-                17.148102,
-                -26.484428
+                15.803792,
+                -24.491386,
+                15.803792,
+                -24.491386
             ],
             "type": "Feature",
             "properties": {
@@ -44,8 +44,8 @@
             "geometry": {
                 "coordinates": [
                     [
-                        17.148102,
-                        -26.484428
+                        15.803792,
+                        -24.491386
                     ]
                 ],
                 "type": "LineString"
@@ -55,16 +55,16 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744635162611,
+        "timestamp": 1744634126999,
         "query": {
             "coordinates": [
                 [
-                    17.15,
-                    -26.48333
+                    15.803785,
+                    -24.491391
                 ],
                 [
-                    17.15,
-                    -26.48333
+                    15.803785,
+                    -24.491391
                 ]
             ],
             "profile": "driving-car",

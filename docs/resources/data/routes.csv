@@ -85,10 +85,10 @@ ad81aa5a-f468-4a96-85d8-b098276867d0,Chennai Airport,Bangalore Airport,plane,gre
 1b30a2d6-87f3-412c-8374-c4aa435fc8ae,Cape Town Airport,"Lome Airport, Togo",plane,great_circle_route_83.geojson
 16a05482-7e13-4f70-bf4b-2d9e8883d81c,"Lome Airport, Togo",Dulles International Airport,plane,great_circle_route_84.geojson
 4336c9de-3863-410c-9617-d06a7d8b80bf,Cape Town,Lambert's Bay,auto,4336c9de-3863-410c-9617-d06a7d8b80bf.geojson
-fc1b0344-6e70-4067-b91d-f22067fea436,Lambert's Bay,"Norotshama River Resort, Namibia",auto,fc1b0344-6e70-4067-b91d-f22067fea436.geojson
-5fa4a264-41a8-443d-bdc7-25d4d096040b,"Norotshama River Resort, Namibia","Bethanien, Namibia",auto,5fa4a264-41a8-443d-bdc7-25d4d096040b.geojson
+fc1b0344-6e70-4067-b91d-f22067fea436,Lambert's Bay,N7 to Noordoewer Border Post,auto,fc1b0344-6e70-4067-b91d-f22067fea436.geojson
+5fa4a264-41a8-443d-bdc7-25d4d096040b,"Norotshama River Resort, Namibia",Fish River Canyon,auto,5fa4a264-41a8-443d-bdc7-25d4d096040b.geojson
 6b2f664f-abef-4c80-81b8-4c650bb8b4ca,"Bethanien, Namibia",Keetmanshoop,auto,6b2f664f-abef-4c80-81b8-4c650bb8b4ca.geojson
-360c8882-f2c4-449b-8ec1-e2b5fbad2cd8,Keetmanshoop,Sesriem,auto,360c8882-f2c4-449b-8ec1-e2b5fbad2cd8.geojson
+360c8882-f2c4-449b-8ec1-e2b5fbad2cd8,"Bethanien, Namibia","Bethanien, Namibia",auto,360c8882-f2c4-449b-8ec1-e2b5fbad2cd8.geojson
 09e68fa5-7036-4bc3-9e1b-d6b0517b5ff2,Sesriem,Walvis Bay,auto,09e68fa5-7036-4bc3-9e1b-d6b0517b5ff2.geojson
 70c145dd-917d-4d16-8484-41dc5a98d031,Walvis Bay,Swakopmund,auto,70c145dd-917d-4d16-8484-41dc5a98d031.geojson
 a8f3f8bc-b9c9-4c70-9416-79ecc51b1600,Swakopmund,Okaukuejo,auto,a8f3f8bc-b9c9-4c70-9416-79ecc51b1600.geojson
@@ -280,3 +280,16 @@ d2d650a7-0048-4357-832e-4e09b909f6e4,Seattle,Mukilteo Ferry Terminal,auto,d2d650
 6f77df80-6f50-431c-96d4-fc271c333ede,Mt Washington,Mt Washington,hike,hike_mt_washington_tuckermans_ravine.geojson
 325c72c4-2bb0-4e4e-888e-28a77af38699,Echo Lake,Echo Lake,hike,hike_echo_lake.geojson
 3b9a1968-f9b2-4472-8c67-88b693123348,"Denning Rd, Catskills","Peekamoose Blue Hole, Catskills",hike,hike_catskills_blue_hole.geojson
+56c166d1-bd65-4629-8d02-333343b25567,Fish River Canyon,Keetmanshoop,auto,56c166d1-bd65-4629-8d02-333343b25567.geojson
+693a5624-1954-4f70-aadd-53d5710b61b7,Noordoewer Border Post,"Norotshama River Resort, Namibia",auto,693a5624-1954-4f70-aadd-53d5710b61b7.geojson
+54be9104-b3f0-4b49-9256-a0a74dc2b33b,N7 to Noordoewer Border Post,N7 again to Noordoewer Border Post,auto,54be9104-b3f0-4b49-9256-a0a74dc2b33b.geojson
+fee90f27-0067-4519-a25a-3ca12c1c7944,N7 again to Noordoewer Border Post,Border Posts - Vioolsdrift,auto,fee90f27-0067-4519-a25a-3ca12c1c7944.geojson
+ff2752a8-2db6-4082-ab69-7af306cc28b9,Keetmanshoop,Kokerboomwoud,auto,ff2752a8-2db6-4082-ab69-7af306cc28b9.geojson
+88cd0d18-e81c-489f-bad3-8f45b32a0862,Sesriem,Sesriem Canyon,auto,88cd0d18-e81c-489f-bad3-8f45b32a0862.geojson
+b97c1111-3917-4c08-82e4-c407553b3a20,Sesriem,Dune 45,auto,b97c1111-3917-4c08-82e4-c407553b3a20.geojson
+5b4179d0-e455-4abb-8d13-1733fe32a8e3,Dune 45,Deadvlei,auto,5b4179d0-e455-4abb-8d13-1733fe32a8e3.geojson
+a1780442-cf86-48be-8efa-30177c344fc0,Kokerboomwoud,Giant's Playground,auto,a1780442-cf86-48be-8efa-30177c344fc0.geojson
+66e445d5-233f-4882-87e0-8dc6a6bc2714,"Bethanien, Namibia",Helmeringhausen,auto,66e445d5-233f-4882-87e0-8dc6a6bc2714.geojson
+3434656e-fea0-4041-86d8-b9b5c727cf1a,Helmeringhausen,Sesriem,auto,3434656e-fea0-4041-86d8-b9b5c727cf1a.geojson
+09b3f0a8-59cb-4a0a-83ae-47426a493e02,JFK New York Airport,Seattle Airport,plane,great_circle_route_292.geojson
+8b8c9c4b-8b6a-4cb6-b017-18a7d9c19b32,Swakopmund,Skeleton Coast,plane,great_circle_namibia.geojson
