@@ -16,7 +16,7 @@ function fetchData() {
   return Promise.all([
     fetch("resources/data/overview.json").then(handleFetchResponseJSON),
     fetch("resources/data/activity.csv").then(handleFetchResponseCSV),
-    fetch("resources/data/location.csv").then(handleFetchResponseCSV),
+    fetch("resources/data/locations.csv").then(handleFetchResponseCSV),
     fetch("resources/data/routes.csv").then(handleFetchResponseCSV),
   ]);
 }
