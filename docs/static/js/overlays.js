@@ -198,7 +198,7 @@ function createPopupContent(place) {
 const activityIcons = {
   skiing: "fas fa-skiing",
   snorkeling: "fas fa-swimmer",
-  "whitewater rafting": "fas fa-water",
+  "whitewater rafting": "mdi mdi-kayaking",
   hiking: "fas fa-hiking",
   paragliding: "fas fa-parachute-box",
   kayaking: "mdi mdi-kayaking",
