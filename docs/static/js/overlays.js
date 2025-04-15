@@ -51,14 +51,14 @@ function addMarker(place) {
 function createCircleMarker(place) {
   // set marker color based on visit type, radius based on importance
   const isAcademic = place.visit_type === "school";
-  const markerColor = isAcademic ? "#FFB400" : "#4CAF50";
+  const markerColor = isAcademic ? colors.academic : colors.defaultMarker;
   const radius = place.importance * 2;
 
   // create main marker
   const mainMarker = L.circleMarker([place.lat, place.lng], {
     radius,
     color: markerColor,
-    fillColor: "#008A51",
+    fillColor: colors.primaryColor,
     fillOpacity: 0.6,
     weight: 3,
   });
@@ -76,7 +76,7 @@ function createCircleMarker(place) {
   if (place.home) {
     const homeRing = L.circleMarker([place.lat, place.lng], {
       radius: radius + 1,
-      color: "#FF0000",
+      color: colors.homeRing,
       fillColor: "transparent",
       fillOpacity: 0,
       weight: 4,
@@ -135,9 +135,11 @@ function createPopupContent(place) {
     place.name === "Vermont"
       ? '<i class="fas fa-graduation-cap school-icon"></i>'
       : "";
+
+  // set icons
   const icons = !isActivity
     ? `<i class="fas fa-globe globe-icon"></i> ${homeIcon} ${schoolIcon}`
-    : "";
+    : `<i class="${iconClass} activity-icon-stack"></i>`;
 
   // create carousel for photos, if applicable
   const template = document.querySelector("#carousel-template");
@@ -162,7 +164,7 @@ function createPopupContent(place) {
 `;
 
   // set border and arrow tip color by popup type
-  const borderColor = isActivity ? "#0085a1" : "#008a51";
+  const borderColor = isActivity ? colors.activityColor : colors.primaryColor;
 
   return `
         <style>
@@ -177,11 +179,6 @@ function createPopupContent(place) {
         <div class="popup-content">
             <h3>
               ${icons}
-              ${
-                iconClass
-                  ? `<i class="${iconClass} activity-icon-stack"></i>`
-                  : ""
-              }
               ${place.name}
             </h3>
             ${zoomButton}
@@ -193,20 +190,6 @@ function createPopupContent(place) {
 }
 
 //////////////////////////////////////////////////////////
-
-// icon mapping for activity overlay
-const activityIcons = {
-  skiing: "fas fa-skiing",
-  snorkeling: "fas fa-swimmer",
-  "whitewater rafting": "mdi mdi-kayaking",
-  hiking: "fas fa-hiking",
-  paragliding: "fas fa-parachute-box",
-  kayaking: "mdi mdi-kayaking",
-  tubing: "fas fa-life-ring",
-  meditation: "mdi mdi-meditation",
-  safari: "fas fa-paw",
-  "scenic flight": "mdi mdi-airplane",
-};
 
 // add activity markers
 function addActivityMarkers(activityData) {
@@ -242,6 +225,7 @@ function addActivityMarkers(activityData) {
 
   // add markers to the activity layer
   tripledActivities.forEach((activity) => {
+    // load activity icon, or default to map marker icon
     const iconClass =
       activityIcons[
         activity.activity_type.toLowerCase() || "fas fa-map-marker"
@@ -269,19 +253,6 @@ function addActivityMarkers(activityData) {
 }
 
 //////////////////////////////////////////////////////////
-
-// centralized route styles
-const routeStyles = {
-  hike: { color: "#228B22", dashArray: null, weight: 4 }, // solid green
-  boat: { color: "#1E90FF", dashArray: "1, 4", weight: 4 }, // dotted blue
-  train: { color: "#8B0000", dashArray: "1, 6", weight: 4 }, // dashed red
-  auto: { color: "#FF8C00", dashArray: null, weight: 2 }, // solid orange
-  // plane: { color: "#00FFFF", dashArray: "20, 10", weight: 1.5 }, // long dashed cyan
-  // plane: { color: "#FFD700", dashArray: "20, 10", weight: 1.5 }, // long dashed yellow
-  // plane: { color: "#00FFFF", dashArray: "10, 5, 2, 5", weight: 1.5 }, // dash-dot cyan
-  plane: { color: "#FFD700", dashArray: "10, 5, 2, 5", weight: 1.5 }, // dash-dot yellow
-  default: { color: "#000000", dashArray: null, weight: 2 }, // solid black
-};
 
 // assign color and shape based on transport mode
 function getRouteStyle(routeType) {

@@ -7,7 +7,7 @@ $popup-bg-color: #f9f9f9;
 $activity-color: #0085a1;
 $activity-hover-color: #005f73;
 $legend-border-color: #ffd700;
-$icon-hover-color: #0085a1;
+$carousel-control-hover-color: #0085a1;
 $icon-hover-transform: scale(1.2);
 $transition-duration: 0.3s;
 $box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -465,7 +465,7 @@ h4 {
 
       &:hover {
         transform: $icon-hover-transform;
-        color: $icon-hover-color;
+        color: $carousel-control-hover-color;
       }
     }
   }
