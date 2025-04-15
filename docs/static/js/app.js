@@ -118,6 +118,25 @@ function createMap(markers, originalBounds, activities, locations, routes) {
     collapsed: false,
   });
 
+  // add zoom-based visibility control for the locations layer
+  mainMap.on("zoomend", () => {
+    const currentZoom = mainMap.getZoom();
+    console.log("Current Zoom Level:", currentZoom); 
+
+    // show the locations layer only if zoom level is below 10
+    if (currentZoom > 5) {
+      if (!mainMap.hasLayer(locations)) {
+        console.log("Adding locations layer to the map."); // Debugging
+        mainMap.addLayer(locations);
+      }
+    } else {
+      if (mainMap.hasLayer(locations)) {
+        console.log("Removing locations layer from the map."); // Debugging
+        mainMap.removeLayer(locations);
+      }
+    }
+  });
+
   // add legend, map reset and about buttons
   addAboutButton(mainMap);
   addResetButton(mainMap, originalBounds);
