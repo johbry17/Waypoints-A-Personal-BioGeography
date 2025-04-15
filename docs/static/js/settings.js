@@ -1,15 +1,16 @@
-// Description: Contains visualization settings for the map, including route styles and activity icons.
+// Description: Centralizes visualization settings for the map, including route styles and activity icons.
 
-// centralized color settings
+// color settings
 const colors = {
-    defaultMarker: "#4CAF50", // default marker color
-    academic: "#FFB400", // school markers
-    homeRing: "#FF0000", // home ring color
-    primaryColor: "#008A51", // marker fill and popup border
-    activityColor: "#0085a1", // activity popup border
-  };
+  defaultMarker: "#4CAF50", // default marker color
+  academic: "#FFB400", // school markers
+  homeRing: "#FF0000", // home ring color
+  primaryColor: "#008A51", // marker fill and popup border
+  activityColor: "#0085A1", // activity popup border
+  locationColor: "#FF8C00", // location popup border
+};
 
-// centralized route styles for routes overlay
+// route styles for routes overlay
 const routeStyles = {
   hike: { color: "#228B22", dashArray: null, weight: 4 }, // solid green
   boat: { color: "#1E90FF", dashArray: "1, 4", weight: 4 }, // dotted blue
@@ -22,7 +23,7 @@ const routeStyles = {
   default: { color: "#000000", dashArray: null, weight: 2 }, // solid black
 };
 
-// centralized icon mapping for activity overlay
+// icon mapping for activity overlay
 const activityIcons = {
   skiing: "fas fa-skiing",
   snorkeling: "fas fa-swimmer",
@@ -34,4 +35,17 @@ const activityIcons = {
   meditation: "mdi mdi-meditation",
   safari: "fas fa-paw",
   "scenic flight": "mdi mdi-airplane",
+};
+
+// icon mapping for location overlay
+const locationIcons = {
+  mountain: "fas fa-mountain", // Mountain icon
+  beach: "fas fa-umbrella-beach", // Beach icon
+  city: "fas fa-city", // City skyline icon
+  town: "fa-solid fa-house-chimney-window", // Town/home icon
+  rural: "fas fa-tractor", // Tractor icon for rural areas
+  desert: "fas fa-sun", // Sun icon for desert
+  jungle: "fas fa-leaf", // Tree icon for jungle
+  volcano: "fa-solid fa-volcano", // Volcano icon
+  "hot springs": "fas fa-hot-tub", // Hot springs icon
 };

@@ -34,6 +34,8 @@ name TEXT
 location TEXT
 lat float
 lng float
+description TEXT
+notes Text
 overview_id int FK - Overview.id
 
 Routes
@@ -43,8 +45,6 @@ start_location TEXT
 end_location TEXT
 transport_mode TEXT
 filename TEXT
-travel_date Date
-usage_tags TEXT
 
 Activity
 --

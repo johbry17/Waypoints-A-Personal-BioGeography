@@ -6,7 +6,6 @@
 // It includes functionality for displaying a photo carousel in popups, adding legends, and handling different map layers.
 // It also includes a welcome modal, and buttons to reset the map view and link to an "About" page.
 
-
 // global constants, for zooming from popups
 const placeData = {};
 let routeLayer;
@@ -17,7 +16,7 @@ function fetchData() {
   return Promise.all([
     fetch("resources/data/overview.json").then(handleFetchResponseJSON),
     fetch("resources/data/activity.csv").then(handleFetchResponseCSV),
-    // fetch("resources/data/location.csv").then(handleFetchResponseCSV),
+    fetch("resources/data/location.csv").then(handleFetchResponseCSV),
     fetch("resources/data/routes.csv").then(handleFetchResponseCSV),
   ]);
 }
@@ -45,14 +44,17 @@ function initializeMap() {
 
   // get data and call functions to create map and layers
   fetchData()
-    .then(([overviewData, activityCsv, routesCsv]) => {
+    .then(([overviewData, activityCsv, locationCsv, routesCsv]) => {
       // parse CSV data
       // throws an error if the csv's last empty line is not skipped
       const activityData = Papa.parse(activityCsv, {
         header: true,
         skipEmptyLines: true,
       }).data;
-      // const locationData = Papa.parse(locationCsv, { header: true }).data;
+      const locationData = Papa.parse(locationCsv, {
+        header: true,
+        skipEmptyLines: true,
+      }).data;
       const routeData = Papa.parse(routesCsv, {
         header: true,
         skipEmptyLines: true,
@@ -62,10 +64,11 @@ function initializeMap() {
       const markers = createMarkers(overviewData);
       const originalBounds = createBounds(overviewData);
       const activities = addActivityMarkers(activityData);
+      const locations = addLocationMarkers(locationData);
       const routes = createRouteLayers(routeData);
 
       // pass to createMap function
-      createMap(markers, originalBounds, activities, routes);
+      createMap(markers, originalBounds, activities, locations, routes);
     })
     .catch((error) => console.error("Error fetching data:", error));
 }
@@ -91,12 +94,13 @@ function setupWelcomeModal() {
 }
 
 // create map, base layers and overlays, toggle legend and route controls
-function createMap(markers, originalBounds, activities, routes) {
+function createMap(markers, originalBounds, activities, locations, routes) {
   // define layers
   const baseMaps = createBaseMaps();
   const overlayMaps = {
     Waypoints: markers,
     Activities: activities,
+    // Locations: locations,
     Routes: routes.routeLayer,
   };
 
@@ -247,7 +251,10 @@ function applyLegendStyles(routeStyles) {
       svg.setAttribute("viewBox", "0 0 100 10");
 
       // create the line
-      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      const line = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "line"
+      );
       line.setAttribute("x1", "0");
       line.setAttribute("y1", "5");
       line.setAttribute("x2", "100");

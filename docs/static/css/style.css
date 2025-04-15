@@ -244,6 +244,10 @@ html,
   color: #008a51;
 }
 
+.location-icon-stack {
+  color: #ff8c00;
+}
+
 .activity-icon-stack .fa-circle, .activity-icon-stack {
   color: #0085a1;
   transition: transform 0.3s, color 0.3s;

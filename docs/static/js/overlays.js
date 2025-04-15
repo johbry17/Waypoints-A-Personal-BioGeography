@@ -118,16 +118,15 @@ function initializePhotoCarousel(marker, place) {
 
 // popup content for each marker
 function createPopupContent(place) {
-  // for activity markers, format text and icon
-  const isActivity = !!place.activity_type; // boolean check for activity type
+  // boolean check for activity type
+  const isActivity = !!place.activity_type;
+
+  // format text of activity type for display
   const formattedActivityType = isActivity
     ? capitalizeWords(place.activity_type)
     : "";
-  const iconClass = isActivity
-    ? activityIcons[place.activity_type.toLowerCase()] || "fas fa-map-marker"
-    : "";
 
-  // regular marker icons, if applicable
+  // assign icons
   const homeIcon = place.home ? '<i class="fas fa-home home-icon"></i>' : "";
   const schoolIcon =
     place.visit_type === "school" ||
@@ -135,11 +134,21 @@ function createPopupContent(place) {
     place.name === "Vermont"
       ? '<i class="fas fa-graduation-cap school-icon"></i>'
       : "";
+  const activityIcon = isActivity
+    ? activityIcons[(place.activity_type ?? "").toLowerCase()] ||
+      "fas fa-map-marker"
+    : "";
+  const locationIcon = place.location_id
+    ? locationIcons[(place.location_type ?? "").toLowerCase()] ||
+      "fas fa-map-marker"
+    : "fas fa-map-marker";
 
   // set icons
-  const icons = !isActivity
-    ? `<i class="fas fa-globe globe-icon"></i> ${homeIcon} ${schoolIcon}`
-    : `<i class="${iconClass} activity-icon-stack"></i>`;
+  const icons = isActivity
+    ? `<i class="${activityIcon} activity-icon-stack"></i>`
+    : place.location_id
+    ? `<i class="${locationIcon} location-icon-stack"></i>`
+    : `<i class="fas fa-globe globe-icon"></i> ${homeIcon} ${schoolIcon}`;
 
   // create carousel for photos, if applicable
   const template = document.querySelector("#carousel-template");
@@ -154,17 +163,21 @@ function createPopupContent(place) {
     place.photos && place.photos.length > 0
       ? carouselContainer.outerHTML
       : `<div class="no-photos"><p><i class="fas fa-camera"></i> No photos available</p></div>`;
-  //   : "";
 
-  const placeId = place.activity_id || place.id;
+  // add zoom button to the popup
+  const placeId = place.activity_id || place.id || place.location_id;
   const zoomButton = `
-  <button class="zoom-button" onclick="zoomToArea('${placeId}')">
-    <i class="fas fa-search-plus"></i> Zoom
-  </button>
-`;
+    <button class="zoom-button" onclick="zoomToArea('${placeId}')">
+      <i class="fas fa-search-plus"></i> Zoom
+    </button>
+  `;
 
   // set border and arrow tip color by popup type
-  const borderColor = isActivity ? colors.activityColor : colors.primaryColor;
+  const borderColor = isActivity
+    ? colors.activityColor
+    : place.location_id
+    ? colors.locationColor
+    : colors.primaryColor;
 
   return `
         <style>
@@ -187,6 +200,40 @@ function createPopupContent(place) {
             <p>${place.notes || ""}</p>
         </div>
     `;
+}
+
+//////////////////////////////////////////////////////////
+
+// add location markers
+function addLocationMarkers(locationData) {
+  // store place data globally for zoomToArea function
+  locationData.forEach((place) => {
+    const key = place.location_id;
+    placeData[key] = place;
+  });
+
+  // tripled the markers for international date line crossing
+  const tripledLocations = tripledMarkers(locationData);
+
+  // create layer for location markers
+  const locationLayer = L.layerGroup();
+  // add markers to the location layer
+  tripledLocations.forEach((location) => {
+    const locationMarker = L.circleMarker([location.lat, location.lng], {
+      radius: 2,
+      color: colors.locationColor,
+      fillColor: colors.academic,
+      fillOpacity: 0.6,
+      weight: 1,
+    });
+
+    // add tooltip and popup to the marker
+    locationMarker.bindTooltip(createTooltipContent(location));
+    locationMarker.bindPopup(createPopupContent(location));
+    initializePhotoCarousel(locationMarker, location);
+    locationLayer.addLayer(locationMarker);
+  });
+  return locationLayer;
 }
 
 //////////////////////////////////////////////////////////
@@ -226,7 +273,7 @@ function addActivityMarkers(activityData) {
   // add markers to the activity layer
   tripledActivities.forEach((activity) => {
     // load activity icon, or default to map marker icon
-    const iconClass =
+    const activityIcon =
       activityIcons[
         activity.activity_type.toLowerCase() || "fas fa-map-marker"
       ];
@@ -234,7 +281,7 @@ function addActivityMarkers(activityData) {
       icon: L.divIcon({
         html: `<span class="fa-stack fa-lg activity-icon-stack">
           <i class="fas fa-circle fa-stack-2x"></i>
-          <i class="${iconClass} fa-stack-1x fa-inverse"></i>
+          <i class="${activityIcon} fa-stack-1x fa-inverse"></i>
         </span>`,
         className: "activity-icon",
         iconSize: [20, 20],

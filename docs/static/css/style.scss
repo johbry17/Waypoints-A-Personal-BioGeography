@@ -1,11 +1,12 @@
 // variables
 $background-color: #333333;
 $primary-color: #008a51;
-$highlight-color: #ff8c00;
+$formatted-activity-type-color: #ff8c00;
 $text-color: #333333;
 $popup-bg-color: #f9f9f9;
 $activity-color: #0085a1;
 $activity-hover-color: #005f73;
+$location-color: #ff8c00;
 $legend-border-color: #ffd700;
 $carousel-control-hover-color: #0085a1;
 $icon-hover-transform: scale(1.2);
@@ -257,13 +258,13 @@ html,
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-    vertical-align: middle; 
+    vertical-align: middle;
   }
 
   .custom-legend-icon {
     margin-right: 8px;
     font-size: 16px;
-    vertical-align: middle; 
+    vertical-align: middle;
   }
 
   .custom-legend-text {
@@ -328,6 +329,11 @@ html,
   color: $primary-color;
 }
 
+// location icons
+.location-icon-stack {
+  color: $location-color;
+}
+
 // activity icons
 .activity-icon-stack {
   .fa-circle,
@@ -374,7 +380,7 @@ html,
 
 // activity popup text
 h4 {
-  color: $highlight-color;
+  color: $formatted-activity-type-color;
 }
 
 // popup styling

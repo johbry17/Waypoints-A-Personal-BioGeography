@@ -44,7 +44,8 @@ Stores geographic details of visited locations.
 | `location` | TEXT | Location, formatted for use in geocoding lat/lng |
 | `lat`          | Float      | Latitude coordinate |
 | `lng`          | Float      | Longitude coordinate |
-| `overview_id`  | Integer FK | Links to the `Overview` table |
+| `description`  | TEXT       | Short summary or story about this location |
+| `notes`        | TEXT       | Additional details about the activity |
 
 <br>
 
