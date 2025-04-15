@@ -56,6 +56,8 @@ The website is hosted on GitHub Pages and can be accessed [here](https://johbry1
 2. **Toggle Layers**: Use the Leaflet control panel to toggle layers (e.g., activities, photos).
 3. **View Popups**: Click on markers to open popups with additional information and photo reels.
 
+To update: See [./resources/extract_data.ipynb](https://github.com/johbry17/Waypoints-A-GeoBiography/blob/main/resources/extract_data.ipynb)
+
 ## Gallery
 
 ![Photo Reel, India](./resources/images/photo_reel_india.png)
