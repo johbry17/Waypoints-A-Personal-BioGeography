@@ -44,8 +44,11 @@ Stores geographic details of visited locations.
 | `location` | TEXT | Location, formatted for use in geocoding lat/lng |
 | `lat`          | Float      | Latitude coordinate |
 | `lng`          | Float      | Longitude coordinate |
+| `activity_type`| TEXT       | Type of location (e.g., city, beach, mountain) for icons |
 | `description`  | TEXT       | Short summary or story about this location |
-| `notes`        | TEXT       | Additional details about the activity |
+| `notes`        | TEXT       | Additional details about the location |
+| `photo_album`  | TEXT       | Link or reference to an associated photo album |
+| `photos`       | TEXT       | Links or references to associated photos |
 
 <br>
 

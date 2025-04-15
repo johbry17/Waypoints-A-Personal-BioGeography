@@ -1,46 +1,49 @@
 Overview
 --
-id Integer PK
+id INT PK
 name TEXT
-lat Float
-lng Float
+lat FLOAT
+lng FLOAT
 start_date Date
 end_date Date
 photo_album TEXT
 photos TEXT
 description TEXT
-notes Text
-importance Integer
+notes TEXT
+importance INT
 visit_type TEXT
 home Boolean
 zoomBounds TEXT
-zoomLevel Int
+zoomLevel INT
 
 Pictures
 --
-picture_id int PK
+picture_id INT PK
 file_name TEXT
 file_location TEXT
 picture_name TEXT
 caption TEXT
-overview_id int FK - Overview.id
-location_id int FK - Location.location_id
-activity_id int FK - Activity.activity_id
+overview_id INT FK - Overview.id
+location_id INT FK - Location.location_id
+activity_id INT FK - Activity.activity_id
 
 Location
 --
-location_id int PK
+location_id INT PK
 name TEXT
 location TEXT
-lat float
-lng float
+lat FLOAT
+lng FLOAT
+location_type TEXT
 description TEXT
-notes Text
-overview_id int FK - Overview.id
+notes TEXT
+photo_album TEXT
+photos TEXT
+overview_id INT FK - Overview.id
 
 Routes
 --
-route_id Integer PK
+route_id INT PK
 start_location TEXT
 end_location TEXT
 transport_mode TEXT
@@ -48,14 +51,14 @@ filename TEXT
 
 Activity
 --
-activity_id Integer PK
+activity_id INT PK
 name TEXT
-location int FK >- Location.location_id
-lat float
-lng float
+location INT FK >- Location.location_id
+lat FLOAT
+lng FLOAT
 activity_type TEXT
 route_path TEXT FK >- Routes.filename
 description TEXT
-notes Text
+notes TEXT
 photo_album TEXT
 photos TEXT
