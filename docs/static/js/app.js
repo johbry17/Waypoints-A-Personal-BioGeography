@@ -269,8 +269,8 @@ function applyLegendStyles(routeStyles) {
       // create SVG element
       const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       svg.setAttribute("width", "100%");
-      svg.setAttribute("height", "10");
-      svg.setAttribute("viewBox", "0 0 100 10");
+      svg.setAttribute("height", "15");
+      svg.setAttribute("viewBox", "0 0 100 15");
 
       // create the line
       const line = document.createElementNS(
@@ -282,9 +282,17 @@ function applyLegendStyles(routeStyles) {
       line.setAttribute("x2", "100");
       line.setAttribute("y2", "5");
       line.setAttribute("stroke", style.color);
-      line.setAttribute("stroke-width", style.weight);
+      // scale the stroke width (visually, the height) for the legend
+      line.setAttribute("stroke-width", style.weight * 3);
+      // scale the width of the dots and dashes in the legend (the gaps are not scaled)
       if (style.dashArray) {
-        line.setAttribute("stroke-dasharray", style.dashArray);
+        const scaledDashArray = style.dashArray
+          .split(",")
+          .map((value, index) =>
+            index % 2 === 0 ? parseFloat(value) * 4 : parseFloat(value) // skips the gaps
+          )
+          .join(",");
+        line.setAttribute("stroke-dasharray", scaledDashArray);
       }
 
       // append the line to the SVG
