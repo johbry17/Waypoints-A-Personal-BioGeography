@@ -5,11 +5,11 @@
 function displayMultiplePhotos(photoSet, carouselId) {
   // get carousel elements
   const carouselDiv = document.querySelector(`#${carouselId} .carousel-photos`);
-  const prevButton = document.querySelector(`#${carouselId} #prev-button`);
-  const playPauseButton = document.querySelector(
+  const prevBtn = document.querySelector(`#${carouselId} #prev-button`);
+  const nextBtn = document.querySelector(`#${carouselId} #next-button`);
+  const playPauseBtn = document.querySelector(
     `#${carouselId} #play-pause-button`
   );
-  const nextButton = document.querySelector(`#${carouselId} #next-button`);
 
   // clear previous photo
   carouselDiv.innerHTML = "";
@@ -96,7 +96,7 @@ function displayMultiplePhotos(photoSet, carouselId) {
   // play carousel, set interval, change button to pause
   function startCarousel() {
     intervalId = setInterval(showNext, 5000); // 5 seconds
-    playPauseButton.innerHTML = `
+    playPauseBtn.innerHTML = `
         <i class="fas fa-circle fa-stack-2x"></i>
         <i class="fas fa-pause fa-stack-1x fa-inverse"></i>
       `;
@@ -105,7 +105,7 @@ function displayMultiplePhotos(photoSet, carouselId) {
   // pause carousel, clear interval, change button to play
   function stopCarousel() {
     clearInterval(intervalId);
-    playPauseButton.innerHTML = `
+    playPauseBtn.innerHTML = `
         <i class="fas fa-circle fa-stack-2x"></i>
         <i class="fas fa-play fa-stack-1x fa-inverse"></i>
       `;
@@ -123,17 +123,17 @@ function displayMultiplePhotos(photoSet, carouselId) {
   }
 
   // add event listeners to buttons
-  prevButton.addEventListener("click", () => {
+  prevBtn.addEventListener("click", () => {
     stopCarousel();
     showPrev();
   });
 
-  nextButton.addEventListener("click", () => {
+  nextBtn.addEventListener("click", () => {
     stopCarousel();
     showNext();
   });
 
-  playPauseButton.addEventListener("click", (event) => togglePlayPause(event));
+  playPauseBtn.addEventListener("click", (event) => togglePlayPause(event));
 
   // initial play
   startCarousel();

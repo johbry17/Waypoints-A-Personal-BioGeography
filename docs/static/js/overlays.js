@@ -1,5 +1,7 @@
 // Description: This file contains functions to create and manage map overlays, including markers, routes, and popups.
 
+// Table of Contents:
+
 // initialize main marker overlay, get map bounds, triple markers
 // main marker overlay
 // location overlay

@@ -1,10 +1,23 @@
 // Description: JavaScript code initializing the map application
 // It relies on functions contained in ./overlays.js and ./image-carousel-popup.js
-
+// ./visualizationSettings.js contains the map settings and route styles
+//
 // This code fetches data from JSON and CSV files, processes it, and creates a map with markers and popups using Leaflet.js.
 // It uses the PapaParse library for CSV parsing and Leaflet.js for map rendering, and handles international date line crossing by tripling markers.
 // It includes functionality for displaying a photo carousel in popups, adding legends, and handling different map layers.
-// It also includes a welcome modal, and buttons to reset the map view and link to an "About" page.
+// It also includes a welcome modal, and buttons to reset the map view and a button for an "About" modal.
+
+// Table of Contents:
+
+// data fetching and parsing, map initialization
+// welcome modal
+// map creation and layer addition
+// reset and about buttons
+// overlay addition and removal handlers
+// about modal
+// legends
+// photo reel fullscreen event listener
+// initialize the map
 
 // global constants, for zooming from popups...
 const placeData = {};
@@ -75,7 +88,9 @@ function initializeMap() {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
-// modal
+//////////////////////////////////////////////////////////
+
+// welcome modal
 function setupWelcomeModal() {
   const modal = document.getElementById("welcome-modal");
   modal.style.display = "flex"; // toggle modal display on / off
@@ -94,6 +109,8 @@ function setupWelcomeModal() {
     modal.style.display = "none";
   });
 }
+
+//////////////////////////////////////////////////////////
 
 // create map, base layers and overlays, toggle legend and route controls
 function createMap(markers, originalBounds, activities, locations, routes) {
@@ -120,12 +137,12 @@ function createMap(markers, originalBounds, activities, locations, routes) {
     collapsed: false,
   });
 
-  // add zoom-based visibility control for the locations layer
+  // add zoom-based visibility for the locations layer
   mainMap.on("zoomend", () => {
     const currentZoom = mainMap.getZoom();
     console.log("Current Zoom Level:", currentZoom);
 
-    // show the locations layer only if zoom level is below 10
+    // show locations layer only if zoom level is below 5
     if (currentZoom > 5) {
       if (!mainMap.hasLayer(locations)) {
         console.log("Adding locations layer to the map.");
@@ -139,7 +156,7 @@ function createMap(markers, originalBounds, activities, locations, routes) {
     }
   });
 
-  // style route legend popup, add main legend, map about and reset buttons
+  // style route legend popup, add main legend, about and reset buttons
   applyLegendStyles(routeStyles);
   addAboutButton(mainMap);
   addResetButton(mainMap, originalBounds);
@@ -176,6 +193,8 @@ function createBaseMaps() {
     // Firefly: L.esri.basemapLayer("ImageryFirefly"),
   };
 }
+
+//////////////////////////////////////////////////////////
 
 // button to reset map to original bounds
 function addResetButton(map, initialBounds) {
@@ -216,37 +235,109 @@ function addAboutButton(map) {
   aboutButton.addTo(map);
 }
 
-// opens the about modal
-function openModal() {
-  // close welcome modal if open
-  const welcomeModal = document.getElementById("welcome-modal");
-  if (welcomeModal && welcomeModal.style.display === "flex") {
-    welcomeModal.style.display = "none";
-  }
+//////////////////////////////////////////////////////////
 
-  // display about modal, add route legend styles
+// adds waypoints legend and route controls to map, toggle routes legend popup
+const handleOverlayAdd = (e, legend, routeControls, map) => {
+  // add main legend to map
+  if (e.name === "Waypoints") {
+    legend.addTo(map);
+  }
+  //add route controls to map
+  if (e.name === "Routes") {
+    routeControls.addTo(map);
+
+    // routes legend popup toggle
+    const legendTrigger = document.getElementById("legend-link");
+    const legendPopup = document.getElementById("routes-legend-popup");
+    const checkbox = legendTrigger
+      .closest("label")
+      .querySelector("input[type='checkbox']");
+
+    if (checkbox && legendPopup) {
+      // add event listener to the routes legend checkbox
+      // can't be added before the checkbox is created in the DOM
+      checkbox.addEventListener("change", () => {
+        isLegendChecked = checkbox.checked; // update global variable
+        if (checkbox.checked) {
+          legendPopup.classList.remove("hidden"); // show legend
+        } else {
+          legendPopup.classList.add("hidden"); // hide legend
+        }
+      });
+
+      // restore checkbox and legend popup state if already checked
+      checkbox.checked = isLegendChecked; // restore checkbox state
+      if (isLegendChecked) {
+        legendPopup.classList.remove("hidden"); // show legend
+      } else {
+        legendPopup.classList.add("hidden"); // hide legend
+      }
+    }
+  }
+};
+
+// remove legends and route controls when overlays are removed
+const handleOverlayRemove = (e, legend, routeControls, map) => {
+  if (e.name === "Waypoints") {
+    map.removeControl(legend);
+  }
+  if (e.name === "Routes") {
+    map.removeControl(routeControls);
+    const legendPopup = document.getElementById("routes-legend-popup");
+    if (legendPopup) {
+      legendPopup.classList.add("hidden");
+    }
+  }
+};
+
+//////////////////////////////////////////////////////////
+
+// opens the About modal
+function openModal() {
+  // display About modal, add route legend styles
   document.getElementById("aboutModal").style.display = "flex";
 }
 
-// closes the about modal with the 'X' button
+// closes About modal with the 'X' button
 function closeModal() {
   document.getElementById("aboutModal").style.display = "none";
 }
 
-// closes modal when clicking outside of the modal content
+// closes About modal when clicking outside of the .modal-content
 function setupAboutModal() {
   const modal = document.getElementById("aboutModal");
-
-  // close modal on click
   modal.addEventListener("click", (event) => {
-    // ensure only clicks outside the modal content close it
+    // ensure only clicks outside the .modal-content close it
     if (event.target === modal) {
       modal.style.display = "none";
     }
   });
 }
 
-// colors and adds dash styles to the route legend
+// sets the copyright year in the About modal
+document.addEventListener("DOMContentLoaded", () => {
+  const yearElement = document.getElementById("current-year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+});
+
+//////////////////////////////////////////////////////////
+
+// add main map legend
+function addLegend() {
+  const legend = L.control({ position: "bottomright" });
+  legend.onAdd = () => {
+    const legendElement = document.getElementById("map-legend");
+    const clonedLegend = legendElement.cloneNode(true); // clone hidden legend
+    clonedLegend.style.display = "block"; // display cloned legend
+    return clonedLegend;
+  };
+  return legend;
+}
+
+// route legend - colors and adds dash styles
 function applyLegendStyles(routeStyles) {
   const legendItems = document.querySelectorAll(".custom-legend-item");
 
@@ -288,8 +379,9 @@ function applyLegendStyles(routeStyles) {
       if (style.dashArray) {
         const scaledDashArray = style.dashArray
           .split(",")
-          .map((value, index) =>
-            index % 2 === 0 ? parseFloat(value) * 4 : parseFloat(value) // skips the gaps
+          .map(
+            (value, index) =>
+              index % 2 === 0 ? parseFloat(value) * 4 : parseFloat(value) // skips the gaps
           )
           .join(",");
         line.setAttribute("stroke-dasharray", scaledDashArray);
@@ -304,76 +396,7 @@ function applyLegendStyles(routeStyles) {
   });
 }
 
-// sets the copyright year in the About modal
-document.addEventListener("DOMContentLoaded", () => {
-  const yearElement = document.getElementById("current-year");
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
-});
-
-// add main map legend
-function addLegend() {
-  const legend = L.control({ position: "bottomright" });
-  legend.onAdd = () => {
-    const legendElement = document.getElementById("map-legend");
-    const clonedLegend = legendElement.cloneNode(true); // clone hidden legend
-    clonedLegend.style.display = "block"; // display cloned legend
-    return clonedLegend;
-  };
-  return legend;
-}
-
-// adds waypoints legend and route controls to map, toggle routes legend popup
-const handleOverlayAdd = (e, legend, routeControls, map) => {
-  if (e.name === "Waypoints") {
-    legend.addTo(map);
-  }
-  if (e.name === "Routes") {
-    routeControls.addTo(map);
-
-    // logic for routes legend popup toggle
-    const legendTrigger = document.getElementById("legend-link");
-    const legendPopup = document.getElementById("routes-legend-popup");
-    const checkbox = legendTrigger
-      .closest("label")
-      .querySelector("input[type='checkbox']");
-
-    if (checkbox && legendPopup) {
-      // add event listener to the routes legend checkbox
-      checkbox.addEventListener("change", () => {
-        isLegendChecked = checkbox.checked; // update global variable
-        if (checkbox.checked) {
-          legendPopup.classList.remove("hidden"); // show legend
-        } else {
-          legendPopup.classList.add("hidden"); // hide legend
-        }
-      });
-
-      // restore checkbox and legend popup state
-      checkbox.checked = isLegendChecked; // restore checkbox state
-      if (isLegendChecked) {
-        legendPopup.classList.remove("hidden"); // show legend
-      } else {
-        legendPopup.classList.add("hidden"); // hide legend
-      }
-    }
-  }
-};
-
-// remove legends and route controls when overlays are removed
-const handleOverlayRemove = (e, legend, routeControls, map) => {
-  if (e.name === "Waypoints") {
-    map.removeControl(legend);
-  }
-  if (e.name === "Routes") {
-    map.removeControl(routeControls);
-    const legendPopup = document.getElementById("routes-legend-popup");
-    if (legendPopup) {
-      legendPopup.classList.add("hidden");
-    }
-  }
-};
+//////////////////////////////////////////////////////////
 
 // event listener for photo reel fullscreen button
 document.addEventListener("click", (event) => {
@@ -412,6 +435,8 @@ document.addEventListener("click", (event) => {
     }
   }
 });
+
+//////////////////////////////////////////////////////////
 
 // start everything - initialize the map
 initializeMap();
