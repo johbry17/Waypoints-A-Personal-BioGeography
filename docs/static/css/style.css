@@ -93,6 +93,17 @@ html,
   margin: 0;
 }
 
+.modal-image {
+  max-width: 50%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #008a51;
+  border-radius: 10px;
+}
+
 .leaflet-control-layers label,
 .leaflet-control-layers input[type=radio] {
   cursor: pointer;

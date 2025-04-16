@@ -147,6 +147,17 @@ html,
   }
 }
 
+.modal-image {
+  max-width: 50%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid $primary-color;
+  border-radius: $border-radius;
+}
+
 // leaflet control layers
 .leaflet-control-layers {
   label,
@@ -283,6 +294,7 @@ html,
   }
 }
 
+// routes legend popup
 .legend-popup {
   position: absolute;
   top: 10px;
