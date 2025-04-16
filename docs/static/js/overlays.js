@@ -351,6 +351,10 @@ function createRouteLayers(routeData) {
       );
   });
 
+  // dummy layer for routes legend popup checkbox
+  const legendIcon = L.layerGroup();
+  legendIcon.onAdd = () => {};
+
   // assign parent layer to global constant (for popup zoom), add all sublayers
   routeLayer = L.layerGroup(Object.values(layers));
   return {
@@ -361,6 +365,8 @@ function createRouteLayers(routeData) {
       '<i class="fas fa-car"></i>': layers.auto,
       '<i class="fas fa-ship"></i>': layers.boat,
       '<i class="fas fa-hiking"></i>': layers.hike,
+      '<span id="legend-link"><i class="fas fa-question-circle"></i></span>':
+        legendIcon,
     },
   };
 }

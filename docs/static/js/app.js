@@ -6,10 +6,12 @@
 // It includes functionality for displaying a photo carousel in popups, adding legends, and handling different map layers.
 // It also includes a welcome modal, and buttons to reset the map view and link to an "About" page.
 
-// global constants, for zooming from popups
+// global constants, for zooming from popups...
 const placeData = {};
 let routeLayer;
 let mainMap;
+// ...and for the route legend popup
+let isLegendChecked = false;
 
 // fetch data from JSON and CSV files
 function fetchData() {
@@ -121,23 +123,24 @@ function createMap(markers, originalBounds, activities, locations, routes) {
   // add zoom-based visibility control for the locations layer
   mainMap.on("zoomend", () => {
     const currentZoom = mainMap.getZoom();
-    console.log("Current Zoom Level:", currentZoom); 
+    console.log("Current Zoom Level:", currentZoom);
 
     // show the locations layer only if zoom level is below 10
     if (currentZoom > 5) {
       if (!mainMap.hasLayer(locations)) {
-        console.log("Adding locations layer to the map."); // Debugging
+        console.log("Adding locations layer to the map.");
         mainMap.addLayer(locations);
       }
     } else {
       if (mainMap.hasLayer(locations)) {
-        console.log("Removing locations layer from the map."); // Debugging
+        console.log("Removing locations layer from the map.");
         mainMap.removeLayer(locations);
       }
     }
   });
 
-  // add legend, map reset and about buttons
+  // style route legend popup, add main legend, map about and reset buttons
+  applyLegendStyles(routeStyles);
   addAboutButton(mainMap);
   addResetButton(mainMap, originalBounds);
   const legend = addLegend();
@@ -223,7 +226,6 @@ function openModal() {
 
   // display about modal, add route legend styles
   document.getElementById("aboutModal").style.display = "flex";
-  applyLegendStyles(routeStyles);
 }
 
 // // closes the about modal with the 'X' button
@@ -235,15 +237,16 @@ function openModal() {
 function setupAboutModal() {
   const modal = document.getElementById("aboutModal");
 
-  // Close modal on click
+  // close modal on click
   modal.addEventListener("click", (event) => {
-    // Ensure only clicks outside the modal content close it
+    // ensure only clicks outside the modal content close it
     if (event.target === modal) {
       modal.style.display = "none";
     }
   });
 }
 
+// colors and adds dash styles to the route legend
 function applyLegendStyles(routeStyles) {
   const legendItems = document.querySelectorAll(".custom-legend-item");
 
@@ -313,15 +316,55 @@ function addLegend() {
   return legend;
 }
 
-// toggle legend and route controls on overlay add/remove
+// adds waypoints legend and route controls to map, toggle routes legend popup
 const handleOverlayAdd = (e, legend, routeControls, map) => {
-  if (e.name === "Waypoints") legend.addTo(map);
-  if (e.name === "Routes") routeControls.addTo(map);
+  if (e.name === "Waypoints") {
+    legend.addTo(map);
+  }
+  if (e.name === "Routes") {
+    routeControls.addTo(map);
+
+    // logic for routes legend popup toggle
+    const legendTrigger = document.getElementById("legend-link");
+    const legendPopup = document.getElementById("routes-legend-popup");
+    const checkbox = legendTrigger
+      .closest("label")
+      .querySelector("input[type='checkbox']");
+
+    if (checkbox && legendPopup) {
+      // add event listener to the routes legend checkbox
+      checkbox.addEventListener("change", () => {
+        isLegendChecked = checkbox.checked; // update global variable
+        if (checkbox.checked) {
+          legendPopup.classList.remove("hidden"); // show legend
+        } else {
+          legendPopup.classList.add("hidden"); // hide legend
+        }
+      });
+
+      // restore checkbox and legend popup state
+      checkbox.checked = isLegendChecked; // restore checkbox state
+      if (isLegendChecked) {
+        legendPopup.classList.remove("hidden"); // show legend
+      } else {
+        legendPopup.classList.add("hidden"); // hide legend
+      }
+    }
+  }
 };
 
+// remove legends and route controls when overlays are removed
 const handleOverlayRemove = (e, legend, routeControls, map) => {
-  if (e.name === "Waypoints") map.removeControl(legend);
-  if (e.name === "Routes") map.removeControl(routeControls);
+  if (e.name === "Waypoints") {
+    map.removeControl(legend);
+  }
+  if (e.name === "Routes") {
+    map.removeControl(routeControls);
+    const legendPopup = document.getElementById("routes-legend-popup");
+    if (legendPopup) {
+      legendPopup.classList.add("hidden");
+    }
+  }
 };
 
 // event listener for photo reel fullscreen button
