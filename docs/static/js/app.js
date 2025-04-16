@@ -228,10 +228,10 @@ function openModal() {
   document.getElementById("aboutModal").style.display = "flex";
 }
 
-// // closes the about modal with the 'X' button
-// function closeModal() {
-//   document.getElementById("aboutModal").style.display = "none";
-// }
+// closes the about modal with the 'X' button
+function closeModal() {
+  document.getElementById("aboutModal").style.display = "none";
+}
 
 // closes modal when clicking outside of the modal content
 function setupAboutModal() {
