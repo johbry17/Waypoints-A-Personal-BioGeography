@@ -1,5 +1,16 @@
 // Description: This file contains functions to create and manage map overlays, including markers, routes, and popups.
 
+// initialize main marker overlay, get map bounds, triple markers
+// main marker overlay
+// location overlay
+// activity overlay
+// route overlay
+// tooltip 
+// marker popups
+// zoom button in popup
+// animation for main marker hover
+// capitalize words function
+
 // create initial markers and get bounds for initial map view
 function createMarkers(data) {
   // store place data globally for zoomToArea function
@@ -11,12 +22,14 @@ function createMarkers(data) {
   // triple markers to handle international date line crossing
   const tripledData = tripledMarkers(data);
   return L.featureGroup(tripledData.map(addMarker));
-  // can experiment with marker clusters here
+
+  // can sub this line of code and experiment with marker clusters here
   // but the homeRing is treated as a separate marker
   // triggering spiderfy and cascading muck-ups with createBounds, blah blah blah
   // return createMarkerCluster(tripledData);
 }
 
+// get bounds to set the the initial map view based on markers
 function createBounds(data) {
   return L.featureGroup(data.map(addMarker)).getBounds();
 }
@@ -38,7 +51,7 @@ function tripledMarkers(data) {
 
 //////////////////////////////////////////////////////////
 
-// add markers to the map, with tooltip and popup
+// add main markers to the map, with tooltip and popup
 function addMarker(place) {
   const marker = createCircleMarker(place);
   marker.bindTooltip(createTooltipContent(place));
@@ -89,120 +102,6 @@ function createCircleMarker(place) {
   return mainMarker;
 }
 
-//////////////////////////////////////////////////////////
-
-// tooltip for hover
-function createTooltipContent(place) {
-  return `
-      <div class="hover-tooltip-content">
-        <b>${place.name}</b><br>
-        Click for more info
-      </div>
-    `;
-}
-
-// initialize photo carousel when popup is opened
-function initializePhotoCarousel(marker, place) {
-  marker.on("popupopen", () => {
-    if (place.photos && place.photos.length > 0) {
-      // ensure `photos` is an array
-      const photos = Array.isArray(place.photos)
-        ? place.photos
-        : [place.photos];
-      // create photo paths
-      const photoSet = photos.map(
-        (photo) => `static/images/${place.photo_album}/${photo}`
-      );
-      displayMultiplePhotos(photoSet, `carousel-${place.id}`);
-    }
-  });
-}
-
-// popup content for each marker
-function createPopupContent(place) {
-  // boolean check for activity type
-  const isActivity = !!place.activity_type;
-
-  // format text of activity type for display
-  const formattedActivityType = isActivity
-    ? capitalizeWords(place.activity_type)
-    : "";
-
-  // assign icons
-  const homeIcon = place.home ? '<i class="fas fa-home home-icon"></i>' : "";
-  const schoolIcon =
-    place.visit_type === "school" ||
-    place.name === "Washington, D.C." ||
-    place.name === "Vermont"
-      ? '<i class="fas fa-graduation-cap school-icon"></i>'
-      : "";
-  const activityIcon = isActivity
-    ? activityIcons[(place.activity_type ?? "").toLowerCase()] ||
-      "fas fa-map-marker"
-    : "";
-  const locationIcon = place.location_id
-    ? locationIcons[(place.location_type ?? "").toLowerCase()] ||
-      "fas fa-map-marker"
-    : "fas fa-map-marker";
-
-  // set icons
-  const icons = isActivity
-    ? `<i class="${activityIcon} activity-icon-stack"></i>`
-    : place.location_id
-    ? `<i class="${locationIcon} location-icon-stack"></i>`
-    : `<i class="fas fa-globe globe-icon"></i> ${homeIcon} ${schoolIcon}`;
-
-  // create carousel for photos, if applicable
-  const template = document.querySelector("#carousel-template");
-  const carouselElement = template.content.cloneNode(true);
-  const carouselContainer = carouselElement.querySelector(
-    ".carousel-container"
-  );
-  carouselContainer.id = `carousel-${place.id}`;
-
-  // if photos, add the carousel to the popup, else add a message
-  const carouselHTML =
-    place.photos && place.photos.length > 0
-      ? carouselContainer.outerHTML
-      : `<div class="no-photos"><p><i class="fas fa-camera"></i> No photos available</p></div>`;
-
-  // add zoom button to the popup
-  const placeId = place.activity_id || place.id || place.location_id;
-  const zoomButton = `
-    <button class="zoom-button" onclick="zoomToArea('${placeId}')">
-      <i class="fas fa-search-plus"></i> Zoom
-    </button>
-  `;
-
-  // set border and arrow tip color by popup type
-  const borderColor = isActivity
-    ? colors.activityColor
-    : place.location_id
-    ? colors.locationColor
-    : colors.primaryColor;
-
-  return `
-        <style>
-        .leaflet-popup-content-wrapper {
-            border-color: ${borderColor} !important;
-        }
-        .leaflet-popup-tip {
-            background-color: ${borderColor} !important;
-        }
-        </style>
-        ${carouselHTML}
-        <div class="popup-content">
-            <h3>
-              ${icons}
-              ${place.name}
-            </h3>
-            ${zoomButton}
-            <h4>${formattedActivityType}</h4>
-            <p>${place.description || ""}</p>
-            <p>${place.notes || ""}</p>
-        </div>
-    `;
-}
 
 //////////////////////////////////////////////////////////
 
@@ -402,14 +301,122 @@ function shiftGeoJSON(geojson, offset) {
 
 //////////////////////////////////////////////////////////
 
-// utility functions
-function capitalizeWords(str) {
-  return str
-    .toLowerCase()
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+// tooltip for hover
+function createTooltipContent(place) {
+  return `
+      <div class="hover-tooltip-content">
+        <b>${place.name}</b><br>
+        Click for more info
+      </div>
+    `;
 }
+
+//////////////////////////////////////////////////////////
+
+// initialize photo carousel when popup is opened
+function initializePhotoCarousel(marker, place) {
+  marker.on("popupopen", () => {
+    if (place.photos && place.photos.length > 0) {
+      // ensure `photos` is an array
+      const photos = Array.isArray(place.photos)
+        ? place.photos
+        : [place.photos];
+      // create photo paths
+      const photoSet = photos.map(
+        (photo) => `static/images/${place.photo_album}/${photo}`
+      );
+      displayMultiplePhotos(photoSet, `carousel-${place.id}`);
+    }
+  });
+}
+
+// popup content for each marker
+function createPopupContent(place) {
+  // boolean check for activity type
+  const isActivity = !!place.activity_type;
+
+  // format text of activity type for display
+  const formattedActivityType = isActivity
+    ? capitalizeWords(place.activity_type)
+    : "";
+
+  // assign icons
+  const homeIcon = place.home ? '<i class="fas fa-home home-icon"></i>' : "";
+  const schoolIcon =
+    place.visit_type === "school" ||
+    place.name === "Washington, D.C." ||
+    place.name === "Vermont"
+      ? '<i class="fas fa-graduation-cap school-icon"></i>'
+      : "";
+  const activityIcon = isActivity
+    ? activityIcons[(place.activity_type ?? "").toLowerCase()] ||
+      "fas fa-map-marker"
+    : "";
+  const locationIcon = place.location_id
+    ? locationIcons[(place.location_type ?? "").toLowerCase()] ||
+      "fas fa-map-marker"
+    : "fas fa-map-marker";
+
+  // set icons
+  const icons = isActivity
+    ? `<i class="${activityIcon} activity-icon-stack"></i>`
+    : place.location_id
+    ? `<i class="${locationIcon} location-icon-stack"></i>`
+    : `<i class="fas fa-globe globe-icon"></i> ${homeIcon} ${schoolIcon}`;
+
+  // create carousel for photos, if applicable
+  const template = document.querySelector("#carousel-template");
+  const carouselElement = template.content.cloneNode(true);
+  const carouselContainer = carouselElement.querySelector(
+    ".carousel-container"
+  );
+  carouselContainer.id = `carousel-${place.id}`;
+
+  // if photos, add the carousel to the popup, else add a message
+  const carouselHTML =
+    place.photos && place.photos.length > 0
+      ? carouselContainer.outerHTML
+      : `<div class="no-photos"><p><i class="fas fa-camera"></i> No photos available</p></div>`;
+
+  // add zoom button to the popup
+  const placeId = place.activity_id || place.id || place.location_id;
+  const zoomButton = `
+    <button class="zoom-button" onclick="zoomToArea('${placeId}')">
+      <i class="fas fa-search-plus"></i> Zoom
+    </button>
+  `;
+
+  // set border and arrow tip color by popup type
+  const borderColor = isActivity
+    ? colors.activityColor
+    : place.location_id
+    ? colors.locationColor
+    : colors.primaryColor;
+
+  return `
+        <style>
+        .leaflet-popup-content-wrapper {
+            border-color: ${borderColor} !important;
+        }
+        .leaflet-popup-tip {
+            background-color: ${borderColor} !important;
+        }
+        </style>
+        ${carouselHTML}
+        <div class="popup-content">
+            <h3>
+              ${icons}
+              ${place.name}
+            </h3>
+            ${zoomButton}
+            <h4>${formattedActivityType}</h4>
+            <p>${place.description || ""}</p>
+            <p>${place.notes || ""}</p>
+        </div>
+    `;
+}
+
+//////////////////////////////////////////////////////////
 
 // for popup's zoom button
 function zoomToArea(placeId) {
@@ -453,6 +460,8 @@ function ensureRouteLayer() {
   }
 }
 
+//////////////////////////////////////////////////////////
+
 // animates the scaling of the marker radius on hover
 function animateRadius(marker, startRadius, endRadius, duration) {
   const startTime = performance.now();
@@ -473,6 +482,17 @@ function animateRadius(marker, startRadius, endRadius, duration) {
 
   // start recursive animation loop
   requestAnimationFrame(step);
+}
+
+//////////////////////////////////////////////////////////
+
+// capitalize the first letter of each word in a string
+function capitalizeWords(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 // optional function to add marker clusters for main markers
