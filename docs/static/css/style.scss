@@ -1,18 +1,21 @@
 // variables
-$background-color: #333333;
 $primary-color: #008a51;
-$formatted-activity-type-color: #ff8c00;
-$text-color: #333333;
-$popup-bg-color: #f9f9f9;
 $activity-color: #0085a1;
 $activity-hover-color: #005f73;
 $location-color: #ff8c00;
-$legend-border-color: #ffd700;
+$background-color: #333333;
+$popup-bg-color: #f9f9f9;
 $carousel-control-hover-color: #0085a1;
+$formatted-activity-type-color: #ff8c00;
+$school-icon-color: #ffb400;
+$home-icon-color: #ff5733;
+$legend-border-color: #ffd700;
+$text-color: #333333;
 $icon-hover-transform: scale(1.2);
 $transition-duration: 0.3s;
-$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-$border-radius: 10px;
+// $box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+$box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+$border-radius: 5px;
 
 // general styling
 body,
@@ -26,138 +29,7 @@ html,
   background-size: cover;
 }
 
-// modal
-.modal {
-  display: none; // toggle modal on/off in JS
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1001;
-  animation: fadeIn $transition-duration ease-in-out;
-
-  .modal-content {
-    background-color: rgba(249, 249, 249, 0.8);
-    padding: 20px;
-    border: 3px solid $primary-color;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
-    text-align: center;
-    max-width: 600px;
-    width: 80%;
-    max-height: 80vh;
-    overflow-y: auto; // scrollbar if content overflows height
-    z-index: 1001;
-    position: relative; // for absolute positioning of close button
-
-    // 'X' close button
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #aaa;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close-button:hover,
-    .close-button:focus {
-      color: black;
-      text-decoration: none;
-    }
-
-    // modal header
-    .modal-header {
-      position: relative;
-      text-align: center;
-
-      h1 {
-        font-size: 2rem;
-        color: $primary-color;
-        margin: 0;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-        color: $text-color;
-      }
-
-      .modal-icon {
-        font-size: 3rem;
-        color: $primary-color;
-        margin-bottom: 10px;
-      }
-    }
-
-    // modal body
-    #modal-body {
-      font-size: 1rem;
-      color: $text-color;
-      line-height: 1.2;
-
-      // fade-in effect for modal body
-      .modal-transition {
-        opacity: 0;
-        transition: opacity 2s ease-in-out;
-      }
-
-      .modal-body-icon {
-        font-size: 1.5rem;
-        color: #003366;
-      }
-
-      .fa-stack {
-        margin-bottom: 0px;
-      }
-
-      .fa-stack .mdi {
-        vertical-align: middle;
-        position: relative;
-        color: $primary-color;
-      }
-
-      p {
-        margin-bottom: 15px;
-      }
-
-      #modal-text {
-        margin-top: 0px;
-        font-size: 0.8em;
-        font-style: italic;
-        color: #495057;
-      }
-    }
-
-    // modal footer
-    .modal-footer {
-      font-size: 0.9rem;
-      color: $activity-color;
-      margin-top: 20px;
-      font-weight: bold;
-      margin-bottom: 0;
-
-      p {
-        margin: 0;
-      }
-    }
-  }
-}
-
-.modal-image {
-  max-width: 50%;
-  max-height: 100vh;
-  width: auto;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border: 2px solid $primary-color;
-  border-radius: $border-radius;
-}
+/////////////////////////////////////////////////////////////////////////////
 
 // leaflet control layers
 .leaflet-control-layers {
@@ -175,6 +47,8 @@ html,
     accent-color: $activity-color;
   }
 }
+
+/////////////////////////////////////////////////////////////////////////////
 
 // common styles for about and reset buttons
 .button {
@@ -240,6 +114,8 @@ html,
   }
 }
 
+/////////////////////////////////////////////////////////////////////////////
+
 // legend(s)
 #map-legend {
   display: none; // hide initial main legend
@@ -251,23 +127,11 @@ html,
   font-size: 12px;
   padding: 10px 10px 0;
   border: 4px solid $legend-border-color;
-  border-radius: 5px;
+  border-radius: $border-radius;
   color: $text-color;
   box-shadow: $box-shadow;
 
-  h4 {
-    font-weight: bold;
-    margin: 0 0 10px 0;
-    text-decoration: underline;
-    // color: $activity-color;
-    color: $primary-color;
-    text-align: center;
-  }
-
-  .legend-mini-text {
-    font-size: 10px;
-  }
-
+  // route legend units (icon, text, route line)
   .custom-legend-item {
     display: flex;
     align-items: center;
@@ -275,12 +139,14 @@ html,
     vertical-align: middle;
   }
 
+  // route legend icon
   .custom-legend-icon {
     margin-right: 8px;
     font-size: 16px;
     vertical-align: middle;
   }
 
+  // route legend text
   .custom-legend-text {
     margin-right: 8px;
     font-size: 12px; // match text size to icon size
@@ -288,6 +154,7 @@ html,
     vertical-align: middle;
   }
 
+  // route line of legend items
   .custom-legend-line {
     flex-grow: 1;
     height: 12px; // match heght of text for vertical alignment
@@ -303,6 +170,8 @@ html,
   max-width: 125px;
   z-index: 1000;
 }
+
+// hide route legend popup when necessary
 .hidden {
   display: none;
 }
@@ -317,16 +186,10 @@ html,
 @media (max-width: 768px) {
   .custom-legend {
     font-size: 10px;
-    // padding: 5px;
-    // border: 2px solid $legend-border-color;
-  }
-
-  .legend-mini-text {
-    font-size: 8px;
   }
 }
 
-// move map legend to bottom-left for landscape orientation on mobile devices
+// move main legend to bottom-left for landscape orientation on mobile devices
 @media (orientation: landscape) and (max-width: 1024px) {
   #map-legend {
     position: fixed;
@@ -336,26 +199,21 @@ html,
   }
 }
 
+/////////////////////////////////////////////////////////////////////////////
+
 // icons
-%icon-base {
-  text-align: center;
-  transition: transform $transition-duration, color $transition-duration;
+.school-icon {
+  color: $school-icon-color;
 }
 
-.school-icon {
-  @extend %icon-base;
-  color: #ffb400;
-}
 .home-icon {
-  @extend %icon-base;
-  color: #ff5733;
+  color: $home-icon-color;
 }
+
 .globe-icon {
-  @extend %icon-base;
   color: $primary-color;
 }
 
-// location icons
 .location-icon-stack {
   color: $location-color;
 }
@@ -367,6 +225,7 @@ html,
     color: $activity-color;
     transition: transform $transition-duration, color $transition-duration;
 
+    // on hover, slightly enlarge and change color
     &:hover .fa-circle {
       transform: $icon-hover-transform;
       color: $activity-hover-color;
@@ -393,21 +252,22 @@ html,
   box-shadow: $box-shadow;
   transition: transform $transition-duration, color $transition-duration;
 
+  // on hover, change background color
   &:hover {
     background-color: $activity-hover-color;
+    // enlarge doesn't work on hover, because of fixed 25px width and height
     transform: $icon-hover-transform;
   }
 }
+
+/////////////////////////////////////////////////////////////////////////////
 
 // hover tooltip styling
 .hover-tooltip-content {
   text-align: center;
 }
 
-// activity popup text
-h4 {
-  color: $formatted-activity-type-color;
-}
+/////////////////////////////////////////////////////////////////////////////
 
 // popup styling
 .leaflet-popup-content {
@@ -418,9 +278,10 @@ h4 {
   padding: 10px;
 }
 
+// popup wrapper
 .leaflet-popup-content-wrapper {
   background-color: $popup-bg-color;
-  border: 2px solid $primary-color;
+  border: 3px solid $primary-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   overflow-y: auto; // scrollbar if content overflows height
@@ -428,6 +289,7 @@ h4 {
   animation: fadeIn $transition-duration ease-in-out;
 }
 
+// animation for popup fade-in effect
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -439,8 +301,14 @@ h4 {
   }
 }
 
+// popup arrow
 .leaflet-popup-tip {
   background-color: $primary-color;
+}
+
+// activity popup text
+h4 {
+  color: $formatted-activity-type-color;
 }
 
 // popup text
@@ -454,6 +322,8 @@ h4 {
   font-size: 13px;
   color: darken($text-color, 20%);
 }
+
+/////////////////////////////////////////////////////////////////////////////
 
 // photo carousel
 .carousel-container {
@@ -481,7 +351,7 @@ h4 {
   }
 
   // prev, next, play/pause buttons
-  // position absolute to overlay controlds on photos
+  // position absolute to overlay controls on photos
   .carousel-controls {
     position: absolute;
     bottom: 10px;
@@ -495,6 +365,7 @@ h4 {
       font-size: 20px;
       transition: transform $transition-duration, color $transition-duration;
 
+      // enlarge and color change on hover
       &:hover {
         transform: $icon-hover-transform;
         color: $carousel-control-hover-color;
@@ -526,6 +397,9 @@ h4 {
   }
 }
 
+/////////////////////////////////////////////////////////////////////////////
+
+// zoom button in popups
 .zoom-button {
   background-color: $primary-color;
   color: white;
@@ -542,6 +416,7 @@ h4 {
   transition: background-color $transition-duration,
     transform $transition-duration;
 
+  // icon
   i {
     font-size: 14px;
   }
@@ -556,4 +431,146 @@ h4 {
   &:active {
     transform: scale(0.95);
   }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+// modals
+.modal {
+  display: none; // toggle modal on/off with JS
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  animation: fadeIn $transition-duration ease-in-out;
+
+  .modal-content {
+    background-color: rgba(249, 249, 249, 0.8);
+    padding: 20px;
+    border: 3px solid $primary-color;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    text-align: center;
+    max-width: 600px;
+    width: 80%;
+    max-height: 80vh;
+    overflow-y: auto; // scrollbar if content overflows height
+    z-index: 1001;
+    position: relative; // for absolute positioning of close button
+
+    // 'X' close button
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    // color change on hover
+    .close-button:hover,
+    .close-button:focus {
+      color: black;
+      text-decoration: none;
+    }
+
+    // modal header
+    .modal-header {
+      position: relative;
+      text-align: center;
+
+      // text
+      h1 {
+        font-size: 2rem;
+        color: $primary-color;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        color: $text-color;
+      }
+
+      // icon
+      .modal-icon {
+        font-size: 3rem;
+        color: $primary-color;
+        margin-bottom: 10px;
+      }
+    }
+
+    // modal body
+    #modal-body {
+      font-size: 1rem;
+      color: $text-color;
+      line-height: 1.2;
+
+      // fade-in effect for modal body
+      .modal-transition {
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+      }
+
+      // welcome modal icon
+      .modal-body-icon {
+        font-size: 1.5rem;
+        color: #003366;
+      }
+
+      .fa-stack {
+        margin-bottom: 0px;
+      }
+
+      .fa-stack .mdi {
+        vertical-align: middle;
+        position: relative;
+        color: $primary-color;
+      }
+
+      // text
+      p {
+        margin-bottom: 15px;
+      }
+
+      #modal-text {
+        margin-top: 0px;
+        font-size: 0.8em;
+        font-style: italic;
+        color: #495057;
+      }
+    }
+
+    // modal footer
+    .modal-footer {
+      font-size: 0.9rem;
+      color: $activity-color;
+      margin-top: 20px;
+      font-weight: bold;
+      margin-bottom: 0;
+
+      // text
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// image in About modal
+.modal-image {
+  max-width: 50%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid $primary-color;
+  border-radius: $border-radius;
 }
