@@ -173,4 +173,4 @@ Helps optimize the map by grouping markers into clusters based on zoom levels.
 
 <br>
 
-This document will be updated as the project evolves.
+This document has been and will be updated as the project evolves.

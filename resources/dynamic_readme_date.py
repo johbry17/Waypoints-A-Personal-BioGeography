@@ -1,3 +1,9 @@
+'''
+This script updates the README.md file with the current month and year.
+It's automatically run every time a commit is made to the repository.
+Thank you, Git Hook!
+'''
+
 from datetime import datetime
 
 # filepath to README
