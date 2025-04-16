@@ -63,13 +63,15 @@ function createCircleMarker(place) {
     weight: 3,
   });
 
-  // hover effect
+  // hover effect (enlarge / shrink marker and change opacity)
   mainMarker.on("mouseover", function () {
-    this.setStyle({ radius: radius * 1.2, fillOpacity: 0.8 });
+    animateRadius(this, radius, radius * 1.2, 300);
+    this.setStyle({ fillOpacity: 0.8 });
   });
-
+  
   mainMarker.on("mouseout", function () {
-    this.setStyle({ radius, fillOpacity: 0.6 });
+    animateRadius(this, radius * 1.2, radius, 300);
+    this.setStyle({ fillOpacity: 0.6 });
   });
 
   // add home ring if it was a residence
@@ -451,21 +453,43 @@ function ensureRouteLayer() {
   }
 }
 
-// optional function to add marker clusters for activity markers
-function createMarkerCluster(data) {
-  let markerCluster = L.markerClusterGroup({
-    spiderfyOnMaxZoom: true,
-    showCoverageOnHover: false,
-    spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" },
-    maxClusterRadius: 50, // max cluster radius in pixels
-    zoomToBoundsOnClick: true,
-  });
+// animates the scaling of the marker radius on hover
+function animateRadius(marker, startRadius, endRadius, duration) {
+  const startTime = performance.now();
 
-  // add markers to the cluster group
-  data.forEach((place) => {
-    let marker = addMarker(place);
-    markerCluster.addLayer(marker);
-  });
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    // progess (0 to 1) based on elapsed time and duration
+    const progress = Math.min(elapsed / duration, 1); // ensure progress doesn't exceed 1, end condition
+    const currentRadius = startRadius + (endRadius - startRadius) * progress;
 
-  return markerCluster;
+    marker.setStyle({ radius: currentRadius });
+
+    // end condition for animation
+    if (progress < 1) {
+      requestAnimationFrame(step); // continue animation
+    }
+  }
+
+  // start recursive animation loop
+  requestAnimationFrame(step);
 }
+
+// optional function to add marker clusters for main markers
+// function createMarkerCluster(data) {
+//   let markerCluster = L.markerClusterGroup({
+//     spiderfyOnMaxZoom: true,
+//     showCoverageOnHover: false,
+//     spiderLegPolylineOptions: { weight: 1.5, color: "#ffd700" },
+//     maxClusterRadius: 50, // max cluster radius in pixels
+//     zoomToBoundsOnClick: true,
+//   });
+
+//   // add markers to the cluster group
+//   data.forEach((place) => {
+//     let marker = addMarker(place);
+//     markerCluster.addLayer(marker);
+//   });
+
+//   return markerCluster;
+// }
