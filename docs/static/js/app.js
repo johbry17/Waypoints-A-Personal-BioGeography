@@ -170,12 +170,15 @@ function initializeMainMap(baseMaps, markers, originalBounds) {
 }
 
 // custom panes for stacking overlays
+// leaflet doesn't support zIndex for layers, so custom panes
+// leaflet puts popups at a zIndex of 600
 function setupCustomPanes() {
   const panes = [
     { name: "routesPane", zIndex: 400 },
     { name: "locationsPane", zIndex: 500 },
     { name: "waypointsPane", zIndex: 600 },
     { name: "activitiesPane", zIndex: 700 },
+    { name: "popupsPane", zIndex: 800 },
   ];
 
   panes.forEach(({ name, zIndex }) => {

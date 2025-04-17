@@ -57,7 +57,7 @@ function tripledMarkers(data) {
 function addMarker(place) {
   const marker = createCircleMarker(place);
   marker.bindTooltip(createTooltipContent(place));
-  marker.bindPopup(createPopupContent(place));
+  marker.bindPopup(createPopupContent(place), { pane: "popupsPane" });
   initializePhotoCarousel(marker, place);
   return marker;
 }
@@ -134,7 +134,9 @@ function addLocationMarkers(locationData) {
 
     // add tooltip and popup to the marker
     locationMarker.bindTooltip(createTooltipContent(location));
-    locationMarker.bindPopup(createPopupContent(location));
+    locationMarker.bindPopup(createPopupContent(location), {
+      pane: "popupsPane",
+    });
     initializePhotoCarousel(locationMarker, location);
     locationLayer.addLayer(locationMarker);
   });
@@ -167,7 +169,7 @@ function addActivityMarkers(activityData) {
         html: `<div class="custom-cluster-icon">${count}</div>`,
         className: "custom-cluster",
         // iconSize: [25, 25],
-        iconSize: null, // seems to offset the icon a bit from the main 
+        iconSize: null, // seems to offset the icon a bit from the main
       });
     },
     clusterPane: "activitiesPane",
@@ -198,7 +200,7 @@ function addActivityMarkers(activityData) {
 
     // add tooltip and popup to the marker
     marker.bindTooltip(createTooltipContent(activity));
-    marker.bindPopup(createPopupContent(activity));
+    marker.bindPopup(createPopupContent(activity), { pane: "popupsPane" });
     initializePhotoCarousel(marker, activity);
     activityLayer.addLayer(marker);
   });
@@ -339,13 +341,21 @@ function initializePhotoCarousel(marker, place) {
 
 // popup content for each marker
 function createPopupContent(place) {
-  // boolean check for activity type
-  const isActivity = !!place.activity_type;
+  // create carousel for photos, if applicable
+  const template = document.querySelector("#carousel-template");
+  const carousel = template.content.cloneNode(true);
+  const carouselContainer = carousel.querySelector(".carousel-container");
+  carouselContainer.id = `carousel-${place.id}`;
 
-  // format text of activity type for display
-  const formattedActivityType = isActivity
-    ? capitalizeWords(place.activity_type)
-    : "";
+  // if photos, add the carousel to the popup, else add a message
+  const carouselHTML =
+    place.photos && place.photos.length > 0
+      ? carouselContainer.outerHTML
+      : `<div class="no-photos"><p><i class="fas fa-camera"></i> No photos available</p></div>`;
+
+  // boolean check for popup type
+  const isActivity = !!place.activity_type;
+  const isLocation = !!place.location_id;
 
   // assign icons
   const homeIcon = place.home ? '<i class="fas fa-home home-icon"></i>' : "";
@@ -359,7 +369,7 @@ function createPopupContent(place) {
     ? activityIcons[(place.activity_type ?? "").toLowerCase()] ||
       "fas fa-map-marker"
     : "";
-  const locationIcon = place.location_id
+  const locationIcon = isLocation
     ? locationIcons[(place.location_type ?? "").toLowerCase()] ||
       "fas fa-map-marker"
     : "fas fa-map-marker";
@@ -367,23 +377,9 @@ function createPopupContent(place) {
   // set icons
   const icons = isActivity
     ? `<i class="${activityIcon} activity-icon-stack"></i>`
-    : place.location_id
+    : isLocation
     ? `<i class="${locationIcon} location-icon-stack"></i>`
     : `<i class="fas fa-globe globe-icon"></i> ${homeIcon} ${schoolIcon}`;
-
-  // create carousel for photos, if applicable
-  const template = document.querySelector("#carousel-template");
-  const carouselElement = template.content.cloneNode(true);
-  const carouselContainer = carouselElement.querySelector(
-    ".carousel-container"
-  );
-  carouselContainer.id = `carousel-${place.id}`;
-
-  // if photos, add the carousel to the popup, else add a message
-  const carouselHTML =
-    place.photos && place.photos.length > 0
-      ? carouselContainer.outerHTML
-      : `<div class="no-photos"><p><i class="fas fa-camera"></i> No photos available</p></div>`;
 
   // add zoom button to the popup
   const placeId = place.activity_id || place.id || place.location_id;
@@ -393,10 +389,15 @@ function createPopupContent(place) {
     </button>
   `;
 
+  // format text of activity type for display
+  const formattedActivityType = isActivity
+    ? capitalizeWords(place.activity_type)
+    : "";
+
   // set border and arrow tip color by popup type
   const borderColor = isActivity
     ? colors.activityColor
-    : place.location_id
+    : isLocation
     ? colors.locationColor
     : colors.primaryColor;
 
