@@ -11,9 +11,9 @@
 
 // data fetching and parsing, map initialization
 // welcome modal
-// map creation and layer addition
+// functions for map creation and layer addition
+// overlay add and remove handlers
 // reset and about buttons
-// overlay addition and removal handlers
 // about modal
 // legends
 // initialize the map
@@ -22,8 +22,9 @@
 const placeData = {};
 let routeLayer;
 let mainMap;
-// ...and for the route legend popup
-let isLegendChecked = false;
+// ...and for the legends
+let legend; // main legend
+let isLegendChecked = false; // routes legend checkbox state
 
 // fetch data from JSON and CSV files
 function fetchData() {
@@ -87,6 +88,19 @@ function initializeMap() {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
+// central function to create the map
+function createMap(markers, originalBounds, activities, locations, routes) {
+  const baseMaps = createBaseMaps();
+  const overlayMaps = createOverlayMaps(markers, activities, routes);
+
+  initializeMainMap(baseMaps, markers, originalBounds);
+  setupLayerControls(baseMaps, overlayMaps, routes);
+  setupMapUI(originalBounds);
+  setupLocationsZoomVisibility(locations);
+  setupEventListeners(locations, routes);
+  addAttribution();
+}
+
 //////////////////////////////////////////////////////////
 
 // welcome modal
@@ -119,86 +133,7 @@ function setupWelcomeModal() {
 
 //////////////////////////////////////////////////////////
 
-// create map, base layers and overlays, toggle legend and route controls
-function createMap(markers, originalBounds, activities, locations, routes) {
-  // define layers
-  const baseMaps = createBaseMaps();
-  const overlayMaps = {
-    Waypoints: markers,
-    Activities: activities,
-    // Locations: locations,
-    Routes: routes.routeLayer,
-  };
-
-  // create map
-  // declared in global scope to access in popup zoom function
-  mainMap = L.map("map", {
-    layers: [baseMaps.Satellite, markers],
-    worldCopyJump: true,
-  });
-
-  // create custom panes for stacking overlays
-  mainMap.createPane("routesPane");
-  mainMap.createPane("locationsPane");
-  mainMap.createPane("waypointsPane");
-  mainMap.createPane("activitiesPane");
-
-  // set zIndex for each pane, routes to activities
-  mainMap.getPane("routesPane").style.zIndex = 400;
-  mainMap.getPane("locationsPane").style.zIndex = 500;
-  mainMap.getPane("waypointsPane").style.zIndex = 600;
-  mainMap.getPane("activitiesPane").style.zIndex = 700;
-
-  // set initial map zoom level and bounds, add controls
-  mainMap.fitBounds(originalBounds);
-  L.control.layers(baseMaps, overlayMaps).addTo(mainMap);
-  routeControls = L.control.layers(null, routes.sublayers, {
-    collapsed: false,
-  });
-
-  // add zoom-based visibility for the locations layer
-  mainMap.on("zoomend", () => {
-    const currentZoom = mainMap.getZoom();
-    console.log("Current Zoom Level:", currentZoom);
-
-    // show locations layer only if zoom level is below 5
-    if (currentZoom > 5) {
-      if (!mainMap.hasLayer(locations)) {
-        console.log("Adding locations layer to the map.");
-        mainMap.addLayer(locations);
-      }
-    } else {
-      if (mainMap.hasLayer(locations)) {
-        console.log("Removing locations layer from the map.");
-        mainMap.removeLayer(locations);
-      }
-    }
-  });
-
-  // style route legend popup, add main legend, about and reset buttons
-  applyLegendStyles(routeStyles);
-  addAboutButton(mainMap);
-  addResetButton(mainMap, originalBounds);
-  const legend = addLegend();
-  legend.addTo(mainMap);
-
-  // event listener to toggle display of legend and route controls
-  mainMap.on("overlayadd", (e) =>
-    handleOverlayAdd(e, legend, routeControls, mainMap)
-  );
-  mainMap.on("overlayremove", (e) =>
-    handleOverlayRemove(e, legend, routeControls, mainMap)
-  );
-
-  // add copyright and place Leaflet attribution control
-  mainMap.attributionControl
-    .setPosition("bottomleft")
-    .addAttribution(
-      `&copy; ${new Date().getFullYear()} Bryan Johns. All rights reserved. Images may not be used without explicit permission.`
-    );
-}
-
-// creates base maps
+// base maps
 function createBaseMaps() {
   return {
     Satellite: L.esri.basemapLayer("Imagery"),
@@ -213,45 +148,97 @@ function createBaseMaps() {
   };
 }
 
-//////////////////////////////////////////////////////////
-
-// button to reset map to original bounds
-function addResetButton(map, initialBounds) {
-  const resetControl = L.control({ position: "topleft" });
-
-  resetControl.onAdd = () => {
-    const button = L.DomUtil.create("button", "reset-map-button");
-    button.innerHTML = '<i class="mdi mdi-refresh"></i>'; // refresh icon
-    button.title = "Return map to global view"; // tooltip text
-
-    // prevent map interactions when clicking the button
-    L.DomEvent.disableClickPropagation(button);
-
-    // event listener to reset map
-    button.addEventListener("click", () => {
-      map.fitBounds(initialBounds); // reset to initial bounds
-    });
-
-    return button;
+// assigns markers to map overlays
+function createOverlayMaps(markers, activities, routes) {
+  return {
+    Waypoints: markers,
+    Activities: activities,
+    // Locations: locations,
+    Routes: routes.routeLayer,
   };
-
-  resetControl.addTo(map); // add to map
 }
 
-// add About button to map
-function addAboutButton(map) {
-  const aboutButton = L.control({ position: "topleft" });
+// set initial base map and marker layer, assign panes, and set view
+function initializeMainMap(baseMaps, markers, originalBounds) {
+  // declared in global scope to access in popup zoom function
+  mainMap = L.map("map", {
+    layers: [baseMaps.Satellite, markers],
+    worldCopyJump: true,
+  });
+  setupCustomPanes();
+  mainMap.fitBounds(originalBounds);
+}
 
-  aboutButton.onAdd = () => {
-    const button = L.DomUtil.create("button", "about-button");
-    button.innerHTML = `<i class="fas fa-info-circle"></i>`;
-    button.title = "About";
-    button.onclick = openModal;
-    L.DomEvent.disableClickPropagation(button);
-    return button;
-  };
+// custom panes for stacking overlays
+function setupCustomPanes() {
+  const panes = [
+    { name: "routesPane", zIndex: 400 },
+    { name: "locationsPane", zIndex: 500 },
+    { name: "waypointsPane", zIndex: 600 },
+    { name: "activitiesPane", zIndex: 700 },
+  ];
 
-  aboutButton.addTo(map);
+  panes.forEach(({ name, zIndex }) => {
+    const pane = mainMap.createPane(name);
+    pane.style.zIndex = zIndex;
+  });
+}
+
+// leaflet controls for the map
+function setupLayerControls(baseMaps, overlayMaps, routes) {
+  L.control.layers(baseMaps, overlayMaps).addTo(mainMap);
+  routeControls = L.control.layers(null, routes.sublayers, {
+    collapsed: false,
+  });
+}
+
+// adds legends, about and reset buttons to the map
+// legends declared in global scope to access in event listeners
+function setupMapUI(originalBounds) {
+  applyLegendStyles(routeStyles);
+  addAboutButton(mainMap);
+  addResetButton(mainMap, originalBounds);
+  legend = addLegend();
+  legend.addTo(mainMap);
+}
+
+// zoom-based visibility for locations layer
+function setupLocationsZoomVisibility(locations) {
+  mainMap.on("zoomend", () => {
+    const currentZoom = mainMap.getZoom();
+    console.log("Current Zoom Level:", currentZoom);
+
+    if (currentZoom > 5) {
+      if (!mainMap.hasLayer(locations)) {
+        console.log("Adding locations layer to the map.");
+        mainMap.addLayer(locations);
+      }
+    } else {
+      if (mainMap.hasLayer(locations)) {
+        console.log("Removing locations layer from the map.");
+        mainMap.removeLayer(locations);
+      }
+    }
+  });
+}
+
+// event listeners for overlay add and remove
+function setupEventListeners(locations, routes) {
+  mainMap.on("overlayadd", (e) =>
+    handleOverlayAdd(e, legend, routeControls, mainMap)
+  );
+  mainMap.on("overlayremove", (e) =>
+    handleOverlayRemove(e, legend, routeControls, mainMap)
+  );
+}
+
+// setup attribution for copyright and Leaflet
+function addAttribution() {
+  mainMap.attributionControl
+    .setPosition("bottomleft")
+    .addAttribution(
+      `&copy; ${new Date().getFullYear()} Bryan Johns. All rights reserved. Images may not be used without explicit permission.`
+    );
 }
 
 //////////////////////////////////////////////////////////
@@ -309,6 +296,47 @@ const handleOverlayRemove = (e, legend, routeControls, map) => {
     }
   }
 };
+
+//////////////////////////////////////////////////////////
+
+// button to reset map to original bounds
+function addResetButton(map, initialBounds) {
+  const resetControl = L.control({ position: "topleft" });
+
+  resetControl.onAdd = () => {
+    const button = L.DomUtil.create("button", "reset-map-button");
+    button.innerHTML = '<i class="mdi mdi-refresh"></i>'; // refresh icon
+    button.title = "Return map to global view"; // tooltip text
+
+    // prevent map interactions when clicking the button
+    L.DomEvent.disableClickPropagation(button);
+
+    // event listener to reset map
+    button.addEventListener("click", () => {
+      map.fitBounds(initialBounds); // reset to initial bounds
+    });
+
+    return button;
+  };
+
+  resetControl.addTo(map); // add to map
+}
+
+// add About button to map
+function addAboutButton(map) {
+  const aboutButton = L.control({ position: "topleft" });
+
+  aboutButton.onAdd = () => {
+    const button = L.DomUtil.create("button", "about-button");
+    button.innerHTML = `<i class="fas fa-info-circle"></i>`;
+    button.title = "About";
+    button.onclick = openModal;
+    L.DomEvent.disableClickPropagation(button);
+    return button;
+  };
+
+  aboutButton.addTo(map);
+}
 
 //////////////////////////////////////////////////////////
 
