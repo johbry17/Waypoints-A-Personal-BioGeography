@@ -7,7 +7,7 @@
 // location overlay
 // activity overlay
 // route overlay
-// tooltip 
+// tooltip
 // marker popups
 // zoom button in popup
 // animation for main marker hover
@@ -76,6 +76,7 @@ function createCircleMarker(place) {
     fillColor: colors.primaryColor,
     fillOpacity: 0.6,
     weight: 3,
+    // pane: "waypointsPane",
   });
 
   // hover effect (enlarge / shrink marker and change opacity)
@@ -83,7 +84,7 @@ function createCircleMarker(place) {
     animateRadius(this, radius, radius * 1.2, 300);
     this.setStyle({ fillOpacity: 0.8 });
   });
-  
+
   mainMarker.on("mouseout", function () {
     animateRadius(this, radius * 1.2, radius, 300);
     this.setStyle({ fillOpacity: 0.6 });
@@ -97,13 +98,13 @@ function createCircleMarker(place) {
       fillColor: "transparent",
       fillOpacity: 0,
       weight: 4,
+      // pane: "waypointsPane",
     });
     return L.featureGroup([homeRing, mainMarker]);
   }
 
   return mainMarker;
 }
-
 
 //////////////////////////////////////////////////////////
 
@@ -128,6 +129,7 @@ function addLocationMarkers(locationData) {
       fillColor: colors.academic,
       fillOpacity: 0.6,
       weight: 1,
+      // pane: "locationsPane",
     });
 
     // add tooltip and popup to the marker
@@ -165,7 +167,7 @@ function addActivityMarkers(activityData) {
         html: `<div class="custom-cluster-icon">${count}</div>`,
         className: "custom-cluster",
         // iconSize: [25, 25],
-        iconSize: null, // seems to offset the icon a bit from the main markers
+        iconSize: null, // seems to offset the icon a bit from the main 
       });
     },
   });
@@ -190,6 +192,7 @@ function addActivityMarkers(activityData) {
         iconSize: [20, 20],
         iconAnchor: [10, 10],
       }),
+      // pane: "activitiesPane",
     });
 
     // add tooltip and popup to the marker
@@ -243,6 +246,7 @@ function createRouteLayers(routeData) {
               lineCap: "round",
               lineJoin: "round",
             },
+            // pane: "routesPane",
           });
 
           // add routes to respective layers

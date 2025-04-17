@@ -266,6 +266,7 @@ html,
   height: 25px;
   box-shadow: $box-shadow;
   transition: transform $transition-duration, color $transition-duration;
+  // z-index: 700;
 
   // on hover, change background color
   &:hover {

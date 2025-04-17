@@ -167,7 +167,8 @@ Helps optimize the map by grouping markers into clusters based on zoom levels.
 - Add a **Story Mode**, to animate the journey through time.  
 - Store **photo metadata** (e.g., GPS locations, timestamps, steps).  
 - Add **Interactive Stats** Countries visited, distance traveled, longest stays
-- Create a themed **map style** a la Indiana Jones or minimalist dark mode
+- Create a themed **map style** a la Indiana Jones or minimalist dark mode.
+- Integrate **weather data** for specific locations with an API, just because I can.
 
 ---
 

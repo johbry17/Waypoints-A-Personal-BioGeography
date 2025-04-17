@@ -77,9 +77,9 @@ function initializeMap() {
       // create overlayMarkers for the map
       const markers = createMarkers(overviewData);
       const originalBounds = createBounds(overviewData);
-      const activities = addActivityMarkers(activityData);
       const locations = addLocationMarkers(locationData);
       const routes = createRouteLayers(routeData);
+      const activities = addActivityMarkers(activityData);
 
       // pass to createMap function
       createMap(markers, originalBounds, activities, locations, routes);
@@ -92,7 +92,11 @@ function initializeMap() {
 // welcome modal
 function setupWelcomeModal() {
   const modal = document.getElementById("welcome-modal");
-  modal.style.display = "flex"; // toggle modal display on / off
+  const mapContainer = document.getElementById("map");
+
+  // display modal on page load, not map
+  mapContainer.style.display = "none"; // hide map while modal is open
+  modal.style.display = "flex"; // modal display on
 
   // wait for modal to display, then fade-in text
   document.addEventListener("DOMContentLoaded", () => {
@@ -103,9 +107,13 @@ function setupWelcomeModal() {
     }, 500); // delay to sync with modal appearance
   });
 
-  // close modal on click
+  // event listener to close modal on click, display map
+  // must invalidate map size to display correctly (force a rerender)
+  // (leaflet thinks the map size is 0x0 when display: none)
   modal.addEventListener("click", () => {
     modal.style.display = "none";
+    mapContainer.style.display = 'block';
+    mainMap.invalidateSize(); 
   });
 }
 
@@ -128,6 +136,19 @@ function createMap(markers, originalBounds, activities, locations, routes) {
     layers: [baseMaps.Satellite, markers],
     worldCopyJump: true,
   });
+
+  
+  // // create custom panes for stacking
+  // mainMap.createPane("routesPane");
+  // mainMap.createPane("locationsPane");
+  // mainMap.createPane("waypointsPane");
+  // // mainMap.createPane("activitiesPane");
+
+  // // set zIndex for each pane, routes to activities
+  // mainMap.getPane("routesPane").style.zIndex = 400;
+  // mainMap.getPane("locationsPane").style.zIndex = 500;
+  // mainMap.getPane("waypointsPane").style.zIndex = 600;
+  // // mainMap.getPane("activitiesPane").style.zIndex = 700;
 
   // set initial map zoom level and bounds, add controls
   mainMap.fitBounds(originalBounds);

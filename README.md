@@ -8,6 +8,7 @@ A map-based visualization of life’s highlights, combining memories, events, an
 
 - [Description](#description)
 - [Features](#features)
+- [Technologies Used](#technologies-used)
 - [Usage](#usage)
 - [Gallery](#gallery)
 - [References](#references)
@@ -43,9 +44,17 @@ The backend, powered by **Python**, processes data from multiple sources, includ
 - **Data Integration**: Combines data from APIs, CSV files, and custom datasets to populate the map dynamically.
 - **Responsive Design**: Works seamlessly across devices and screen sizes.
 
+## Technologies Used
+
+- **Frontend**: Leaflet.js, HTML, CSS, JavaScript
+- **Backend**: Python
+- **Geospatial Tools**: OpenRouteService, Overpass API, Nominatim
+- **Data Formats**: GeoJSON, CSV
+- **Hosting**: GitHub Pages
+
 <br>
 
-> **Current Status**: Integrating polylines for hiking trails and adding transportation routes using data from [Overpass Turbo](https://overpass-turbo.eu/) and [OpenStreetMap](https://www.openstreetmap.org/).
+> **Current Status**: Building out the activity and location overlays, integrating polylines for hiking trails and adding transportation routes using data from [Overpass Turbo](https://overpass-turbo.eu/) and [OpenStreetMap](https://www.openstreetmap.org/).
 
 ## Usage
 
