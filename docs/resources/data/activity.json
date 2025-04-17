@@ -1,0 +1,524 @@
+[
+  {
+    "activity_id":"0c39a14a-6cdf-4525-afba-71df9e6a13ef",
+    "name":"Jay Peak",
+    "location":"Jay Peak",
+    "lat":44.939612,
+    "lng":-72.531502,
+    "activity_type":"skiing",
+    "route_path":"",
+    "description":"",
+    "notes":"I lucked into being a good skier. Between various programs for locals and schoolchildren, and family volunteering on the ski patrol, I managed to cost-effectively learn this bougie sport. If Vermont wasn't miserably cold for eight months out of the year, I'd probably be on the patrol myself.",
+    "photo_album":"VT",
+    "photos":[
+      "001 IMG_0062.JPG",
+      "IMG_0060.JPG",
+      "IMG_1535.jpeg",
+      "IMG_1536.jpeg",
+      "PXL_20250205_163957447.MP.jpg",
+      "001 PXL_20250207_170141016.jpg"
+    ]
+  },
+  {
+    "activity_id":"a19730a9-0b4e-4495-ac12-3953076c45bc",
+    "name":"North Shore, St John",
+    "location":"North Shore, St John",
+    "lat":18.36423,
+    "lng":-64.761231,
+    "activity_type":"snorkeling",
+    "route_path":"",
+    "description":"",
+    "notes":"I spent three years exploring the coral with the turtles. I know these waters. They fill me with deep solastalgia.",
+    "photo_album":"STJ",
+    "photos":[
+      "1 P4070233.JPG",
+      "1 P7070278.JPG",
+      "P3070169.JPG",
+      "P3070171.JPG",
+      "P4020200.JPG"
+    ]
+  },
+  {
+    "activity_id":"81b604f5-4eb3-4d4a-ad60-97edcd43768c",
+    "name":"Rio Pacuare",
+    "location":"Rio Pacuare",
+    "lat":10.032942,
+    "lng":-83.514039,
+    "activity_type":"whitewater rafting",
+    "route_path":"boat_pacuare.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"Costa_Rica",
+    "photos":[
+      "Upaz pre-whitewatering.jpg",
+      "UPaz Whitewater Ready.jpg",
+      "PACUARE RIVER 29-11-2011 117.jpg",
+      "PACUARE RIVER 29-11-2011 121.jpg",
+      "PACUARE RIVER 29-11-2011 128.jpg"
+    ]
+  },
+  {
+    "activity_id":"c6c0cc70-8d00-4297-ba82-47aff8260f5e",
+    "name":"Mt Washington",
+    "location":"Mt Washington",
+    "lat":44.295258,
+    "lng":-71.294323,
+    "activity_type":"hiking",
+    "route_path":"hike_mt_washington_tuckermans_ravine.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"d97f3dbd-3ec6-47ef-a5e8-758ecd1b741a",
+    "name":"Cerro Chirripo",
+    "location":"Cerro Chirripo",
+    "lat":9.508317,
+    "lng":-83.495068,
+    "activity_type":"hiking",
+    "route_path":"hike_chirripo.geojson",
+    "description":"",
+    "notes":"The peak of Costa Rica. People don't generally picture snow when they think of the tropics. This sunrise was worth waking up at 2am",
+    "photo_album":"Costa_Rica",
+    "photos":[
+      "001 PC050757.JPG",
+      "120.JPG",
+      "127.JPG",
+      "132.JPG",
+      "133.JPG",
+      "144.JPG",
+      "160.JPG",
+      "165.JPG",
+      "166.JPG",
+      "167.JPG",
+      "170.JPG",
+      "173.JPG",
+      "178.JPG",
+      "180.JPG"
+    ]
+  },
+  {
+    "activity_id":"2cf57391-7925-4c70-a488-a3604c596f19",
+    "name":"Corcovado",
+    "location":"Corcovado",
+    "lat":8.477514,
+    "lng":-83.523722,
+    "activity_type":"hiking",
+    "route_path":"hike_corcovado.geojson",
+    "description":"",
+    "notes":"Amazing shoreline jungle hike. Time the tide, or the river crossings may be filled with crocodiles and sharks.",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"e1187797-ac10-45e8-856f-0ff70aad7982",
+    "name":"Ometepe",
+    "location":"Ometepe",
+    "lat":11.531448,
+    "lng":-85.618891,
+    "activity_type":"hiking",
+    "route_path":"hike_ometepe.geojson",
+    "description":"",
+    "notes":"True to form, I hiked this volcano in flip-flops. The guide's consternation gave way to grudging respect",
+    "photo_album":"Nicaragua",
+    "photos":[
+      "001-217.JPG",
+      "087-2011-12-10 08.56.56.jpg",
+      "094.JPG",
+      "170.JPG",
+      "183.JPG",
+      "191.JPG",
+      "191-2011-12-11 08.52.58.jpg",
+      "191-2011-12-11 08.53.21.jpg",
+      "192.JPG",
+      "199.JPG",
+      "200-2011-12-11 11.12.23.jpg",
+      "2011-12-13 13.20.41.jpg",
+      "2011-12-13 16.50.35.jpg",
+      "201-2011-12-11 12.09.10.jpg",
+      "202.JPG",
+      "203-2011-12-11 12.39.45.jpg",
+      "204-2011-12-11 12.40.07.jpg",
+      "Ometepe3.jpg"
+    ]
+  },
+  {
+    "activity_id":"7200b974-3244-49a7-9164-85a8981d63e4",
+    "name":"Volcan Tajumulco",
+    "location":"Volcan Tajumulco",
+    "lat":15.020257,
+    "lng":-91.900682,
+    "activity_type":"hiking",
+    "route_path":"hike_tajumulco.geojson",
+    "description":"",
+    "notes":"The highest point in Central America",
+    "photo_album":"Guatemala",
+    "photos":[
+      "Tajumulcho sign.jpg",
+      "Tajumulcho Bryan.jpg",
+      "084.JPG",
+      "096.JPG",
+      "101.JPG",
+      "102.JPG"
+    ]
+  },
+  {
+    "activity_id":"3443f5b1-a7e3-44ca-95f7-c55ff8a40bc7",
+    "name":"Olympic Hot Springs",
+    "location":"Olympic Hot Springs",
+    "lat":47.966921,
+    "lng":-123.698306,
+    "activity_type":"hiking",
+    "route_path":"hike_olympic_hot_springs.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"4e09c9c7-69ff-4193-8059-937d0a3505ff",
+    "name":"Palisades Tahoe",
+    "location":"Palisades Tahoe",
+    "lat":39.19662245,
+    "lng":-120.2345468,
+    "activity_type":"skiing",
+    "route_path":"",
+    "description":"",
+    "notes":"",
+    "photo_album":"Lake_Tahoe",
+    "photos":[
+      "Tahoe_ski_trip.jpg"
+    ]
+  },
+  {
+    "activity_id":"4da20c6a-b593-49d8-a0d7-722360ac457f",
+    "name":"Loblolly, Anegada",
+    "location":"Loblolly, Anegada",
+    "lat":18.750037,
+    "lng":-64.306777,
+    "activity_type":"snorkeling",
+    "route_path":"",
+    "description":"",
+    "notes":"",
+    "photo_album":"STJ",
+    "photos":[
+      "P6280171.JPG",
+      "P6290183.JPG",
+      "P6270162.JPG",
+      "P6270149.JPG",
+      "1 P6280170.JPG",
+      "P6280175.JPG",
+      "P6280176.JPG",
+      "P6280177.JPG"
+    ]
+  },
+  {
+    "activity_id":"94f95906-00dc-437b-999a-08cd14c06452",
+    "name":"Menjangan Island",
+    "location":"Menjangan Island",
+    "lat":-8.107837,
+    "lng":114.520624,
+    "activity_type":"snorkeling",
+    "route_path":"",
+    "description":"",
+    "notes":"",
+    "photo_album":"Bali_Round_2",
+    "photos":[
+      "1672124585752-cfd13a3f-669b-47b7-b62a-a596d0273495.jpg",
+      "1672124409998-9e735b06-f959-4ece-9d2c-e9a0a7478411.jpg",
+      "001 DSCN0217.JPG"
+    ]
+  },
+  {
+    "activity_id":"dafce1a1-4b80-425c-a9cd-9d26e465236b",
+    "name":"Gunung Batur",
+    "location":"Gunung Batur",
+    "lat":-8.234754,
+    "lng":115.35895,
+    "activity_type":"hiking",
+    "route_path":"hike_bali_gunung_batur.geojson",
+    "description":"",
+    "notes":"Beautiful volcano growing out of its own caldera, with multiple villages around a lake within the caldera.",
+    "photo_album":"Bali_Round_2",
+    "photos":[
+      "001 DSCN0122.JPG"
+    ]
+  },
+  {
+    "activity_id":"05426177-89d3-4d98-9abe-ee08a6e20244",
+    "name":"Manali",
+    "location":"Manali",
+    "lat":32.25533,
+    "lng":77.205635,
+    "activity_type":"paragliding",
+    "route_path":"",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"2508151a-f318-4ed2-af55-1e9296cfbace",
+    "name":"Table Mountain",
+    "location":"Table Mountain",
+    "lat":-33.959147,
+    "lng":18.427368,
+    "activity_type":"hiking",
+    "route_path":"hike_table_mountain.geojson",
+    "description":"",
+    "notes":"Table Mountain and I bonded, especially when the covid pandemic hit, over the two-and-a-half weeks I spent booking flights home as the world closed down airspace, and canceled said flights.",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"968176de-1efa-4fb1-83dd-7014fd1f4f9e",
+    "name":"Mt Mansfield",
+    "location":"Mt Mansfield",
+    "lat":44.512794,
+    "lng":-72.805475,
+    "activity_type":"hiking",
+    "route_path":"hike_mansfield.geojson",
+    "description":"",
+    "notes":"This mountain and I have shaped each other. Literally - I spent a summer in my early twenties building trails on it. I keep going back home to it.",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"1c02bd77-0dba-467f-8707-ad549fb18b81",
+    "name":"Vieques",
+    "location":"Vieques",
+    "lat":18.101785,
+    "lng":-65.445466,
+    "activity_type":"kayaking",
+    "route_path":"",
+    "description":"",
+    "notes":"Amazing bioluminescent bay. Kayak it on a New Moon, or you'll be viewing the dinoflagellates under a tarp.",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"a2cb6cd1-e495-4e0c-9f4e-b7a5c7b5db1c",
+    "name":"Echo Lake",
+    "location":"Echo Lake",
+    "lat":42.10487,
+    "lng":-74.111603,
+    "activity_type":"hiking",
+    "route_path":"hike_echo_lake.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"da8a0184-02f1-4e72-904a-2270a33000fc",
+    "name":"East End, St John",
+    "location":"East End, St John",
+    "lat":18.335228,
+    "lng":-64.686043,
+    "activity_type":"kayaking",
+    "route_path":"",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"70bb0fee-970b-4207-b71a-7bdb4cf665a5",
+    "name":"Cabo Pulmo",
+    "location":"Cabo Pulmo",
+    "lat":23.414014,
+    "lng":-109.410647,
+    "activity_type":"snorkeling",
+    "route_path":"",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"e9152044-aada-42d6-83ee-f5b25735c970",
+    "name":"Cabo Pulmo",
+    "location":"Cabo Pulmo",
+    "lat":23.435436,
+    "lng":-109.47502,
+    "activity_type":"hiking",
+    "route_path":"hike_cabo_pulmo.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"534c1a4c-d85c-408a-8b44-9cc8cd7b36da",
+    "name":"Sugarbush, Vermont",
+    "location":"Sugarbush, Vermont",
+    "lat":44.1515207,
+    "lng":-72.90846716,
+    "activity_type":"skiing",
+    "route_path":"",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"2a581ee3-c4de-4819-a2c9-dcd58820a2c7",
+    "name":"Kalalau Trail, Kauai",
+    "location":"Kalalau Trail, Kauai",
+    "lat":22.202072,
+    "lng":-159.603851,
+    "activity_type":"hiking",
+    "route_path":"hike_kalalau.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"8ecea3d4-7b58-46b6-9427-a2f0fa0d0fc3",
+    "name":"St John",
+    "location":"Ram Head, St John",
+    "lat":18.311436,
+    "lng":-64.747498,
+    "activity_type":"hiking",
+    "route_path":"hike_stj.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"5083da2d-6d96-40c0-87bb-151a7d9f09e0",
+    "name":"Ohiopyle",
+    "location":"Ohiopyle",
+    "lat":39.606686,
+    "lng":-79.428527,
+    "activity_type":"whitewater rafting",
+    "route_path":"boat_ohiopyle.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"a9ca614a-45e0-4d09-831c-7d97efb07f9f",
+    "name":"Shenandoah River Outfitters",
+    "location":"Shenandoah River, Luray, Virginia",
+    "lat":38.757661,
+    "lng":-78.431545,
+    "activity_type":"tubing",
+    "route_path":"boat_shenandoah_tubing.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"9afe5f5f-6eeb-4a44-a37d-a4a0b356491a",
+    "name":"Uluwatu, Bali",
+    "location":"Uluwatu, Bali",
+    "lat":-8.836171,
+    "lng":115.073752,
+    "activity_type":"meditation",
+    "route_path":"",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"2e81fcb1-8c6e-4209-ac77-3e3684f37c1d",
+    "name":"Pumamarca Ruins",
+    "location":"Pumamarca, Peru",
+    "lat":-13.223074,
+    "lng":-72.230993,
+    "activity_type":"hiking",
+    "route_path":"hike_pumamarca.geojson",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"36705f29-f8f8-49e2-9181-6adec85d4a25",
+    "name":"Huayna Picchu, etc.",
+    "location":"Huayna Picchu",
+    "lat":-13.149838,
+    "lng":-72.550219,
+    "activity_type":"hiking",
+    "route_path":"hike_huayna_picchu.geojson",
+    "description":"The Stairs of Death",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"2a11113e-57d0-4594-bf9f-a14a7ca77d20",
+    "name":"Etosha National Park",
+    "location":"Etosha National Park",
+    "lat":-19.219804,
+    "lng":16.051527,
+    "activity_type":"safari",
+    "route_path":"",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"5e21cfa8-5597-4156-8b79-a24d9935ff30",
+    "name":"Namib Desert & the Skeleton Coast",
+    "location":"Wreck of Eduard Bohlen",
+    "lat":-23.995558,
+    "lng":14.466342,
+    "activity_type":"scenic flight",
+    "route_path":"great_circle_namibia.geojson",
+    "description":"So-called Skeleton Coast because a person shipwrecked would be trapped between the salty sea and the unforgiving desert. It's one of the rare points on Earth where the desert meets the ocean. The sands of the Namib are swallowing abandonded diamond mines, and even shipwrecks (Google \"Wreck of Eduard Bohlen\").",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  }
+]

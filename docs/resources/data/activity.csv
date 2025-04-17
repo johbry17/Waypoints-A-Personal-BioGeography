@@ -1,32 +1,32 @@
 activity_id,name,location,lat,lng,activity_type,route_path,description,notes,photo_album,photos
-0c39a14a-6cdf-4525-afba-71df9e6a13ef,Jay Peak,Jay Peak,44.939612,-72.531502,skiing,,,"I lucked into being a good skier. Between various programs for locals and schoolchildren, and family volunteering on the ski patrol, I managed to cost-effe0ctively learn this bougie sport. If Vermont wasn't miserably cold for eight months out of the year, I'd probably be on the patrol myself.",,
-a19730a9-0b4e-4495-ac12-3953076c45bc,"North Shore, St John","North Shore, St John",18.36423,-64.761231,snorkeling,,,I spent three years exploring the coral with the turtles. I know these waters. They fill me with deep solastalgia.,,
-81b604f5-4eb3-4d4a-ad60-97edcd43768c,Rio Pacuare,Rio Pacuare,10.032942,-83.514039,whitewater rafting,boat_pacuare.geojson,,,,
-c6c0cc70-8d00-4297-ba82-47aff8260f5e,Mt Washington,Mt Washington,44.295258,-71.294323,hiking,hike_mt_washington_tuckermans_ravine.geojson,,,,
-d97f3dbd-3ec6-47ef-a5e8-758ecd1b741a,Cerro Chirripo,Cerro Chirripo,9.508317,-83.495068,hiking,hike_chirripo.geojson,,The peak of Costa Rica. People don't generally picture snow when they think of the tropics. This sunrise was worth waking up at 2am,,
-2cf57391-7925-4c70-a488-a3604c596f19,Corcovado,Corcovado,8.477514,-83.523722,hiking,hike_corcovado.geojson,,"Amazing shoreline jungle hike. Time the tide, or the river crossings may be filled with crocodiles and sharks.",,
-e1187797-ac10-45e8-856f-0ff70aad7982,Ometepe,Ometepe,11.531448,-85.618891,hiking,hike_ometepe.geojson,,"True to form, I hiked this volcano in flip-flops. The guide's consternation gave way to grudging respect",,
-7200b974-3244-49a7-9164-85a8981d63e4,Volcan Tajumulco,Volcan Tajumulco,15.020257,-91.900682,hiking,hike_tajumulco.geojson,,The highest point in Central America,,
-3443f5b1-a7e3-44ca-95f7-c55ff8a40bc7,Olympic Hot Springs,Olympic Hot Springs,47.966921,-123.698306,hiking,hike_olympic_hot_springs.geojson,,,,
-4e09c9c7-69ff-4193-8059-937d0a3505ff,Palisades Tahoe,Palisades Tahoe,39.19662245,-120.2345468,skiing,,,,Lake_Tahoe,Tahoe_ski_trip.jpg
-4da20c6a-b593-49d8-a0d7-722360ac457f,"Loblolly, Anegada","Loblolly, Anegada",18.750037,-64.306777,snorkeling,,,,,
-94f95906-00dc-437b-999a-08cd14c06452,Menjangan Island,Menjangan Island,-8.107837,114.520624,snorkeling,,,,,
-dafce1a1-4b80-425c-a9cd-9d26e465236b,Gunung Batur,Gunung Batur,-8.234754,115.35895,hiking,hike_bali_gunung_batur.geojson,,"Beautiful volcano growing out of its own caldera, with multiple villages around a lake within the caldera.",,
-05426177-89d3-4d98-9abe-ee08a6e20244,Manali,Manali,32.25533,77.205635,paragliding,,,,,
-2508151a-f318-4ed2-af55-1e9296cfbace,Table Mountain,Table Mountain,-33.959147,18.427368,hiking,hike_table_mountain.geojson,,"Table Mountain and I bonded, especially when the covid pandemic hit, over the two-and-a-half weeks I spent booking flights home as the world closed down airspace, and canceled said flights.",,
-968176de-1efa-4fb1-83dd-7014fd1f4f9e,Mt Mansfield,Mt Mansfield,44.512794,-72.805475,hiking,hike_mansfield.geojson,,This mountain and I have shaped each other. Literally - I spent a summer in my early twenties building trails on it. I keep going back home to it.,,
-1c02bd77-0dba-467f-8707-ad549fb18b81,Vieques,Vieques,18.101785,-65.445466,kayaking,,,"Amazing bioluminescent bay. Kayak it on a New Moon, or you'll be viewing the dinoflagellates under a tarp.",,
-a2cb6cd1-e495-4e0c-9f4e-b7a5c7b5db1c,Echo Lake,Echo Lake,42.10487,-74.111603,hiking,hike_echo_lake.geojson,,,,
-da8a0184-02f1-4e72-904a-2270a33000fc,"East End, St John","East End, St John",18.335228,-64.686043,kayaking,,,,,
-70bb0fee-970b-4207-b71a-7bdb4cf665a5,Cabo Pulmo,Cabo Pulmo,23.414014,-109.410647,snorkeling,,,,,
-e9152044-aada-42d6-83ee-f5b25735c970,Cabo Pulmo,Cabo Pulmo,23.435436,-109.47502,hiking,hike_cabo_pulmo.geojson,,,,
-534c1a4c-d85c-408a-8b44-9cc8cd7b36da,"Sugarbush, Vermont","Sugarbush, Vermont",44.1515207,-72.90846716,skiing,,,,,
-2a581ee3-c4de-4819-a2c9-dcd58820a2c7,"Kalalau Trail, Kauai","Kalalau Trail, Kauai",22.202072,-159.603851,hiking,hike_kalalau.geojson,,,,
-8ecea3d4-7b58-46b6-9427-a2f0fa0d0fc3,St John,"Ram Head, St John",18.311436,-64.747498,hiking,hike_stj.geojson,,,,
-5083da2d-6d96-40c0-87bb-151a7d9f09e0,Ohiopyle,Ohiopyle,39.606686,-79.428527,whitewater rafting,boat_ohiopyle.geojson,,,,
-a9ca614a-45e0-4d09-831c-7d97efb07f9f,Shenandoah River Outfitters,"Shenandoah River, Luray, Virginia",38.757661,-78.431545,tubing,boat_shenandoah_tubing.geojson,,,,
-9afe5f5f-6eeb-4a44-a37d-a4a0b356491a,"Uluwatu, Bali","Uluwatu, Bali",-8.836171,115.073752,meditation,,,,,
-2e81fcb1-8c6e-4209-ac77-3e3684f37c1d,Pumamarca Ruins,"Pumamarca, Peru",-13.223074,-72.230993,hiking,hike_pumamarca.geojson,,,,
-36705f29-f8f8-49e2-9181-6adec85d4a25,"Huayna Picchu, etc.",Huayna Picchu,-13.149838,-72.550219,hiking,hike_huayna_picchu.geojson,The Stairs of Death,,,
-2a11113e-57d0-4594-bf9f-a14a7ca77d20,Etosha National Park,Etosha National Park,-19.219804,16.051527,safari,,,,,
-5e21cfa8-5597-4156-8b79-a24d9935ff30,Namib Desert & the Skeleton Coast,Wreck of Eduard Bohlen,-23.995558,14.466342,scenic flight,great_circle_namibia.geojson,"So-called Skeleton Coast because a person shipwrecked would be trapped between the salty sea and the unforgiving desert. It's one of the rare points on Earth where the desert meets the ocean. The sands of the Namib are swallowing abandonded diamond mines, and even shipwrecks (Google ""Wreck of Eduard Bohlen"").",,,
+0c39a14a-6cdf-4525-afba-71df9e6a13ef,Jay Peak,Jay Peak,44.939612,-72.531502,skiing,,,"I lucked into being a good skier. Between various programs for locals and schoolchildren, and family volunteering on the ski patrol, I managed to cost-effectively learn this bougie sport. If Vermont wasn't miserably cold for eight months out of the year, I'd probably be on the patrol myself.",VT,"[""001 IMG_0062.JPG"", ""IMG_0060.JPG"", ""IMG_1535.jpeg"", ""IMG_1536.jpeg"", ""PXL_20250205_163957447.MP.jpg"", ""001 PXL_20250207_170141016.jpg""]"
+a19730a9-0b4e-4495-ac12-3953076c45bc,"North Shore, St John","North Shore, St John",18.36423,-64.761231,snorkeling,,,I spent three years exploring the coral with the turtles. I know these waters. They fill me with deep solastalgia.,STJ,"[""1 P4070233.JPG"", ""1 P7070278.JPG"", ""P3070169.JPG"", ""P3070171.JPG"", ""P4020200.JPG""]"
+81b604f5-4eb3-4d4a-ad60-97edcd43768c,Rio Pacuare,Rio Pacuare,10.032942,-83.514039,whitewater rafting,boat_pacuare.geojson,,,Costa_Rica,"[""Upaz pre-whitewatering.jpg"", ""UPaz Whitewater Ready.jpg"", ""PACUARE RIVER 29-11-2011 117.jpg"", ""PACUARE RIVER 29-11-2011 121.jpg"", ""PACUARE RIVER 29-11-2011 128.jpg""]"
+c6c0cc70-8d00-4297-ba82-47aff8260f5e,Mt Washington,Mt Washington,44.295258,-71.294323,hiking,hike_mt_washington_tuckermans_ravine.geojson,,,,[]
+d97f3dbd-3ec6-47ef-a5e8-758ecd1b741a,Cerro Chirripo,Cerro Chirripo,9.508317,-83.495068,hiking,hike_chirripo.geojson,,The peak of Costa Rica. People don't generally picture snow when they think of the tropics. This sunrise was worth waking up at 2am,Costa_Rica,"[""001 PC050757.JPG"", ""120.JPG"", ""127.JPG"", ""132.JPG"", ""133.JPG"", ""144.JPG"", ""160.JPG"", ""165.JPG"", ""166.JPG"", ""167.JPG"", ""170.JPG"", ""173.JPG"", ""178.JPG"", ""180.JPG""]"
+2cf57391-7925-4c70-a488-a3604c596f19,Corcovado,Corcovado,8.477514,-83.523722,hiking,hike_corcovado.geojson,,"Amazing shoreline jungle hike. Time the tide, or the river crossings may be filled with crocodiles and sharks.",,[]
+e1187797-ac10-45e8-856f-0ff70aad7982,Ometepe,Ometepe,11.531448,-85.618891,hiking,hike_ometepe.geojson,,"True to form, I hiked this volcano in flip-flops. The guide's consternation gave way to grudging respect",Nicaragua,"[""001-217.JPG"", ""087-2011-12-10 08.56.56.jpg"", ""094.JPG"", ""170.JPG"", ""183.JPG"", ""191.JPG"", ""191-2011-12-11 08.52.58.jpg"", ""191-2011-12-11 08.53.21.jpg"", ""192.JPG"", ""199.JPG"", ""200-2011-12-11 11.12.23.jpg"", ""2011-12-13 13.20.41.jpg"", ""2011-12-13 16.50.35.jpg"", ""201-2011-12-11 12.09.10.jpg"", ""202.JPG"", ""203-2011-12-11 12.39.45.jpg"", ""204-2011-12-11 12.40.07.jpg"", ""Ometepe3.jpg""]"
+7200b974-3244-49a7-9164-85a8981d63e4,Volcan Tajumulco,Volcan Tajumulco,15.020257,-91.900682,hiking,hike_tajumulco.geojson,,The highest point in Central America,Guatemala,"[""Tajumulcho sign.jpg"", ""Tajumulcho Bryan.jpg"", ""084.JPG"", ""096.JPG"", ""101.JPG"", ""102.JPG""]"
+3443f5b1-a7e3-44ca-95f7-c55ff8a40bc7,Olympic Hot Springs,Olympic Hot Springs,47.966921,-123.698306,hiking,hike_olympic_hot_springs.geojson,,,,[]
+4e09c9c7-69ff-4193-8059-937d0a3505ff,Palisades Tahoe,Palisades Tahoe,39.19662245,-120.2345468,skiing,,,,Lake_Tahoe,"[""Tahoe_ski_trip.jpg""]"
+4da20c6a-b593-49d8-a0d7-722360ac457f,"Loblolly, Anegada","Loblolly, Anegada",18.750037,-64.306777,snorkeling,,,,STJ,"[""P6280171.JPG"", ""P6290183"", ""P6270162.JPG"", ""P6270162.JPG"", ""P6270149.JPG"", ""1 P6280170.JPG"", ""P6280175.JPG"", ""P6280176.JPG"", ""P6280177.JPG""]"
+94f95906-00dc-437b-999a-08cd14c06452,Menjangan Island,Menjangan Island,-8.107837,114.520624,snorkeling,,,,Bali_Round_2,"[""1672124585752-cfd13a3f-669b-47b7-b62a-a596d0273495.jpg"", ""1672124409998-9e735b06-f959-4ece-9d2c-e9a0a7478411"", ""001 DSCN0217.JPG""]"
+dafce1a1-4b80-425c-a9cd-9d26e465236b,Gunung Batur,Gunung Batur,-8.234754,115.35895,hiking,hike_bali_gunung_batur.geojson,,"Beautiful volcano growing out of its own caldera, with multiple villages around a lake within the caldera.",Bali_Round_2,"[""001 DSCN0122.JPG""]"
+05426177-89d3-4d98-9abe-ee08a6e20244,Manali,Manali,32.25533,77.205635,paragliding,,,,,[]
+2508151a-f318-4ed2-af55-1e9296cfbace,Table Mountain,Table Mountain,-33.959147,18.427368,hiking,hike_table_mountain.geojson,,"Table Mountain and I bonded, especially when the covid pandemic hit, over the two-and-a-half weeks I spent booking flights home as the world closed down airspace, and canceled said flights.",,[]
+968176de-1efa-4fb1-83dd-7014fd1f4f9e,Mt Mansfield,Mt Mansfield,44.512794,-72.805475,hiking,hike_mansfield.geojson,,This mountain and I have shaped each other. Literally - I spent a summer in my early twenties building trails on it. I keep going back home to it.,,[]
+1c02bd77-0dba-467f-8707-ad549fb18b81,Vieques,Vieques,18.101785,-65.445466,kayaking,,,"Amazing bioluminescent bay. Kayak it on a New Moon, or you'll be viewing the dinoflagellates under a tarp.",,[]
+a2cb6cd1-e495-4e0c-9f4e-b7a5c7b5db1c,Echo Lake,Echo Lake,42.10487,-74.111603,hiking,hike_echo_lake.geojson,,,,[]
+da8a0184-02f1-4e72-904a-2270a33000fc,"East End, St John","East End, St John",18.335228,-64.686043,kayaking,,,,,[]
+70bb0fee-970b-4207-b71a-7bdb4cf665a5,Cabo Pulmo,Cabo Pulmo,23.414014,-109.410647,snorkeling,,,,,[]
+e9152044-aada-42d6-83ee-f5b25735c970,Cabo Pulmo,Cabo Pulmo,23.435436,-109.47502,hiking,hike_cabo_pulmo.geojson,,,,[]
+534c1a4c-d85c-408a-8b44-9cc8cd7b36da,"Sugarbush, Vermont","Sugarbush, Vermont",44.1515207,-72.90846716,skiing,,,,,[]
+2a581ee3-c4de-4819-a2c9-dcd58820a2c7,"Kalalau Trail, Kauai","Kalalau Trail, Kauai",22.202072,-159.603851,hiking,hike_kalalau.geojson,,,,[]
+8ecea3d4-7b58-46b6-9427-a2f0fa0d0fc3,St John,"Ram Head, St John",18.311436,-64.747498,hiking,hike_stj.geojson,,,,[]
+5083da2d-6d96-40c0-87bb-151a7d9f09e0,Ohiopyle,Ohiopyle,39.606686,-79.428527,whitewater rafting,boat_ohiopyle.geojson,,,,[]
+a9ca614a-45e0-4d09-831c-7d97efb07f9f,Shenandoah River Outfitters,"Shenandoah River, Luray, Virginia",38.757661,-78.431545,tubing,boat_shenandoah_tubing.geojson,,,,[]
+9afe5f5f-6eeb-4a44-a37d-a4a0b356491a,"Uluwatu, Bali","Uluwatu, Bali",-8.836171,115.073752,meditation,,,,,[]
+2e81fcb1-8c6e-4209-ac77-3e3684f37c1d,Pumamarca Ruins,"Pumamarca, Peru",-13.223074,-72.230993,hiking,hike_pumamarca.geojson,,,,[]
+36705f29-f8f8-49e2-9181-6adec85d4a25,"Huayna Picchu, etc.",Huayna Picchu,-13.149838,-72.550219,hiking,hike_huayna_picchu.geojson,The Stairs of Death,,,[]
+2a11113e-57d0-4594-bf9f-a14a7ca77d20,Etosha National Park,Etosha National Park,-19.219804,16.051527,safari,,,,,[]
+5e21cfa8-5597-4156-8b79-a24d9935ff30,Namib Desert & the Skeleton Coast,Wreck of Eduard Bohlen,-23.995558,14.466342,scenic flight,great_circle_namibia.geojson,"So-called Skeleton Coast because a person shipwrecked would be trapped between the salty sea and the unforgiving desert. It's one of the rare points on Earth where the desert meets the ocean. The sands of the Namib are swallowing abandonded diamond mines, and even shipwrecks (Google ""Wreck of Eduard Bohlen"").",,,[]
