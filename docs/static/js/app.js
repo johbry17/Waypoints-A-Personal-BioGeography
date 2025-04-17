@@ -112,8 +112,8 @@ function setupWelcomeModal() {
   // (leaflet thinks the map size is 0x0 when display: none)
   modal.addEventListener("click", () => {
     modal.style.display = "none";
-    mapContainer.style.display = 'block';
-    mainMap.invalidateSize(); 
+    mapContainer.style.display = "block";
+    mainMap.invalidateSize();
   });
 }
 
@@ -137,18 +137,17 @@ function createMap(markers, originalBounds, activities, locations, routes) {
     worldCopyJump: true,
   });
 
-  
-  // // create custom panes for stacking
-  // mainMap.createPane("routesPane");
-  // mainMap.createPane("locationsPane");
-  // mainMap.createPane("waypointsPane");
-  // // mainMap.createPane("activitiesPane");
+  // create custom panes for stacking overlays
+  mainMap.createPane("routesPane");
+  mainMap.createPane("locationsPane");
+  mainMap.createPane("waypointsPane");
+  mainMap.createPane("activitiesPane");
 
-  // // set zIndex for each pane, routes to activities
-  // mainMap.getPane("routesPane").style.zIndex = 400;
-  // mainMap.getPane("locationsPane").style.zIndex = 500;
-  // mainMap.getPane("waypointsPane").style.zIndex = 600;
-  // // mainMap.getPane("activitiesPane").style.zIndex = 700;
+  // set zIndex for each pane, routes to activities
+  mainMap.getPane("routesPane").style.zIndex = 400;
+  mainMap.getPane("locationsPane").style.zIndex = 500;
+  mainMap.getPane("waypointsPane").style.zIndex = 600;
+  mainMap.getPane("activitiesPane").style.zIndex = 700;
 
   // set initial map zoom level and bounds, add controls
   mainMap.fitBounds(originalBounds);

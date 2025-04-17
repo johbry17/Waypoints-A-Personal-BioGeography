@@ -76,7 +76,7 @@ function createCircleMarker(place) {
     fillColor: colors.primaryColor,
     fillOpacity: 0.6,
     weight: 3,
-    // pane: "waypointsPane",
+    pane: "waypointsPane",
   });
 
   // hover effect (enlarge / shrink marker and change opacity)
@@ -98,7 +98,7 @@ function createCircleMarker(place) {
       fillColor: "transparent",
       fillOpacity: 0,
       weight: 4,
-      // pane: "waypointsPane",
+      pane: "waypointsPane",
     });
     return L.featureGroup([homeRing, mainMarker]);
   }
@@ -129,7 +129,7 @@ function addLocationMarkers(locationData) {
       fillColor: colors.academic,
       fillOpacity: 0.6,
       weight: 1,
-      // pane: "locationsPane",
+      pane: "locationsPane",
     });
 
     // add tooltip and popup to the marker
@@ -170,6 +170,7 @@ function addActivityMarkers(activityData) {
         iconSize: null, // seems to offset the icon a bit from the main 
       });
     },
+    clusterPane: "activitiesPane",
   });
 
   // // tripled the markers for international date line crossing
@@ -192,7 +193,7 @@ function addActivityMarkers(activityData) {
         iconSize: [20, 20],
         iconAnchor: [10, 10],
       }),
-      // pane: "activitiesPane",
+      pane: "activitiesPane",
     });
 
     // add tooltip and popup to the marker
@@ -246,7 +247,7 @@ function createRouteLayers(routeData) {
               lineCap: "round",
               lineJoin: "round",
             },
-            // pane: "routesPane",
+            pane: "routesPane",
           });
 
           // add routes to respective layers
