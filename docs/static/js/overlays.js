@@ -74,7 +74,7 @@ function createCircleMarker(place) {
     radius,
     color: markerColor,
     fillColor: colors.primaryColor,
-    fillOpacity: 0.6,
+    fillOpacity: 0.4,
     weight: 3,
     pane: "waypointsPane",
   });
@@ -82,12 +82,12 @@ function createCircleMarker(place) {
   // hover effect (enlarge / shrink marker and change opacity)
   mainMarker.on("mouseover", function () {
     animateRadius(this, radius, radius * 1.2, 300);
-    this.setStyle({ fillOpacity: 0.8 });
+    this.setStyle({ fillOpacity: 0.9 });
   });
 
   mainMarker.on("mouseout", function () {
     animateRadius(this, radius * 1.2, radius, 300);
-    this.setStyle({ fillOpacity: 0.6 });
+    this.setStyle({ fillOpacity: 0.4 });
   });
 
   // add home ring if it was a residence
