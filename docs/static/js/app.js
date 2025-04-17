@@ -1,5 +1,5 @@
 // Description: JavaScript code initializing the map application
-// It relies on functions contained in ./overlays.js and ./image-carousel-popup.js
+// It relies on functions contained in ./overlays.js and ./image-carousel.js
 // ./visualizationSettings.js contains the map settings and route styles
 //
 // This code fetches data from JSON and CSV files, processes it, and creates a map with markers and popups using Leaflet.js.
@@ -16,7 +16,6 @@
 // overlay addition and removal handlers
 // about modal
 // legends
-// photo reel fullscreen event listener
 // initialize the map
 
 // global constants, for zooming from popups...
@@ -395,46 +394,6 @@ function applyLegendStyles(routeStyles) {
     }
   });
 }
-
-//////////////////////////////////////////////////////////
-
-// event listener for photo reel fullscreen button
-document.addEventListener("click", (event) => {
-  const fullscreenButton = document.querySelector("#fullscreen-button");
-  const carouselContainer = document.querySelector(".carousel-container"); // entire carousel container
-  // check if clicked element is fullscreen button
-  if (event.target.closest("#fullscreen-button")) {
-    if (document.fullscreenElement) {
-      // if in fullscreen, exit fullscreen, change button to enter fullscreen
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen(); // Safari
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen(); // IE/Edge
-      }
-      carouselContainer.classList.remove("fullscreen");
-      fullscreenButton.innerHTML = `
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-expand fa-stack-1x fa-inverse"></i>
-      `;
-    } else {
-      // if not, enter fullscreen, change button to exit fullscreen
-      if (carouselContainer.requestFullscreen) {
-        carouselContainer.requestFullscreen();
-      } else if (carouselContainer.webkitRequestFullscreen) {
-        carouselContainer.webkitRequestFullscreen(); // Safari
-      } else if (carouselContainer.msRequestFullscreen) {
-        carouselContainer.msRequestFullscreen(); // IE/Edge
-      }
-      carouselContainer.classList.add("fullscreen");
-      fullscreenButton.innerHTML = `
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-compress fa-stack-1x fa-inverse"></i>
-      `;
-    }
-  }
-});
 
 //////////////////////////////////////////////////////////
 
