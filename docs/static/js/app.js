@@ -30,9 +30,8 @@ let isLegendChecked = false; // routes legend checkbox state
 function fetchData() {
   return Promise.all([
     fetch("resources/data/overview.json").then(handleFetchResponseJSON),
-    // fetch("resources/data/activity.csv").then(handleFetchResponseCSV),
     fetch("resources/data/activity.json").then(handleFetchResponseJSON),
-    fetch("resources/data/locations.csv").then(handleFetchResponseCSV),
+    fetch("resources/data/location.json").then(handleFetchResponseJSON),
     fetch("resources/data/routes.csv").then(handleFetchResponseCSV),
   ]);
 }
@@ -60,17 +59,9 @@ function initializeMap() {
 
   // get data and call functions to create map and layers
   fetchData()
-    .then(([overviewData, activityData, locationCsv, routesCsv]) => {
+    .then(([overviewData, activityData, locationData, routesCsv]) => {
       // parse CSV data
       // throws an error if the csv's last empty line is not skipped
-      // const activityData = Papa.parse(activityCsv, {
-      //   header: true,
-      //   skipEmptyLines: true,
-      // }).data;
-      const locationData = Papa.parse(locationCsv, {
-        header: true,
-        skipEmptyLines: true,
-      }).data;
       const routeData = Papa.parse(routesCsv, {
         header: true,
         skipEmptyLines: true,

@@ -1,0 +1,465 @@
+[
+  {
+    "location_id":"ad1dad53-2402-46b1-82a5-86e75a52c6ef",
+    "name":"Jay Peak",
+    "location":"Jay Peak, Vermont",
+    "lat":44.9242294,
+    "lng":-72.5256931,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"VT",
+    "photos":[
+      "001 IMG_0062.JPG",
+      "IMG_0060.JPG",
+      "IMG_1535.jpeg",
+      "IMG_1536.jpeg",
+      "PXL_20250205_163957447.MP.jpg",
+      "001 PXL_20250207_170141016.jpg"
+    ]
+  },
+  {
+    "location_id":"de6643db-625a-4cdb-9a6e-1f80a0b53505",
+    "name":"North Shore, St John",
+    "location":"Francis Bay Beach, Saint Thomas - Saint John District, United States Virgin Islands, United States",
+    "lat":18.3648379,
+    "lng":-64.7436297,
+    "location_type":"beach",
+    "description":"",
+    "notes":"",
+    "photo_album":"STJ",
+    "photos":[
+      "1 P4070233.JPG",
+      "1 P7070278.JPG",
+      "P3070169.JPG",
+      "P3070171.JPG",
+      "P4020200.JPG"
+    ]
+  },
+  {
+    "location_id":"2a7788e7-a83f-4159-a4fe-4732ea56314c",
+    "name":"Rio Pacuare",
+    "location":"Rio Pacuare, Costa Rica",
+    "lat":9.9428498,
+    "lng":-83.5347444,
+    "location_type":"jungle",
+    "description":"",
+    "notes":"",
+    "photo_album":"Costa_Rica",
+    "photos":[
+      "Upaz pre-whitewatering.jpg",
+      "UPaz Whitewater Ready.jpg",
+      "PACUARE RIVER 29-11-2011 117.jpg",
+      "PACUARE RIVER 29-11-2011 121.jpg",
+      "PACUARE RIVER 29-11-2011 128.jpg"
+    ]
+  },
+  {
+    "location_id":"e3b2028f-3884-437b-b42c-f00e771a7d7f",
+    "name":"Mt Washington",
+    "location":"Mt Washington, New Hampshire",
+    "lat":44.2704946,
+    "lng":-71.3033045,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"cd440d27-a7ac-4148-8ed5-2ebbc8b15481",
+    "name":"Cerro Chirripo",
+    "location":"Cerro Chirripo, Costa Rica",
+    "lat":9.4843073,
+    "lng":-83.4885816,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"Costa_Rica",
+    "photos":[
+      "001 PC050757.JPG",
+      "120.JPG",
+      "127.JPG",
+      "132.JPG",
+      "133.JPG",
+      "144.JPG",
+      "160.JPG",
+      "165.JPG",
+      "166.JPG",
+      "167.JPG",
+      "170.JPG",
+      "173.JPG",
+      "178.JPG",
+      "180.JPG"
+    ]
+  },
+  {
+    "location_id":"75ab6859-2ba3-4ae2-8523-8d4b398d6559",
+    "name":"Corcovado",
+    "location":"Corcovado, Costa Rica",
+    "lat":10.0615,
+    "lng":-84.12489605,
+    "location_type":"jungle",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"1c7dad02-5bab-4d20-a758-d49baa380582",
+    "name":"Ometepe",
+    "location":"Volcan Concepcion, Nicaragua",
+    "lat":11.5390087,
+    "lng":-85.6225811,
+    "location_type":"volcano",
+    "description":"",
+    "notes":"",
+    "photo_album":"Nicaragua",
+    "photos":[
+      "001-217.JPG",
+      "087-2011-12-10 08.56.56.jpg",
+      "094.JPG",
+      "170.JPG",
+      "183.JPG",
+      "191.JPG",
+      "191-2011-12-11 08.52.58.jpg",
+      "191-2011-12-11 08.53.21.jpg",
+      "192.JPG",
+      "199.JPG",
+      "200-2011-12-11 11.12.23.jpg",
+      "2011-12-13 13.20.41.jpg",
+      "2011-12-13 16.50.35.jpg",
+      "201-2011-12-11 12.09.10.jpg",
+      "202.JPG",
+      "203-2011-12-11 12.39.45.jpg",
+      "204-2011-12-11 12.40.07.jpg",
+      "Ometepe3.jpg"
+    ]
+  },
+  {
+    "location_id":"3fd36b8f-b611-48b5-b695-00c42819da72",
+    "name":"Volcan Tajumulco",
+    "location":"Volcan Tajumulco, Guatemala",
+    "lat":15.0430989,
+    "lng":-91.903608,
+    "location_type":"volcano",
+    "description":"",
+    "notes":"",
+    "photo_album":"Guatemala",
+    "photos":[
+      "Tajumulcho sign.jpg",
+      "Tajumulcho Bryan.jpg",
+      "084.JPG",
+      "096.JPG",
+      "101.JPG",
+      "102.JPG"
+    ]
+  },
+  {
+    "location_id":"2d9a1398-d341-4970-85a6-02fe66d2f8da",
+    "name":"Olympic Hot Springs",
+    "location":"Olympic Hot Springs, Washington State",
+    "lat":47.9765393,
+    "lng":-123.6893553,
+    "location_type":"hot springs",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"4370dc0c-4328-4c6a-8fd0-c39044675229",
+    "name":"Palisades Tahoe",
+    "location":"Palisades Tahoe, California",
+    "lat":39.19662245,
+    "lng":-120.2345468,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"Lake_Tahoe",
+    "photos":[
+      "Tahoe_ski_trip.jpg"
+    ]
+  },
+  {
+    "location_id":"be297e89-ad36-4beb-944b-c85786e176b2",
+    "name":"Loblolly, Anegada",
+    "location":"Loblolly Bay, British Virgin Islands",
+    "lat":18.7408432,
+    "lng":-64.3102596,
+    "location_type":"beach",
+    "description":"",
+    "notes":"",
+    "photo_album":"STJ",
+    "photos":[
+      "P6280171.JPG",
+      "P6290183.JPG",
+      "P6270162.JPG",
+      "P6270149.JPG",
+      "1 P6280170.JPG",
+      "P6280175.JPG",
+      "P6280176.JPG",
+      "P6280177.JPG"
+    ]
+  },
+  {
+    "location_id":"c982192e-76e6-40b6-9ec0-690e2a67133a",
+    "name":"Menjangan Island",
+    "location":"Menjangan Island, Bali, Indonesia",
+    "lat":-8.09601895,
+    "lng":114.5177964,
+    "location_type":"beach",
+    "description":"",
+    "notes":"",
+    "photo_album":"Bali_Round_2",
+    "photos":[
+      "1672124585752-cfd13a3f-669b-47b7-b62a-a596d0273495.jpg",
+      "1672124409998-9e735b06-f959-4ece-9d2c-e9a0a7478411.jpg",
+      "001 DSCN0217.JPG"
+    ]
+  },
+  {
+    "location_id":"30267a98-a4a6-453a-abd5-ea5bcaee8d7d",
+    "name":"Gunung Batur",
+    "location":"Gunung Batur, Bali, Indonesia",
+    "lat":-8.2394154,
+    "lng":115.3779603,
+    "location_type":"volcano",
+    "description":"",
+    "notes":"",
+    "photo_album":"Bali_Round_2",
+    "photos":[
+      "001 DSCN0122.JPG"
+    ]
+  },
+  {
+    "location_id":"09aa3e9e-bdb4-4734-ad5b-dc84a84f12b4",
+    "name":"Manali",
+    "location":"Manali, India",
+    "lat":32.2454608,
+    "lng":77.1872926,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"3fd8340c-c85b-44b6-895d-7faa439b9924",
+    "name":"Table Mountain",
+    "location":"Table Mountain, South Africa",
+    "lat":-33.95906351,
+    "lng":18.4038716,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"f465256c-3a01-4320-8fb8-73e07e5c6274",
+    "name":"Mt Mansfield",
+    "location":"Mt Mansfield, Vermont",
+    "lat":44.543947,
+    "lng":-72.81431,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"9d96370c-39d3-426a-9435-b57fc6b315fb",
+    "name":"Vieques",
+    "location":"Vieques, Puerto Rico",
+    "lat":18.1215622,
+    "lng":-65.45746403,
+    "location_type":"beach",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"3762f081-3b47-4c2a-986a-2296128426b4",
+    "name":"Echo Lake",
+    "location":"Echo Lake, New York",
+    "lat":42.09712075,
+    "lng":-74.09098064,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"d9f31ae6-5b57-49a5-bdfb-cb2d82e88659",
+    "name":"East End, St John",
+    "location":"Haulover, Saint Thomas - Saint John District, United States Virgin Islands, United States",
+    "lat":18.3506378,
+    "lng":-64.6843396,
+    "location_type":"beach",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"69c2f6be-8494-4704-ba14-031e760a8b11",
+    "name":"Los Arbolitos, Municipio de Los Cabos, Baja California Sur, M\u00e9xico",
+    "location":"Los Arbolitos, Municipio de Los Cabos, Baja California Sur, M\u00e9xico",
+    "lat":23.4045736,
+    "lng":-109.4254458,
+    "location_type":"beach",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"d69f229c-83e2-4c51-afd5-54684b0e5600",
+    "name":"Cabo Pulmo, Mexico",
+    "location":"Cabo Pulmo, Mexico",
+    "lat":23.4453627,
+    "lng":-109.4240213,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"7b4896b8-8b51-437d-bfbe-ca049d63f617",
+    "name":"Sugarbush, Vermont",
+    "location":"Sugarbush, Vermont",
+    "lat":44.1515207,
+    "lng":-72.90846716,
+    "location_type":"mountain",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"ed071243-f320-43f1-8ad0-0d6a1d738f4e",
+    "name":"Na Pali Coast, Hawai'i",
+    "location":"Na Pali Coast, Hawai'i",
+    "lat":22.1677686,
+    "lng":-159.6440871,
+    "location_type":"jungle",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"10bb0259-b755-406b-bb94-5dd0f6847064",
+    "name":"Ram Head, St John",
+    "location":"Ram Head, St John",
+    "lat":18.30405894,
+    "lng":-64.70352418,
+    "location_type":"beach",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"6680ca21-ada6-4561-b9d1-877fe6ff959d",
+    "name":"Mexico City",
+    "location":"Mexico City",
+    "lat":19.3207722,
+    "lng":-99.15146775,
+    "location_type":"city",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"d8f3c830-ca9e-4de8-9dd3-d71829e498f0",
+    "name":"The Great State of Vermont",
+    "location":"Vermont",
+    "lat":44.4761601,
+    "lng":-73.212906,
+    "location_type":"rural",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"c5b422df-df91-448b-93e6-ce8ab7ad3542",
+    "name":"Washington, D.C.",
+    "location":"Washington, D.C.",
+    "lat":38.8950368,
+    "lng":-77.0365427,
+    "location_type":"city",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"119cff72-eed4-4a68-b86f-87874a9012bb",
+    "name":"Olympia, WA",
+    "location":"Olympia, Washington",
+    "lat":47.0451022,
+    "lng":-122.8950075,
+    "location_type":"town",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "location_id":"7b8350c1-d7e3-4728-8499-f7401a347555",
+    "name":"Namib Desert",
+    "location":"Namibia",
+    "lat":-18.99133055,
+    "lng":15.74605506,
+    "location_type":"desert",
+    "description":"",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  }
+]
