@@ -273,7 +273,7 @@ h4 {
   font-size: 20px;
   transition: transform 0.3s, color 0.3s;
 }
-.carousel-container .carousel-controls span:hover {
+.carousel-container .carousel-controls span:hover, .carousel-container .carousel-controls span.touched {
   transform: scale(1.2);
   color: #0085a1;
 }

@@ -440,5 +440,35 @@ function applyLegendStyles(routeStyles) {
 
 //////////////////////////////////////////////////////////
 
+function detectTouchDevice() {
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    document.body.classList.add('touch-device');
+  }
+}
+window.addEventListener('DOMContentLoaded', detectTouchDevice);
+
+function enableGlobalTouchFeedback(selector, className = 'touched', duration = 300) {
+  document.querySelectorAll(selector).forEach((el) => {
+    el.addEventListener('touchstart', () => {
+      // add temporary hover class
+      el.classList.add(className);
+      console.log(`Added ${className} to`, el);
+
+      // remove after the specified duration
+      setTimeout(() => {
+        el.classList.remove(className);
+        console.log(`Removed ${className} from`, el);
+      }, duration);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  enableGlobalTouchFeedback('.carousel-controls span');
+});
+
+// Apply the touch feedback to specific elements
+// enableGlobalTouchFeedback('.carousel-controls span');
+
 // start everything - initialize the map
 initializeMap();

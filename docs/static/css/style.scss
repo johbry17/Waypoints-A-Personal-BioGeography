@@ -382,7 +382,7 @@ h4 {
       transition: transform $transition-duration, color $transition-duration;
 
       // enlarge and color change on hover
-      &:hover {
+      &:hover, &.touched {
         transform: $icon-hover-transform;
         color: $carousel-control-hover-color;
       }
