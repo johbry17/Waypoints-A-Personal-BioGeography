@@ -245,7 +245,7 @@
     "activity_type":"hiking",
     "route_path":"hike_bali_gunung_batur.geojson",
     "description":"",
-    "notes":"Beautiful volcano growing out of its own caldera, with multiple villages around a lake within the caldera.",
+    "notes":"Beautiful volcano growing out of its own caldera, with multiple villages around a lake within said caldera",
     "photo_album":"Bali_Round_2",
     "photos":[
       "001 DSCN0122.JPG"
@@ -259,8 +259,8 @@
     "lng":77.205635,
     "activity_type":"paragliding",
     "route_path":"",
-    "description":"",
-    "notes":"",
+    "description":"The Himalayas",
+    "notes":"The closest I have come to Everest, even though it's comparatively in the foothills of the HImalayas",
     "photo_album":"India",
     "photos":[
       "0-P4160180.JPG",
@@ -290,7 +290,7 @@
     "activity_type":"hiking",
     "route_path":"hike_table_mountain.geojson",
     "description":"",
-    "notes":"Table Mountain and I bonded, especially when the covid pandemic hit, over the two-and-a-half weeks I spent booking flights home as the world closed down airspace, and canceled said flights.",
+    "notes":"Table Mountain and I bonded, especially when the covid pandemic hit, over the two-and-a-half weeks I spent booking flights home as the world closed down airspace and canceled said flights. I was either at the airport, or doomscrolling, or hiking. Good times",
     "photo_album":"South_Africa",
     "photos":[
       "001-IMG_2621.jpg",
@@ -374,7 +374,7 @@
     "activity_type":"hiking",
     "route_path":"hike_echo_lake.geojson",
     "description":"",
-    "notes":"",
+    "notes":"My first trip post-covid, camping with friends in the Catskills",
     "photo_album":"Catskills",
     "photos":[
       "0-EXMI9048.JPG",
@@ -428,7 +428,7 @@
     "activity_type":"kayaking",
     "route_path":"",
     "description":"",
-    "notes":"",
+    "notes":"There is a sunken ship, the HMS <i>Santa Monica<\/i>, rotting somewhere beneath the waters of Round Bay, and I have yet to find it",
     "photo_album":"STJ",
     "photos":[
       "Haulover Kayak Round Bay.jpg",
@@ -444,7 +444,7 @@
     "activity_type":"snorkeling",
     "route_path":"",
     "description":"",
-    "notes":"",
+    "notes":"I saw a baby Humpback swimming with its momma on this snorkel",
     "photo_album":"Mexico_Baja_Sur",
     "photos":[
       "PXL_20220412_214625538.jpg",
@@ -477,7 +477,7 @@
     "activity_type":"skiing",
     "route_path":"",
     "description":"",
-    "notes":"",
+    "notes":"Honorary shout-out to Sugarbush, which I used to ski at a bunch. Same for Smuggler's Notch, Mad River Glen, and Bolton Valley. Stowe, not so much. Always a bit too expensive",
     "photo_album":"",
     "photos":[
 
@@ -492,7 +492,7 @@
     "activity_type":"hiking",
     "route_path":"hike_kalalau.geojson",
     "description":"",
-    "notes":"",
+    "notes":"The Jurassic Park coastline",
     "photo_album":"Hawaii",
     "photos":[
       "IMG_1453.JPG"
@@ -507,7 +507,7 @@
     "activity_type":"hiking",
     "route_path":"hike_stj.geojson",
     "description":"",
-    "notes":"",
+    "notes":"I spent three years hiking this island, popping into abandoned plantations, hidden snorkeling bays, and standing on the cliffside under the full moon while the waves crashed below",
     "photo_album":"STJ",
     "photos":[
       "P4230030.JPG",
@@ -557,7 +557,7 @@
     "activity_type":"tubing",
     "route_path":"boat_shenandoah_tubing.geojson",
     "description":"",
-    "notes":"",
+    "notes":"The annual tubing trip",
     "photo_album":"DC",
     "photos":[
       "IMG_4890.JPG"
@@ -572,7 +572,7 @@
     "activity_type":"meditation",
     "route_path":"",
     "description":"",
-    "notes":"",
+    "notes":"Extremely stereotypical. I full-moon meditated in caves under the holy Balinese cliffside temple of Uluwatu, led by a pandita. The only religious pilgrimmage of my life",
     "photo_album":"Bali",
     "photos":[
       "1671997377380-2e5a0399-dd73-4c1f-9101-2d929c007980.jpg"
@@ -587,7 +587,7 @@
     "activity_type":"hiking",
     "route_path":"hike_pumamarca.geojson",
     "description":"",
-    "notes":"",
+    "notes":"Under-rated hike just outside of Ollantaytambo",
     "photo_album":"Peru_2",
     "photos":[
       "IMG_0191.jpg"
@@ -602,7 +602,7 @@
     "activity_type":"hiking",
     "route_path":"hike_huayna_picchu.geojson",
     "description":"The Stairs of Death",
-    "notes":"",
+    "notes":"Yep, hiked it in flip-flops",
     "photo_album":"Peru_2",
     "photos":[
       "IMG_0656.jpg",
@@ -664,8 +664,8 @@
     "lng":14.466342,
     "activity_type":"scenic flight",
     "route_path":"great_circle_namibia.geojson",
-    "description":"So-called Skeleton Coast because a person shipwrecked would be trapped between the salty sea and the unforgiving desert. It's one of the rare points on Earth where the desert meets the ocean. The sands of the Namib are swallowing abandonded diamond mines, and even shipwrecks (Google \"Wreck of Eduard Bohlen\").",
-    "notes":"",
+    "description":"",
+    "notes":"So-called Skeleton Coast because a person shipwrecked would be trapped between the salty sea and the unforgiving desert. It's one of the rare points on Earth where the desert meets the ocean. The sands of the Namib are swallowing abandonded diamond mines, and even shipwrecks (Google \"Wreck of Eduard Bohlen\").",
     "photo_album":"Namibia_flight",
     "photos":[
       "..\/Namibia\/0-PXL_20230328_154728261.MP.jpg",
