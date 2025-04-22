@@ -85,13 +85,16 @@ To update: See [./resources/extract_data.ipynb](https://github.com/johbry17/Wayp
 
 ## References
 
-- [Leaflet.js Documentation](https://leafletjs.com/)
+- [Leaflet.js](https://leafletjs.com/)
+- [Overpass Turbo](https://overpass-turbo.eu/)
 - [Overpass API Documentation](https://wiki.openstreetmap.org/wiki/Overpass_API)
-- [Nominatim Documentation](https://nominatim.org/release-docs/latest/)
-- [OpenRouteService API Documentation](https://openrouteservice.org/documentation/)
+- [Nominatim API Documentation](https://nominatim.org/release-docs/latest/)
+- [OpenRouteService API](https://openrouteservice.org/)
 - [GeographicLib Documentation](https://geographiclib.sourceforge.io/)
 - [geojson.io](https://geojson.io/)
 - [GeoJSON Specification](https://geojson.org/)
+- [Font Awesome Icons](https://fontawesome.com/)
+- [Material Design Icons](https://materialdesignicons.com/)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [MIT License](https://opensource.org/licenses/MIT)
 
