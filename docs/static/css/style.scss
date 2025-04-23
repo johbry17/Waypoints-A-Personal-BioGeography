@@ -301,7 +301,7 @@ html,
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   overflow-y: auto; // scrollbar if content overflows height
-  // max-height: 300px; // set a max height for the popup
+  max-height: 80vh;
   animation: fadeIn $transition-duration ease-in-out;
 }
 
@@ -320,6 +320,26 @@ html,
 // popup arrow
 .leaflet-popup-tip {
   background-color: $primary-color;
+}
+
+.leaflet-popup-close-button {
+  top: -15px !important; // Move above the popup
+  right: -15px !important; // Move to the right of the popup
+  color: white !important;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: $box-shadow;
+  z-index: 1000; // Ensure it is above the popup content
+
+  &:hover {
+    color: black !important;
+  }
 }
 
 // activity popup text

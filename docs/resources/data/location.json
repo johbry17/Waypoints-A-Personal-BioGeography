@@ -832,5 +832,29 @@
       "PXL_20230331_172634034.jpg",
       "PXL_20230331_191123628.jpg"
     ]
+  },
+  {
+    "location_id":"860a5dac-ad87-461f-aa64-6e9f849c5306",
+    "name":"Arna Jharna: The Thar Desert Museum of Rajasthan",
+    "location":"Arna Jharna Thar Desert Museum",
+    "lat":26.29725,
+    "lng":72.894706,
+    "location_type":"desert",
+    "description":"<a href=\"https:\/\/en.wikipedia.org\/wiki\/Arna_Jharna_Museum\" target=\"_blank\">Wikipedia<\/a>",
+    "notes":"The museum of brooms. I spent an eventful week out here, early-ish in the museum's construction. An ethnographic museum dedicated to folk culture, the intersection of ecology and culture in the surrounding communities. A heavy dose of ethno-musicology as well. The tight coupling of the environment and culture endlessly surprised me - down to the materials used in construcintg brooms and the floors they are used on.<br><br>Sadly, my stay was cut short when one of the caretakers tragically died, quite young, probably from a poisonous animal.",
+    "photo_album":"India",
+    "photos":[
+      "Working Women.JPG",
+      "Museum.JPG",
+      "Museum Valley.JPG",
+      "PB020284.JPG",
+      "PB030311.JPG",
+      "Predator Taking Flight.JPG",
+      "Recording Musicians.JPG",
+      "Musicians.JPG",
+      "The Festival.JPG",
+      "The Kids.JPG",
+      "Kesin and Sanju.JPG"
+    ]
   }
 ]

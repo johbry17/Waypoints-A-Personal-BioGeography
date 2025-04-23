@@ -409,6 +409,9 @@ function createPopupContent(place) {
         .leaflet-popup-tip {
             background-color: ${borderColor} !important;
         }
+        .leaflet-popup-close-button {
+            background-color: ${borderColor} !important;
+        }
         </style>
         ${carouselHTML}
         <div class="popup-content">
