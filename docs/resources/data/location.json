@@ -856,5 +856,19 @@
       "The Kids.JPG",
       "Kesin and Sanju.JPG"
     ]
+  },
+  {
+    "location_id":"e7659f4a-86e7-4a12-82a0-bfe12a16905f",
+    "name":"Mehrangarh Fort & the city of Jodhpur",
+    "location":"Jodhpur",
+    "lat":26.296236,
+    "lng":73.019039,
+    "location_type":"desert",
+    "description":"",
+    "notes":"As blink-and-you'll-miss-it seen in <i>The Dark Knight Rises<\/i>.<br><br>The blue city. I spent a brief period here with Rupayan Sansthan, a nonprofit focused on the ethnographic study of Rajasthan\u2019s intangible cultural heritage. Founded by a folklorist who documented countless folk tales and musical traditions, the organization revealed fascinating links between culture, agriculture, and daily life. For example, dividing Rajasthan into three major agricultural zones\u2014pearl millet, sorghum, and maize\u2014correlates with differences in construction materials, diets, land use (pastoralism vs. agriculture), and even the types of musical instruments or household items like brooms that are traditionally made in each region. They built a museum out in the desert near Jodhpur.<br><br>Mehrangarh Fort has nothing to do with Rupayan Sansthan. It's just a really cool fort dominating the Jodhpur landscape,  \"a palace that might have been built by Titans and colored by the morning sun,\" according to Rudyard Kipling.",
+    "photo_album":"India",
+    "photos":[
+      "Mehrangarh Fort.JPG"
+    ]
   }
 ]
