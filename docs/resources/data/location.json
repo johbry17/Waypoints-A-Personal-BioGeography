@@ -863,12 +863,31 @@
     "location":"Jodhpur",
     "lat":26.296236,
     "lng":73.019039,
-    "location_type":"desert",
+    "location_type":"city",
     "description":"",
-    "notes":"As blink-and-you'll-miss-it seen in <i>The Dark Knight Rises<\/i>.<br><br>The blue city. I spent a brief period here with Rupayan Sansthan, a nonprofit focused on the ethnographic study of Rajasthan\u2019s intangible cultural heritage. Founded by a folklorist who documented countless folk tales and musical traditions, the organization revealed fascinating links between culture, agriculture, and daily life. For example, dividing Rajasthan into three major agricultural zones\u2014pearl millet, sorghum, and maize\u2014correlates with differences in construction materials, diets, land use (pastoralism vs. agriculture), and even the types of musical instruments or household items like brooms that are traditionally made in each region. They built a museum out in the desert near Jodhpur.<br><br>Mehrangarh Fort has nothing to do with Rupayan Sansthan. It's just a really cool fort dominating the Jodhpur landscape,  \"a palace that might have been built by Titans and colored by the morning sun,\" according to Rudyard Kipling.",
+    "notes":"As seen in <i>The Dark Knight Rises<\/i>. Blink and you'll miss it.<br><br>The blue city. I spent a brief period here with Rupayan Sansthan, a nonprofit focused on the ethnographic study of Rajasthan\u2019s intangible cultural heritage. Founded by a folklorist who documented countless folk tales and musical traditions, the organization revealed fascinating links between culture, agriculture, and daily life. For example, dividing Rajasthan into three major agricultural zones\u2014pearl millet, sorghum, and maize\u2014correlates with differences in construction materials, diets, land use (pastoralism vs. agriculture), and even the types of musical instruments or household items like brooms that are traditionally made in each region. They built a museum out in the desert near Jodhpur.<br><br>Mehrangarh Fort has nothing to do with Rupayan Sansthan. It's just a really cool fort dominating the Jodhpur landscape,  \"a palace that might have been built by Titans and colored by the morning sun,\" according to Rudyard Kipling.",
     "photo_album":"India",
     "photos":[
       "Mehrangarh Fort.JPG"
+    ]
+  },
+  {
+    "location_id":"51a61d97-67b7-4d95-b65b-055ba6d8e0db",
+    "name":"Pushkar",
+    "location":"Pushkar",
+    "lat":26.487702,
+    "lng":74.554227,
+    "location_type":"desert",
+    "description":"",
+    "notes":"A sacred and spiritual town, often said to be home to the only temple dedicated to Brahma in India \u2014 though that\u2019s not strictly true. It is, however, one of the very few temples honoring the Hindu god of creation. Devotees tend to favor Shiva and Vishnu, respectively the gods of destruction and protection, which I find a fascinating spiritual example of loss aversion \u2014 people are more motivated to ward off loss or protect what they have than to celebrate creation itself. Hundreds of temples surround the town\u2019s holy lake, which is lined with ghats for ritual bathing. In short, this is a place steeped in mysticism and devotion\u2014drawing both pilgrims in search of enlightenment and, inevitably, a fair share of hippies and mystics of more questionable credibility (read: quacks).<br><br>Every fall, during pilgrimage season, the town erupts into the famous Pushkar Camel Fair \u2014 a lively convergence of livestock trading, handicraft markets, and cultural spectacles. Ever wanted to race a camel or win the longest moustache contest? Here\u2019s your chance.",
+    "photo_album":"India",
+    "photos":[
+      "Sunset 1.JPG",
+      "Gandhi Ghat 2.JPG",
+      "Shiva Kid.JPG",
+      "PA250207.JPG",
+      "Goat!.JPG",
+      "Aids is Curable.JPG"
     ]
   }
 ]
