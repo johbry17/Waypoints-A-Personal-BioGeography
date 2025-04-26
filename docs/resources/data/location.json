@@ -7,7 +7,7 @@
     "lng":-72.531502,
     "location_type":"mountain",
     "description":"",
-    "notes":"",
+    "notes":"One of my top ski areas, because my step-father is on the volunteer ski patrol, so I get deals and can afford to ski. Good glades",
     "photo_album":"VT",
     "photos":[
       "001 IMG_0062.JPG",
@@ -456,7 +456,7 @@
     "lng":-72.90846716,
     "location_type":"mountain",
     "description":"",
-    "notes":"",
+    "notes":"My step-father used to volunteer ski patrol here, so I frequently went. Other frequented areas include Mad River Glen, Sugarbush, Bolton Valley, and Jay Peak, with just a dash of Stowe.",
     "photo_album":"",
     "photos":[
 
@@ -841,7 +841,7 @@
     "lng":72.894706,
     "location_type":"desert",
     "description":"<a href=\"https:\/\/en.wikipedia.org\/wiki\/Arna_Jharna_Museum\" target=\"_blank\">Wikipedia<\/a>",
-    "notes":"The museum of brooms. I spent an eventful week out here, early-ish in the museum's construction. An ethnographic museum dedicated to folk culture, the intersection of ecology and culture in the surrounding communities. A heavy dose of ethno-musicology as well. The tight coupling of the environment and culture endlessly surprised me - down to the materials used in construcintg brooms and the floors they are used on.<br><br>Sadly, my stay was cut short when one of the caretakers tragically died, quite young, probably from a poisonous animal.",
+    "notes":"The museum of brooms (etc.). I spent an eventful week here during the early stages of its construction \u2014 an ethnographic museum devoted to folk culture and the deep interconnection between ecology and daily life in Rajasthani communities. Ethnomusicology also played a central role, capturing the sounds and stories of the region. I was continually struck by how tightly woven environment and culture were, down to the specific materials used to make brooms \u2014 and the types of floors they were crafted to sweep.<br><br>Tragically, my time there was cut short by the unexpected death of one of the caretakers, a young man likely bitten by a venomous animal.",
     "photo_album":"India",
     "photos":[
       "Working Women.JPG",
@@ -859,7 +859,7 @@
   },
   {
     "location_id":"e7659f4a-86e7-4a12-82a0-bfe12a16905f",
-    "name":"Mehrangarh Fort & the city of Jodhpur",
+    "name":"Mehrangarh Fort & the City of Jodhpur",
     "location":"Jodhpur",
     "lat":26.296236,
     "lng":73.019039,
@@ -888,6 +888,22 @@
       "PA250207.JPG",
       "Goat!.JPG",
       "Aids is Curable.JPG"
+    ]
+  },
+  {
+    "location_id":"8109e033-5ea5-400b-97e2-2883db8451f3",
+    "name":"Karni Mata Temple",
+    "location":"Karni Mata Temple",
+    "lat":27.79091,
+    "lng":73.340482,
+    "location_type":"desert",
+    "description":"The Rat Temple",
+    "notes":"Yes, holy rats. The rare white ones are extra holy. Welcome to India.",
+    "photo_album":"India",
+    "photos":[
+      "Hindus at the rat temple.JPG",
+      "Holy Rat Emblem.JPG",
+      "Holy Rats.JPG"
     ]
   }
 ]
