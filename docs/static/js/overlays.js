@@ -123,13 +123,25 @@ function addLocationMarkers(locationData) {
   const locationLayer = L.layerGroup();
   // add markers to the location layer
   tripledLocations.forEach((location) => {
+    const radius = 2;
     const locationMarker = L.circleMarker([location.lat, location.lng], {
-      radius: 2,
+      radius,
       color: colors.locationColor,
       fillColor: colors.academic,
       fillOpacity: 0.6,
       weight: 1,
       pane: "locationsPane",
+    });
+
+    // hover effect (enlarge / shrink marker and change opacity)
+    locationMarker.on("mouseover", function () {
+      animateRadius(this, radius, radius * 4, 300);
+      this.setStyle({ fillOpacity: 0.9 });
+    });
+
+    locationMarker.on("mouseout", function () {
+      animateRadius(this, radius * 4, radius, 300);
+      this.setStyle({ fillOpacity: 0.6 });
     });
 
     // add tooltip and popup to the marker
