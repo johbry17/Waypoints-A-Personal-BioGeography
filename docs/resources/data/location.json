@@ -922,5 +922,22 @@
       "Flooded Streets1.jpg",
       "Val's 161.jpg"
     ]
+  },
+  {
+    "location_id":"702dcee6-e971-4320-a409-99b38de16d2d",
+    "name":"Alwar",
+    "location":"Alwar",
+    "lat":27.574986,
+    "lng":76.588109,
+    "location_type":"desert",
+    "description":"I have no memory of this place",
+    "notes":"Alwar, another former Rajput princely state, sits nestled in the ancient Aravalli Hills \u2014 among the oldest geological formations on Earth. Like many Rajasthani cities, it\u2019s crowned by a hilltop fort, Bala Quila, predating the Mughal era and offering commanding views of the region. As a regional capital, Alwar benefits from its location in one of Rajasthan\u2019s greener pockets, where the Aravalli range marks a natural transition, dividing watersheds, tempering the spread of the Thar Desert, and creating conditions more hospitable to humans in the eastern part of the state.",
+    "photo_album":"India",
+    "photos":[
+      "Alwar beyond Bala Quila's ramparts.JPG",
+      "Hope Circle.JPG",
+      "Peacock on the road to Bala QUila.JPG",
+      "Chipmunk in window.JPG"
+    ]
   }
 ]
