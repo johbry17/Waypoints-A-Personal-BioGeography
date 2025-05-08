@@ -1498,8 +1498,8 @@
       "PXL_20220415_013910011.jpg",
       "PXL_20220415_014624838.jpg"
     ],
-    "description": "Cabo Pulmo, Todos Santos, & La Paz",
-    "notes": "Met up with my parents and their friends in southern Baja. Never made it to Cabo, funnily",
+    "description": "<i>Cabo Pulmo, Todos Santos, & La Paz</i>",
+    "notes": "Met up with my parents and their friends in southern Baja. Never saw the flashy Cabo San Lucas everyone\u2019s obsessed with \u2014 but Cabo Pulmo? An underwater cathedral. Legendary for a reason.",
     "importance": 3,
     "visit_type": "family",
     "home": "",
@@ -1540,8 +1540,8 @@
       "IMG_1471.JPG",
       "IMG_1473.JPG"
     ],
-    "description": "Kaua'i! (no photos of the Road to Hana)",
-    "notes": "A trip sadly marred by family tragedy - Stateside, grandma was dying",
+    "description": "",
+    "notes": "Kaua\u2018i may be a dream vacation, but real life didn\u2019t pause for paradise. While I explored volcanic peaks and lush coastlines, my grandmother was fading back home. I didn\u2019t get many photos, but I did spot the mountain that opens <i>Raiders of the Lost Ark</i>",
     "importance": 3,
     "visit_type": "family",
     "home": "",
@@ -1575,8 +1575,8 @@
       "IMG_2238.jpg",
       "IMG_2240.jpg"
     ],
-    "description": "",
-    "notes": "Long layover at the meeting of continents. Great first impression. Lovely city. Cats run the place",
+    "description": "Cats run the place.",
+    "notes": "East meets West, past meets present, continents collide, history breathes, empires rise and fall \u2014 and the cats rule it all.<br><br>Cats were here before you. They'll be here after you.",
     "importance": 1,
     "visit_type": "solo",
     "home": "",
@@ -1603,7 +1603,7 @@
       "IMG_2206.jpg"
     ],
     "description": "",
-    "notes": "My first conference working as an event specialist. February of 2020. My last conference working as an event specialist. Great people-watching",
+    "notes": "Vegas was the setting for both my debut and swan song as a conference event specialist. This was early February 2020, shortly before covid shut the world's doors. I worked hard, spent nothing, and left richer than I arrived. Statistically rare for Vegas. The people-watching alone was worth the trip. Like Disneyland, but for adults with expense accounts.",
     "importance": 1,
     "visit_type": "work",
     "home": "",
@@ -1621,8 +1621,8 @@
     "photos": [
       "Tahoe_ski_trip.jpg"
     ],
-    "description": "Family ski trip",
-    "notes": "I didn't know what powder was like until this.",
+    "description": "<i>Family ski trip</i>",
+    "notes": "East Coast grit meets West Coast fluff. I didn't know what powder was before Tahoe",
     "importance": 1,
     "visit_type": "family",
     "home": "",
@@ -1655,8 +1655,8 @@
       "IMG_0453.JPG",
       "IMG_0477.JPG"
     ],
-    "description": "Road trip!",
-    "notes": "Mighty fine trees out there. And cheesy tourist traps. The quintessential Americana road trip.",
+    "description": "",
+    "notes": "Massive trees. Misty coastlines. Sasquatch statues and \u201cworld\u2019s largest\u201d everything. The Oregon Coast to the redwoods is a pure kitshcy Americana campfire-and-coastline cruise.",
     "importance": 2,
     "visit_type": "friends",
     "home": "",
@@ -2618,7 +2618,7 @@
     "photo_album": "",
     "photos": [],
     "description": "",
-    "notes": "<i>Latitude 0\u00b0 N, Longitude 0\u00b0 E</i>",
+    "notes": "<i>Latitude 0\u00b0, Longitude 0\u00b0</i>",
     "importance": "",
     "visit_type": "",
     "home": "",
