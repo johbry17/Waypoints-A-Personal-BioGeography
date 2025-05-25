@@ -1832,7 +1832,7 @@
       "Z Belize boat trip.jpg",
       "Z Belize Bryan Geoff.jpg"
     ],
-    "description": "Epic Central American Semana Santa Road Trip",
+    "description": "<i>Epic Central American Road Trip for Semana Santa</i>",
     "notes": "Costa Rica through Nicaragua and Honduras, ferry to Belize. Belmopan and Caye Caulker. To Guatemala: Tikal, Flores, Antigua, Lago Atitlan, Xela, and Volcan Tajumulco. Back to Costa Rica through San Salvador and Granada.",
     "importance": 3,
     "visit_type": "friends",
@@ -2422,8 +2422,8 @@
   {
     "id": 40,
     "name": "The Rally to Restore Sanity",
-    "lat": 38.88948305,
-    "lng": -77.03525006,
+    "lat": 38.889669,
+    "lng": -77.018152,
     "start_date": "10-2010",
     "end_date": "10-2010",
     "photo_album": "DC_Rally_Restore_Sanity",
@@ -2617,12 +2617,29 @@
     "end_date": "",
     "photo_album": "",
     "photos": [],
-    "description": "",
-    "notes": "<i>Latitude 0\u00b0, Longitude 0\u00b0</i>",
-    "importance": "",
+    "description": "<i>Latitude 0\u00b0, Longitude 0\u00b0</i>",
+    "notes": "<a href=\"https://www.atlasobscura.com/articles/null-island-is-one-of-the-most-visited-places-on-earth-too-bad-it-doesnt-exist\" target=\"_blank\">Atlas Obscura</a><span class=\"fa-stack modal-transition\"><i class=\"fas fa-circle fa-stack-1x modal-body-icon\"></i><i class=\"mdi mdi-earth fa-stack-1x fa-inverse modal-body-icon\"></i></span><a href=\"https://stamen.com/the-many-lives-of-null-island/\" target=\"_blank\">More info</a><br><br>A man travelling on Null Island passed a small courtyard and heard voices murmuring. He went in and saw an altar with a large stone 0 in the middle. White-robed people were kneeling before the altar, softly chanting \u201cNil... nil... nil...\" while ceremonial priests sang prayers to The Great Nullity and The Blessed Emptiness.<br><br>Eventually, the man turned to a white-robed observer beside him and asked \"Is Nothing sacred?\"",
+    "importance": 1,
     "visit_type": "",
     "home": "",
     "zoomBounds": null,
     "zoomLevel": 6
+  },
+  {
+    "id": 46,
+    "name": "Point Nemo",
+    "lat": -48.876667,
+    "lng": -123.393333,
+    "start_date": "",
+    "end_date": "",
+    "photo_album": "",
+    "photos": [],
+    "description": "Graveyard of satellites",
+    "notes": "<a href=\"https://www.atlasobscura.com/articles/strange-maps-point-nemo\" target=\"_blank\">Atlas Obscura</a><span class=\"fa-stack modal-transition\"><i class=\"fas fa-circle fa-stack-1x modal-body-icon\"></i><i class=\"mdi mdi-earth fa-stack-1x fa-inverse modal-body-icon\"></i></span><a href=\"https://www.bbc.com/future/article/20231006-the-soviet-spacecraft-cemetery-in-the-pacific\" target=\"_blank\">More info</a><br><br>In his house at R\u2019lyeh, dead Cthulhu waits dreaming",
+    "importance": 1,
+    "visit_type": "",
+    "home": "",
+    "zoomBounds": null,
+    "zoomLevel": ""
   }
 ]
