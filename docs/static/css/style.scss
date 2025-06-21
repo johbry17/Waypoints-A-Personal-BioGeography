@@ -557,7 +557,7 @@ h4 {
       // welcome modal icon
       .modal-body-icon {
         font-size: 1.5rem;
-        color: #003366;
+        // color: #003366;
       }
 
       .fa-stack {
@@ -565,11 +565,12 @@ h4 {
 
         .earth-ocean {
           color: #009dc4;
+          // color: $activity-color;
         }
 
-        .earth-land {
-          color: #27ae60;
-        }
+        // .earth-land {
+        //   color: #27ae60;
+        // }
       }
 
       // text
