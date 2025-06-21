@@ -418,10 +418,11 @@ h4 {
 .modal .modal-content #modal-body .fa-stack {
   margin-bottom: 0px;
 }
-.modal .modal-content #modal-body .fa-stack .mdi {
-  vertical-align: middle;
-  position: relative;
-  color: #008a51;
+.modal .modal-content #modal-body .fa-stack .earth-ocean {
+  color: #009dc4;
+}
+.modal .modal-content #modal-body .fa-stack .earth-land {
+  color: #27ae60;
 }
 .modal .modal-content #modal-body p {
   margin-bottom: 15px;

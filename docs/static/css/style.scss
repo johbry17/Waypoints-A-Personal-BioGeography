@@ -562,12 +562,14 @@ h4 {
 
       .fa-stack {
         margin-bottom: 0px;
-      }
 
-      .fa-stack .mdi {
-        vertical-align: middle;
-        position: relative;
-        color: $primary-color;
+        .earth-ocean {
+          color: #009dc4;
+        }
+
+        .earth-land {
+          color: #27ae60;
+        }
       }
 
       // text
