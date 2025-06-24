@@ -48,7 +48,9 @@
         <div id="modal-body">
           <span class="fa-stack modal-transition">
             <i class="fas fa-circle fa-stack-1x modal-body-icon earth-land"></i>
-            <i class="fas fa-globe-americas fa-stack-1x fa-inverse modal-body-icon earth-ocean"></i>
+            <i
+              class="fas fa-globe-americas fa-stack-1x fa-inverse modal-body-icon earth-ocean"
+            ></i>
           </span>
           <p id="modal-text">
             <!-- <span id="modal-being" style="font-size: 3em">Being</span>
@@ -93,7 +95,7 @@
       <div><i class="fas fa-home home-icon"></i> Residence</div>
       <div><i class="fas fa-graduation-cap school-icon"></i> Academic</div>
       <div><i class="fas fa-globe globe-icon"></i> Other</div>
-      <p>Markers scaled<br>by life imprint</p>
+      <p>Markers scaled<br />by life imprint</p>
     </div>
 
     <!-- routes legend popup -->
@@ -163,45 +165,71 @@
             <i class="fas fa-globe-americas fa-stack-1x modal-body-icon"></i>
           </span>
         </div>
-        <image src="static/images/India/Monkey!.JPG" alt="Waypoints" class="modal-image" />
+        <image
+          src="static/images/India/Monkey!.JPG"
+          alt="Waypoints"
+          class="modal-image"
+        />
+        <p>Welcome to my travel map.</p>
         <p>
-          Check out my
-          <a
-            href="https://johbry17.github.io/portfolio/templates/waypoints.html"
-            target="_blank"
-            >portfolio</a
-          >
-          for more details.
+          I cross-checked my faulty memory against clues found in emails,
+          journals, and the internet writ large. While there is a fair amount of
+          memoir in these popups, I have done my educational best to share the
+          character and spirit of these places. My faults should in no way
+          reflect upon them.
         </p>
         <p>
-          I like maps. I like photos. And I like building things that challenge
-          me. This project was all three.
+          It’s a beautiful world out there. It fills me with wonder, wabi-sabi,
+          and solastalgia—all the little sweet, endearing, eccentric things we
+          humans get up to on this pale blue dot.
+        </p>
+        <p>I hope it inspires you to get out there and explore.</p>
+        <span class="fa-stack modal-transition">
+          <!-- <i class="fas fa-circle fa-stack-1x modal-body-icon"></i> -->
+          <i class="fas fa-globe-americas fa-stack-1x modal-body-icon"></i>
+        </span>
+        <p>
+          I coded the map’s core during a gloomy, introspective winter—a time
+          perfect for self-reflection and growth. I’ll keep working on it until
+          I die.
         </p>
         <p>
-          What I thought would be a straightforward photo map turned into a wild
-          goose chase through the digital backwaters of the internet. I spent
-          countless hours gathering routes — by road, rail, boat, and foot —
-          finding or generating GeoJSON's, even drawing some by hand when all
-          else failed.
+          I thought this would be an easy way to finally have my travel
+          recommendations on standby: a couple of photo reels pinned to a map.
+          Naturally, I spiraled down a rabbit hole of geospatial nerdery and
+          deep memory excavation.
         </p>
         <p>
-          Though this is more a data visualization than a deep analysis, a few
-          patterns emerged. The longer I live somewhere, the fewer pictures I
-          tend to take. Long-term stays result in chaotic, sparse photo reels.
-          Short trips, by contrast, often tell a story—photos ordered almost
-          chronologically, capturing a clearer narrative.
+          Technically, this autodidact acquired some digital cartography skills.
+          I learned to auto-route a road trip across Latin America, hand-draw a
+          boat ride through mangrove-laden waterways in Mexico, and slice a
+          train route in India so it didn’t snake off into the Bay of Bengal. I
+          built flight arcs over the International Date Line, retraced hikes
+          across Table Mountain, and discovered the open mapping
+          community—citizen cartographers of the world. Nerds after my own
+          heart.
         </p>
         <p>
-          There are lots of animals, a few kids, not many selfies. I take too
-          few photos of the people who matter. But when they are in the frame,
-          the energy changes. The trips feel warmer, more memorable.
+          What surprised me most, though, was how deep into the past I went. I
+          found myself confirming the location of a remote schoolyard in Bali by
+          a grainy photo, hunting down a watershed project I once worked on in
+          rural India, tracing a river upstream to a BriBri chocolate farm in
+          Costa Rica where I studied indigenous rights. It became less about the
+          map and more about reinhabiting those moments. It was deeply moving,
+          profound, and cathartic—recovering bits of myself buried in the
+          foundations of my being.
+        </p>
+        <p>I really got some mileage out of those memories.</p>
+        <p>
+          It also got to be a bit much, living in the past. You gotta buy
+          groceries.
         </p>
         <p>
-          One day, I hope to live abroad again. Until then, this project has
-          been a meaningful way to revisit old memories and explore my travels
-          in a new way. Really get some mileage out of these memories. I hope
-          you enjoy exploring it as much as I did creating it.
+          It’s unfinished, and probably always will be. Text to write. Photos to
+          edit. Places I haven’t even been yet. And that’s kind of the whole
+          point. This is a living document of my life.
         </p>
+        <p>I look forward to never finishing it.</p>
 
         <h3>How It Was Built</h3>
         <p>
@@ -243,8 +271,11 @@
           – Used to geocode coordinates and name locations.
         </p>
         <p>
-          <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> and
-          <a href="https://materialdesignicons.com/" target="_blank">Material Design Icons</a>
+          <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>
+          and
+          <a href="https://materialdesignicons.com/" target="_blank"
+            >Material Design Icons</a
+          >
           – Provided icons for the map and UI elements.
         </p>
         <p>
@@ -270,6 +301,47 @@
             >contact me</a
           >.
         </p>
+        <span class="footer-links site-footer">
+          <a
+            href="https://johbry17.github.io/portfolio/templates/waypoints.html"
+            target="_blank"
+            class="portfolio-link"
+            aria-label="Portfolio"
+          >
+            <i
+              class="fas fa-laptop-code footer-icon"
+              aria-hidden="true"
+              title="Portfolio"
+            ></i
+            >Portfolio
+          </a>
+          <a
+            href="https://www.linkedin.com/in/b-johns/"
+            target="_blank"
+            class="linkedin-link"
+            aria-label="LinkedIn"
+          >
+            <i
+              class="fab fa-linkedin footer-icon"
+              aria-hidden="true"
+              title="LinkedIn"
+            ></i
+            >LinkedIn
+          </a>
+          <a
+            href="https://github.com/johbry17/Waypoints-A-GeoBiography"
+            target="_blank"
+            class="github-link"
+            aria-label="GitHub"
+          >
+            <i
+              class="fab fa-github footer-icon"
+              aria-hidden="true"
+              title="GitHub"
+            ></i
+            >GitHub
+          </a>
+        </span>
       </div>
     </div>
 
@@ -288,12 +360,12 @@
     <!-- PapaParse -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <!-- style settings for overlays -->
-    <script type="text/javascript" src="static/js/visualizationSettings.js"></script>
-    <!-- image carousel for popups -->
     <script
       type="text/javascript"
-      src="static/js/image-carousel.js"
+      src="static/js/visualizationSettings.js"
     ></script>
+    <!-- image carousel for popups -->
+    <script type="text/javascript" src="static/js/image-carousel.js"></script>
     <!-- overlay markers -->
     <script type="text/javascript" src="static/js/overlays.js"></script>
     <!-- Main app JavaScript -->
