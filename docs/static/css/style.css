@@ -451,9 +451,23 @@ h4 {
   border-radius: 5px;
 }
 
+#aboutModal a,
+#aboutModal a:visited {
+  color: #0085a1;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#aboutModal a:hover,
+#aboutModal a:focus {
+  color: #005f73 !important;
+  text-decoration: underline;
+}
+
 .site-footer {
+  margin-top: 1em;
   padding: 1em 0;
-  border-top: 0px solid #e5e5e5;
+  border-top: 1px solid #333333;
   text-align: center;
   font-size: 1em;
   display: flex;
@@ -464,16 +478,15 @@ h4 {
 }
 
 .site-footer .footer-owner {
-  color: #888;
+  color: #333333;
   font-weight: normal;
   font-size: 1em;
   letter-spacing: 0.01em;
 }
 
 .site-footer .footer-author {
-  font-weight: 500;
-  color: #888;
-  margin-left: 0.2em;
+  font-weight: 700;
+  color: #333333;
 }
 
 .site-footer .footer-links {
@@ -496,7 +509,7 @@ h4 {
 }
 
 .site-footer .linkedin-link {
-  color: #0077b5;
+  color: #0077b5 !important;
   text-decoration: none;
   transition: color 0.2s;
 }
