@@ -1,6 +1,6 @@
 # Data Dictionary: Global Waypoints Project
 
-- [Link to README.md](README.md)
+🔗 [Link to README.md](README.md)
 
 This document defines the structure and purpose of the datasets used in the Global Waypoints project, modeled after a SQL database.
 
