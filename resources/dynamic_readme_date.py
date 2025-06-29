@@ -18,7 +18,7 @@ marker_start = "<!-- START_DATE -->"
 marker_end = "<!-- END_DATE -->"
 
 # read README
-with open(readme_path, "r") as file:
+with open(readme_path, "r", encoding="utf-8") as file:
     content = file.read()
 
 # insert current month and year
