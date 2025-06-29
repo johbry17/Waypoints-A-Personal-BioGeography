@@ -33,7 +33,7 @@ else:
     exit()
 
 # write updated content back to README.md
-with open(readme_path, "w") as file:
+with open(readme_path, "w", encoding="utf-8") as file:
     file.write(updated_content)
 
 print(f"Updated README.md with the current date: {month_year}")
