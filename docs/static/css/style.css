@@ -60,7 +60,6 @@ html,
 
 .about-button {
   background-color: white;
-  border: 1px solid #ccc;
 }
 .about-button a {
   text-decoration: none;
@@ -73,6 +72,12 @@ html,
 }
 .about-button i {
   color: #0085a1;
+}
+.about-button:hover {
+  background-color: #005f73;
+}
+.about-button:hover i {
+  color: white;
 }
 
 #map-legend {
