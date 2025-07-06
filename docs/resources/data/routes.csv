@@ -105,7 +105,7 @@ ea1557da-42d7-4fa2-8cfb-df652e62a453,Juan Santamaría International Airport,El S
 dcae5d60-71ab-4055-a82f-ad7dff3dc303,El Salvador International Airport,San Francisco Airport,plane,great_circle_route_103.geojson
 a85f78f5-4fd8-4d71-862f-551fac2bac1a,Ronald Reagan Washington National Airport,Mexico City Airport,plane,great_circle_route_104.geojson
 32a5450e-e64d-4da2-87df-536de2a81769,"Cancun Airport, Mexico",Ronald Reagan Washington National Airport,plane,great_circle_route_105.geojson
-04ca803a-eb84-46c0-807f-1872a98e4b26,"San Jose del Cabo Airport, Mexico",Ronald Reagan Washington National Airport,plane,great_circle_route_106.geojson
+04ca803a-eb84-46c0-807f-1872a98e4b26,SJD,Ronald Reagan Washington National Airport,plane,great_circle_route_106.geojson
 b8b50c0d-3bd4-47dc-b42d-febd00245f66,Ronald Reagan Washington National Airport,Cyril E. King Airport,plane,great_circle_route_107.geojson
 91242f0e-f858-488a-b3bb-587d00ab246e,Cyril E. King Airport,Henry E. Rohlsen Airport,plane,great_circle_route_108.geojson
 91d57c74-6d2f-4ad4-b0e5-ef9500d6d856,"San Juan Airport, Puerto Rico",Ronald Reagan Washington National Airport,plane,great_circle_route_109.geojson
@@ -199,8 +199,8 @@ ea047182-62b3-4872-9be3-fddf73d0dbfc,"Valladolid, Yucatan, Mexico",San Felipe Nu
 30faec23-eb4a-423e-a920-d3dda0033379,Boca Paila,"Punta Allen, Mexico",boat,boat_sian_kaan.geojson
 b7551526-294d-4cd9-b55d-f1c163e15a2a,"Tulum, Mexico",Cenote Dos Ojos,auto,b7551526-294d-4cd9-b55d-f1c163e15a2a.geojson
 9aa0e64f-7ebd-415a-8547-c5a01fdf21c0,"Tulum, Mexico",Playa Pescadores,auto,9aa0e64f-7ebd-415a-8547-c5a01fdf21c0.geojson
-9e623fba-d165-4b43-becf-6a2a04e62f36,"San Jose del Cabo Airport, Mexico","Todos Santos, B.C.S., Mexico",auto,9e623fba-d165-4b43-becf-6a2a04e62f36.geojson
-59eb0e60-47ab-47b7-a2b9-cbcf790c424b,"Todos Santos, B.C.S., Mexico","La Paz, Mexico",auto,59eb0e60-47ab-47b7-a2b9-cbcf790c424b.geojson
+9e623fba-d165-4b43-becf-6a2a04e62f36,Aeropuerto Internacional de Los Cabos,"La Paz, Mexico",auto,9e623fba-d165-4b43-becf-6a2a04e62f36.geojson
+59eb0e60-47ab-47b7-a2b9-cbcf790c424b,Aeropuerto Internacional de Los Cabos,Letras Todos Santos,auto,59eb0e60-47ab-47b7-a2b9-cbcf790c424b.geojson
 02e5d4e0-5358-4e80-b400-56234babf7b6,"La Paz, Mexico",Camino El Tecolote,auto,02e5d4e0-5358-4e80-b400-56234babf7b6.geojson
 3136eaf7-056a-4890-b732-a768393db1ff,"La Paz, Mexico","Minero Núm. 1, 23210 El Triunfo, B.C.S., Mexico",auto,3136eaf7-056a-4890-b732-a768393db1ff.geojson
 eb8da18f-39ec-4c3f-b58e-cdff0e3339fd,"Minero Núm. 1, 23210 El Triunfo, B.C.S., Mexico","Cabo Pulmo, Mexico",auto,eb8da18f-39ec-4c3f-b58e-cdff0e3339fd.geojson
@@ -295,3 +295,6 @@ a1780442-cf86-48be-8efa-30177c344fc0,Kokerboomwoud,Giant's Playground,auto,a1780
 8b8c9c4b-8b6a-4cb6-b017-18a7d9c19b32,Swakopmund,Skeleton Coast,plane,great_circle_namibia.geojson
 abc4c5c7-7a4b-47a7-8c7b-47178f82f37c,Shenandoah River,Shenandoah River,boat,boat_shenandoah_tubing.geojson
 b439d15d-9d48-4542-af6f-14779cb0cea9,Upper Youghiogheny River,Upper Youghiogheny River,boat,boat_ohiopyle.geojson
+09d865ba-0cac-433d-9cc0-9025242161e2,Letras Todos Santos,"La Paz, Mexico",auto,09d865ba-0cac-433d-9cc0-9025242161e2.geojson
+821c9daf-7f14-41ab-8f0e-b4e3bba21efb,"Cancun Airport, Mexico",Mexico City Airport,plane,great_circle_route_297.geojson
+fa5f564d-1826-4732-b994-b16ab28ad69f,"Colon, Costa Rica",Universidad para la Paz,auto,fa5f564d-1826-4732-b994-b16ab28ad69f.geojson
