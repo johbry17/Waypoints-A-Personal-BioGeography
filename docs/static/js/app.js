@@ -120,6 +120,7 @@ function setupWelcomeModal() {
     modal.style.display = "none";
     mapContainer.style.display = "block";
     mainMap.invalidateSize();
+    setTimeout(() => startMapTour(), 1000); // start tour after a delay
   });
 }
 

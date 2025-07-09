@@ -13,6 +13,7 @@
 // zoom button in popups
 // modals
 // footer (in About modal)
+// tour
 
 // variables
 $primary-color: #008a51;
@@ -130,7 +131,7 @@ html,
 
   &:hover {
     background-color: $activity-hover-color;
-    
+
     i {
       color: white; // change icon color on hover
     }
@@ -703,5 +704,115 @@ h4 {
   .site-footer .footer-links {
     flex-direction: column;
     gap: 0.5em;
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+// tour
+.shepherd-element {
+  background-color: $popup-bg-color;
+  color: $text-color;
+  border: 3px solid $primary-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  max-width: 320px;
+  animation: fadeInShepherd $transition-duration ease-in-out;
+  overflow: visible;
+
+  // mimic leaflet popup style
+  .shepherd-text {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    padding: 10px;
+  }
+
+  .shepherd-header {
+    font-weight: bold;
+    color: $primary-color;
+    font-size: 16px;
+    padding: 10px;
+    // border-bottom: 1px solid lighten($primary-color, 0%);
+    background-color: $popup-bg-color;
+  }
+
+  .shepherd-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+}
+
+.shepherd-element .shepherd-arrow:before {
+  background: $popup-bg-color !important;
+  border-color: $primary-color !important;
+}
+
+// back/next buttons
+.shepherd-button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: $box-shadow;
+  transition:
+    background-color $transition-duration,
+    transform $transition-duration;
+
+  &:hover {
+    background-color: $activity-hover-color !important;
+    transform: $icon-hover-transform;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// cancel (X) button
+.shepherd-cancel-icon {
+  position: absolute;
+  top: -15px !important;
+  right: -15px !important;
+  color: white !important;
+  background-color: $primary-color;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color $transition-duration;
+
+  &:hover {
+    background-color: $activity-hover-color;
+    color: white;
+  }
+}
+
+// modal overlay
+.shepherd-modal-overlay {
+  background: rgba(0, 0, 0, 0.7) !important;
+  pointer-events: none !important;
+}
+
+// fadeIn animation
+@keyframes fadeInShepherd {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
