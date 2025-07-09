@@ -43,11 +43,13 @@ function tripledMarkers(data) {
     // avoid concatenation of strings
     const lng = parseFloat(place.lng);
     const lat = parseFloat(place.lat);
-    return [
-      { ...place, lng, lat },
-      { ...place, lng: lng + 360, lat },
-      { ...place, lng: lng - 360, lat },
-    ];
+    // triple marker lng by +/- 360 degrees
+    const base = { ...place, lng, lat };
+    const clone1 = { ...place, lng: lng + 360, lat };
+    const clone2 = { ...place, lng: lng - 360, lat };
+
+    base._isCanonical = true; // tag the main one (for shepherd tour)
+    return [base, clone1, clone2];
   });
 }
 
@@ -59,6 +61,10 @@ function addMarker(place) {
   marker.bindTooltip(createTooltipContent(place));
   marker.bindPopup(createPopupContent(place), { pane: "popupsPane" });
   initializePhotoCarousel(marker, place);
+  // store marker in placeData for shepherd tour
+  if (place._isCanonical) {
+    placeData[place.id].marker = marker;
+  }
   return marker;
 }
 
