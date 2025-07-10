@@ -1,11 +1,13 @@
 // Description: JavaScript code initializing the map application
 // It relies on functions contained in ./overlays.js and ./image-carousel.js
 // ./visualizationSettings.js contains the map settings and route styles
+// ./tour.js contains the Shepherd.js user tour
 //
 // This code fetches data from JSON and CSV files, processes it, and creates a map with markers and popups using Leaflet.js.
 // It uses the PapaParse library for CSV parsing and Leaflet.js for map rendering, and handles international date line crossing by tripling markers.
 // It includes functionality for displaying a photo carousel in popups, adding legends, and handling different map layers.
 // It also includes a welcome modal, and buttons to reset the map view and a button for an "About" modal.
+// A Shepherd.js tour guides users through the map features
 
 // Table of Contents:
 

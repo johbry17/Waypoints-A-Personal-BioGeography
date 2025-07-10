@@ -1,6 +1,18 @@
+// Description: This script sets up a guided tour using Shepherd.js
+// It demonstrates features like layer toggling, marker interaction, and popups.
+
+// restarts the tour from the About modal
+function restartTour() {
+  if (window.tour && typeof window.tour.complete === "function") {
+    window.tour.complete(); // if tour is active
+  }
+  closeModal(); // close About modal
+  setTimeout(() => startMapTour(), 500);
+}
+
 // Shepherd.js tour setup
 function startMapTour() {
-  const tour = new Shepherd.Tour({
+  window.tour = new Shepherd.Tour({
     useModalOverlay: true,
     defaultStepOptions: {
       scrollTo: false,
@@ -148,6 +160,16 @@ function startMapTour() {
       modifiers: [{ name: "offset", options: { offset: [0, -20] } }],
     },
     buttons: [{ text: "Next", action: tour.next }],
+    when: {
+      show: () => {
+        const zoomBtn = document.querySelector(".zoom-button");
+        if (zoomBtn) zoomBtn.setAttribute("disabled", "disabled");
+      },
+      hide: () => {
+        const zoomBtn = document.querySelector(".zoom-button");
+        if (zoomBtn) zoomBtn.removeAttribute("disabled");
+      },
+    },
   });
 
   // zoom
@@ -195,13 +217,28 @@ function startMapTour() {
   // The End
   tour.addStep({
     id: "popup",
-    text: "Enjoy exploring!",
+    attachTo: {
+      element: ".tour-restart-button",
+      on: "top",
+    },
+    text: "You can restart the tour at any time. The map will reset.<br><br>Enjoy exploring!",
     buttons: [
       {
         text: "Done",
-        action: tour.complete,
+        action: () => {
+          tour.complete();
+          closeModal();
+        },
       },
     ],
+    when: {
+      show: () => {
+        const btn = document.querySelector(".tour-restart-button");
+        if (btn) {
+          btn.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      },
+    },
   });
 
   tour.start();
