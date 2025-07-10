@@ -24,6 +24,8 @@
 const placeData = {};
 let routeLayer;
 let mainMap;
+// ...and for the tour...
+let markers;
 // ...and for the legends
 let legend; // main legend
 let isLegendChecked = false; // routes legend checkbox state
@@ -70,7 +72,7 @@ function initializeMap() {
       }).data;
 
       // create overlayMarkers for the map
-      const markers = createMarkers(overviewData);
+      markers = createMarkers(overviewData);
       const originalBounds = createBounds(overviewData);
       const locations = addLocationMarkers(locationData);
       const routes = createRouteLayers(routeData);

@@ -160,6 +160,7 @@ function startMapTour() {
       modifiers: [{ name: "offset", options: { offset: [0, -20] } }],
     },
     buttons: [{ text: "Next", action: tour.next }],
+    // disable the zoom button while this step is active
     when: {
       show: () => {
         const zoomBtn = document.querySelector(".zoom-button");
@@ -214,7 +215,7 @@ function startMapTour() {
     advanceOn: { selector: ".about-button", event: "click" },
   });
 
-  // The End
+  // The End (resets the map when done)
   tour.addStep({
     id: "popup",
     attachTo: {
@@ -233,9 +234,35 @@ function startMapTour() {
     ],
     when: {
       show: () => {
+        // scroll to restart button
         const btn = document.querySelector(".tour-restart-button");
         if (btn) {
           btn.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
+        // reset basemap
+        const baseLayer = createBaseMaps().Satellite;
+        baseLayer.addTo(mainMap);
+
+        // remove any other base layers
+        Object.values(mainMap._layers).forEach((layer) => {
+          if (layer instanceof L.TileLayer && layer !== baseLayer) {
+            mainMap.removeLayer(layer);
+          }
+        });
+
+        // show only overview markers (waypoints)
+        mainMap.eachLayer((layer) => {
+          if (
+            layer !== baseLayer &&
+            layer !== legend &&
+            layer !== mainMap._panes.overlayPane
+          ) {
+            mainMap.removeLayer(layer);
+          }
+        });
+        if (mainMap && !mainMap.hasLayer(markers)) {
+          mainMap.addLayer(markers);
         }
       },
     },
