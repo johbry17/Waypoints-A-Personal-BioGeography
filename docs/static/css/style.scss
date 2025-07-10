@@ -710,6 +710,7 @@ h4 {
 /////////////////////////////////////////////////////////////////////////////
 
 // tour
+// mimic leaflet popup styles
 .shepherd-element {
   background-color: $popup-bg-color;
   color: $text-color;
@@ -720,7 +721,6 @@ h4 {
   animation: fadeInShepherd $transition-duration ease-in-out;
   overflow: visible;
 
-  // mimic leaflet popup style
   .shepherd-text {
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -733,7 +733,6 @@ h4 {
     color: $primary-color;
     font-size: 16px;
     padding: 10px;
-    // border-bottom: 1px solid lighten($primary-color, 0%);
     background-color: $popup-bg-color;
   }
 
@@ -745,6 +744,15 @@ h4 {
   }
 }
 
+// for button-less tour stops
+.shepherd-element:not(:has(.shepherd-footer)) .shepherd-text {
+  padding-bottom: 15px;
+}
+.shepherd-element .shepherd-header {
+  padding-top: 0px;
+}
+
+// adds background color to the arrow (sadly not the border)
 .shepherd-element .shepherd-arrow:before {
   background: $popup-bg-color !important;
   border-color: $primary-color !important;
@@ -761,8 +769,7 @@ h4 {
   font-family: Arial, sans-serif;
   cursor: pointer;
   box-shadow: $box-shadow;
-  transition:
-    background-color $transition-duration,
+  transition: background-color $transition-duration,
     transform $transition-duration;
 
   &:hover {
@@ -801,7 +808,7 @@ h4 {
   }
 }
 
-// modal overlay
+// modal overlay (dark background behind tour steps)
 .shepherd-modal-overlay {
   background: rgba(0, 0, 0, 0.7) !important;
   pointer-events: none !important;

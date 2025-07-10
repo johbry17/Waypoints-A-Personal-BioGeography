@@ -14,36 +14,73 @@ function startMapTour() {
   tour.addStep({
     id: "welcome",
     text: "Welcome! Let me show you how to explore this map.",
-    buttons: [
-      {
-        text: "Next",
-        action: tour.next,
-      },
-    ],
+    buttons: [{ text: "Next", action: tour.next }],
   });
 
-  // map controls
+  // map layers toggle
   tour.addStep({
-    id: "layers-button",
+    id: "layers-toggle",
     attachTo: {
-      element: ".leaflet-control-layers", // attaches to the persistent container
+      element: ".leaflet-control-layers-toggle",
       on: "left",
     },
     popperOptions: {
-      modifiers: [
-        {
-          name: "offset",
-          options: {
-            offset: [0, 16],
-          },
-        },
-      ],
+      modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "Use this to toggle which map layers are visible.",
+    text: "Tap / hover to open the map layers menu.",
+    when: {
+      show: () => {
+        const control = document.querySelector(".leaflet-control-layers");
+        if (control) {
+          // watch for leaflet-control-layers-expanded class
+          const observer = new MutationObserver((mutationsList) => {
+            for (const mutation of mutationsList) {
+              if (
+                mutation.type === "attributes" &&
+                control.classList.contains("leaflet-control-layers-expanded")
+              ) {
+                observer.disconnect();
+                tour.next();
+                break;
+              }
+            }
+          });
+          observer.observe(control, {
+            attributes: true,
+            attributeFilter: ["class"],
+          });
+        }
+      },
+      hide: () => {
+        // Clean up observer if the step is hidden before advancing
+      },
+    },
+  });
+
+  // map controls (opens on start, closes on Next button)
+  tour.addStep({
+    id: "layers-button",
+    attachTo: {
+      element: ".leaflet-control-layers",
+      on: "left",
+    },
+    popperOptions: {
+      modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
+    },
+    text: "Use this menu to toggle which map layers are visible.",
     buttons: [
-      { text: "Back", action: tour.back },
-      { text: "Next", action: tour.next },
+      {
+        text: "Next",
+        action: () => {
+          const control = document.querySelector(".leaflet-control-layers");
+          if (control?.classList.contains("leaflet-control-layers-expanded")) {
+            control.classList.remove("leaflet-control-layers-expanded");
+          }
+          tour.next();
+        },
+      },
     ],
+    // ensure the layers menu is open
     when: {
       show: () => {
         const toggle = document.querySelector(".leaflet-control-layers-toggle");
@@ -60,26 +97,16 @@ function startMapTour() {
       on: "left",
     },
     popperOptions: {
-      modifiers: [
-        {
-          name: "offset",
-          options: {
-            offset: [0, 16],
-          },
-        },
-      ],
+      modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "Here’s the legend that explains icon meanings.",
-    buttons: [
-      { text: "Back", action: tour.back },
-      { text: "Next", action: tour.next },
-    ],
+    text: "Here’s the legend.",
+    buttons: [{ text: "Next", action: tour.next }],
   });
 
   // tour marker
   // first, add a class to a specific tour marker (.includes("...") below)
   const place = Object.values(placeData).find(
-    (p) => p.name && p.name.toLowerCase().includes("costa rica")
+    (p) => p.name && p.name.toLowerCase().includes("cape town")
   );
   let marker = place && place.marker;
   if (marker && marker instanceof L.FeatureGroup) {
@@ -91,12 +118,12 @@ function startMapTour() {
     }
   }, 100);
 
-  // then, add a one-time listener for popupopen to advance the tour
+  // second, add a one-time listener for popupopen to advance the tour
   mainMap.once("popupopen", function () {
     tour.next();
   });
 
-  // and, highlight the tour marker
+  // third and final, highlight the tour marker
   tour.addStep({
     id: "marker-demo",
     text: "Click this marker to open a popup.",
@@ -104,26 +131,21 @@ function startMapTour() {
       element: ".tour-marker",
       on: "top",
     },
-    buttons: [{ text: "Back", action: tour.back }],
+    popperOptions: {
+      modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
+    },
   });
 
   // popup
   tour.addStep({
     id: "popup-demo",
-    text: "Here's a popup! You can use the photo reel controls.",
+    text: "Note the photo reel controls.",
     attachTo: {
       element: ".leaflet-popup",
       on: "bottom",
     },
     popperOptions: {
-      modifiers: [
-        {
-          name: "offset",
-          options: {
-            offset: [0, 40],
-          },
-        },
-      ],
+      modifiers: [{ name: "offset", options: { offset: [0, -20] } }],
     },
     buttons: [{ text: "Next", action: tour.next }],
   });
@@ -136,16 +158,9 @@ function startMapTour() {
       on: "top",
     },
     popperOptions: {
-      modifiers: [
-        {
-          name: "offset",
-          options: {
-            offset: [0, 24],
-          },
-        },
-      ],
+      modifiers: [{ name: "offset", options: { offset: [0, 24] } }],
     },
-    text: "Click here to zoom in on the map.",
+    text: "Click to zoom in on the popup's location.",
     advanceOn: { selector: ".zoom-button", event: "click" },
   });
 
@@ -157,16 +172,9 @@ function startMapTour() {
       on: "right",
     },
     popperOptions: {
-      modifiers: [
-        {
-          name: "offset",
-          options: {
-            offset: [0, 16],
-          },
-        },
-      ],
+      modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "Click here to reset the map to the global view.",
+    text: "Click to reset the map view.",
     advanceOn: { selector: ".reset-map-button", event: "click" },
   });
 
@@ -178,23 +186,16 @@ function startMapTour() {
       on: "right",
     },
     popperOptions: {
-      modifiers: [
-        {
-          name: "offset",
-          options: {
-            offset: [0, 16],
-          },
-        },
-      ],
+      modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
     text: "This opens a modal with background on the project.",
-    buttons: [{ text: "Next", action: tour.next }],
+    advanceOn: { selector: ".about-button", event: "click" },
   });
 
   // The End
   tour.addStep({
     id: "popup",
-    text: "Now try clicking on a map marker to open a popup with photos and details.",
+    text: "Enjoy exploring!",
     buttons: [
       {
         text: "Done",
@@ -205,8 +206,3 @@ function startMapTour() {
 
   tour.start();
 }
-
-// modal.addEventListener("click", () => {
-//   // assuming modal is closed at this point
-//   setTimeout(() => startMapTour(), 1000);
-// });

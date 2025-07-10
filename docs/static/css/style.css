@@ -573,6 +573,14 @@ h4 {
   gap: 10px;
 }
 
+.shepherd-element:not(:has(.shepherd-footer)) .shepherd-text {
+  padding-bottom: 15px;
+}
+
+.shepherd-element .shepherd-header {
+  padding-top: 0px;
+}
+
 .shepherd-element .shepherd-arrow:before {
   background: #f9f9f9 !important;
   border-color: #008a51 !important;
