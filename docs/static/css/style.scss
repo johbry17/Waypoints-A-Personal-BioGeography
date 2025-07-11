@@ -503,6 +503,13 @@ h4 {
   }
 }
 
+// disabled style
+.disabled-gray {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(80%);
+}
+
 /////////////////////////////////////////////////////////////////////////////
 
 // modals
@@ -766,6 +773,13 @@ h4 {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+  }
+}
+
+// mobile responsive
+@media (max-width: 600px) {
+  .shepherd-element {
+    max-width: 60vw !important;
   }
 }
 

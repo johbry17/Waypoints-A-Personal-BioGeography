@@ -369,6 +369,12 @@ h4 {
   transform: scale(0.95);
 }
 
+.disabled-gray {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(80%);
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -594,6 +600,11 @@ h4 {
   gap: 10px;
 }
 
+@media (max-width: 600px) {
+  .shepherd-element {
+    max-width: 60vw !important;
+  }
+}
 .shepherd-element:not(:has(.shepherd-footer)) .shepherd-text {
   padding-bottom: 15px;
 }

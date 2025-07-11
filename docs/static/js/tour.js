@@ -3,16 +3,14 @@
 
 // restarts the tour from the About modal
 function restartTour() {
-  if (window.tour && typeof window.tour.complete === "function") {
-    window.tour.complete(); // if tour is active
-  }
+  if (window.tour?.complete) window.tour.complete(); // if tour is active
   closeModal(); // close About modal
   setTimeout(() => startMapTour(), 500);
 }
 
 // Shepherd.js tour setup
 function startMapTour() {
-  window.tour = new Shepherd.Tour({
+  const tour = new Shepherd.Tour({
     useModalOverlay: true,
     defaultStepOptions: {
       scrollTo: false,
@@ -22,49 +20,32 @@ function startMapTour() {
     },
   });
 
+  window.tour = tour; // make tour accessible globally
+
   // welcome message
   tour.addStep({
     id: "welcome",
-    text: "Welcome! Let me show you how to explore this map.",
+    text: "Every marker here tells a story. This quick tour will show you how to explore them.",
     buttons: [{ text: "Next", action: tour.next }],
   });
 
   // map layers toggle
   tour.addStep({
     id: "layers-toggle",
-    attachTo: {
-      element: ".leaflet-control-layers-toggle",
-      on: "left",
-    },
+    attachTo: { element: ".leaflet-control-layers-toggle", on: "left" },
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "Tap / hover to open the map layers menu.",
+    text: "Start here—tap or hover to open the map layers menu.",
     when: {
       show: () => {
         const control = document.querySelector(".leaflet-control-layers");
-        if (control) {
-          // watch for leaflet-control-layers-expanded class
-          const observer = new MutationObserver((mutationsList) => {
-            for (const mutation of mutationsList) {
-              if (
-                mutation.type === "attributes" &&
-                control.classList.contains("leaflet-control-layers-expanded")
-              ) {
-                observer.disconnect();
-                tour.next();
-                break;
-              }
-            }
-          });
-          observer.observe(control, {
-            attributes: true,
-            attributeFilter: ["class"],
-          });
-        }
-      },
-      hide: () => {
-        // Clean up observer if the step is hidden before advancing
+        if (control)
+          observeClassToggle(
+            control,
+            "leaflet-control-layers-expanded",
+            tour.next
+          );
       },
     },
   });
@@ -72,77 +53,45 @@ function startMapTour() {
   // map controls (opens on start, closes on Next button)
   tour.addStep({
     id: "layers-button",
-    attachTo: {
-      element: ".leaflet-control-layers",
-      on: "left",
-    },
+    attachTo: { element: ".leaflet-control-layers", on: "left" },
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "Use this menu to toggle which map layers are visible.",
+    text: "Use this panel to turn layers on and off—routes, markers, and maps.",
     buttons: [
       {
         text: "Next",
         action: () => {
-          const control = document.querySelector(".leaflet-control-layers");
-          if (control?.classList.contains("leaflet-control-layers-expanded")) {
-            control.classList.remove("leaflet-control-layers-expanded");
-          }
+          toggleLayerControl(false); // close the layers menu
           tour.next();
         },
       },
     ],
     // ensure the layers menu is open
-    when: {
-      show: () => {
-        const toggle = document.querySelector(".leaflet-control-layers-toggle");
-        if (toggle) toggle.click();
-      },
-    },
+    when: { show: () => toggleLayerControl(true) },
   });
 
   // legend
   tour.addStep({
     id: "legend",
-    attachTo: {
-      element: "#map-legend",
-      on: "left",
-    },
+    attachTo: { element: "#map-legend", on: "left" },
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "Here’s the legend.",
+    text: "A key to the colors on the map.",
     buttons: [{ text: "Next", action: tour.next }],
   });
 
-  // tour marker
-  // first, add a class to a specific tour marker (.includes("...") below)
-  const place = Object.values(placeData).find(
-    (p) => p.name && p.name.toLowerCase().includes("cape town")
-  );
-  let marker = place && place.marker;
-  if (marker && marker instanceof L.FeatureGroup) {
-    marker = marker.getLayers().find((m) => m instanceof L.CircleMarker);
-  }
-  setTimeout(() => {
-    if (marker && marker._path) {
-      marker._path.classList.add("tour-marker");
-    }
-  }, 100);
+  // highlight a marker by name
+  // add a one-time popup open event to advance the tour
+  highlightMarker("Cape Town");
+  mainMap.once("popupopen", () => tour.next());
 
-  // second, add a one-time listener for popupopen to advance the tour
-  mainMap.once("popupopen", function () {
-    tour.next();
-  });
-
-  // third and final, highlight the tour marker
+  // advance the tour on marker click
   tour.addStep({
     id: "marker-demo",
-    text: "Click this marker to open a popup.",
-    attachTo: {
-      element: ".tour-marker",
-      on: "top",
-    },
+    text: "This marks a place I passed through. Click to open a small window into it.",
+    attachTo: { element: ".tour-marker", on: "top" },
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
@@ -151,84 +100,66 @@ function startMapTour() {
   // popup
   tour.addStep({
     id: "popup-demo",
-    text: "Note the photo reel controls.",
-    attachTo: {
-      element: ".leaflet-popup",
-      on: "bottom",
-    },
+    text: "Each popup holds a glimpse—photos, a few lines of memory. Scroll through as you like.",
+    attachTo: { element: ".leaflet-popup", on: "bottom" },
     popperOptions: {
-      modifiers: [{ name: "offset", options: { offset: [0, -20] } }],
+      modifiers: [{ name: "offset", options: { offset: [0, -10] } }],
     },
     buttons: [{ text: "Next", action: tour.next }],
     // disable the zoom button while this step is active
     when: {
-      show: () => {
-        const zoomBtn = document.querySelector(".zoom-button");
-        if (zoomBtn) zoomBtn.setAttribute("disabled", "disabled");
-      },
-      hide: () => {
-        const zoomBtn = document.querySelector(".zoom-button");
-        if (zoomBtn) zoomBtn.removeAttribute("disabled");
-      },
+      show: () => disableButton(".zoom-button", true),
+      hide: () => disableButton(".zoom-button", false),
     },
   });
 
   // zoom
   tour.addStep({
     id: "zoom-button",
-    attachTo: {
-      element: ".zoom-button",
-      on: "top",
-    },
+    attachTo: { element: ".zoom-button", on: "top" },
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 24] } }],
     },
-    text: "Click to zoom in on the popup's location.",
+    text: "Use this button to zoom closer and focus in on that location.",
     advanceOn: { selector: ".zoom-button", event: "click" },
   });
 
   // reset map
   tour.addStep({
     id: "reset-button",
-    attachTo: {
-      element: ".reset-map-button",
-      on: "right",
-    },
+    attachTo: { element: ".reset-map-button", on: "right" },
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "Click to reset the map view.",
+    text: "This resets the map to a bird’s-eye view—sometimes helpful to reorient.",
     advanceOn: { selector: ".reset-map-button", event: "click" },
   });
 
   // about button
   tour.addStep({
     id: "about-button",
-    attachTo: {
-      element: ".about-button",
-      on: "right",
-    },
+    attachTo: { element: ".about-button", on: "right" },
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "This opens a modal with background on the project.",
+    text: "Want to know more about how and why this map exists? Click here for a bit of backstory.",
     advanceOn: { selector: ".about-button", event: "click" },
   });
 
-  // The End (resets the map when done)
+  // The End (resets the map view)
   tour.addStep({
     id: "popup",
-    attachTo: {
-      element: ".tour-restart-button",
-      on: "top",
+    attachTo: { element: ".tour-restart-button", on: "top" },
+    popperOptions: {
+      modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "You can restart the tour at any time. The map will reset.<br><br>Enjoy exploring!",
+    text: "That’s the overview. You can restart this tour anytime—but feel free to wander.",
     buttons: [
       {
         text: "Done",
         action: () => {
           tour.complete();
-          closeModal();
+          closeModal(); // close About modal
         },
       },
     ],
@@ -236,37 +167,87 @@ function startMapTour() {
       show: () => {
         // scroll to restart button
         const btn = document.querySelector(".tour-restart-button");
-        if (btn) {
-          btn.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-
-        // reset basemap
-        const baseLayer = createBaseMaps().Satellite;
-        baseLayer.addTo(mainMap);
-
-        // remove any other base layers
-        Object.values(mainMap._layers).forEach((layer) => {
-          if (layer instanceof L.TileLayer && layer !== baseLayer) {
-            mainMap.removeLayer(layer);
-          }
-        });
-
-        // show only overview markers (waypoints)
-        mainMap.eachLayer((layer) => {
-          if (
-            layer !== baseLayer &&
-            layer !== legend &&
-            layer !== mainMap._panes.overlayPane
-          ) {
-            mainMap.removeLayer(layer);
-          }
-        });
-        if (mainMap && !mainMap.hasLayer(markers)) {
-          mainMap.addLayer(markers);
-        }
+        if (btn) btn.scrollIntoView({ behavior: "smooth", block: "center" });
+        resetMapView(); // reset the map view
       },
     },
   });
 
   tour.start();
+}
+
+//////////////////////////////////////////////////////////
+
+// watches for a class to toggle, then calls callback function
+function observeClassToggle(el, className, callback) {
+  const observer = new MutationObserver((mutations) => {
+    if (
+      [...mutations].some(
+        (m) => m.type === "attributes" && el.classList.contains(className)
+      )
+    ) {
+      observer.disconnect();
+      callback();
+    }
+  });
+  observer.observe(el, { attributes: true, attributeFilter: ["class"] });
+}
+
+// toggles the layer control open or closed
+function toggleLayerControl(open = true) {
+  const toggle = document.querySelector(".leaflet-control-layers-toggle");
+  const control = document.querySelector(".leaflet-control-layers");
+  if (toggle && control) {
+    const isOpen = control.classList.contains(
+      "leaflet-control-layers-expanded"
+    );
+    if ((open && !isOpen) || (!open && isOpen)) toggle.click();
+  }
+}
+
+// highlights a marker by adding a class to its SVG path
+function highlightMarker(name) {
+  const place = Object.values(placeData).find((p) =>
+    p.name?.toLowerCase().includes(name.toLowerCase())
+  );
+  let marker = place?.marker;
+  if (marker instanceof L.FeatureGroup) {
+    marker = marker.getLayers().find((m) => m instanceof L.CircleMarker);
+  }
+  if (marker?._path) {
+    marker._path.classList.add("tour-marker");
+  }
+}
+
+// disable zoom button and gray it out
+function disableButton(selector, disable = true) {
+  const btn = document.querySelector(selector);
+  if (btn) {
+    btn.toggleAttribute("disabled", disable);
+    btn.classList.toggle("disabled-gray", disable);
+  }
+}
+
+// resets the map view to the initial state
+function resetMapView() {
+  // reset basemap
+  const baseLayer = createBaseMaps().Satellite;
+  baseLayer.addTo(mainMap);
+
+  // remove any other base layers (just to be safe)
+  Object.values(mainMap._layers).forEach((layer) => {
+    if (layer instanceof L.TileLayer && layer !== baseLayer) {
+      mainMap.removeLayer(layer);
+    }
+  });
+
+  // remove all other layers except the base layer, legend, and overlay pane
+  mainMap.eachLayer((layer) => {
+    if (![baseLayer, legend, mainMap._panes.overlayPane].includes(layer)) {
+      mainMap.removeLayer(layer);
+    }
+  });
+
+  // show waypoint markers
+  if (!mainMap.hasLayer(markers)) mainMap.addLayer(markers);
 }
