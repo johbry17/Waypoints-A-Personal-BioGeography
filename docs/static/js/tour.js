@@ -1,12 +1,16 @@
 // Description: This script sets up a guided tour using Shepherd.js
 // It demonstrates features like layer toggling, marker interaction, and popups.
+// It toggles certain UI elements to prevent user interactions...
+// ... causing bugs and interfering with the tour.
 
-// restarts the tour from the About modal
-function restartTour() {
-  if (window.tour?.complete) window.tour.complete(); // if tour is active
-  closeModal(); // close About modal
-  setTimeout(() => startMapTour(), 500);
-}
+// Table of Contents:
+
+// the tour
+// restart tour
+// UI watcher
+// highlight marker
+// toggles (controls, layers, buttons)
+// map reset
 
 // Shepherd.js tour setup
 function startMapTour() {
@@ -21,6 +25,8 @@ function startMapTour() {
   });
 
   window.tour = tour; // make tour accessible globally
+  // ensure markers layer is added to the map (for highlightMarker)
+  if (!mainMap.hasLayer(markers)) mainMap.addLayer(markers);
 
   // welcome message
   tour.addStep({
@@ -57,7 +63,7 @@ function startMapTour() {
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "Use this panel to turn layers on and off—routes, markers, and maps.",
+    text: "Use this panel to toggle routes, markers, and map styles.",
     buttons: [
       {
         text: "Next",
@@ -67,8 +73,14 @@ function startMapTour() {
         },
       },
     ],
-    // ensure the layers menu is open
-    when: { show: () => toggleLayerControl(true) },
+    // disable the Waypoints layer toggle while this step is active
+    when: {
+      show: () => {
+        toggleLayerControl(true); // open the layers menu
+        setLayerToggleEnabled("Waypoints", false);
+      },
+      hide: () => setLayerToggleEnabled("Waypoints", true),
+    },
   });
 
   // legend
@@ -176,8 +188,18 @@ function startMapTour() {
   tour.start();
 }
 
-//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
+// restarts the tour from the About modal
+function restartTour() {
+  if (window.tour?.complete) window.tour.complete(); // if tour is active
+  closeModal(); // close About modal
+  setTimeout(() => startMapTour(), 500);
+}
+
+/////////////////////////////////////////////////////////////////////
+
+// UI watcher - watches for the layers panel to open
 // watches for a class to toggle, then calls callback function
 function observeClassToggle(el, className, callback) {
   const observer = new MutationObserver((mutations) => {
@@ -193,7 +215,26 @@ function observeClassToggle(el, className, callback) {
   observer.observe(el, { attributes: true, attributeFilter: ["class"] });
 }
 
-// toggles the layer control open or closed
+///////////////////////////////////////////////////////////////////
+
+// highlights a marker by adding a class to its SVG path
+function highlightMarker(name) {
+  const place = Object.values(placeData).find((p) =>
+    p.name?.toLowerCase().includes(name.toLowerCase())
+  );
+
+  let marker = place?.marker;
+  if (marker instanceof L.FeatureGroup) {
+    marker = marker.getLayers().find((m) => m instanceof L.CircleMarker);
+  }
+  if (marker?._path) {
+    marker._path.classList.add("tour-marker");
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+
+// toggles the layer control panel open or closed
 function toggleLayerControl(open = true) {
   const toggle = document.querySelector(".leaflet-control-layers-toggle");
   const control = document.querySelector(".leaflet-control-layers");
@@ -205,21 +246,20 @@ function toggleLayerControl(open = true) {
   }
 }
 
-// highlights a marker by adding a class to its SVG path
-function highlightMarker(name) {
-  const place = Object.values(placeData).find((p) =>
-    p.name?.toLowerCase().includes(name.toLowerCase())
+// enables or disables a layer toggle by label (Waypoints layer)
+function setLayerToggleEnabled(layerLabel, enabled = true) {
+  const labels = document.querySelectorAll(
+    ".leaflet-control-layers-overlays label"
   );
-  let marker = place?.marker;
-  if (marker instanceof L.FeatureGroup) {
-    marker = marker.getLayers().find((m) => m instanceof L.CircleMarker);
-  }
-  if (marker?._path) {
-    marker._path.classList.add("tour-marker");
+  for (const label of labels) {
+    if (label.textContent.trim().includes(layerLabel)) {
+      const input = label.querySelector("input[type='checkbox']");
+      if (input) input.disabled = !enabled;
+    }
   }
 }
 
-// disable zoom button and gray it out
+// disable a button and gray it out (zoom button)
 function disableButton(selector, disable = true) {
   const btn = document.querySelector(selector);
   if (btn) {
@@ -227,6 +267,8 @@ function disableButton(selector, disable = true) {
     btn.classList.toggle("disabled-gray", disable);
   }
 }
+
+//////////////////////////////////////////////////////////////
 
 // resets the map view to the initial state
 function resetMapView() {
