@@ -115,7 +115,7 @@ function startMapTour() {
     text: "Each popup holds a glimpse—photos, a few lines of memory. Scroll through as you like.",
     attachTo: { element: ".leaflet-popup", on: "bottom" },
     popperOptions: {
-      modifiers: [{ name: "offset", options: { offset: [0, 30] } }],
+      modifiers: [{ name: "offset", options: { offset: [0, 120] } }],
     },
     buttons: [{ text: "Next", action: tour.next }],
     // disable the zoom button while this step is active
