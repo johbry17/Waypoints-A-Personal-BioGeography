@@ -39,11 +39,12 @@ At its core is a flexible geospatial engine powered by GeoJSON and open-source A
 - 🛣️ **Transportation Routes** for air, road, rail, boat, and foot
 - 📍 **Custom Marker Clustering** for performance and clarity
 - 🌐 **Multi-source Geospatial Data Integration** (OSM, APIs, hand-drawn)
+- 👣 **Interactive Guided Tour** walking users through map layers, markers, and controls
 - 📱 **Responsive UI** for desktop and mobile
 
 ## Tools & Technologies
 
-- **Frontend**: Leaflet.js, HTML, CSS, JavaScript
+- **Frontend**: Leaflet.js, Shepherd.js, HTML, CSS, JavaScript
 - **Backend**: Python (data ingestion and cleaning)
 - **Geospatial APIs**: OpenRouteService, Overpass API, Nominatim
 - **Data Formats**: GeoJSON, CSV
@@ -57,6 +58,7 @@ To explore:
 1. Navigate the map to explore custom markers
 2. Click any marker to view associated photo galleries and descriptions
 3. Use the layer control to toggle activities and route types
+4. (Optional) Take the interactive guided tour to get oriented with the map interface
 
 To update the data:
 - Run `extract_data.ipynb` inside the `resources/` directory to regenerate from source sheets and GeoJSON files.
@@ -87,6 +89,7 @@ To update the data:
 - [geojson.io](https://geojson.io/) – For hand-drawing and editing GeoJSON routes
 - [GeoJSON Specification](https://geojson.org/) – Core format for encoding spatial data
 - [GitHub Pages](https://pages.github.com/) – Hosting platform
+- [Shepherd.js](https://shepherdjs.dev/) – For building the interactive guided tour
 - [Font Awesome](https://fontawesome.com/) and [Material Design Icons](https://materialdesignicons.com/) – Iconography and styling assets
 
 ## Licenses
