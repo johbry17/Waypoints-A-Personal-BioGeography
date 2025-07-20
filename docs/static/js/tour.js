@@ -12,8 +12,18 @@
 // toggles (controls, layers, buttons)
 // map reset
 
+// global variables
+let tourCancelled = false;
+let layerToggleObserver; // for the layers control
+
 // Shepherd.js tour setup
 function startMapTour() {
+  // ensure map is ready
+  tourCancelled = false; // in case tour was restarted
+  // reset the map
+  document.querySelector(".reset-map-button")?.click();
+  resetMapView();
+
   const tour = new Shepherd.Tour({
     useModalOverlay: true,
     defaultStepOptions: {
@@ -47,11 +57,9 @@ function startMapTour() {
       show: () => {
         const control = document.querySelector(".leaflet-control-layers");
         if (control)
-          observeClassToggle(
-            control,
-            "leaflet-control-layers-expanded",
-            tour.next
-          );
+          observeClassToggle(control, "leaflet-control-layers-expanded", () => {
+            if (!tourCancelled) tour.next();
+          });
       },
     },
   });
@@ -97,7 +105,10 @@ function startMapTour() {
   // highlight a marker by name
   // add a one-time popup open event to advance the tour
   highlightMarker("Cape Town");
-  mainMap.once("popupopen", () => tour.next());
+  // mainMap.once("popupopen", () => {
+  //   if (!tourCancelled) tour.next();
+  // });
+  waitForPopupThenNext();
 
   // advance the tour on marker click
   tour.addStep({
@@ -185,6 +196,18 @@ function startMapTour() {
     },
   });
 
+  // complete tour on X button click
+  tour.on("cancel", () => {
+    disableButton(".zoom-button", false); // if zoom button was greyed out
+    tourCancelled = true;
+    tour.complete();
+  });
+
+  // clean up tour on completion
+  tour.on("complete", () => {
+    window.tour = null;
+  });
+
   tour.start();
 }
 
@@ -192,9 +215,15 @@ function startMapTour() {
 
 // restarts the tour from the About modal
 function restartTour() {
-  if (window.tour?.complete) window.tour.complete(); // if tour is active
-  closeModal(); // close About modal
-  setTimeout(() => startMapTour(), 500);
+  if (window.tour) {
+    window.tour.cancel(); // triggers cleanup and sets tourCancelled = true
+    window.tour = null;
+  }
+  closeModal();
+  setTimeout(() => {
+    tourCancelled = false; // rest flag if tour was restarted
+    startMapTour();
+  }, 500);
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -202,27 +231,39 @@ function restartTour() {
 // UI watcher - watches for the layers panel to open
 // watches for a class to toggle, then calls callback function
 function observeClassToggle(el, className, callback) {
-  const observer = new MutationObserver((mutations) => {
+  // disconnect any existing observer (if restarted)
+  if (layerToggleObserver) layerToggleObserver.disconnect();
+  layerToggleObserver = new MutationObserver((mutations) => {
     if (
       [...mutations].some(
         (m) => m.type === "attributes" && el.classList.contains(className)
       )
     ) {
-      observer.disconnect();
+      layerToggleObserver.disconnect();
       callback();
     }
   });
-  observer.observe(el, { attributes: true, attributeFilter: ["class"] });
+  layerToggleObserver.observe(el, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
 }
 
 ///////////////////////////////////////////////////////////////////
 
 // highlights a marker by adding a class to its SVG path
 function highlightMarker(name) {
+  // remove existing marker highlight
+  document
+    .querySelectorAll(".tour-marker")
+    .forEach((el) => el.classList.remove("tour-marker"));
+
+  // find marker by name
   const place = Object.values(placeData).find((p) =>
     p.name?.toLowerCase().includes(name.toLowerCase())
   );
 
+  // add class to marker SVG path
   let marker = place?.marker;
   if (marker instanceof L.FeatureGroup) {
     marker = marker.getLayers().find((m) => m instanceof L.CircleMarker);
@@ -230,6 +271,16 @@ function highlightMarker(name) {
   if (marker?._path) {
     marker._path.classList.add("tour-marker");
   }
+}
+
+// waits for a popup to open, then advances the tour
+// bug fix for restarting the tour
+function waitForPopupThenNext() {
+  const handler = () => {
+    mainMap.off("popupopen", handler);
+    if (!tourCancelled) tour.next();
+  };
+  mainMap.on("popupopen", handler);
 }
 
 //////////////////////////////////////////////////////////////////////
