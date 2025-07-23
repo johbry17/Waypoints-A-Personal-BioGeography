@@ -8,7 +8,7 @@
 // the tour
 // restart tour
 // UI watcher
-// highlight marker
+// highlight marker, wait for popup to advance the tour
 // toggles (controls, layers, buttons)
 // map reset
 
@@ -105,9 +105,6 @@ function startMapTour() {
   // highlight a marker by name
   // add a one-time popup open event to advance the tour
   highlightMarker("Cape Town");
-  // mainMap.once("popupopen", () => {
-  //   if (!tourCancelled) tour.next();
-  // });
   waitForPopupThenNext();
 
   // advance the tour on marker click
