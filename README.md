@@ -45,7 +45,7 @@ At its core is a flexible geospatial engine powered by GeoJSON and open-source A
 ## Tools & Technologies
 
 - **Frontend**: Leaflet.js, Shepherd.js, HTML, CSS, JavaScript
-- **Backend**: Python (data ingestion and cleaning)
+- **Backend**: Google Sheets API, Python (data ingestion and cleaning)
 - **Geospatial APIs**: OpenRouteService, Overpass API, Nominatim
 - **Data Formats**: GeoJSON, CSV
 - **Hosting**: GitHub Pages
@@ -89,6 +89,7 @@ To update the data:
 - [geojson.io](https://geojson.io/) – For hand-drawing and editing GeoJSON routes
 - [GeoJSON Specification](https://geojson.org/) – Core format for encoding spatial data
 - [GitHub Pages](https://pages.github.com/) – Hosting platform
+- [Google Sheets API](https://developers.google.com/sheets/api) and [Python](https://www.python.org/) – For managing and updating project data.
 - [Shepherd.js](https://shepherdjs.dev/) – For building the interactive guided tour
 - [Font Awesome](https://fontawesome.com/) and [Material Design Icons](https://materialdesignicons.com/) – Iconography and styling assets
 
