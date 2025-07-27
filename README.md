@@ -1,10 +1,10 @@
-# Waypoints: A GeoBiography
+# Waypoints: A Personal BioGeography
  
-![GitHub last commit](https://img.shields.io/github/last-commit/johbry17/waypoints-a-geobiography)
+![GitHub last commit](https://img.shields.io/github/last-commit/johbry17/waypoints-a-personaal-biogeography)
 
 *Mapping memories: An interactive travelogue handcrafted with Leaflet.js, Python, and open-source geospatial resources.*
 
-🌍 [Live Site](https://johbry17.github.io/Waypoints-A-GeoBiography/)
+🌍 [Live Site](https://johbry17.github.io/Waypoints-A-Personal-BioGeography/)
 
 > ⚠️ This project is under active development.
 
@@ -22,7 +22,7 @@
 
 ## Project Overview
 
-**Waypoints: A GeoBiography** is a map-based storytelling project—an interactive memoir composed of travels, memories, and photos. What began as a simple way to pin photos on a map, so I can bore others with my vacation photos, soon evolved into a full-stack geospatial app integrating **Leaflet.js**, **Python**, and a suite of open mapping APIs.
+**Waypoints: A Personal BioGeography** is a map-based storytelling project—an interactive memoir composed of travels, memories, and photos. What began as a simple way to pin photos on a map, so I can bore others with my vacation photos, soon evolved into a full-stack geospatial app integrating **Leaflet.js**, **Python**, and a suite of open mapping APIs.
 
 It’s a digital keepsake, visualized through:
 - 📍 Custom markers with photo carousels
@@ -52,7 +52,7 @@ At its core is a flexible geospatial engine powered by GeoJSON and open-source A
 
 ## Usage
 
-The project is live at [johbry17.github.io/Waypoints-A-GeoBiography.](https://johbry17.github.io/Waypoints-A-GeoBiography/).
+The project is live at [johbry17.github.io/Waypoints-A-Personal-BioGeography.](https://johbry17.github.io/Waypoints-A-Personal-BioGeography/).
 
 To explore:
 1. Navigate the map to explore custom markers
