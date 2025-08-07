@@ -107,6 +107,6 @@ Thanks to everyone who’s shared this beautiful world with me. And to the open-
 ## Author
 
 Bryan Johns  
-Last updated: <!-- START_DATE -->July 2025<!-- END_DATE -->  
+Last updated: <!-- START_DATE -->August 2025<!-- END_DATE -->  
 [bryan.johns.official@gmail.com](mailto:bryan.johns.official@gmail.com) | [LinkedIn](https://www.linkedin.com/in/b-johns/) | [GitHub](https://github.com/johbry17) | [Portfolio](https://johbry17.github.io/portfolio/index.html)
 
