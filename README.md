@@ -25,22 +25,22 @@
 **Waypoints: A Personal BioGeography** is a map-based storytelling project—an interactive memoir composed of travels, memories, and photos. What began as a simple way to pin photos on a map, so I can bore others with my vacation photos, soon evolved into a full-stack geospatial app integrating **Leaflet.js**, **Python**, and a suite of open mapping APIs.
 
 It’s a digital keepsake, visualized through:
-- 📍 Custom markers with photo carousels
-- 🥾 Activity overlays (e.g., hiking, snorkeling, kayaking)
-- 🛫 Route mapping for planes, boats, trains, and more
+- Custom markers with photo carousels
+- Activity overlays (e.g., hiking, snorkeling, kayaking)
+- Route mapping for planes, boats, trains, and more
 
 At its core is a flexible geospatial engine powered by GeoJSON and open-source APIs like **Overpass**, **OpenRouteService**, and **Nominatim**, with data managed via Google Sheets. [View Data Dictionary](data_dictionary.md).
 
 ## Features
 
-- 🗺️ **Interactive Leaflet Map** with zoomable, pan-able layers
-- 🖼️ **Photo Carousels** in location popups
-- 🎯 **Activity Icons & Overlays** (hiking, snorkeling, sightseeing, etc.)
-- 🛣️ **Transportation Routes** for air, road, rail, boat, and foot
-- 📍 **Custom Marker Clustering** for performance and clarity
-- 🌐 **Multi-source Geospatial Data Integration** (OSM, APIs, hand-drawn)
-- 👣 **Interactive Guided Tour** walking users through map layers, markers, and controls
-- 📱 **Responsive UI** for desktop and mobile
+- **Interactive Leaflet Map** with zoomable, pan-able layers
+- **Photo Carousels** in location popups
+- **Activity Icons & Overlays** (hiking, snorkeling, sightseeing, etc.)
+- **Transportation Routes** for air, road, rail, boat, and foot
+- **Custom Marker Clustering** for performance and clarity
+- **Multi-source Geospatial Data Integration** (OSM, APIs, hand-drawn)
+- **Interactive Guided Tour** walking users through map layers, markers, and controls
+- **Responsive UI** for desktop and mobile
 
 ## Tools & Technologies
 
