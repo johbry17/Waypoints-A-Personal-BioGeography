@@ -2217,16 +2217,16 @@
   {
     "id": 33,
     "name": "Brussels",
-    "lat": 50.8465573,
-    "lng": 4.351697,
+    "lat": 50.845011,
+    "lng": 4.349945,
     "start_date": "11-1998",
     "end_date": "11-1998",
     "photo_album": "Brussels",
     "photos": [
       "1671912991974-9904c30d-e46d-4266-b0e2-9b29da616566_.jpg"
     ],
-    "description": "",
-    "notes": "Fell in love with Salvador Dali's artwork on this high school art class jaunt to Brussels",
+    "description": "<i>Netherlands art class day trip</i>",
+    "notes": "Fell in love with Salvador Dal\u00ed\u2019s surreal world on this excursion. And, naturally, the <i>Manneken Pis</i>.",
     "importance": 1,
     "visit_type": "school",
     "home": "",
