@@ -1,31 +1,31 @@
 {
     "type": "FeatureCollection",
     "bbox": [
-        75.7912,
+        75.820402,
         26.854939,
-        78.012209,
+        78.039102,
         27.206421
     ],
     "features": [
         {
             "bbox": [
-                75.7912,
+                75.820402,
                 26.854939,
-                78.012209,
+                78.039102,
                 27.206421
             ],
             "type": "Feature",
             "properties": {
                 "segments": [
                     {
-                        "distance": 240717.0,
-                        "duration": 10657.1,
+                        "distance": 238249.5,
+                        "duration": 10370.9,
                         "steps": [
                             {
-                                "distance": 34.9,
-                                "duration": 8.4,
+                                "distance": 7.0,
+                                "duration": 2.5,
                                 "type": 11,
-                                "instruction": "Head northeast",
+                                "instruction": "Head south",
                                 "name": "-",
                                 "way_points": [
                                     0,
@@ -33,158 +33,36 @@
                                 ]
                             },
                             {
-                                "distance": 76.9,
-                                "duration": 18.5,
-                                "type": 1,
-                                "instruction": "Turn right",
-                                "name": "-",
-                                "way_points": [
-                                    1,
-                                    3
-                                ]
-                            },
-                            {
-                                "distance": 241.6,
-                                "duration": 19.3,
-                                "type": 0,
-                                "instruction": "Turn left",
-                                "name": "-",
-                                "way_points": [
-                                    3,
-                                    14
-                                ]
-                            },
-                            {
-                                "distance": 12.6,
-                                "duration": 4.5,
-                                "type": 1,
-                                "instruction": "Turn right",
-                                "name": "-",
-                                "way_points": [
-                                    14,
-                                    15
-                                ]
-                            },
-                            {
-                                "distance": 162.1,
-                                "duration": 16.7,
-                                "type": 1,
-                                "instruction": "Turn right",
-                                "name": "-",
-                                "way_points": [
-                                    15,
-                                    19
-                                ]
-                            },
-                            {
-                                "distance": 484.2,
-                                "duration": 34.9,
-                                "type": 0,
-                                "instruction": "Turn left onto Pankaj Singhvi Marg",
-                                "name": "Pankaj Singhvi Marg",
-                                "way_points": [
-                                    19,
-                                    29
-                                ]
-                            },
-                            {
-                                "distance": 615.0,
-                                "duration": 49.2,
-                                "type": 0,
-                                "instruction": "Turn left onto Jan Path",
-                                "name": "Jan Path",
-                                "way_points": [
-                                    29,
-                                    38
-                                ]
-                            },
-                            {
-                                "distance": 1109.5,
-                                "duration": 89.2,
-                                "type": 7,
-                                "instruction": "Enter the roundabout and take the 2nd exit onto Bhagwandas Road",
-                                "name": "Bhagwandas Road",
-                                "exit_number": 2,
-                                "way_points": [
-                                    38,
-                                    58
-                                ]
-                            },
-                            {
-                                "distance": 173.8,
-                                "duration": 12.5,
-                                "type": 0,
-                                "instruction": "Turn left onto statue circle",
-                                "name": "statue circle",
-                                "way_points": [
-                                    58,
-                                    73
-                                ]
-                            },
-                            {
-                                "distance": 1001.0,
-                                "duration": 72.1,
-                                "type": 0,
-                                "instruction": "Turn left onto Bhagwandas Road",
-                                "name": "Bhagwandas Road",
-                                "way_points": [
-                                    73,
-                                    78
-                                ]
-                            },
-                            {
-                                "distance": 4997.0,
-                                "duration": 211.6,
+                                "distance": 14.0,
+                                "duration": 0.6,
                                 "type": 1,
                                 "instruction": "Turn right onto Mirza Ismail Road",
                                 "name": "Mirza Ismail Road",
                                 "way_points": [
-                                    78,
-                                    184
+                                    1,
+                                    2
                                 ]
                             },
                             {
-                                "distance": 1858.2,
-                                "duration": 78.7,
+                                "distance": 3924.6,
+                                "duration": 170.3,
+                                "type": 6,
+                                "instruction": "Continue straight onto Mirza Ismail Road",
+                                "name": "Mirza Ismail Road",
+                                "way_points": [
+                                    2,
+                                    83
+                                ]
+                            },
+                            {
+                                "distance": 2684.2,
+                                "duration": 113.7,
                                 "type": 6,
                                 "instruction": "Continue straight onto Old Agra Jaipur Bikaner Road",
                                 "name": "Old Agra Jaipur Bikaner Road",
                                 "way_points": [
-                                    184,
-                                    224
-                                ]
-                            },
-                            {
-                                "distance": 95.9,
-                                "duration": 23.0,
-                                "type": 2,
-                                "instruction": "Turn sharp left",
-                                "name": "-",
-                                "way_points": [
-                                    224,
-                                    226
-                                ]
-                            },
-                            {
-                                "distance": 733.1,
-                                "duration": 58.6,
-                                "type": 1,
-                                "instruction": "Turn right",
-                                "name": "-",
-                                "way_points": [
-                                    226,
-                                    231
-                                ]
-                            },
-                            {
-                                "distance": 28.9,
-                                "duration": 1.2,
-                                "type": 0,
-                                "instruction": "Turn left onto Old Agra Jaipur Bikaner Road",
-                                "name": "Old Agra Jaipur Bikaner Road",
-                                "way_points": [
-                                    231,
-                                    234
+                                    83,
+                                    143
                                 ]
                             },
                             {
@@ -194,8 +72,8 @@
                                 "instruction": "Turn right onto Agra Jaipur Bikaner Road, NH21",
                                 "name": "Agra Jaipur Bikaner Road, NH21",
                                 "way_points": [
-                                    234,
-                                    262
+                                    143,
+                                    171
                                 ]
                             },
                             {
@@ -205,30 +83,19 @@
                                 "instruction": "Continue straight onto Agra Jaipur Bikaner Road, NH21",
                                 "name": "Agra Jaipur Bikaner Road, NH21",
                                 "way_points": [
-                                    262,
-                                    359
+                                    171,
+                                    268
                                 ]
                             },
                             {
-                                "distance": 19950.6,
-                                "duration": 844.9,
+                                "distance": 22336.1,
+                                "duration": 946.0,
                                 "type": 13,
                                 "instruction": "Keep right onto Lane 4, NH21",
                                 "name": "Lane 4, NH21",
                                 "way_points": [
-                                    359,
-                                    448
-                                ]
-                            },
-                            {
-                                "distance": 2385.5,
-                                "duration": 101.0,
-                                "type": 6,
-                                "instruction": "Continue straight onto Agra Jaipur Bikaner Road, NH21",
-                                "name": "Agra Jaipur Bikaner Road, NH21",
-                                "way_points": [
-                                    448,
-                                    463
+                                    268,
+                                    372
                                 ]
                             },
                             {
@@ -238,597 +105,256 @@
                                 "instruction": "Keep right onto Agra Jaipur Bikaner Road, NH21",
                                 "name": "Agra Jaipur Bikaner Road, NH21",
                                 "way_points": [
-                                    463,
-                                    610
+                                    372,
+                                    519
                                 ]
                             },
                             {
-                                "distance": 37494.3,
-                                "duration": 1588.0,
+                                "distance": 146540.7,
+                                "duration": 6206.2,
                                 "type": 13,
                                 "instruction": "Keep right onto Agra Jaipur Bikaner Road, NH21",
                                 "name": "Agra Jaipur Bikaner Road, NH21",
                                 "way_points": [
-                                    610,
-                                    743
+                                    519,
+                                    1200
                                 ]
                             },
                             {
-                                "distance": 109046.5,
-                                "duration": 4618.3,
-                                "type": 6,
-                                "instruction": "Continue straight onto Agra Jaipur Bikaner Road, NH21",
-                                "name": "Agra Jaipur Bikaner Road, NH21",
-                                "way_points": [
-                                    743,
-                                    1288
-                                ]
-                            },
-                            {
-                                "distance": 7461.3,
-                                "duration": 419.6,
+                                "distance": 8521.8,
+                                "duration": 489.5,
                                 "type": 6,
                                 "instruction": "Continue straight onto Fatehpur Sikri road",
                                 "name": "Fatehpur Sikri road",
                                 "way_points": [
-                                    1288,
-                                    1370
+                                    1200,
+                                    1311
                                 ]
                             },
                             {
-                                "distance": 1233.7,
-                                "duration": 85.2,
-                                "type": 12,
-                                "instruction": "Keep left onto sangeeta road",
-                                "name": "sangeeta road",
+                                "distance": 1114.7,
+                                "duration": 74.6,
+                                "type": 4,
+                                "instruction": "Turn slight left onto Shahganj Road",
+                                "name": "Shahganj Road",
                                 "way_points": [
-                                    1370,
-                                    1399
+                                    1311,
+                                    1338
                                 ]
                             },
                             {
-                                "distance": 21.3,
-                                "duration": 1.3,
+                                "distance": 34.3,
+                                "duration": 2.2,
+                                "type": 13,
+                                "instruction": "Keep right onto Shahganj Road",
+                                "name": "Shahganj Road",
+                                "way_points": [
+                                    1338,
+                                    1341
+                                ]
+                            },
+                            {
+                                "distance": 763.8,
+                                "duration": 32.3,
+                                "type": 1,
+                                "instruction": "Turn right onto Mahatma Gandhi Road, NH44",
+                                "name": "Mahatma Gandhi Road, NH44",
+                                "way_points": [
+                                    1341,
+                                    1367
+                                ]
+                            },
+                            {
+                                "distance": 414.9,
+                                "duration": 27.2,
                                 "type": 2,
                                 "instruction": "Turn sharp left",
                                 "name": "-",
                                 "way_points": [
-                                    1399,
-                                    1405
+                                    1367,
+                                    1375
                                 ]
                             },
                             {
-                                "distance": 14.5,
-                                "duration": 1.0,
-                                "type": 0,
-                                "instruction": "Turn left",
-                                "name": "-",
-                                "way_points": [
-                                    1405,
-                                    1406
-                                ]
-                            },
-                            {
-                                "distance": 425.0,
-                                "duration": 34.0,
-                                "type": 0,
-                                "instruction": "Turn left",
-                                "name": "-",
-                                "way_points": [
-                                    1406,
-                                    1415
-                                ]
-                            },
-                            {
-                                "distance": 721.7,
-                                "duration": 30.6,
-                                "type": 0,
-                                "instruction": "Turn left onto Mahatma Gandhi Road, NH44",
-                                "name": "Mahatma Gandhi Road, NH44",
-                                "way_points": [
-                                    1415,
-                                    1428
-                                ]
-                            },
-                            {
-                                "distance": 698.8,
-                                "duration": 58.8,
-                                "type": 1,
-                                "instruction": "Turn right onto Noori Darwaja Road",
-                                "name": "Noori Darwaja Road",
-                                "way_points": [
-                                    1428,
-                                    1445
-                                ]
-                            },
-                            {
-                                "distance": 368.0,
-                                "duration": 29.4,
+                                "distance": 290.0,
+                                "duration": 23.2,
                                 "type": 13,
                                 "instruction": "Keep right",
                                 "name": "-",
                                 "way_points": [
-                                    1445,
-                                    1450
+                                    1375,
+                                    1381
                                 ]
                             },
                             {
-                                "distance": 7.6,
-                                "duration": 1.8,
+                                "distance": 25.2,
+                                "duration": 1.5,
                                 "type": 0,
                                 "instruction": "Turn left",
                                 "name": "-",
                                 "way_points": [
-                                    1450,
-                                    1451
+                                    1381,
+                                    1385
                                 ]
                             },
                             {
-                                "distance": 185.0,
-                                "duration": 44.4,
+                                "distance": 295.7,
+                                "duration": 23.7,
+                                "type": 0,
+                                "instruction": "Turn left",
+                                "name": "-",
+                                "way_points": [
+                                    1385,
+                                    1388
+                                ]
+                            },
+                            {
+                                "distance": 384.0,
+                                "duration": 27.6,
+                                "type": 0,
+                                "instruction": "Turn left",
+                                "name": "-",
+                                "way_points": [
+                                    1388,
+                                    1401
+                                ]
+                            },
+                            {
+                                "distance": 34.5,
+                                "duration": 2.5,
+                                "type": 13,
+                                "instruction": "Keep right",
+                                "name": "-",
+                                "way_points": [
+                                    1401,
+                                    1403
+                                ]
+                            },
+                            {
+                                "distance": 456.7,
+                                "duration": 41.5,
+                                "type": 1,
+                                "instruction": "Turn right",
+                                "name": "-",
+                                "way_points": [
+                                    1403,
+                                    1411
+                                ]
+                            },
+                            {
+                                "distance": 40.1,
+                                "duration": 9.6,
+                                "type": 0,
+                                "instruction": "Turn left",
+                                "name": "-",
+                                "way_points": [
+                                    1411,
+                                    1416
+                                ]
+                            },
+                            {
+                                "distance": 9.5,
+                                "duration": 2.3,
+                                "type": 5,
+                                "instruction": "Turn slight right",
+                                "name": "-",
+                                "way_points": [
+                                    1416,
+                                    1417
+                                ]
+                            },
+                            {
+                                "distance": 1380.6,
+                                "duration": 99.4,
                                 "type": 12,
                                 "instruction": "Keep left",
                                 "name": "-",
                                 "way_points": [
-                                    1451,
-                                    1458
+                                    1417,
+                                    1447
                                 ]
                             },
                             {
-                                "distance": 109.8,
-                                "duration": 26.3,
-                                "type": 0,
-                                "instruction": "Turn left onto milan vatika",
-                                "name": "milan vatika",
+                                "distance": 8.3,
+                                "duration": 0.6,
+                                "type": 3,
+                                "instruction": "Turn sharp right",
+                                "name": "-",
                                 "way_points": [
-                                    1458,
-                                    1461
+                                    1447,
+                                    1449
                                 ]
                             },
                             {
                                 "distance": 0.0,
                                 "duration": 0.0,
                                 "type": 10,
-                                "instruction": "Arrive at milan vatika, on the left",
+                                "instruction": "Arrive at your destination, on the left",
                                 "name": "-",
                                 "way_points": [
-                                    1461,
-                                    1461
+                                    1449,
+                                    1449
                                 ]
                             }
                         ]
                     }
                 ],
+                "extras": {
+                    "roadaccessrestrictions": {
+                        "values": [
+                            [
+                                0,
+                                1447,
+                                0
+                            ],
+                            [
+                                1447,
+                                1449,
+                                1
+                            ]
+                        ],
+                        "summary": [
+                            {
+                                "value": 0.0,
+                                "distance": 238241.2,
+                                "amount": 100.0
+                            },
+                            {
+                                "value": 1.0,
+                                "distance": 8.3,
+                                "amount": 0.0
+                            }
+                        ]
+                    }
+                },
+                "warnings": [
+                    {
+                        "code": 1,
+                        "message": "There may be restrictions on some roads"
+                    }
+                ],
                 "way_points": [
                     0,
-                    1461
+                    1449
                 ],
                 "summary": {
-                    "distance": 240717.0,
-                    "duration": 10657.1
+                    "distance": 238249.5,
+                    "duration": 10370.9
                 }
             },
             "geometry": {
                 "coordinates": [
                     [
-                        75.7912,
-                        26.894545
+                        75.82055,
+                        26.91595
                     ],
                     [
-                        75.791357,
-                        26.894826
+                        75.82054,
+                        26.915888
                     ],
                     [
-                        75.791749,
-                        26.894568
-                    ],
-                    [
-                        75.791962,
-                        26.894394
-                    ],
-                    [
-                        75.79213,
-                        26.894563
-                    ],
-                    [
-                        75.792185,
-                        26.894596
-                    ],
-                    [
-                        75.79235,
-                        26.894658
-                    ],
-                    [
-                        75.792463,
-                        26.89468
-                    ],
-                    [
-                        75.792688,
-                        26.894729
-                    ],
-                    [
-                        75.792724,
-                        26.894779
-                    ],
-                    [
-                        75.792857,
-                        26.895133
-                    ],
-                    [
-                        75.792961,
-                        26.895337
-                    ],
-                    [
-                        75.793185,
-                        26.895614
-                    ],
-                    [
-                        75.793336,
-                        26.895846
-                    ],
-                    [
-                        75.793442,
-                        26.895965
-                    ],
-                    [
-                        75.793569,
-                        26.895972
-                    ],
-                    [
-                        75.793601,
-                        26.895339
-                    ],
-                    [
-                        75.793607,
-                        26.895176
-                    ],
-                    [
-                        75.793629,
-                        26.894633
-                    ],
-                    [
-                        75.793634,
-                        26.894515
-                    ],
-                    [
-                        75.794232,
-                        26.894537
-                    ],
-                    [
-                        75.79498,
-                        26.894561
-                    ],
-                    [
-                        75.795146,
-                        26.894548
-                    ],
-                    [
-                        75.795252,
-                        26.894522
-                    ],
-                    [
-                        75.795579,
-                        26.894377
-                    ],
-                    [
-                        75.796026,
-                        26.894171
-                    ],
-                    [
-                        75.796418,
-                        26.893968
-                    ],
-                    [
-                        75.796963,
-                        26.893696
-                    ],
-                    [
-                        75.798072,
-                        26.893166
-                    ],
-                    [
-                        75.79812,
-                        26.893143
-                    ],
-                    [
-                        75.798406,
-                        26.893722
-                    ],
-                    [
-                        75.798605,
-                        26.894112
-                    ],
-                    [
-                        75.798756,
-                        26.894408
-                    ],
-                    [
-                        75.798907,
-                        26.894706
-                    ],
-                    [
-                        75.798941,
-                        26.894773
-                    ],
-                    [
-                        75.799221,
-                        26.895316
-                    ],
-                    [
-                        75.800594,
-                        26.898
-                    ],
-                    [
-                        75.800612,
-                        26.898142
-                    ],
-                    [
-                        75.800619,
-                        26.898195
-                    ],
-                    [
-                        75.800566,
-                        26.898253
-                    ],
-                    [
-                        75.800525,
-                        26.898337
-                    ],
-                    [
-                        75.800513,
-                        26.898428
-                    ],
-                    [
-                        75.800525,
-                        26.898496
-                    ],
-                    [
-                        75.80058,
-                        26.898596
-                    ],
-                    [
-                        75.800663,
-                        26.898668
-                    ],
-                    [
-                        75.800729,
-                        26.898698
-                    ],
-                    [
-                        75.80082,
-                        26.898718
-                    ],
-                    [
-                        75.800908,
-                        26.898716
-                    ],
-                    [
-                        75.801008,
-                        26.898809
-                    ],
-                    [
-                        75.801231,
-                        26.899253
-                    ],
-                    [
-                        75.802113,
-                        26.900984
-                    ],
-                    [
-                        75.802503,
-                        26.901855
-                    ],
-                    [
-                        75.802927,
-                        26.902692
-                    ],
-                    [
-                        75.803687,
-                        26.904101
-                    ],
-                    [
-                        75.804166,
-                        26.904987
-                    ],
-                    [
-                        75.804273,
-                        26.905199
-                    ],
-                    [
-                        75.804697,
-                        26.906037
-                    ],
-                    [
-                        75.804932,
-                        26.906503
-                    ],
-                    [
-                        75.805228,
-                        26.90707
-                    ],
-                    [
-                        75.805132,
-                        26.907132
-                    ],
-                    [
-                        75.805052,
-                        26.907211
-                    ],
-                    [
-                        75.804992,
-                        26.907303
-                    ],
-                    [
-                        75.804954,
-                        26.907403
-                    ],
-                    [
-                        75.80494,
-                        26.907509
-                    ],
-                    [
-                        75.80495,
-                        26.907615
-                    ],
-                    [
-                        75.804984,
-                        26.907716
-                    ],
-                    [
-                        75.805021,
-                        26.907781
-                    ],
-                    [
-                        75.805092,
-                        26.907867
-                    ],
-                    [
-                        75.805181,
-                        26.907938
-                    ],
-                    [
-                        75.805285,
-                        26.907991
-                    ],
-                    [
-                        75.805398,
-                        26.908023
-                    ],
-                    [
-                        75.805517,
-                        26.908035
-                    ],
-                    [
-                        75.805636,
-                        26.908024
-                    ],
-                    [
-                        75.805751,
-                        26.907994
-                    ],
-                    [
-                        75.806933,
-                        26.910475
-                    ],
-                    [
-                        75.807385,
-                        26.911357
-                    ],
-                    [
-                        75.808592,
-                        26.913857
-                    ],
-                    [
-                        75.809268,
-                        26.915183
-                    ],
-                    [
-                        75.809727,
-                        26.916266
-                    ],
-                    [
-                        75.809894,
-                        26.916254
-                    ],
-                    [
-                        75.81012,
-                        26.916234
-                    ],
-                    [
-                        75.810267,
-                        26.916237
-                    ],
-                    [
-                        75.810706,
-                        26.916261
-                    ],
-                    [
-                        75.81079,
-                        26.916277
-                    ],
-                    [
-                        75.811067,
-                        26.91633
-                    ],
-                    [
-                        75.81135,
-                        26.916403
-                    ],
-                    [
-                        75.811621,
-                        26.916492
-                    ],
-                    [
-                        75.812011,
-                        26.916627
-                    ],
-                    [
-                        75.812435,
-                        26.916718
-                    ],
-                    [
-                        75.813632,
-                        26.916776
-                    ],
-                    [
-                        75.814149,
-                        26.916795
-                    ],
-                    [
-                        75.815273,
-                        26.916858
-                    ],
-                    [
-                        75.815879,
-                        26.916872
-                    ],
-                    [
-                        75.816007,
-                        26.916923
-                    ],
-                    [
-                        75.816397,
-                        26.916925
-                    ],
-                    [
-                        75.816486,
-                        26.916913
-                    ],
-                    [
-                        75.816783,
-                        26.916839
-                    ],
-                    [
-                        75.817051,
-                        26.916735
-                    ],
-                    [
-                        75.817189,
-                        26.916677
-                    ],
-                    [
-                        75.817285,
-                        26.916655
-                    ],
-                    [
-                        75.817673,
-                        26.91657
-                    ],
-                    [
-                        75.817835,
-                        26.916543
-                    ],
-                    [
-                        75.818403,
-                        26.916449
-                    ],
-                    [
-                        75.818545,
-                        26.916421
-                    ],
-                    [
-                        75.819997,
-                        26.916132
+                        75.820402,
+                        26.915917
                     ],
                     [
                         75.820431,
@@ -1075,6 +601,10 @@
                         26.90283
                     ],
                     [
+                        75.845942,
+                        26.902538
+                    ],
+                    [
                         75.845996,
                         26.902455
                     ],
@@ -1083,24 +613,24 @@
                         26.90233
                     ],
                     [
-                        75.846869,
-                        26.901878
+                        75.84686,
+                        26.901898
                     ],
                     [
-                        75.847101,
-                        26.90177
+                        75.846982,
+                        26.901842
                     ],
                     [
-                        75.84743,
-                        26.901697
+                        75.847445,
+                        26.901716
                     ],
                     [
-                        75.848173,
-                        26.901582
+                        75.847911,
+                        26.901626
                     ],
                     [
-                        75.848322,
-                        26.901571
+                        75.848179,
+                        26.901589
                     ],
                     [
                         75.849738,
@@ -1311,28 +841,68 @@
                         26.891906
                     ],
                     [
-                        75.867242,
-                        26.892165
+                        75.867285,
+                        26.891701
                     ],
                     [
-                        75.867475,
-                        26.892689
+                        75.867415,
+                        26.891599
                     ],
                     [
-                        75.868217,
-                        26.892417
+                        75.867579,
+                        26.891511
                     ],
                     [
-                        75.869684,
-                        26.891904
+                        75.867753,
+                        26.891436
                     ],
                     [
-                        75.870734,
-                        26.891581
+                        75.867986,
+                        26.891347
                     ],
                     [
-                        75.874242,
-                        26.890587
+                        75.868967,
+                        26.890975
+                    ],
+                    [
+                        75.869693,
+                        26.890658
+                    ],
+                    [
+                        75.869848,
+                        26.890596
+                    ],
+                    [
+                        75.870227,
+                        26.890494
+                    ],
+                    [
+                        75.870634,
+                        26.890347
+                    ],
+                    [
+                        75.871966,
+                        26.889906
+                    ],
+                    [
+                        75.872206,
+                        26.88986
+                    ],
+                    [
+                        75.872432,
+                        26.889845
+                    ],
+                    [
+                        75.872733,
+                        26.889887
+                    ],
+                    [
+                        75.873325,
+                        26.890065
+                    ],
+                    [
+                        75.874321,
+                        26.890405
                     ],
                     [
                         75.874435,
@@ -4723,6 +4293,10 @@
                         27.158274
                     ],
                     [
+                        77.577814,
+                        27.156407
+                    ],
+                    [
                         77.580885,
                         27.154317
                     ],
@@ -4811,6 +4385,10 @@
                         27.128077
                     ],
                     [
+                        77.629266,
+                        27.127959
+                    ],
+                    [
                         77.629416,
                         27.127834
                     ],
@@ -4821,6 +4399,10 @@
                     [
                         77.631994,
                         27.12538
+                    ],
+                    [
+                        77.634886,
+                        27.123623
                     ],
                     [
                         77.637907,
@@ -5895,368 +5477,672 @@
                         27.176329
                     ],
                     [
-                        77.98596,
-                        27.176377
+                        77.985966,
+                        27.176326
                     ],
                     [
-                        77.98627,
-                        27.176552
+                        77.986218,
+                        27.176317
                     ],
                     [
-                        77.986647,
-                        27.176763
+                        77.986834,
+                        27.176289
                     ],
                     [
-                        77.986797,
-                        27.176833
+                        77.987186,
+                        27.176269
                     ],
                     [
-                        77.987411,
-                        27.177103
+                        77.988231,
+                        27.17621
                     ],
                     [
-                        77.987756,
-                        27.177258
+                        77.988434,
+                        27.176187
                     ],
                     [
-                        77.988145,
-                        27.177407
+                        77.988459,
+                        27.176186
                     ],
                     [
-                        77.988535,
-                        27.177563
+                        77.988897,
+                        27.176168
                     ],
                     [
-                        77.988955,
-                        27.177665
+                        77.989264,
+                        27.176145
                     ],
                     [
-                        77.989211,
-                        27.177666
+                        77.989395,
+                        27.176136
                     ],
                     [
-                        77.989431,
-                        27.177697
+                        77.990014,
+                        27.176097
                     ],
                     [
-                        77.989745,
-                        27.177767
+                        77.990189,
+                        27.176088
                     ],
                     [
-                        77.990116,
-                        27.177872
+                        77.990822,
+                        27.176065
                     ],
                     [
-                        77.990232,
-                        27.177921
+                        77.990961,
+                        27.176057
                     ],
                     [
-                        77.991195,
-                        27.178337
+                        77.991138,
+                        27.176049
                     ],
                     [
-                        77.991273,
-                        27.178375
+                        77.991832,
+                        27.176007
                     ],
                     [
-                        77.991422,
-                        27.178448
+                        77.992188,
+                        27.175982
                     ],
                     [
-                        77.991574,
-                        27.178524
+                        77.99264,
+                        27.175929
                     ],
                     [
-                        77.991657,
-                        27.178565
+                        77.993251,
+                        27.175822
                     ],
                     [
-                        77.991734,
-                        27.178598
+                        77.993498,
+                        27.175784
                     ],
                     [
-                        77.99202,
-                        27.178721
+                        77.993658,
+                        27.175756
                     ],
                     [
-                        77.992153,
-                        27.178778
+                        77.993793,
+                        27.175731
                     ],
                     [
-                        77.99243,
-                        27.178892
+                        77.994628,
+                        27.175551
                     ],
                     [
-                        77.993007,
-                        27.17911
+                        77.995047,
+                        27.17546
                     ],
                     [
-                        77.993897,
-                        27.179481
+                        77.99514,
+                        27.175477
                     ],
                     [
-                        77.994102,
-                        27.179551
+                        77.995699,
+                        27.17539
                     ],
                     [
-                        77.99551,
-                        27.180118
+                        77.99582,
+                        27.175365
                     ],
                     [
-                        77.996764,
-                        27.180647
+                        77.996343,
+                        27.175234
                     ],
                     [
-                        77.99722,
-                        27.180815
+                        77.996469,
+                        27.175173
                     ],
                     [
-                        77.997205,
-                        27.180833
+                        77.997783,
+                        27.174921
                     ],
                     [
-                        77.997205,
-                        27.180872
+                        77.997992,
+                        27.174903
                     ],
                     [
-                        77.997229,
-                        27.180894
+                        77.998869,
+                        27.174896
                     ],
                     [
-                        77.997277,
-                        27.180896
+                        77.999487,
+                        27.174944
                     ],
                     [
-                        77.997307,
-                        27.180864
+                        77.999785,
+                        27.174965
                     ],
                     [
-                        77.997309,
-                        27.180849
+                        78.000155,
+                        27.174992
                     ],
                     [
-                        77.997453,
-                        27.180872
+                        78.000246,
+                        27.175
                     ],
                     [
-                        77.997455,
-                        27.180902
+                        78.000468,
+                        27.175021
                     ],
                     [
-                        77.997631,
-                        27.18101
+                        78.001035,
+                        27.175062
                     ],
                     [
-                        77.998255,
-                        27.181262
+                        78.001615,
+                        27.175096
                     ],
                     [
-                        77.998916,
-                        27.181563
+                        78.002247,
+                        27.175182
                     ],
                     [
-                        77.999385,
-                        27.18184
+                        78.002801,
+                        27.17531
                     ],
                     [
-                        77.99982,
-                        27.182165
+                        78.003209,
+                        27.175418
                     ],
                     [
-                        78.000144,
-                        27.182376
-                    ],
-                    [
-                        78.000948,
-                        27.18289
-                    ],
-                    [
-                        78.00104,
-                        27.182922
-                    ],
-                    [
-                        78.001066,
-                        27.18318
-                    ],
-                    [
-                        78.001119,
-                        27.183304
-                    ],
-                    [
-                        78.001229,
-                        27.183509
-                    ],
-                    [
-                        78.001298,
-                        27.18364
-                    ],
-                    [
-                        78.001443,
-                        27.184024
-                    ],
-                    [
-                        78.001494,
-                        27.184561
-                    ],
-                    [
-                        78.001478,
-                        27.184771
-                    ],
-                    [
-                        78.001331,
-                        27.185515
-                    ],
-                    [
-                        78.00114,
-                        27.186404
-                    ],
-                    [
-                        78.001134,
-                        27.186905
-                    ],
-                    [
-                        78.001192,
-                        27.188521
-                    ],
-                    [
-                        78.001202,
-                        27.18877
-                    ],
-                    [
-                        78.001172,
-                        27.189314
-                    ],
-                    [
-                        78.001275,
-                        27.189318
-                    ],
-                    [
-                        78.001762,
-                        27.18934
-                    ],
-                    [
-                        78.002291,
-                        27.189402
-                    ],
-                    [
-                        78.00289,
-                        27.189546
-                    ],
-                    [
-                        78.003388,
-                        27.189652
+                        78.003436,
+                        27.175469
                     ],
                     [
                         78.003718,
-                        27.189697
+                        27.175539
                     ],
                     [
-                        78.004021,
-                        27.189716
+                        78.003905,
+                        27.175585
                     ],
                     [
-                        78.00449,
-                        27.189721
+                        78.004868,
+                        27.175801
                     ],
                     [
-                        78.005062,
-                        27.189659
+                        78.005011,
+                        27.175822
                     ],
                     [
-                        78.005736,
-                        27.18957
+                        78.005458,
+                        27.175894
                     ],
                     [
-                        78.005945,
-                        27.189557
+                        78.005525,
+                        27.175928
                     ],
                     [
-                        78.006301,
-                        27.189542
+                        78.005662,
+                        27.176033
                     ],
                     [
-                        78.006639,
-                        27.189517
+                        78.005844,
+                        27.176203
                     ],
                     [
-                        78.006771,
-                        27.189512
+                        78.005959,
+                        27.176284
                     ],
                     [
-                        78.00752,
-                        27.189545
+                        78.00617,
+                        27.176376
                     ],
                     [
-                        78.008078,
-                        27.189566
+                        78.006367,
+                        27.17643
                     ],
                     [
-                        78.008177,
-                        27.189569
+                        78.00682,
+                        27.176466
                     ],
                     [
-                        78.008771,
-                        27.189087
+                        78.007381,
+                        27.176534
                     ],
                     [
-                        78.00918,
-                        27.188767
+                        78.007495,
+                        27.176598
                     ],
                     [
-                        78.009353,
-                        27.188634
+                        78.007588,
+                        27.17668
                     ],
                     [
-                        78.009537,
-                        27.188555
+                        78.007636,
+                        27.176738
                     ],
                     [
-                        78.011351,
-                        27.187949
+                        78.007799,
+                        27.176696
                     ],
                     [
-                        78.011417,
-                        27.187984
+                        78.008018,
+                        27.176678
                     ],
                     [
-                        78.012023,
-                        27.188607
+                        78.008144,
+                        27.176648
                     ],
                     [
-                        78.012097,
-                        27.188702
+                        78.008236,
+                        27.176571
                     ],
                     [
-                        78.012181,
-                        27.188867
+                        78.008387,
+                        27.176203
                     ],
                     [
-                        78.012206,
-                        27.188981
+                        78.008462,
+                        27.176043
                     ],
                     [
-                        78.012209,
-                        27.189067
+                        78.008745,
+                        27.175661
                     ],
                     [
-                        78.012165,
-                        27.189203
+                        78.008824,
+                        27.17549
                     ],
                     [
-                        78.012038,
-                        27.189368
+                        78.008854,
+                        27.175339
                     ],
                     [
-                        78.011983,
-                        27.189321
+                        78.008854,
+                        27.175236
                     ],
                     [
-                        78.01193,
-                        27.189314
+                        78.008855,
+                        27.175143
                     ],
                     [
-                        78.010965,
-                        27.189461
+                        78.008823,
+                        27.17493
+                    ],
+                    [
+                        78.008801,
+                        27.174739
+                    ],
+                    [
+                        78.008766,
+                        27.174609
+                    ],
+                    [
+                        78.008694,
+                        27.174333
+                    ],
+                    [
+                        78.008633,
+                        27.173979
+                    ],
+                    [
+                        78.008615,
+                        27.173767
+                    ],
+                    [
+                        78.008645,
+                        27.173092
+                    ],
+                    [
+                        78.008678,
+                        27.172823
+                    ],
+                    [
+                        78.008746,
+                        27.172511
+                    ],
+                    [
+                        78.008923,
+                        27.17205
+                    ],
+                    [
+                        78.009144,
+                        27.171622
+                    ],
+                    [
+                        78.009276,
+                        27.171405
+                    ],
+                    [
+                        78.00946,
+                        27.171019
+                    ],
+                    [
+                        78.009535,
+                        27.170815
+                    ],
+                    [
+                        78.00958,
+                        27.170578
+                    ],
+                    [
+                        78.01042,
+                        27.171185
+                    ],
+                    [
+                        78.010916,
+                        27.171559
+                    ],
+                    [
+                        78.011231,
+                        27.17181
+                    ],
+                    [
+                        78.01163,
+                        27.172124
+                    ],
+                    [
+                        78.011756,
+                        27.172236
+                    ],
+                    [
+                        78.012366,
+                        27.172821
+                    ],
+                    [
+                        78.012553,
+                        27.173004
+                    ],
+                    [
+                        78.01263,
+                        27.173122
+                    ],
+                    [
+                        78.012949,
+                        27.173209
+                    ],
+                    [
+                        78.01323,
+                        27.173247
+                    ],
+                    [
+                        78.013386,
+                        27.173242
+                    ],
+                    [
+                        78.014502,
+                        27.173105
+                    ],
+                    [
+                        78.01497,
+                        27.173102
+                    ],
+                    [
+                        78.015531,
+                        27.173142
+                    ],
+                    [
+                        78.015547,
+                        27.173211
+                    ],
+                    [
+                        78.015597,
+                        27.173238
+                    ],
+                    [
+                        78.015655,
+                        27.173229
+                    ],
+                    [
+                        78.015693,
+                        27.17319
+                    ],
+                    [
+                        78.018322,
+                        27.173562
+                    ],
+                    [
+                        78.018492,
+                        27.17356
+                    ],
+                    [
+                        78.018647,
+                        27.173538
+                    ],
+                    [
+                        78.018665,
+                        27.173585
+                    ],
+                    [
+                        78.018651,
+                        27.173694
+                    ],
+                    [
+                        78.018749,
+                        27.17396
+                    ],
+                    [
+                        78.018844,
+                        27.174154
+                    ],
+                    [
+                        78.019009,
+                        27.174418
+                    ],
+                    [
+                        78.019179,
+                        27.174632
+                    ],
+                    [
+                        78.019325,
+                        27.174757
+                    ],
+                    [
+                        78.019455,
+                        27.174846
+                    ],
+                    [
+                        78.019888,
+                        27.17509
+                    ],
+                    [
+                        78.020058,
+                        27.175162
+                    ],
+                    [
+                        78.02106,
+                        27.175414
+                    ],
+                    [
+                        78.021219,
+                        27.17548
+                    ],
+                    [
+                        78.021414,
+                        27.175592
+                    ],
+                    [
+                        78.021608,
+                        27.175719
+                    ],
+                    [
+                        78.02169,
+                        27.175781
+                    ],
+                    [
+                        78.021804,
+                        27.175718
+                    ],
+                    [
+                        78.022281,
+                        27.175613
+                    ],
+                    [
+                        78.02358,
+                        27.175372
+                    ],
+                    [
+                        78.024661,
+                        27.175125
+                    ],
+                    [
+                        78.02475,
+                        27.175116
+                    ],
+                    [
+                        78.025098,
+                        27.175121
+                    ],
+                    [
+                        78.02519,
+                        27.175111
+                    ],
+                    [
+                        78.026193,
+                        27.17527
+                    ],
+                    [
+                        78.026195,
+                        27.175349
+                    ],
+                    [
+                        78.02625,
+                        27.175412
+                    ],
+                    [
+                        78.026337,
+                        27.175432
+                    ],
+                    [
+                        78.026382,
+                        27.175423
+                    ],
+                    [
+                        78.02645,
+                        27.17537
+                    ],
+                    [
+                        78.026467,
+                        27.175286
+                    ],
+                    [
+                        78.026663,
+                        27.175068
+                    ],
+                    [
+                        78.026931,
+                        27.174833
+                    ],
+                    [
+                        78.027247,
+                        27.174611
+                    ],
+                    [
+                        78.027524,
+                        27.174451
+                    ],
+                    [
+                        78.02791,
+                        27.17427
+                    ],
+                    [
+                        78.028321,
+                        27.174081
+                    ],
+                    [
+                        78.028525,
+                        27.174021
+                    ],
+                    [
+                        78.028932,
+                        27.173916
+                    ],
+                    [
+                        78.029433,
+                        27.173821
+                    ],
+                    [
+                        78.03084,
+                        27.173577
+                    ],
+                    [
+                        78.031444,
+                        27.173456
+                    ],
+                    [
+                        78.031855,
+                        27.173394
+                    ],
+                    [
+                        78.032031,
+                        27.173377
+                    ],
+                    [
+                        78.032647,
+                        27.173445
+                    ],
+                    [
+                        78.032895,
+                        27.173461
+                    ],
+                    [
+                        78.033092,
+                        27.173448
+                    ],
+                    [
+                        78.033311,
+                        27.173415
+                    ],
+                    [
+                        78.033523,
+                        27.173351
+                    ],
+                    [
+                        78.033721,
+                        27.173262
+                    ],
+                    [
+                        78.034283,
+                        27.172969
+                    ],
+                    [
+                        78.034507,
+                        27.172873
+                    ],
+                    [
+                        78.035236,
+                        27.172607
+                    ],
+                    [
+                        78.035905,
+                        27.172381
+                    ],
+                    [
+                        78.036158,
+                        27.172311
+                    ],
+                    [
+                        78.037714,
+                        27.172084
+                    ],
+                    [
+                        78.038298,
+                        27.171927
+                    ],
+                    [
+                        78.038425,
+                        27.171857
+                    ],
+                    [
+                        78.038654,
+                        27.171661
+                    ],
+                    [
+                        78.03909,
+                        27.171204
+                    ],
+                    [
+                        78.039102,
+                        27.17111
+                    ],
+                    [
+                        78.039023,
+                        27.171131
+                    ],
+                    [
+                        78.039022,
+                        27.171132
                     ]
                 ],
                 "type": "LineString"
@@ -6266,16 +6152,16 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1743665574189,
+        "timestamp": 1756632297277,
         "query": {
             "coordinates": [
                 [
-                    75.791307,
-                    26.894497
+                    75.820505,
+                    26.915956
                 ],
                 [
-                    78.010888,
-                    27.189062
+                    78.038945,
+                    27.171074
                 ]
             ],
             "profile": "driving-car",
@@ -6283,9 +6169,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-24T11:22:16Z",
+            "osm_date": "2025-08-18T00:00:00Z"
         }
     }
 }

@@ -4,7 +4,7 @@
         -5.850042,
         56.81904,
         -5.07537,
-        57.002925
+        57.003896
     ],
     "features": [
         {
@@ -12,57 +12,46 @@
                 -5.850042,
                 56.81904,
                 -5.07537,
-                57.002925
+                57.003896
             ],
             "type": "Feature",
             "properties": {
                 "segments": [
                     {
-                        "distance": 67866.0,
-                        "duration": 3386.4,
+                        "distance": 67873.0,
+                        "duration": 3515.6,
                         "steps": [
                             {
-                                "distance": 42.4,
-                                "duration": 10.2,
+                                "distance": 7.7,
+                                "duration": 1.9,
                                 "type": 11,
-                                "instruction": "Head southwest on Clanranald Terrace",
-                                "name": "Clanranald Terrace",
+                                "instruction": "Head southwest",
+                                "name": "-",
                                 "way_points": [
                                     0,
-                                    4
+                                    1
                                 ]
                             },
                             {
-                                "distance": 66.0,
-                                "duration": 15.8,
+                                "distance": 1370.3,
+                                "duration": 102.4,
                                 "type": 0,
-                                "instruction": "Turn left onto Lovat Terrace",
-                                "name": "Lovat Terrace",
-                                "way_points": [
-                                    4,
-                                    9
-                                ]
-                            },
-                            {
-                                "distance": 1263.2,
-                                "duration": 92.8,
-                                "type": 1,
-                                "instruction": "Turn right onto Annie's Brae, B8008",
+                                "instruction": "Turn left onto Annie's Brae, B8008",
                                 "name": "Annie's Brae, B8008",
                                 "way_points": [
-                                    9,
-                                    53
+                                    1,
+                                    48
                                 ]
                             },
                             {
                                 "distance": 62955.2,
-                                "duration": 2900.1,
+                                "duration": 3017.7,
                                 "type": 0,
                                 "instruction": "Turn left onto Road to the Isles, A830",
                                 "name": "Road to the Isles, A830",
                                 "way_points": [
-                                    53,
-                                    1091
+                                    48,
+                                    1090
                                 ]
                             },
                             {
@@ -73,8 +62,8 @@
                                 "name": "Road to the Isles, A830",
                                 "exit_number": 3,
                                 "way_points": [
-                                    1091,
-                                    1109
+                                    1090,
+                                    1108
                                 ]
                             },
                             {
@@ -85,42 +74,43 @@
                                 "name": "A82",
                                 "exit_number": 2,
                                 "way_points": [
-                                    1109,
-                                    1133
+                                    1108,
+                                    1132
                                 ]
                             },
                             {
-                                "distance": 1011.4,
-                                "duration": 88.5,
+                                "distance": 1009.1,
+                                "duration": 86.9,
                                 "type": 7,
                                 "instruction": "Enter the roundabout and take the 3rd exit onto North Road, A82",
                                 "name": "North Road, A82",
                                 "exit_number": 3,
                                 "way_points": [
-                                    1133,
-                                    1160
+                                    1132,
+                                    1158
                                 ]
                             },
                             {
-                                "distance": 196.7,
-                                "duration": 34.9,
-                                "type": 6,
-                                "instruction": "Continue straight onto North Road, A82",
+                                "distance": 199.0,
+                                "duration": 52.6,
+                                "type": 7,
+                                "instruction": "Enter the roundabout and take the 1st exit onto North Road, A82",
                                 "name": "North Road, A82",
+                                "exit_number": 1,
                                 "way_points": [
-                                    1160,
+                                    1158,
                                     1166
                                 ]
                             },
                             {
                                 "distance": 512.1,
-                                "duration": 46.1,
+                                "duration": 50.8,
                                 "type": 1,
                                 "instruction": "Turn right onto Belford Road, A82",
                                 "name": "Belford Road, A82",
                                 "way_points": [
                                     1166,
-                                    1173
+                                    1174
                                 ]
                             },
                             {
@@ -130,19 +120,19 @@
                                 "instruction": "Turn left onto Victoria Road",
                                 "name": "Victoria Road",
                                 "way_points": [
-                                    1173,
-                                    1175
+                                    1174,
+                                    1176
                                 ]
                             },
                             {
-                                "distance": 175.1,
-                                "duration": 15.8,
+                                "distance": 175.6,
+                                "duration": 21.1,
                                 "type": 5,
                                 "instruction": "Turn slight right onto Victoria Road",
                                 "name": "Victoria Road",
                                 "way_points": [
-                                    1175,
-                                    1180
+                                    1176,
+                                    1181
                                 ]
                             },
                             {
@@ -152,8 +142,8 @@
                                 "instruction": "Arrive at Victoria Road, on the left",
                                 "name": "-",
                                 "way_points": [
-                                    1180,
-                                    1180
+                                    1181,
+                                    1181
                                 ]
                             }
                         ]
@@ -161,50 +151,30 @@
                 ],
                 "way_points": [
                     0,
-                    1180
+                    1181
                 ],
                 "summary": {
-                    "distance": 67866.0,
-                    "duration": 3386.4
+                    "distance": 67873.0,
+                    "duration": 3515.6
                 }
             },
             "geometry": {
                 "coordinates": [
                     [
-                        -5.830808,
-                        57.002925
+                        -5.829614,
+                        57.003896
                     ],
                     [
-                        -5.830856,
-                        57.002889
+                        -5.829717,
+                        57.003854
                     ],
                     [
-                        -5.83087,
-                        57.002849
+                        -5.829684,
+                        57.003477
                     ],
                     [
-                        -5.830786,
-                        57.002741
-                    ],
-                    [
-                        -5.830566,
-                        57.002609
-                    ],
-                    [
-                        -5.830385,
-                        57.002661
-                    ],
-                    [
-                        -5.830046,
-                        57.002845
-                    ],
-                    [
-                        -5.829947,
-                        57.002879
-                    ],
-                    [
-                        -5.829808,
-                        57.002899
+                        -5.829623,
+                        57.003238
                     ],
                     [
                         -5.829663,
@@ -583,8 +553,8 @@
                         56.959149
                     ],
                     [
-                        -5.819493,
-                        56.959027
+                        -5.819455,
+                        56.95909
                     ],
                     [
                         -5.819737,
@@ -1855,6 +1825,10 @@
                         56.878375
                     ],
                     [
+                        -5.666447,
+                        56.87845
+                    ],
+                    [
                         -5.666137,
                         56.878592
                     ],
@@ -3067,6 +3041,10 @@
                         56.875607
                     ],
                     [
+                        -5.458633,
+                        56.875194
+                    ],
+                    [
                         -5.458149,
                         56.87503
                     ],
@@ -3091,10 +3069,6 @@
                         56.874258
                     ],
                     [
-                        -5.45733,
-                        56.874186
-                    ],
-                    [
                         -5.457296,
                         56.874144
                     ],
@@ -3115,8 +3089,8 @@
                         56.873874
                     ],
                     [
-                        -5.455961,
-                        56.8738
+                        -5.455662,
+                        56.873772
                     ],
                     [
                         -5.455409,
@@ -3301,6 +3275,10 @@
                     [
                         -5.432002,
                         56.86822
+                    ],
+                    [
+                        -5.431441,
+                        56.868231
                     ],
                     [
                         -5.430054,
@@ -4127,6 +4105,10 @@
                         56.848969
                     ],
                     [
+                        -5.16209,
+                        56.848397
+                    ],
+                    [
                         -5.160396,
                         56.847862
                     ],
@@ -4255,6 +4237,10 @@
                         56.84371
                     ],
                     [
+                        -5.12898,
+                        56.84376
+                    ],
+                    [
                         -5.128743,
                         56.843771
                     ],
@@ -4343,8 +4329,8 @@
                         56.843883
                     ],
                     [
-                        -5.119099,
-                        56.843933
+                        -5.119294,
+                        56.843919
                     ],
                     [
                         -5.118409,
@@ -4823,6 +4809,10 @@
                         56.822531
                     ],
                     [
+                        -5.092895,
+                        56.822371
+                    ],
+                    [
                         -5.093145,
                         56.822216
                     ],
@@ -4837,6 +4827,10 @@
                     [
                         -5.094315,
                         56.82142
+                    ],
+                    [
+                        -5.094817,
+                        56.821495
                     ],
                     [
                         -5.095742,
@@ -4902,12 +4896,12 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744005396407,
+        "timestamp": 1756620498839,
         "query": {
             "coordinates": [
                 [
-                    -5.83082,
-                    57.00293
+                    -5.829646,
+                    57.003919
                 ],
                 [
                     -5.103589,
@@ -4919,9 +4913,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-24T11:22:16Z",
+            "osm_date": "2025-08-18T00:00:00Z"
         }
     }
 }

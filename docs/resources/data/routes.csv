@@ -1,16 +1,16 @@
 route_id,start_location,end_location,transport_mode,filename
-accc1702-bb7f-4080-8145-30c503d88414,Jaipur,New Delhi,auto,accc1702-bb7f-4080-8145-30c503d88414.geojson
+accc1702-bb7f-4080-8145-30c503d88414,Jaipur,New Delhi Airport,auto,accc1702-bb7f-4080-8145-30c503d88414.geojson
 ee4b4ff0-d86e-446c-8c99-0d8a17b0538b,Jaipur,Jaipur,auto,ee4b4ff0-d86e-446c-8c99-0d8a17b0538b.geojson
 79e36ef6-100b-493b-a587-0dac56d1416c,New Delhi,Agra,auto,79e36ef6-100b-493b-a587-0dac56d1416c.geojson
 4353f3cc-3987-453c-bb63-969e006d468f,Jaipur,Agra,auto,4353f3cc-3987-453c-bb63-969e006d468f.geojson
-4dbfdf96-30ea-407b-8ab3-e6d60f8f9cb6,Calicut,Fort Cochin,auto,4dbfdf96-30ea-407b-8ab3-e6d60f8f9cb6.geojson
+4dbfdf96-30ea-407b-8ab3-e6d60f8f9cb6,Calicut Airport,Ernakulam,auto,4dbfdf96-30ea-407b-8ab3-e6d60f8f9cb6.geojson
 7a957094-a1db-46d8-bc2b-082910d2028e,Fort Cochin,Alleppey,auto,7a957094-a1db-46d8-bc2b-082910d2028e.geojson
-fc981513-ee74-4a1c-9ee3-71440c9d1c13,Allepy,Bangalore,auto,fc981513-ee74-4a1c-9ee3-71440c9d1c13.geojson
+fc981513-ee74-4a1c-9ee3-71440c9d1c13,Alleppey,Bangalore,auto,fc981513-ee74-4a1c-9ee3-71440c9d1c13.geojson
 5e34b6d4-578b-4770-988e-7db424f1ca15,Bangalore,Mysore,auto,5e34b6d4-578b-4770-988e-7db424f1ca15.geojson
 cd97717c-28c7-4a1c-8d3d-6d55eb27c1e9,Mysore,Gokarna,auto,cd97717c-28c7-4a1c-8d3d-6d55eb27c1e9.geojson
-924b9c99-5104-4144-8ad6-93777c8fa2e3,Gokarna,Panaji,auto,924b9c99-5104-4144-8ad6-93777c8fa2e3.geojson
+924b9c99-5104-4144-8ad6-93777c8fa2e3,Gokarna,Goa Dabolim Airport,auto,924b9c99-5104-4144-8ad6-93777c8fa2e3.geojson
 4e6d134f-4ada-488b-98c9-1160ca93e198,Bangalore,Anjuna,auto,4e6d134f-4ada-488b-98c9-1160ca93e198.geojson
-8035d936-1300-4b40-bede-70e0cb3bf78f,Anjuna,Panaji,auto,8035d936-1300-4b40-bede-70e0cb3bf78f.geojson
+8035d936-1300-4b40-bede-70e0cb3bf78f,Anjuna,Goa Dabolim Airport,auto,8035d936-1300-4b40-bede-70e0cb3bf78f.geojson
 4b070063-7b41-4431-b131-e0c273020216,Pushkar,Ajmer Junction,auto,4b070063-7b41-4431-b131-e0c273020216.geojson
 85a61321-6e6e-4a05-a2fb-db17419f7d62,Jaipur,Jodhpur,auto,85a61321-6e6e-4a05-a2fb-db17419f7d62.geojson
 574a2e4b-b4ea-4149-8a1f-3cdd40dab4ef,Jaipur,Jawanpura,auto,574a2e4b-b4ea-4149-8a1f-3cdd40dab4ef.geojson
@@ -40,8 +40,8 @@ f46ea3f0-7ac8-4633-9533-8592f662a476,Mt Mansfield,Mt Mansfield,hike,hike_mansfie
 30eb22e1-b1dc-42a0-92cd-04de0d5b75ad,Ollantaytambo,Machu Picchu,train,train_machu_picchu_ollantaytambo.geojson
 080605de-fbf0-4512-9420-f66abb04fbc1,Cusco,Puno,train,train_cusco_puno.geojson
 8cd32eeb-081d-454e-8e59-165d53efbb38,Edinburgh,Llandudno,auto,8cd32eeb-081d-454e-8e59-165d53efbb38.geojson
-b642ec95-fd59-4a2a-af5a-c1d44f189dc6,Saqsaywaman,Ollantaytambo,auto,b642ec95-fd59-4a2a-af5a-c1d44f189dc6.geojson
-627855bd-4aae-4e18-a866-1e03c9836a93,Ollantaytambo,Pisac Q'allaqasa,auto,627855bd-4aae-4e18-a866-1e03c9836a93.geojson
+b642ec95-fd59-4a2a-af5a-c1d44f189dc6,Cusco,Ollantaytambo,auto,b642ec95-fd59-4a2a-af5a-c1d44f189dc6.geojson
+627855bd-4aae-4e18-a866-1e03c9836a93,Ollantaytambo,Pisac,auto,627855bd-4aae-4e18-a866-1e03c9836a93.geojson
 75ce3130-d8db-4f11-bbeb-08cdc4e0e13f,Sittard,"Salviusstraat, Limbricht",auto,75ce3130-d8db-4f11-bbeb-08cdc4e0e13f.geojson
 fcaa8833-50ca-4816-a971-0b96368488e3,Geleen,Brussels,auto,fcaa8833-50ca-4816-a971-0b96368488e3.geojson
 fd939e73-e322-46ec-9d0a-eff0a0a2504b,Geleen,Paris,auto,fd939e73-e322-46ec-9d0a-eff0a0a2504b.geojson
@@ -263,8 +263,8 @@ e84782a5-c23a-451c-97e9-d092e3ec5137,"Kalalau Trail, Kauai","Kalalau Trail, Kaua
 60fba8c7-95df-4ba3-bee7-6b68d5dc7b63,Rio Pacuare,Rio Pacuare,boat,boat_pacuare.geojson
 704e0981-657c-4d57-9817-d7e84e725ab9,Hout Bay,Duiker Island,boat,boat_hout.geojson
 49b8576a-59a4-44dd-bf13-512dd185f842,Alwar,Jawanpura,auto,49b8576a-59a4-44dd-bf13-512dd185f842.geojson
-9d6eea0d-5a54-4a21-81b6-8ce13c9c765f,Jawanpura,Cheend,auto,9d6eea0d-5a54-4a21-81b6-8ce13c9c765f.geojson
-53e2109b-7802-4666-be19-a44d92e21b78,Jawanpura,Bhamod,auto,53e2109b-7802-4666-be19-a44d92e21b78.geojson
+9d6eea0d-5a54-4a21-81b6-8ce13c9c765f,Kukdela,Cheend,auto,9d6eea0d-5a54-4a21-81b6-8ce13c9c765f.geojson
+53e2109b-7802-4666-be19-a44d92e21b78,Jawanpura,Kukdela,auto,53e2109b-7802-4666-be19-a44d92e21b78.geojson
 8fe6e95b-bca0-44bf-996b-9440a01aa66a,Jodhpur,Arna Jharna Thar Desert Museum,auto,8fe6e95b-bca0-44bf-996b-9440a01aa66a.geojson
 0bd6f01b-e2cb-42f7-949c-841aabeef190,Ambala,Amritsar,train,train_ambala_new_delhi.geojson
 9ea435ed-9959-46df-959a-67c52f511a91,Bikaner,Karni Mata Temple,auto,9ea435ed-9959-46df-959a-67c52f511a91.geojson
@@ -298,3 +298,10 @@ b439d15d-9d48-4542-af6f-14779cb0cea9,Upper Youghiogheny River,Upper Youghiogheny
 09d865ba-0cac-433d-9cc0-9025242161e2,Letras Todos Santos,"La Paz, Mexico",auto,09d865ba-0cac-433d-9cc0-9025242161e2.geojson
 821c9daf-7f14-41ab-8f0e-b4e3bba21efb,"Cancun Airport, Mexico",Mexico City Airport,plane,great_circle_route_297.geojson
 fa5f564d-1826-4732-b994-b16ab28ad69f,"Colon, Costa Rica",Universidad para la Paz,auto,fa5f564d-1826-4732-b994-b16ab28ad69f.geojson
+c888042f-4eb3-4a3c-8699-f03eb52a22ab,Kempegowda International Airport,Bangalore,auto,c888042f-4eb3-4a3c-8699-f03eb52a22ab.geojson
+fb0fa907-fb08-4217-8bf7-ff47b3448a4e,Ernakulam,Fort Cochin,auto,fb0fa907-fb08-4217-8bf7-ff47b3448a4e.geojson
+ecdefd70-54b6-4d7e-904d-5348c884fad3,Agra,Fatehpur Sikri,auto,ecdefd70-54b6-4d7e-904d-5348c884fad3.geojson
+106bcd75-1842-4e27-99f1-3b0e7d459b06,Jaipur,Nahargah Fort,auto,106bcd75-1842-4e27-99f1-3b0e7d459b06.geojson
+98bb1195-c6d2-4f27-9580-05a2110cf38e,Jaipur,Gaurav Tower,auto,98bb1195-c6d2-4f27-9580-05a2110cf38e.geojson
+7db4d539-21ec-4aec-a10c-30df26147e73,Amritsar,Gurudwara,auto,7db4d539-21ec-4aec-a10c-30df26147e73.geojson
+5f99a252-ca0d-4c55-bf1d-dfa88f1bd7ce,New Delhi Airport,New Delhi,auto,5f99a252-ca0d-4c55-bf1d-dfa88f1bd7ce.geojson
