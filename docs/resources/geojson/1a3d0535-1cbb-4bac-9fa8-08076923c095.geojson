@@ -1,45 +1,56 @@
 {
     "type": "FeatureCollection",
     "bbox": [
-        -82.940417,
+        -82.93579,
         9.553436,
-        -82.754383,
-        9.656882
+        -82.755083,
+        9.656747
     ],
     "features": [
         {
             "bbox": [
-                -82.940417,
+                -82.93579,
                 9.553436,
-                -82.754383,
-                9.656882
+                -82.755083,
+                9.656747
             ],
             "type": "Feature",
             "properties": {
                 "segments": [
                     {
-                        "distance": 30847.1,
-                        "duration": 2165.7,
+                        "distance": 30136.2,
+                        "duration": 2160.2,
                         "steps": [
                             {
-                                "distance": 11.5,
-                                "duration": 2.8,
+                                "distance": 9.3,
+                                "duration": 2.2,
                                 "type": 11,
-                                "instruction": "Head southeast on Calle 215",
-                                "name": "Calle 215",
+                                "instruction": "Head southwest on Avenida 73",
+                                "name": "Avenida 73",
                                 "way_points": [
                                     0,
                                     1
                                 ]
                             },
                             {
-                                "distance": 5275.5,
-                                "duration": 521.4,
+                                "distance": 109.0,
+                                "duration": 13.1,
+                                "type": 0,
+                                "instruction": "Turn left onto Calle 213",
+                                "name": "Calle 213",
+                                "way_points": [
+                                    1,
+                                    2
+                                ]
+                            },
+                            {
+                                "distance": 5160.2,
+                                "duration": 507.6,
                                 "type": 1,
                                 "instruction": "Turn right onto Avenida 71, 256",
                                 "name": "Avenida 71, 256",
                                 "way_points": [
-                                    1,
+                                    2,
                                     79
                                 ]
                             },
@@ -55,25 +66,47 @@
                                 ]
                             },
                             {
-                                "distance": 17826.6,
-                                "duration": 1222.7,
+                                "distance": 16819.4,
+                                "duration": 1156.8,
                                 "type": 6,
                                 "instruction": "Continue straight onto Avenida Central, 801",
                                 "name": "Avenida Central, 801",
                                 "way_points": [
                                     239,
-                                    702
+                                    694
+                                ]
+                            },
+                            {
+                                "distance": 300.2,
+                                "duration": 58.4,
+                                "type": 2,
+                                "instruction": "Turn sharp left",
+                                "name": "-",
+                                "way_points": [
+                                    694,
+                                    700
+                                ]
+                            },
+                            {
+                                "distance": 4.5,
+                                "duration": 3.3,
+                                "type": 0,
+                                "instruction": "Turn left onto Ruta Suretka-Amubri",
+                                "name": "Ruta Suretka-Amubri",
+                                "way_points": [
+                                    700,
+                                    701
                                 ]
                             },
                             {
                                 "distance": 0.0,
                                 "duration": 0.0,
                                 "type": 10,
-                                "instruction": "Arrive at Avenida Central, 801, on the right",
+                                "instruction": "Arrive at Ruta Suretka-Amubri, straight ahead",
                                 "name": "-",
                                 "way_points": [
-                                    702,
-                                    702
+                                    701,
+                                    701
                                 ]
                             }
                         ]
@@ -81,22 +114,22 @@
                 ],
                 "way_points": [
                     0,
-                    702
+                    701
                 ],
                 "summary": {
-                    "distance": 30847.1,
-                    "duration": 2165.7
+                    "distance": 30136.2,
+                    "duration": 2160.2
                 }
             },
             "geometry": {
                 "coordinates": [
                     [
-                        -82.754462,
-                        9.656882
+                        -82.755796,
+                        9.656747
                     ],
                     [
-                        -82.754383,
-                        9.656815
+                        -82.755845,
+                        9.656678
                     ],
                     [
                         -82.755083,
@@ -199,12 +232,12 @@
                         9.654957
                     ],
                     [
-                        -82.765902,
-                        9.654744
+                        -82.766058,
+                        9.654684
                     ],
                     [
-                        -82.767401,
-                        9.653682
+                        -82.766707,
+                        9.654221
                     ],
                     [
                         -82.768294,
@@ -2871,36 +2904,32 @@
                         9.567988
                     ],
                     [
-                        -82.935898,
-                        9.56873
+                        -82.935436,
+                        9.566982
                     ],
                     [
-                        -82.936424,
-                        9.569521
+                        -82.935486,
+                        9.566555
                     ],
                     [
-                        -82.937068,
-                        9.570269
+                        -82.935513,
+                        9.566055
                     ],
                     [
-                        -82.937781,
-                        9.571525
+                        -82.93556,
+                        9.565587
                     ],
                     [
-                        -82.938098,
-                        9.572147
+                        -82.935638,
+                        9.565491
                     ],
                     [
-                        -82.938908,
-                        9.57325
+                        -82.93579,
+                        9.565446
                     ],
                     [
-                        -82.939841,
-                        9.574583
-                    ],
-                    [
-                        -82.940417,
-                        9.575461
+                        -82.935781,
+                        9.565406
                     ]
                 ],
                 "type": "LineString"
@@ -2910,16 +2939,16 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744059459277,
+        "timestamp": 1756800824185,
         "query": {
             "coordinates": [
                 [
-                    -82.75449,
-                    9.65685
+                    -82.755807,
+                    9.656754
                 ],
                 [
-                    -82.93987,
-                    9.57581
+                    -82.935778,
+                    9.565407
                 ]
             ],
             "profile": "driving-car",
@@ -2927,9 +2956,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }

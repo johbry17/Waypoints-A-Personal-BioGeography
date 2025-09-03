@@ -2,28 +2,28 @@
     "type": "FeatureCollection",
     "bbox": [
         -122.417622,
-        47.978593,
-        -122.358045,
+        47.974686,
+        -122.351719,
         47.997036
     ],
     "features": [
         {
             "bbox": [
                 -122.417622,
-                47.978593,
-                -122.358045,
+                47.974686,
+                -122.351719,
                 47.997036
             ],
             "type": "Feature",
             "properties": {
                 "segments": [
                     {
-                        "distance": 5714.3,
-                        "duration": 381.5,
+                        "distance": 6399.9,
+                        "duration": 433.3,
                         "steps": [
                             {
-                                "distance": 21.8,
-                                "duration": 3.1,
+                                "distance": 22.3,
+                                "duration": 3.2,
                                 "type": 11,
                                 "instruction": "Head east",
                                 "name": "-",
@@ -55,36 +55,25 @@
                                 ]
                             },
                             {
-                                "distance": 4242.6,
-                                "duration": 262.2,
+                                "distance": 4998.0,
+                                "duration": 330.7,
                                 "type": 1,
                                 "instruction": "Turn right onto State Route 525, WA 525",
                                 "name": "State Route 525, WA 525",
                                 "way_points": [
                                     31,
-                                    74
-                                ]
-                            },
-                            {
-                                "distance": 70.2,
-                                "duration": 16.9,
-                                "type": 0,
-                                "instruction": "Turn left onto Deer Lake Road",
-                                "name": "Deer Lake Road",
-                                "way_points": [
-                                    74,
-                                    76
+                                    94
                                 ]
                             },
                             {
                                 "distance": 0.0,
                                 "duration": 0.0,
                                 "type": 10,
-                                "instruction": "Arrive at Deer Lake Road, straight ahead",
+                                "instruction": "Arrive at State Route 525, WA 525, on the left",
                                 "name": "-",
                                 "way_points": [
-                                    76,
-                                    76
+                                    94,
+                                    94
                                 ]
                             }
                         ]
@@ -92,11 +81,11 @@
                 ],
                 "way_points": [
                     0,
-                    76
+                    94
                 ],
                 "summary": {
-                    "distance": 5714.3,
-                    "duration": 381.5
+                    "distance": 6399.9,
+                    "duration": 433.3
                 }
             },
             "geometry": {
@@ -402,12 +391,84 @@
                         47.979593
                     ],
                     [
-                        -122.358059,
-                        47.9802
+                        -122.357678,
+                        47.979528
                     ],
                     [
-                        -122.35806,
-                        47.980224
+                        -122.357316,
+                        47.979427
+                    ],
+                    [
+                        -122.357173,
+                        47.979377
+                    ],
+                    [
+                        -122.356854,
+                        47.979243
+                    ],
+                    [
+                        -122.356542,
+                        47.979075
+                    ],
+                    [
+                        -122.356275,
+                        47.978889
+                    ],
+                    [
+                        -122.355768,
+                        47.978482
+                    ],
+                    [
+                        -122.355641,
+                        47.97837
+                    ],
+                    [
+                        -122.355341,
+                        47.978094
+                    ],
+                    [
+                        -122.353757,
+                        47.976628
+                    ],
+                    [
+                        -122.35348,
+                        47.976334
+                    ],
+                    [
+                        -122.353022,
+                        47.9757
+                    ],
+                    [
+                        -122.352556,
+                        47.974922
+                    ],
+                    [
+                        -122.352461,
+                        47.97482
+                    ],
+                    [
+                        -122.352289,
+                        47.974739
+                    ],
+                    [
+                        -122.35216,
+                        47.974707
+                    ],
+                    [
+                        -122.352076,
+                        47.974686
+                    ],
+                    [
+                        -122.351952,
+                        47.97469
+                    ],
+                    [
+                        -122.351821,
+                        47.974715
+                    ],
+                    [
+                        -122.351719,
+                        47.974752
                     ]
                 ],
                 "type": "LineString"
@@ -417,7 +478,7 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744086527437,
+        "timestamp": 1756793559290,
         "query": {
             "coordinates": [
                 [
@@ -425,8 +486,8 @@
                     47.99259
                 ],
                 [
-                    -122.35806,
-                    47.980224
+                    -122.351728,
+                    47.974763
                 ]
             ],
             "profile": "driving-car",
@@ -434,9 +495,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }

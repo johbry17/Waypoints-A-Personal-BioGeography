@@ -1,68 +1,134 @@
 {
     "type": "FeatureCollection",
     "bbox": [
-        -87.439607,
-        20.194286,
-        -87.431951,
-        20.206153
+        -87.465218,
+        20.210818,
+        -87.436735,
+        20.2186
     ],
     "features": [
         {
             "bbox": [
-                -87.439607,
-                20.194286,
-                -87.431951,
-                20.206153
+                -87.465218,
+                20.210818,
+                -87.436735,
+                20.2186
             ],
             "type": "Feature",
             "properties": {
                 "segments": [
                     {
-                        "distance": 1647.2,
-                        "duration": 199.7,
+                        "distance": 3583.5,
+                        "duration": 488.1,
                         "steps": [
                             {
-                                "distance": 1479.5,
-                                "duration": 177.5,
+                                "distance": 143.0,
+                                "duration": 34.3,
                                 "type": 11,
-                                "instruction": "Head northeast on Carretera Bocapaila",
-                                "name": "Carretera Bocapaila",
+                                "instruction": "Head east on Polar Oriente",
+                                "name": "Polar Oriente",
                                 "way_points": [
                                     0,
-                                    7
+                                    1
                                 ]
                             },
                             {
-                                "distance": 82.3,
-                                "duration": 9.9,
+                                "distance": 81.5,
+                                "duration": 19.6,
                                 "type": 1,
-                                "instruction": "Turn right onto Privada Playa Maya",
-                                "name": "Privada Playa Maya",
+                                "instruction": "Turn right onto Alfa Norte",
+                                "name": "Alfa Norte",
                                 "way_points": [
-                                    7,
-                                    8
+                                    1,
+                                    2
                                 ]
                             },
                             {
-                                "distance": 85.4,
-                                "duration": 12.3,
+                                "distance": 1169.8,
+                                "duration": 172.2,
+                                "type": 1,
+                                "instruction": "Turn right",
+                                "name": "-",
+                                "way_points": [
+                                    2,
+                                    18
+                                ]
+                            },
+                            {
+                                "distance": 1530.0,
+                                "duration": 112.6,
+                                "type": 6,
+                                "instruction": "Continue straight onto Carretera Reforma Agraria - Puerto Ju\u00e1rez, MEX 307",
+                                "name": "Carretera Reforma Agraria - Puerto Ju\u00e1rez, MEX 307",
+                                "way_points": [
+                                    18,
+                                    30
+                                ]
+                            },
+                            {
+                                "distance": 92.7,
+                                "duration": 22.2,
+                                "type": 1,
+                                "instruction": "Turn right",
+                                "name": "-",
+                                "way_points": [
+                                    30,
+                                    33
+                                ]
+                            },
+                            {
+                                "distance": 234.0,
+                                "duration": 56.2,
+                                "type": 1,
+                                "instruction": "Turn right",
+                                "name": "-",
+                                "way_points": [
+                                    33,
+                                    36
+                                ]
+                            },
+                            {
+                                "distance": 186.4,
+                                "duration": 44.7,
                                 "type": 0,
                                 "instruction": "Turn left",
                                 "name": "-",
                                 "way_points": [
-                                    8,
-                                    10
+                                    36,
+                                    41
+                                ]
+                            },
+                            {
+                                "distance": 105.6,
+                                "duration": 19.0,
+                                "type": 0,
+                                "instruction": "Turn left",
+                                "name": "-",
+                                "way_points": [
+                                    41,
+                                    44
+                                ]
+                            },
+                            {
+                                "distance": 40.5,
+                                "duration": 7.3,
+                                "type": 3,
+                                "instruction": "Turn sharp right",
+                                "name": "-",
+                                "way_points": [
+                                    44,
+                                    47
                                 ]
                             },
                             {
                                 "distance": 0.0,
                                 "duration": 0.0,
                                 "type": 10,
-                                "instruction": "Arrive at your destination, on the right",
+                                "instruction": "Arrive at your destination, straight ahead",
                                 "name": "-",
                                 "way_points": [
-                                    10,
-                                    10
+                                    47,
+                                    47
                                 ]
                             }
                         ]
@@ -70,58 +136,206 @@
                 ],
                 "way_points": [
                     0,
-                    10
+                    47
                 ],
                 "summary": {
-                    "distance": 1647.2,
-                    "duration": 199.7
+                    "distance": 3583.5,
+                    "duration": 488.1
                 }
             },
             "geometry": {
                 "coordinates": [
                     [
-                        -87.439607,
-                        20.194286
+                        -87.465218,
+                        20.21121
                     ],
                     [
-                        -87.438945,
-                        20.195263
+                        -87.463924,
+                        20.211634
                     ],
                     [
-                        -87.435924,
-                        20.199774
+                        -87.463784,
+                        20.210913
                     ],
                     [
-                        -87.435455,
-                        20.200541
+                        -87.463814,
+                        20.210888
                     ],
                     [
-                        -87.435137,
-                        20.201173
+                        -87.463824,
+                        20.210846
                     ],
                     [
-                        -87.434853,
-                        20.201854
+                        -87.463796,
+                        20.210818
                     ],
                     [
-                        -87.434588,
-                        20.202582
+                        -87.463756,
+                        20.210818
                     ],
                     [
-                        -87.43342,
-                        20.206153
+                        -87.46322,
+                        20.210998
                     ],
                     [
-                        -87.432664,
-                        20.205945
+                        -87.462805,
+                        20.211137
                     ],
                     [
-                        -87.432421,
-                        20.206152
+                        -87.461803,
+                        20.211458
                     ],
                     [
-                        -87.431951,
-                        20.206021
+                        -87.4607,
+                        20.211814
+                    ],
+                    [
+                        -87.459519,
+                        20.212173
+                    ],
+                    [
+                        -87.458444,
+                        20.212506
+                    ],
+                    [
+                        -87.458312,
+                        20.212545
+                    ],
+                    [
+                        -87.457085,
+                        20.212919
+                    ],
+                    [
+                        -87.455893,
+                        20.213305
+                    ],
+                    [
+                        -87.454748,
+                        20.213665
+                    ],
+                    [
+                        -87.45337,
+                        20.214111
+                    ],
+                    [
+                        -87.453294,
+                        20.214138
+                    ],
+                    [
+                        -87.451697,
+                        20.214653
+                    ],
+                    [
+                        -87.450562,
+                        20.215019
+                    ],
+                    [
+                        -87.448386,
+                        20.215706
+                    ],
+                    [
+                        -87.446713,
+                        20.216234
+                    ],
+                    [
+                        -87.446113,
+                        20.216424
+                    ],
+                    [
+                        -87.445925,
+                        20.216485
+                    ],
+                    [
+                        -87.444644,
+                        20.216909
+                    ],
+                    [
+                        -87.442071,
+                        20.217743
+                    ],
+                    [
+                        -87.440426,
+                        20.218262
+                    ],
+                    [
+                        -87.440164,
+                        20.218347
+                    ],
+                    [
+                        -87.439838,
+                        20.218453
+                    ],
+                    [
+                        -87.439424,
+                        20.2186
+                    ],
+                    [
+                        -87.439249,
+                        20.218053
+                    ],
+                    [
+                        -87.439149,
+                        20.217932
+                    ],
+                    [
+                        -87.439038,
+                        20.217899
+                    ],
+                    [
+                        -87.438933,
+                        20.217655
+                    ],
+                    [
+                        -87.438546,
+                        20.21656
+                    ],
+                    [
+                        -87.438292,
+                        20.215916
+                    ],
+                    [
+                        -87.438066,
+                        20.215947
+                    ],
+                    [
+                        -87.437935,
+                        20.21601
+                    ],
+                    [
+                        -87.437602,
+                        20.21602
+                    ],
+                    [
+                        -87.437307,
+                        20.216203
+                    ],
+                    [
+                        -87.436735,
+                        20.21662
+                    ],
+                    [
+                        -87.436841,
+                        20.216702
+                    ],
+                    [
+                        -87.437218,
+                        20.217096
+                    ],
+                    [
+                        -87.437288,
+                        20.21738
+                    ],
+                    [
+                        -87.437054,
+                        20.2173
+                    ],
+                    [
+                        -87.436979,
+                        20.2173
+                    ],
+                    [
+                        -87.436921,
+                        20.217325
                     ]
                 ],
                 "type": "LineString"
@@ -131,16 +345,16 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744072797279,
+        "timestamp": 1756799301146,
         "query": {
             "coordinates": [
                 [
-                    -87.439798,
-                    20.1944
+                    -87.465124,
+                    20.210958
                 ],
                 [
-                    -87.43188,
-                    20.20592
+                    -87.436921,
+                    20.217326
                 ]
             ],
             "profile": "driving-car",
@@ -148,9 +362,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }

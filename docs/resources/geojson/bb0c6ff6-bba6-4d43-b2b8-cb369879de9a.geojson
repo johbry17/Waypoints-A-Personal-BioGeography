@@ -2,24 +2,24 @@
     "type": "FeatureCollection",
     "bbox": [
         -84.322515,
-        9.423644,
-        -84.16418,
+        9.429476,
+        -84.161596,
         9.535131
     ],
     "features": [
         {
             "bbox": [
                 -84.322515,
-                9.423644,
-                -84.16418,
+                9.429476,
+                -84.161596,
                 9.535131
             ],
             "type": "Feature",
             "properties": {
                 "segments": [
                     {
-                        "distance": 24476.8,
-                        "duration": 1795.8,
+                        "distance": 24199.1,
+                        "duration": 1696.3,
                         "steps": [
                             {
                                 "distance": 167.3,
@@ -66,47 +66,47 @@
                                 ]
                             },
                             {
-                                "distance": 350.1,
-                                "duration": 84.0,
-                                "type": 6,
-                                "instruction": "Continue straight onto Calle 4",
-                                "name": "Calle 4",
+                                "distance": 260.5,
+                                "duration": 29.7,
+                                "type": 0,
+                                "instruction": "Turn left onto Avenida 2, 235",
+                                "name": "Avenida 2, 235",
                                 "way_points": [
                                     153,
+                                    157
+                                ]
+                            },
+                            {
+                                "distance": 83.2,
+                                "duration": 20.0,
+                                "type": 0,
+                                "instruction": "Turn left onto Calle Central",
+                                "name": "Calle Central",
+                                "way_points": [
+                                    157,
                                     158
                                 ]
                             },
                             {
-                                "distance": 169.1,
-                                "duration": 40.6,
-                                "type": 0,
-                                "instruction": "Turn left onto Calle Zona Americana",
-                                "name": "Calle Zona Americana",
+                                "distance": 135.1,
+                                "duration": 32.4,
+                                "type": 1,
+                                "instruction": "Turn right onto Avenida Central",
+                                "name": "Avenida Central",
                                 "way_points": [
                                     158,
-                                    164
-                                ]
-                            },
-                            {
-                                "distance": 237.3,
-                                "duration": 57.0,
-                                "type": 1,
-                                "instruction": "Turn right onto Calle Zona Americana",
-                                "name": "Calle Zona Americana",
-                                "way_points": [
-                                    164,
-                                    174
+                                    161
                                 ]
                             },
                             {
                                 "distance": 0.0,
                                 "duration": 0.0,
                                 "type": 10,
-                                "instruction": "Arrive at Calle Zona Americana, on the left",
+                                "instruction": "Arrive at Avenida Central, on the left",
                                 "name": "-",
                                 "way_points": [
-                                    174,
-                                    174
+                                    161,
+                                    161
                                 ]
                             }
                         ]
@@ -114,11 +114,11 @@
                 ],
                 "way_points": [
                     0,
-                    174
+                    161
                 ],
                 "summary": {
-                    "distance": 24476.8,
-                    "duration": 1795.8
+                    "distance": 24199.1,
+                    "duration": 1696.3
                 }
             },
             "geometry": {
@@ -204,6 +204,10 @@
                         9.532889
                     ],
                     [
+                        -84.287278,
+                        9.533928
+                    ],
+                    [
                         -84.286801,
                         9.533996
                     ],
@@ -226,10 +230,6 @@
                     [
                         -84.285535,
                         9.534184
-                    ],
-                    [
-                        -84.285131,
-                        9.534244
                     ],
                     [
                         -84.284867,
@@ -740,88 +740,36 @@
                         9.429806
                     ],
                     [
-                        -84.165437,
-                        9.429075
+                        -84.164561,
+                        9.429595
                     ],
                     [
-                        -84.16561,
-                        9.428302
+                        -84.164201,
+                        9.429521
                     ],
                     [
-                        -84.165874,
-                        9.427757
+                        -84.163723,
+                        9.429479
                     ],
                     [
-                        -84.166,
-                        9.427258
+                        -84.162914,
+                        9.429476
                     ],
                     [
-                        -84.166072,
-                        9.426779
+                        -84.162824,
+                        9.430218
                     ],
                     [
-                        -84.165981,
-                        9.426708
+                        -84.16223,
+                        9.430166
                     ],
                     [
-                        -84.165878,
-                        9.426544
+                        -84.16187,
+                        9.430135
                     ],
                     [
-                        -84.165721,
-                        9.426203
-                    ],
-                    [
-                        -84.165639,
-                        9.426091
-                    ],
-                    [
-                        -84.165248,
-                        9.425738
-                    ],
-                    [
-                        -84.16515,
-                        9.425589
-                    ],
-                    [
-                        -84.165194,
-                        9.425464
-                    ],
-                    [
-                        -84.165369,
-                        9.42523
-                    ],
-                    [
-                        -84.165372,
-                        9.425162
-                    ],
-                    [
-                        -84.165317,
-                        9.425073
-                    ],
-                    [
-                        -84.165251,
-                        9.424948
-                    ],
-                    [
-                        -84.165217,
-                        9.424326
-                    ],
-                    [
-                        -84.165143,
-                        9.423879
-                    ],
-                    [
-                        -84.165195,
-                        9.423717
-                    ],
-                    [
-                        -84.165266,
-                        9.423649
-                    ],
-                    [
-                        -84.165273,
-                        9.423644
+                        -84.161596,
+                        9.430119
                     ]
                 ],
                 "type": "LineString"
@@ -831,7 +779,7 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744020530921,
+        "timestamp": 1756803836115,
         "query": {
             "coordinates": [
                 [
@@ -839,8 +787,8 @@
                     9.52012
                 ],
                 [
-                    -84.16522,
-                    9.42357
+                    -84.161592,
+                    9.430187
                 ]
             ],
             "profile": "driving-car",
@@ -848,9 +796,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }

@@ -18,29 +18,29 @@
             "properties": {
                 "segments": [
                     {
-                        "distance": 147783.1,
-                        "duration": 9058.2,
+                        "distance": 148763.0,
+                        "duration": 9152.2,
                         "steps": [
                             {
-                                "distance": 94.9,
-                                "duration": 22.8,
+                                "distance": 45.6,
+                                "duration": 10.9,
                                 "type": 11,
-                                "instruction": "Head northwest on Seagull Street",
-                                "name": "Seagull Street",
+                                "instruction": "Head southwest",
+                                "name": "-",
                                 "way_points": [
                                     0,
-                                    2
+                                    5
                                 ]
                             },
                             {
-                                "distance": 19.1,
-                                "duration": 2.0,
-                                "type": 0,
-                                "instruction": "Turn left onto Fadden Avenue",
+                                "distance": 1048.3,
+                                "duration": 107.8,
+                                "type": 1,
+                                "instruction": "Turn right onto Fadden Avenue",
                                 "name": "Fadden Avenue",
                                 "way_points": [
-                                    2,
-                                    3
+                                    5,
+                                    30
                                 ]
                             },
                             {
@@ -50,8 +50,8 @@
                                 "instruction": "Turn right onto Savannah Road",
                                 "name": "Savannah Road",
                                 "way_points": [
-                                    3,
-                                    49
+                                    30,
+                                    76
                                 ]
                             },
                             {
@@ -61,8 +61,8 @@
                                 "instruction": "Continue straight onto Thomas Vincent Ramos Highway",
                                 "name": "Thomas Vincent Ramos Highway",
                                 "way_points": [
-                                    49,
-                                    305
+                                    76,
+                                    332
                                 ]
                             },
                             {
@@ -73,8 +73,8 @@
                                 "name": "Thomas Vincent Ramos Highway",
                                 "exit_number": 2,
                                 "way_points": [
-                                    305,
-                                    590
+                                    332,
+                                    617
                                 ]
                             },
                             {
@@ -84,20 +84,20 @@
                                 "instruction": "Turn left onto Hummingbird Highway",
                                 "name": "Hummingbird Highway",
                                 "way_points": [
-                                    590,
-                                    656
+                                    617,
+                                    682
                                 ]
                             },
                             {
                                 "distance": 67.1,
                                 "duration": 9.4,
                                 "type": 7,
-                                "instruction": "Enter the roundabout and take the 2nd exit",
-                                "name": "-",
+                                "instruction": "Enter the roundabout and take the 2nd exit onto Hummingbird Highway",
+                                "name": "Hummingbird Highway",
                                 "exit_number": 2,
                                 "way_points": [
-                                    656,
-                                    662
+                                    682,
+                                    688
                                 ]
                             },
                             {
@@ -107,8 +107,8 @@
                                 "instruction": "Turn slight right onto Hummingbird Highway",
                                 "name": "Hummingbird Highway",
                                 "way_points": [
-                                    662,
-                                    1688
+                                    688,
+                                    1713
                                 ]
                             },
                             {
@@ -119,8 +119,8 @@
                                 "name": "Constitution Drive",
                                 "exit_number": 1,
                                 "way_points": [
-                                    1688,
-                                    1711
+                                    1713,
+                                    1736
                                 ]
                             },
                             {
@@ -130,8 +130,8 @@
                                 "instruction": "Turn right onto South Ring Road",
                                 "name": "South Ring Road",
                                 "way_points": [
-                                    1711,
-                                    1726
+                                    1736,
+                                    1751
                                 ]
                             },
                             {
@@ -141,8 +141,8 @@
                                 "instruction": "Turn left",
                                 "name": "-",
                                 "way_points": [
-                                    1726,
-                                    1727
+                                    1751,
+                                    1752
                                 ]
                             },
                             {
@@ -152,8 +152,8 @@
                                 "instruction": "Turn right onto Cardinal Avenue",
                                 "name": "Cardinal Avenue",
                                 "way_points": [
-                                    1727,
-                                    1730
+                                    1752,
+                                    1755
                                 ]
                             },
                             {
@@ -163,8 +163,8 @@
                                 "instruction": "Turn left onto Macaw Avenue",
                                 "name": "Macaw Avenue",
                                 "way_points": [
-                                    1730,
-                                    1736
+                                    1755,
+                                    1761
                                 ]
                             },
                             {
@@ -174,8 +174,8 @@
                                 "instruction": "Arrive at Macaw Avenue, on the right",
                                 "name": "-",
                                 "way_points": [
-                                    1736,
-                                    1736
+                                    1761,
+                                    1761
                                 ]
                             }
                         ]
@@ -183,22 +183,130 @@
                 ],
                 "way_points": [
                     0,
-                    1736
+                    1761
                 ],
                 "summary": {
-                    "distance": 147783.1,
-                    "duration": 9058.2
+                    "distance": 148763.0,
+                    "duration": 9152.2
                 }
             },
             "geometry": {
                 "coordinates": [
                     [
-                        -88.418699,
-                        16.534558
+                        -88.416827,
+                        16.543832
                     ],
                     [
-                        -88.418823,
-                        16.534617
+                        -88.416841,
+                        16.543813
+                    ],
+                    [
+                        -88.416837,
+                        16.543745
+                    ],
+                    [
+                        -88.416797,
+                        16.543661
+                    ],
+                    [
+                        -88.416681,
+                        16.543532
+                    ],
+                    [
+                        -88.416634,
+                        16.543503
+                    ],
+                    [
+                        -88.416691,
+                        16.54311
+                    ],
+                    [
+                        -88.416708,
+                        16.54275
+                    ],
+                    [
+                        -88.416681,
+                        16.541977
+                    ],
+                    [
+                        -88.416643,
+                        16.541477
+                    ],
+                    [
+                        -88.416645,
+                        16.541125
+                    ],
+                    [
+                        -88.416715,
+                        16.540628
+                    ],
+                    [
+                        -88.416845,
+                        16.540145
+                    ],
+                    [
+                        -88.41688,
+                        16.540018
+                    ],
+                    [
+                        -88.416924,
+                        16.539758
+                    ],
+                    [
+                        -88.417002,
+                        16.539425
+                    ],
+                    [
+                        -88.417174,
+                        16.538907
+                    ],
+                    [
+                        -88.41727,
+                        16.538597
+                    ],
+                    [
+                        -88.417403,
+                        16.538092
+                    ],
+                    [
+                        -88.417443,
+                        16.537988
+                    ],
+                    [
+                        -88.417606,
+                        16.537702
+                    ],
+                    [
+                        -88.417903,
+                        16.537248
+                    ],
+                    [
+                        -88.41811,
+                        16.536905
+                    ],
+                    [
+                        -88.418195,
+                        16.536754
+                    ],
+                    [
+                        -88.418692,
+                        16.535843
+                    ],
+                    [
+                        -88.418757,
+                        16.535624
+                    ],
+                    [
+                        -88.418794,
+                        16.535583
+                    ],
+                    [
+                        -88.418918,
+                        16.535449
+                    ],
+                    [
+                        -88.419288,
+                        16.535111
                     ],
                     [
                         -88.419477,
@@ -2801,10 +2909,6 @@
                         16.999308
                     ],
                     [
-                        -88.313476,
-                        16.999151
-                    ],
-                    [
                         -88.314098,
                         16.998718
                     ],
@@ -2869,10 +2973,6 @@
                         16.996992
                     ],
                     [
-                        -88.320947,
-                        16.996958
-                    ],
-                    [
                         -88.321428,
                         16.996874
                     ],
@@ -2889,8 +2989,8 @@
                         16.996507
                     ],
                     [
-                        -88.325295,
-                        16.996216
+                        -88.325222,
+                        16.996227
                     ],
                     [
                         -88.325619,
@@ -7148,12 +7248,12 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744014370783,
+        "timestamp": 1756873467426,
         "query": {
             "coordinates": [
                 [
-                    -88.41878,
-                    16.5344
+                    -88.416825,
+                    16.543831
                 ],
                 [
                     -88.76667,
@@ -7165,9 +7265,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }

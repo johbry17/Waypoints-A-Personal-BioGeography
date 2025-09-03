@@ -1,112 +1,90 @@
 {
     "type": "FeatureCollection",
     "bbox": [
-        -89.902219,
+        -89.893521,
         16.897504,
-        -88.187592,
+        -88.18477,
         17.501429
     ],
     "features": [
         {
             "bbox": [
-                -89.902219,
+                -89.893521,
                 16.897504,
-                -88.187592,
+                -88.18477,
                 17.501429
             ],
             "type": "Feature",
             "properties": {
                 "segments": [
                     {
-                        "distance": 222299.4,
-                        "duration": 17545.7,
+                        "distance": 220496.8,
+                        "duration": 17569.9,
                         "steps": [
                             {
-                                "distance": 100.6,
-                                "duration": 12.1,
+                                "distance": 79.5,
+                                "duration": 19.1,
                                 "type": 11,
-                                "instruction": "Head northwest",
-                                "name": "-",
+                                "instruction": "Head north on Angel Lane",
+                                "name": "Angel Lane",
                                 "way_points": [
                                     0,
-                                    1
-                                ]
-                            },
-                            {
-                                "distance": 79.5,
-                                "duration": 14.3,
-                                "type": 0,
-                                "instruction": "Turn left onto Victoria Street",
-                                "name": "Victoria Street",
-                                "way_points": [
-                                    1,
                                     2
                                 ]
                             },
                             {
-                                "distance": 162.6,
-                                "duration": 16.7,
-                                "type": 0,
-                                "instruction": "Turn left onto North Front Street",
+                                "distance": 236.9,
+                                "duration": 28.4,
+                                "type": 2,
+                                "instruction": "Turn sharp left onto North Front Street",
                                 "name": "North Front Street",
                                 "way_points": [
                                     2,
-                                    4
+                                    12
                                 ]
                             },
                             {
-                                "distance": 171.2,
-                                "duration": 41.1,
+                                "distance": 80.0,
+                                "duration": 21.6,
                                 "type": 0,
-                                "instruction": "Turn left onto Pickstock Street",
-                                "name": "Pickstock Street",
+                                "instruction": "Turn left onto Queen Street",
+                                "name": "Queen Street",
                                 "way_points": [
-                                    4,
-                                    5
+                                    12,
+                                    15
                                 ]
                             },
                             {
-                                "distance": 418.8,
-                                "duration": 43.1,
-                                "type": 0,
-                                "instruction": "Turn left onto New Road",
-                                "name": "New Road",
+                                "distance": 316.3,
+                                "duration": 51.7,
+                                "type": 1,
+                                "instruction": "Turn right onto Carl Lindberg Rogers Street",
+                                "name": "Carl Lindberg Rogers Street",
                                 "way_points": [
-                                    5,
-                                    9
+                                    15,
+                                    28
                                 ]
                             },
                             {
-                                "distance": 561.3,
-                                "duration": 67.8,
-                                "type": 0,
-                                "instruction": "Turn left onto Douglas Jones Street",
-                                "name": "Douglas Jones Street",
-                                "way_points": [
-                                    9,
-                                    24
-                                ]
-                            },
-                            {
-                                "distance": 1356.0,
-                                "duration": 157.2,
+                                "distance": 1790.8,
+                                "duration": 207.9,
                                 "type": 1,
                                 "instruction": "Turn right onto Vernon Street",
                                 "name": "Vernon Street",
                                 "way_points": [
-                                    24,
-                                    57
+                                    28,
+                                    74
                                 ]
                             },
                             {
-                                "distance": 1834.8,
-                                "duration": 137.3,
+                                "distance": 1834.7,
+                                "duration": 135.6,
                                 "type": 1,
                                 "instruction": "Turn right onto George Price Highway",
                                 "name": "George Price Highway",
                                 "way_points": [
-                                    57,
-                                    95
+                                    74,
+                                    112
                                 ]
                             },
                             {
@@ -117,8 +95,8 @@
                                 "name": "George Price Highway",
                                 "exit_number": 2,
                                 "way_points": [
-                                    95,
-                                    223
+                                    112,
+                                    239
                                 ]
                             },
                             {
@@ -129,8 +107,8 @@
                                 "name": "George Price Highway",
                                 "exit_number": 2,
                                 "way_points": [
-                                    223,
-                                    351
+                                    239,
+                                    367
                                 ]
                             },
                             {
@@ -141,19 +119,19 @@
                                 "name": "-",
                                 "exit_number": 2,
                                 "way_points": [
-                                    351,
-                                    359
+                                    367,
+                                    375
                                 ]
                             },
                             {
-                                "distance": 52715.8,
+                                "distance": 52715.9,
                                 "duration": 2580.0,
                                 "type": 5,
                                 "instruction": "Turn slight right onto George Price Highway",
                                 "name": "George Price Highway",
                                 "way_points": [
-                                    359,
-                                    829
+                                    375,
+                                    849
                                 ]
                             },
                             {
@@ -164,8 +142,8 @@
                                 "name": "George Price Highway",
                                 "exit_number": 1,
                                 "way_points": [
-                                    829,
-                                    1359
+                                    849,
+                                    1379
                                 ]
                             },
                             {
@@ -176,8 +154,8 @@
                                 "name": "-",
                                 "exit_number": 2,
                                 "way_points": [
-                                    1359,
-                                    1367
+                                    1379,
+                                    1387
                                 ]
                             },
                             {
@@ -187,75 +165,42 @@
                                 "instruction": "Continue straight onto George Price Highway",
                                 "name": "George Price Highway",
                                 "way_points": [
-                                    1367,
-                                    1598
+                                    1387,
+                                    1618
                                 ]
                             },
                             {
-                                "distance": 154.8,
-                                "duration": 19.8,
+                                "distance": 1337.8,
+                                "duration": 159.5,
                                 "type": 7,
-                                "instruction": "Enter the roundabout and take the 1st exit onto Loma Luz Boulevard",
-                                "name": "Loma Luz Boulevard",
-                                "exit_number": 1,
+                                "instruction": "Enter the roundabout and take the 2nd exit onto George Price Highway",
+                                "name": "George Price Highway",
+                                "exit_number": 2,
                                 "way_points": [
-                                    1598,
-                                    1603
+                                    1618,
+                                    1648
                                 ]
                             },
                             {
-                                "distance": 578.9,
-                                "duration": 48.1,
-                                "type": 0,
-                                "instruction": "Turn left",
-                                "name": "-",
-                                "way_points": [
-                                    1603,
-                                    1612
-                                ]
-                            },
-                            {
-                                "distance": 178.1,
-                                "duration": 14.2,
+                                "distance": 166.0,
+                                "duration": 13.3,
                                 "type": 1,
-                                "instruction": "Turn right",
-                                "name": "-",
+                                "instruction": "Turn right onto Liberty Street",
+                                "name": "Liberty Street",
                                 "way_points": [
-                                    1612,
-                                    1614
+                                    1648,
+                                    1651
                                 ]
                             },
                             {
-                                "distance": 306.7,
-                                "duration": 24.5,
-                                "type": 0,
-                                "instruction": "Turn left onto Bishop Martin Street",
-                                "name": "Bishop Martin Street",
-                                "way_points": [
-                                    1614,
-                                    1620
-                                ]
-                            },
-                            {
-                                "distance": 250.1,
-                                "duration": 20.0,
-                                "type": 1,
-                                "instruction": "Turn right onto Salazar Street",
-                                "name": "Salazar Street",
-                                "way_points": [
-                                    1620,
-                                    1628
-                                ]
-                            },
-                            {
-                                "distance": 643.9,
-                                "duration": 51.2,
+                                "distance": 163.0,
+                                "duration": 13.0,
                                 "type": 0,
                                 "instruction": "Turn left onto George Price Avenue",
                                 "name": "George Price Avenue",
                                 "way_points": [
-                                    1628,
-                                    1646
+                                    1651,
+                                    1654
                                 ]
                             },
                             {
@@ -265,8 +210,8 @@
                                 "instruction": "Turn right onto Wooden Bridge Road",
                                 "name": "Wooden Bridge Road",
                                 "way_points": [
-                                    1646,
-                                    1655
+                                    1654,
+                                    1663
                                 ]
                             },
                             {
@@ -276,8 +221,8 @@
                                 "instruction": "Turn left onto Joseph Andrews Drive",
                                 "name": "Joseph Andrews Drive",
                                 "way_points": [
-                                    1655,
-                                    1666
+                                    1663,
+                                    1674
                                 ]
                             },
                             {
@@ -287,8 +232,8 @@
                                 "instruction": "Turn right onto Waight Street",
                                 "name": "Waight Street",
                                 "way_points": [
-                                    1666,
-                                    1684
+                                    1674,
+                                    1692
                                 ]
                             },
                             {
@@ -298,8 +243,8 @@
                                 "instruction": "Turn left onto Joseph Andrews Drive",
                                 "name": "Joseph Andrews Drive",
                                 "way_points": [
-                                    1684,
-                                    1692
+                                    1692,
+                                    1700
                                 ]
                             },
                             {
@@ -309,8 +254,8 @@
                                 "instruction": "Turn slight right onto Benque Viejo Road",
                                 "name": "Benque Viejo Road",
                                 "way_points": [
-                                    1692,
-                                    1699
+                                    1700,
+                                    1707
                                 ]
                             },
                             {
@@ -321,8 +266,8 @@
                                 "name": "George Price Highway",
                                 "exit_number": 1,
                                 "way_points": [
-                                    1699,
-                                    1842
+                                    1707,
+                                    1849
                                 ]
                             },
                             {
@@ -332,19 +277,19 @@
                                 "instruction": "Turn left onto George Price Highway",
                                 "name": "George Price Highway",
                                 "way_points": [
-                                    1842,
-                                    1874
+                                    1849,
+                                    1881
                                 ]
                             },
                             {
                                 "distance": 33558.7,
-                                "duration": 3274.0,
+                                "duration": 3319.3,
                                 "type": 5,
                                 "instruction": "Turn slight right onto George Price Highway",
                                 "name": "George Price Highway",
                                 "way_points": [
-                                    1874,
-                                    2257
+                                    1881,
+                                    2266
                                 ]
                             },
                             {
@@ -354,8 +299,8 @@
                                 "instruction": "Turn left",
                                 "name": "-",
                                 "way_points": [
-                                    2257,
-                                    2258
+                                    2266,
+                                    2267
                                 ]
                             },
                             {
@@ -365,8 +310,8 @@
                                 "instruction": "Turn right",
                                 "name": "-",
                                 "way_points": [
-                                    2258,
-                                    2267
+                                    2267,
+                                    2276
                                 ]
                             },
                             {
@@ -376,8 +321,8 @@
                                 "instruction": "Turn right",
                                 "name": "-",
                                 "way_points": [
-                                    2267,
-                                    2268
+                                    2276,
+                                    2277
                                 ]
                             },
                             {
@@ -387,8 +332,8 @@
                                 "instruction": "Turn left onto Carretera Flores - Melchor, CA-13",
                                 "name": "Carretera Flores - Melchor, CA-13",
                                 "way_points": [
-                                    2268,
-                                    2614
+                                    2277,
+                                    2623
                                 ]
                             },
                             {
@@ -398,41 +343,52 @@
                                 "instruction": "Continue straight onto Carretera Flores - Melchor, CA-13",
                                 "name": "Carretera Flores - Melchor, CA-13",
                                 "way_points": [
-                                    2614,
-                                    2657
+                                    2623,
+                                    2666
                                 ]
                             },
                             {
-                                "distance": 2386.2,
-                                "duration": 219.3,
+                                "distance": 1273.1,
+                                "duration": 133.9,
                                 "type": 7,
                                 "instruction": "Enter the roundabout and take the 1st exit onto Calle Principal, CA-13",
                                 "name": "Calle Principal, CA-13",
                                 "exit_number": 1,
                                 "way_points": [
-                                    2657,
-                                    2708
+                                    2666,
+                                    2691
                                 ]
                             },
                             {
-                                "distance": 435.6,
-                                "duration": 18.4,
-                                "type": 0,
-                                "instruction": "Turn left onto 5a Avenida, RD PET-11",
-                                "name": "5a Avenida, RD PET-11",
+                                "distance": 574.6,
+                                "duration": 65.2,
+                                "type": 1,
+                                "instruction": "Turn right onto 6a Avenida",
+                                "name": "6a Avenida",
                                 "way_points": [
-                                    2708,
-                                    2716
+                                    2691,
+                                    2707
                                 ]
                             },
                             {
-                                "distance": 363.5,
-                                "duration": 43.6,
-                                "type": 0,
-                                "instruction": "Turn left onto 10a Calle",
-                                "name": "10a Calle",
+                                "distance": 168.6,
+                                "duration": 40.5,
+                                "type": 4,
+                                "instruction": "Turn slight left onto Calle Playa Sur",
+                                "name": "Calle Playa Sur",
                                 "way_points": [
-                                    2716,
+                                    2707,
+                                    2712
+                                ]
+                            },
+                            {
+                                "distance": 159.0,
+                                "duration": 38.1,
+                                "type": 0,
+                                "instruction": "Turn left onto Calle Litoral Flores",
+                                "name": "Calle Litoral Flores",
+                                "way_points": [
+                                    2712,
                                     2720
                                 ]
                             },
@@ -440,7 +396,7 @@
                                 "distance": 0.0,
                                 "duration": 0.0,
                                 "type": 10,
-                                "instruction": "Arrive at 10a Calle, on the left",
+                                "instruction": "Arrive at Calle Litoral Flores, on the right",
                                 "name": "-",
                                 "way_points": [
                                     2720,
@@ -455,107 +411,175 @@
                     2720
                 ],
                 "summary": {
-                    "distance": 222299.4,
-                    "duration": 17545.7
+                    "distance": 220496.8,
+                    "duration": 17569.9
                 }
             },
             "geometry": {
                 "coordinates": [
                     [
-                        -88.188624,
-                        17.498418
+                        -88.184821,
+                        17.494449
                     ],
                     [
-                        -88.18936,
-                        17.498988
+                        -88.184798,
+                        17.495112
                     ],
                     [
-                        -88.189832,
-                        17.498433
+                        -88.18477,
+                        17.495156
                     ],
                     [
-                        -88.189481,
-                        17.498161
+                        -88.184904,
+                        17.49519
                     ],
                     [
-                        -88.188679,
-                        17.497469
+                        -88.185081,
+                        17.495169
                     ],
                     [
-                        -88.187592,
-                        17.498607
+                        -88.185289,
+                        17.495119
                     ],
                     [
-                        -88.18854,
-                        17.499333
+                        -88.185621,
+                        17.495052
                     ],
                     [
-                        -88.188777,
-                        17.499538
+                        -88.18574,
+                        17.495051
                     ],
                     [
-                        -88.189075,
-                        17.499902
+                        -88.185827,
+                        17.495078
                     ],
                     [
-                        -88.190613,
-                        17.501014
+                        -88.185915,
+                        17.49511
                     ],
                     [
-                        -88.190899,
-                        17.500715
+                        -88.18613,
+                        17.495226
                     ],
                     [
-                        -88.191178,
-                        17.500425
+                        -88.186501,
+                        17.495484
                     ],
                     [
-                        -88.191727,
-                        17.499842
+                        -88.18678,
+                        17.495687
                     ],
                     [
-                        -88.192142,
-                        17.499567
+                        -88.186894,
+                        17.495539
                     ],
                     [
-                        -88.192263,
-                        17.499396
+                        -88.187132,
+                        17.495261
                     ],
                     [
-                        -88.192685,
-                        17.498815
+                        -88.18724,
+                        17.495117
                     ],
                     [
-                        -88.19278,
-                        17.498635
+                        -88.187409,
+                        17.495267
                     ],
                     [
-                        -88.192812,
-                        17.498444
+                        -88.18747,
+                        17.495284
                     ],
                     [
-                        -88.192837,
-                        17.497987
+                        -88.187764,
+                        17.495313
                     ],
                     [
-                        -88.192859,
-                        17.497872
+                        -88.188365,
+                        17.495393
                     ],
                     [
-                        -88.192931,
-                        17.497679
+                        -88.188402,
+                        17.495401
                     ],
                     [
-                        -88.193037,
-                        17.497494
+                        -88.188423,
+                        17.495406
                     ],
                     [
-                        -88.193101,
-                        17.497362
+                        -88.188434,
+                        17.495409
                     ],
                     [
-                        -88.193233,
-                        17.497064
+                        -88.188464,
+                        17.495415
+                    ],
+                    [
+                        -88.188897,
+                        17.495467
+                    ],
+                    [
+                        -88.189266,
+                        17.495556
+                    ],
+                    [
+                        -88.189615,
+                        17.495683
+                    ],
+                    [
+                        -88.189727,
+                        17.495714
+                    ],
+                    [
+                        -88.190103,
+                        17.495742
+                    ],
+                    [
+                        -88.189985,
+                        17.496315
+                    ],
+                    [
+                        -88.190035,
+                        17.496376
+                    ],
+                    [
+                        -88.190108,
+                        17.496407
+                    ],
+                    [
+                        -88.190301,
+                        17.49644
+                    ],
+                    [
+                        -88.190965,
+                        17.496461
+                    ],
+                    [
+                        -88.191406,
+                        17.496511
+                    ],
+                    [
+                        -88.192083,
+                        17.496636
+                    ],
+                    [
+                        -88.192121,
+                        17.496644
+                    ],
+                    [
+                        -88.192194,
+                        17.496659
+                    ],
+                    [
+                        -88.192272,
+                        17.496678
+                    ],
+                    [
+                        -88.192872,
+                        17.496804
+                    ],
+                    [
+                        -88.193193,
+                        17.496867
                     ],
                     [
                         -88.193385,
@@ -826,16 +850,16 @@
                         17.500383
                     ],
                     [
-                        -88.221601,
-                        17.500212
+                        -88.221418,
+                        17.50028
                     ],
                     [
                         -88.221748,
                         17.500164
                     ],
                     [
-                        -88.221783,
-                        17.500152
+                        -88.221778,
+                        17.500154
                     ],
                     [
                         -88.221893,
@@ -882,20 +906,16 @@
                         17.499581
                     ],
                     [
-                        -88.223622,
-                        17.499516
+                        -88.223912,
+                        17.499454
                     ],
                     [
-                        -88.223878,
-                        17.499477
+                        -88.224201,
+                        17.499412
                     ],
                     [
-                        -88.224155,
-                        17.499429
-                    ],
-                    [
-                        -88.224324,
-                        17.499399
+                        -88.224337,
+                        17.499385
                     ],
                     [
                         -88.224813,
@@ -2998,6 +3018,10 @@
                         17.305037
                     ],
                     [
+                        -88.589688,
+                        17.304992
+                    ],
+                    [
                         -88.5899,
                         17.304667
                     ],
@@ -3078,12 +3102,16 @@
                         17.289253
                     ],
                     [
-                        -88.6069,
-                        17.288181
+                        -88.607561,
+                        17.287707
                     ],
                     [
                         -88.609689,
                         17.286138
+                    ],
+                    [
+                        -88.616631,
+                        17.281115
                     ],
                     [
                         -88.618168,
@@ -3166,12 +3194,20 @@
                         17.277175
                     ],
                     [
+                        -88.642578,
+                        17.277175
+                    ],
+                    [
                         -88.643407,
                         17.277176
                     ],
                     [
                         -88.643984,
                         17.277176
+                    ],
+                    [
+                        -88.644601,
+                        17.277173
                     ],
                     [
                         -88.645006,
@@ -6862,176 +6898,128 @@
                         17.167036
                     ],
                     [
-                        -89.054286,
-                        17.167117
+                        -89.054142,
+                        17.16699
                     ],
                     [
-                        -89.05467,
-                        17.167349
+                        -89.054171,
+                        17.16692
                     ],
                     [
-                        -89.054785,
-                        17.167404
+                        -89.054171,
+                        17.166883
                     ],
                     [
-                        -89.055347,
-                        17.167615
+                        -89.054157,
+                        17.166841
                     ],
                     [
-                        -89.055371,
-                        17.167518
+                        -89.054161,
+                        17.166745
                     ],
                     [
-                        -89.055399,
-                        17.167481
+                        -89.054207,
+                        17.166659
                     ],
                     [
-                        -89.056306,
-                        17.166889
+                        -89.054857,
+                        17.165826
                     ],
                     [
-                        -89.057019,
-                        17.166435
+                        -89.054892,
+                        17.165779
                     ],
                     [
-                        -89.057144,
-                        17.166354
+                        -89.054918,
+                        17.165743
                     ],
                     [
-                        -89.057734,
-                        17.165972
+                        -89.054991,
+                        17.165647
                     ],
                     [
-                        -89.057816,
-                        17.165921
+                        -89.055234,
+                        17.165366
                     ],
                     [
-                        -89.058362,
-                        17.165579
+                        -89.05563,
+                        17.164989
                     ],
                     [
-                        -89.059796,
-                        17.164659
+                        -89.055651,
+                        17.164972
                     ],
                     [
-                        -89.060104,
-                        17.165078
+                        -89.055855,
+                        17.164809
                     ],
                     [
-                        -89.060739,
-                        17.165983
+                        -89.056673,
+                        17.164281
                     ],
                     [
-                        -89.060821,
-                        17.165906
+                        -89.057407,
+                        17.163803
                     ],
                     [
-                        -89.061167,
-                        17.165467
+                        -89.059038,
+                        17.162752
                     ],
                     [
-                        -89.061549,
-                        17.165014
+                        -89.059199,
+                        17.162605
                     ],
                     [
-                        -89.062088,
-                        17.164355
+                        -89.059849,
+                        17.162189
                     ],
                     [
-                        -89.062205,
-                        17.164212
+                        -89.060233,
+                        17.16194
                     ],
                     [
-                        -89.062526,
-                        17.163818
+                        -89.060777,
+                        17.161592
                     ],
                     [
-                        -89.06259,
-                        17.163867
+                        -89.061262,
+                        17.161285
                     ],
                     [
-                        -89.062729,
-                        17.163966
+                        -89.061326,
+                        17.161243
                     ],
                     [
-                        -89.063059,
-                        17.164158
+                        -89.061384,
+                        17.161206
                     ],
                     [
-                        -89.063398,
-                        17.164306
+                        -89.062241,
+                        17.16066
                     ],
                     [
-                        -89.063504,
-                        17.164333
+                        -89.062357,
+                        17.160586
                     ],
                     [
-                        -89.063755,
-                        17.164381
+                        -89.06303,
+                        17.160144
                     ],
                     [
-                        -89.064119,
-                        17.164381
+                        -89.063687,
+                        17.159696
                     ],
                     [
-                        -89.064729,
-                        17.164355
+                        -89.063735,
+                        17.159662
                     ],
                     [
-                        -89.064698,
-                        17.163862
+                        -89.063784,
+                        17.159725
                     ],
                     [
-                        -89.06469,
-                        17.163492
-                    ],
-                    [
-                        -89.064696,
-                        17.163438
-                    ],
-                    [
-                        -89.064789,
-                        17.162889
-                    ],
-                    [
-                        -89.064831,
-                        17.162655
-                    ],
-                    [
-                        -89.064874,
-                        17.162416
-                    ],
-                    [
-                        -89.064901,
-                        17.162268
-                    ],
-                    [
-                        -89.064944,
-                        17.161941
-                    ],
-                    [
-                        -89.064916,
-                        17.161507
-                    ],
-                    [
-                        -89.06489,
-                        17.161199
-                    ],
-                    [
-                        -89.064885,
-                        17.160854
-                    ],
-                    [
-                        -89.064896,
-                        17.160769
-                    ],
-                    [
-                        -89.064963,
-                        17.160584
-                    ],
-                    [
-                        -89.065104,
-                        17.160311
+                        -89.064492,
+                        17.159918
                     ],
                     [
                         -89.065206,
@@ -7502,12 +7490,8 @@
                         17.126095
                     ],
                     [
-                        -89.097355,
-                        17.125306
-                    ],
-                    [
-                        -89.097434,
-                        17.125211
+                        -89.097377,
+                        17.125285
                     ],
                     [
                         -89.097688,
@@ -8408,6 +8392,14 @@
                     [
                         -89.189395,
                         17.054404
+                    ],
+                    [
+                        -89.189781,
+                        17.054194
+                    ],
+                    [
+                        -89.189866,
+                        17.054148
                     ],
                     [
                         -89.190366,
@@ -11194,156 +11186,120 @@
                         16.923181
                     ],
                     [
-                        -89.891966,
-                        16.923261
+                        -89.891675,
+                        16.923427
                     ],
                     [
-                        -89.892591,
-                        16.923457
+                        -89.891626,
+                        16.923695
                     ],
                     [
-                        -89.893377,
-                        16.923713
+                        -89.891613,
+                        16.923766
                     ],
                     [
-                        -89.89383,
-                        16.923847
+                        -89.891536,
+                        16.924178
                     ],
                     [
-                        -89.894565,
-                        16.924017
+                        -89.891486,
+                        16.924433
                     ],
                     [
-                        -89.896027,
-                        16.924295
+                        -89.891311,
+                        16.925563
                     ],
                     [
-                        -89.896422,
-                        16.924355
+                        -89.891234,
+                        16.9262
                     ],
                     [
-                        -89.897468,
-                        16.924563
-                    ],
-                    [
-                        -89.897857,
-                        16.924721
-                    ],
-                    [
-                        -89.898229,
-                        16.924876
-                    ],
-                    [
-                        -89.898369,
-                        16.924975
-                    ],
-                    [
-                        -89.89842,
-                        16.925066
-                    ],
-                    [
-                        -89.898514,
-                        16.925382
-                    ],
-                    [
-                        -89.89857,
-                        16.925662
-                    ],
-                    [
-                        -89.898626,
-                        16.926061
-                    ],
-                    [
-                        -89.898656,
-                        16.926424
-                    ],
-                    [
-                        -89.898668,
-                        16.926565
-                    ],
-                    [
-                        -89.898685,
-                        16.926821
-                    ],
-                    [
-                        -89.898721,
-                        16.926948
-                    ],
-                    [
-                        -89.898805,
-                        16.927077
-                    ],
-                    [
-                        -89.89886,
-                        16.927134
-                    ],
-                    [
-                        -89.899203,
-                        16.927381
-                    ],
-                    [
-                        -89.899359,
-                        16.927422
-                    ],
-                    [
-                        -89.899471,
-                        16.927433
-                    ],
-                    [
-                        -89.899582,
-                        16.927465
-                    ],
-                    [
-                        -89.899877,
-                        16.927655
-                    ],
-                    [
-                        -89.899956,
-                        16.927548
-                    ],
-                    [
-                        -89.900449,
-                        16.926893
-                    ],
-                    [
-                        -89.900671,
+                        -89.891173,
                         16.926552
                     ],
                     [
-                        -89.900765,
-                        16.92641
+                        -89.891124,
+                        16.926839
                     ],
                     [
-                        -89.901253,
-                        16.925752
+                        -89.89111,
+                        16.926911
                     ],
                     [
-                        -89.901278,
-                        16.925718
+                        -89.890989,
+                        16.927229
                     ],
                     [
-                        -89.90188,
-                        16.924901
+                        -89.890953,
+                        16.927461
                     ],
                     [
-                        -89.902219,
-                        16.924442
+                        -89.890902,
+                        16.927933
                     ],
                     [
-                        -89.901725,
-                        16.924079
+                        -89.890911,
+                        16.928029
                     ],
                     [
-                        -89.900744,
-                        16.923422
+                        -89.890937,
+                        16.928111
                     ],
                     [
-                        -89.900144,
-                        16.923004
+                        -89.891012,
+                        16.928257
                     ],
                     [
-                        -89.899451,
-                        16.922526
+                        -89.891165,
+                        16.928393
+                    ],
+                    [
+                        -89.891266,
+                        16.928436
+                    ],
+                    [
+                        -89.891399,
+                        16.928457
+                    ],
+                    [
+                        -89.891919,
+                        16.928491
+                    ],
+                    [
+                        -89.892528,
+                        16.928528
+                    ],
+                    [
+                        -89.892563,
+                        16.928341
+                    ],
+                    [
+                        -89.892599,
+                        16.928292
+                    ],
+                    [
+                        -89.892652,
+                        16.928258
+                    ],
+                    [
+                        -89.893295,
+                        16.928129
+                    ],
+                    [
+                        -89.893401,
+                        16.928154
+                    ],
+                    [
+                        -89.89348,
+                        16.928214
+                    ],
+                    [
+                        -89.893516,
+                        16.928297
+                    ],
+                    [
+                        -89.893521,
+                        16.928491
                     ]
                 ],
                 "type": "LineString"
@@ -11353,16 +11309,16 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744014067361,
+        "timestamp": 1756873468306,
         "query": {
             "coordinates": [
                 [
-                    -88.188374,
-                    17.498711
+                    -88.18481,
+                    17.494329
                 ],
                 [
-                    -89.89941,
-                    16.92258
+                    -89.893485,
+                    16.928492
                 ]
             ],
             "profile": "driving-car",
@@ -11370,9 +11326,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }

@@ -1,7 +1,7 @@
 {
     "type": "FeatureCollection",
     "bbox": [
-        -84.166072,
+        -84.161596,
         9.15361,
         -83.735045,
         9.447191
@@ -9,7 +9,7 @@
     "features": [
         {
             "bbox": [
-                -84.166072,
+                -84.161596,
                 9.15361,
                 -83.735045,
                 9.447191
@@ -18,73 +18,84 @@
             "properties": {
                 "segments": [
                     {
-                        "distance": 64579.1,
-                        "duration": 4701.7,
+                        "distance": 63487.3,
+                        "duration": 4581.1,
                         "steps": [
                             {
-                                "distance": 237.3,
-                                "duration": 57.0,
+                                "distance": 350.4,
+                                "duration": 84.1,
                                 "type": 11,
-                                "instruction": "Head northeast on Calle Zona Americana",
-                                "name": "Calle Zona Americana",
+                                "instruction": "Head east on Avenida Central",
+                                "name": "Avenida Central",
                                 "way_points": [
                                     0,
+                                    6
+                                ]
+                            },
+                            {
+                                "distance": 51.9,
+                                "duration": 12.5,
+                                "type": 1,
+                                "instruction": "Turn right onto Avenida 9",
+                                "name": "Avenida 9",
+                                "way_points": [
+                                    6,
+                                    7
+                                ]
+                            },
+                            {
+                                "distance": 125.5,
+                                "duration": 30.1,
+                                "type": 0,
+                                "instruction": "Turn left onto Calle 3A",
+                                "name": "Calle 3A",
+                                "way_points": [
+                                    7,
+                                    9
+                                ]
+                            },
+                            {
+                                "distance": 54.9,
+                                "duration": 13.2,
+                                "type": 5,
+                                "instruction": "Turn slight right",
+                                "name": "-",
+                                "way_points": [
+                                    9,
                                     10
                                 ]
                             },
                             {
-                                "distance": 169.1,
-                                "duration": 40.6,
-                                "type": 0,
-                                "instruction": "Turn left onto Calle Zona Americana",
-                                "name": "Calle Zona Americana",
+                                "distance": 215.8,
+                                "duration": 51.8,
+                                "type": 1,
+                                "instruction": "Turn right onto Transversal 7",
+                                "name": "Transversal 7",
                                 "way_points": [
                                     10,
-                                    16
+                                    15
                                 ]
                             },
                             {
-                                "distance": 350.1,
-                                "duration": 84.0,
-                                "type": 1,
-                                "instruction": "Turn right onto Paseo del Mar",
-                                "name": "Paseo del Mar",
+                                "distance": 145.2,
+                                "duration": 34.8,
+                                "type": 2,
+                                "instruction": "Turn sharp left onto Calle 7",
+                                "name": "Calle 7",
                                 "way_points": [
-                                    16,
-                                    21
+                                    15,
+                                    17
                                 ]
                             },
                             {
-                                "distance": 562.6,
-                                "duration": 60.8,
-                                "type": 1,
-                                "instruction": "Turn right onto Avenida 2, 235",
-                                "name": "Avenida 2, 235",
+                                "distance": 3333.7,
+                                "duration": 342.9,
+                                "type": 4,
+                                "instruction": "Turn slight left onto V\u00eda 235, 235",
+                                "name": "V\u00eda 235, 235",
                                 "way_points": [
-                                    21,
-                                    30
-                                ]
-                            },
-                            {
-                                "distance": 223.2,
-                                "duration": 45.6,
-                                "type": 0,
-                                "instruction": "Turn left onto Calle 5, 235",
-                                "name": "Calle 5, 235",
-                                "way_points": [
-                                    30,
-                                    33
-                                ]
-                            },
-                            {
-                                "distance": 3826.7,
-                                "duration": 402.0,
-                                "type": 1,
-                                "instruction": "Turn right onto Avenida 5, 235",
-                                "name": "Avenida 5, 235",
-                                "way_points": [
-                                    33,
-                                    137
+                                    17,
+                                    104
                                 ]
                             },
                             {
@@ -94,8 +105,8 @@
                                 "instruction": "Keep right",
                                 "name": "-",
                                 "way_points": [
-                                    137,
-                                    139
+                                    104,
+                                    106
                                 ]
                             },
                             {
@@ -105,8 +116,8 @@
                                 "instruction": "Turn slight right onto Carretera Pac\u00edfica Fern\u00e1ndez Oreamuno, 34",
                                 "name": "Carretera Pac\u00edfica Fern\u00e1ndez Oreamuno, 34",
                                 "way_points": [
-                                    139,
-                                    728
+                                    106,
+                                    695
                                 ]
                             },
                             {
@@ -116,8 +127,8 @@
                                 "instruction": "Turn right onto Calle Bah\u00eda",
                                 "name": "Calle Bah\u00eda",
                                 "way_points": [
-                                    728,
-                                    746
+                                    695,
+                                    713
                                 ]
                             },
                             {
@@ -127,8 +138,8 @@
                                 "instruction": "Turn left onto Calle Playa Colonia",
                                 "name": "Calle Playa Colonia",
                                 "way_points": [
-                                    746,
-                                    761
+                                    713,
+                                    728
                                 ]
                             },
                             {
@@ -138,8 +149,8 @@
                                 "instruction": "Turn right onto Calle La Curinga",
                                 "name": "Calle La Curinga",
                                 "way_points": [
-                                    761,
-                                    763
+                                    728,
+                                    730
                                 ]
                             },
                             {
@@ -149,8 +160,8 @@
                                 "instruction": "Arrive at Calle La Curinga, on the left",
                                 "name": "-",
                                 "way_points": [
-                                    763,
-                                    763
+                                    730,
+                                    730
                                 ]
                             }
                         ]
@@ -158,214 +169,82 @@
                 ],
                 "way_points": [
                     0,
-                    763
+                    730
                 ],
                 "summary": {
-                    "distance": 64579.1,
-                    "duration": 4701.7
+                    "distance": 63487.3,
+                    "duration": 4581.1
                 }
             },
             "geometry": {
                 "coordinates": [
                     [
-                        -84.165273,
-                        9.423644
+                        -84.161596,
+                        9.430119
                     ],
                     [
-                        -84.165266,
-                        9.423649
+                        -84.16123,
+                        9.430097
                     ],
                     [
-                        -84.165195,
-                        9.423717
+                        -84.161187,
+                        9.430669
                     ],
                     [
-                        -84.165143,
-                        9.423879
+                        -84.161182,
+                        9.430735
                     ],
                     [
-                        -84.165217,
-                        9.424326
+                        -84.161091,
+                        9.431488
                     ],
                     [
-                        -84.165251,
-                        9.424948
+                        -84.161022,
+                        9.432189
                     ],
                     [
-                        -84.165317,
-                        9.425073
+                        -84.160959,
+                        9.432873
                     ],
                     [
-                        -84.165372,
-                        9.425162
+                        -84.160488,
+                        9.432832
                     ],
                     [
-                        -84.165369,
-                        9.42523
+                        -84.160427,
+                        9.433258
                     ],
                     [
-                        -84.165194,
-                        9.425464
+                        -84.160273,
+                        9.433939
                     ],
                     [
-                        -84.16515,
-                        9.425589
+                        -84.159934,
+                        9.434303
                     ],
                     [
-                        -84.165248,
-                        9.425738
+                        -84.159681,
+                        9.434033
                     ],
                     [
-                        -84.165639,
-                        9.426091
+                        -84.159552,
+                        9.43384
                     ],
                     [
-                        -84.165721,
-                        9.426203
-                    ],
-                    [
-                        -84.165878,
-                        9.426544
-                    ],
-                    [
-                        -84.165981,
-                        9.426708
-                    ],
-                    [
-                        -84.166072,
-                        9.426779
-                    ],
-                    [
-                        -84.166,
-                        9.427258
-                    ],
-                    [
-                        -84.165874,
-                        9.427757
-                    ],
-                    [
-                        -84.16561,
-                        9.428302
-                    ],
-                    [
-                        -84.165437,
-                        9.429075
-                    ],
-                    [
-                        -84.165247,
-                        9.429806
-                    ],
-                    [
-                        -84.164561,
-                        9.429595
-                    ],
-                    [
-                        -84.164201,
-                        9.429521
-                    ],
-                    [
-                        -84.163723,
-                        9.429479
-                    ],
-                    [
-                        -84.162914,
-                        9.429476
-                    ],
-                    [
-                        -84.162306,
-                        9.429466
-                    ],
-                    [
-                        -84.161785,
-                        9.429473
-                    ],
-                    [
-                        -84.161191,
-                        9.429454
-                    ],
-                    [
-                        -84.160346,
-                        9.429401
-                    ],
-                    [
-                        -84.160162,
-                        9.429396
-                    ],
-                    [
-                        -84.160102,
-                        9.430413
-                    ],
-                    [
-                        -84.160097,
-                        9.430502
-                    ],
-                    [
-                        -84.16004,
-                        9.4314
-                    ],
-                    [
-                        -84.159596,
-                        9.431419
-                    ],
-                    [
-                        -84.159064,
-                        9.431472
-                    ],
-                    [
-                        -84.158632,
-                        9.431531
-                    ],
-                    [
-                        -84.158335,
-                        9.43161
-                    ],
-                    [
-                        -84.158207,
-                        9.431664
-                    ],
-                    [
-                        -84.158129,
-                        9.431731
-                    ],
-                    [
-                        -84.158038,
-                        9.431855
-                    ],
-                    [
-                        -84.157998,
-                        9.431964
-                    ],
-                    [
-                        -84.157835,
-                        9.432784
-                    ],
-                    [
-                        -84.157804,
-                        9.43301
-                    ],
-                    [
-                        -84.157817,
-                        9.433162
-                    ],
-                    [
-                        -84.157862,
+                        -84.159268,
                         9.433262
                     ],
                     [
-                        -84.157924,
-                        9.433346
+                        -84.159141,
+                        9.432953
                     ],
                     [
-                        -84.158027,
-                        9.433428
+                        -84.159036,
+                        9.432602
                     ],
                     [
-                        -84.158411,
-                        9.433651
-                    ],
-                    [
-                        -84.158497,
-                        9.433725
+                        -84.158678,
+                        9.433558
                     ],
                     [
                         -84.15856,
@@ -3231,12 +3110,12 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744073089644,
+        "timestamp": 1756803836466,
         "query": {
             "coordinates": [
                 [
-                    -84.16522,
-                    9.42357
+                    -84.161592,
+                    9.430187
                 ],
                 [
                     -83.738377,
@@ -3248,9 +3127,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }

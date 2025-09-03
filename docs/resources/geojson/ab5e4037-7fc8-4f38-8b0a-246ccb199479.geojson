@@ -3,7 +3,7 @@
     "bbox": [
         -88.776726,
         17.246798,
-        -88.187592,
+        -88.18477,
         17.501429
     ],
     "features": [
@@ -11,15 +11,15 @@
             "bbox": [
                 -88.776726,
                 17.246798,
-                -88.187592,
+                -88.18477,
                 17.501429
             ],
             "type": "Feature",
             "properties": {
                 "segments": [
                     {
-                        "distance": 80616.5,
-                        "duration": 4548.0,
+                        "distance": 80694.5,
+                        "duration": 4544.7,
                         "steps": [
                             {
                                 "distance": 372.7,
@@ -85,7 +85,7 @@
                                 "name": "George Price Highway",
                                 "way_points": [
                                     87,
-                                    525
+                                    529
                                 ]
                             },
                             {
@@ -96,8 +96,8 @@
                                 "name": "George Price Highway",
                                 "exit_number": 1,
                                 "way_points": [
-                                    525,
-                                    650
+                                    529,
+                                    654
                                 ]
                             },
                             {
@@ -108,31 +108,20 @@
                                 "name": "George Price Highway",
                                 "exit_number": 2,
                                 "way_points": [
-                                    650,
-                                    778
+                                    654,
+                                    781
                                 ]
                             },
                             {
-                                "distance": 77.6,
-                                "duration": 11.6,
+                                "distance": 2634.4,
+                                "duration": 193.7,
                                 "type": 7,
-                                "instruction": "Enter the roundabout and take the 2nd exit",
-                                "name": "-",
+                                "instruction": "Enter the roundabout and take the 2nd exit onto George Price Highway",
+                                "name": "George Price Highway",
                                 "exit_number": 2,
                                 "way_points": [
-                                    778,
-                                    784
-                                ]
-                            },
-                            {
-                                "distance": 2556.9,
-                                "duration": 184.0,
-                                "type": 6,
-                                "instruction": "Continue straight onto George Price Highway",
-                                "name": "George Price Highway",
-                                "way_points": [
-                                    784,
-                                    836
+                                    781,
+                                    839
                                 ]
                             },
                             {
@@ -143,8 +132,8 @@
                                 "name": "Cemetery Road",
                                 "exit_number": 2,
                                 "way_points": [
-                                    836,
-                                    856
+                                    839,
+                                    860
                                 ]
                             },
                             {
@@ -154,8 +143,8 @@
                                 "instruction": "Turn left onto Wood Street",
                                 "name": "Wood Street",
                                 "way_points": [
-                                    856,
-                                    857
+                                    860,
+                                    861
                                 ]
                             },
                             {
@@ -165,8 +154,8 @@
                                 "instruction": "Turn left onto Vernon Street",
                                 "name": "Vernon Street",
                                 "way_points": [
-                                    857,
-                                    858
+                                    861,
+                                    862
                                 ]
                             },
                             {
@@ -176,74 +165,41 @@
                                 "instruction": "Turn right onto Youth for the Future Drive",
                                 "name": "Youth for the Future Drive",
                                 "way_points": [
-                                    858,
-                                    871
-                                ]
-                            },
-                            {
-                                "distance": 417.5,
-                                "duration": 42.9,
-                                "type": 1,
-                                "instruction": "Turn right onto North Front Street",
-                                "name": "North Front Street",
-                                "way_points": [
-                                    871,
-                                    874
-                                ]
-                            },
-                            {
-                                "distance": 171.2,
-                                "duration": 41.1,
-                                "type": 0,
-                                "instruction": "Turn left onto Pickstock Street",
-                                "name": "Pickstock Street",
-                                "way_points": [
-                                    874,
+                                    862,
                                     875
                                 ]
                             },
                             {
-                                "distance": 162.9,
-                                "duration": 16.8,
-                                "type": 0,
-                                "instruction": "Turn left onto New Road",
-                                "name": "New Road",
+                                "distance": 938.2,
+                                "duration": 108.1,
+                                "type": 1,
+                                "instruction": "Turn right onto North Front Street",
+                                "name": "North Front Street",
                                 "way_points": [
                                     875,
-                                    877
+                                    894
                                 ]
                             },
                             {
-                                "distance": 87.5,
-                                "duration": 15.8,
-                                "type": 0,
-                                "instruction": "Turn left onto Victoria Street",
-                                "name": "Victoria Street",
+                                "distance": 79.5,
+                                "duration": 19.1,
+                                "type": 3,
+                                "instruction": "Turn sharp right onto Angel Lane",
+                                "name": "Angel Lane",
                                 "way_points": [
-                                    877,
-                                    880
-                                ]
-                            },
-                            {
-                                "distance": 100.6,
-                                "duration": 12.1,
-                                "type": 0,
-                                "instruction": "Turn left",
-                                "name": "-",
-                                "way_points": [
-                                    880,
-                                    881
+                                    894,
+                                    896
                                 ]
                             },
                             {
                                 "distance": 0.0,
                                 "duration": 0.0,
                                 "type": 10,
-                                "instruction": "Arrive at your destination, on the left",
+                                "instruction": "Arrive at Angel Lane, on the left",
                                 "name": "-",
                                 "way_points": [
-                                    881,
-                                    881
+                                    896,
+                                    896
                                 ]
                             }
                         ]
@@ -251,11 +207,11 @@
                 ],
                 "way_points": [
                     0,
-                    881
+                    896
                 ],
                 "summary": {
-                    "distance": 80616.5,
-                    "duration": 4548.0
+                    "distance": 80694.5,
+                    "duration": 4544.7
                 }
             },
             "geometry": {
@@ -1081,12 +1037,20 @@
                         17.27717
                     ],
                     [
+                        -88.644601,
+                        17.277173
+                    ],
+                    [
                         -88.643984,
                         17.277176
                     ],
                     [
                         -88.643407,
                         17.277176
+                    ],
+                    [
+                        -88.642578,
+                        17.277175
                     ],
                     [
                         -88.642517,
@@ -1169,12 +1133,16 @@
                         17.279994
                     ],
                     [
+                        -88.616631,
+                        17.281115
+                    ],
+                    [
                         -88.609689,
                         17.286138
                     ],
                     [
-                        -88.6069,
-                        17.288181
+                        -88.607561,
+                        17.287707
                     ],
                     [
                         -88.605406,
@@ -1255,6 +1223,10 @@
                     [
                         -88.5899,
                         17.304667
+                    ],
+                    [
+                        -88.589688,
+                        17.304992
                     ],
                     [
                         -88.589658,
@@ -3337,20 +3309,16 @@
                         17.499307
                     ],
                     [
-                        -88.224324,
-                        17.499399
+                        -88.224337,
+                        17.499385
                     ],
                     [
-                        -88.224155,
-                        17.499429
+                        -88.224201,
+                        17.499412
                     ],
                     [
-                        -88.223878,
-                        17.499477
-                    ],
-                    [
-                        -88.223622,
-                        17.499516
+                        -88.223912,
+                        17.499454
                     ],
                     [
                         -88.223391,
@@ -3397,16 +3365,16 @@
                         17.500034
                     ],
                     [
-                        -88.221783,
-                        17.500152
+                        -88.221778,
+                        17.500154
                     ],
                     [
                         -88.221748,
                         17.500164
                     ],
                     [
-                        -88.221601,
-                        17.500212
+                        -88.221418,
+                        17.50028
                     ],
                     [
                         -88.221156,
@@ -3593,8 +3561,8 @@
                         17.496089
                     ],
                     [
-                        -88.199765,
-                        17.495947
+                        -88.199763,
+                        17.495943
                     ],
                     [
                         -88.199409,
@@ -3639,6 +3607,10 @@
                     [
                         -88.198596,
                         17.495547
+                    ],
+                    [
+                        -88.198448,
+                        17.495491
                     ],
                     [
                         -88.198103,
@@ -3761,32 +3733,76 @@
                         17.497469
                     ],
                     [
-                        -88.187592,
-                        17.498607
+                        -88.188413,
+                        17.497267
                     ],
                     [
-                        -88.18854,
-                        17.499333
+                        -88.18769,
+                        17.496707
                     ],
                     [
-                        -88.188777,
-                        17.499538
+                        -88.187381,
+                        17.496402
                     ],
                     [
-                        -88.188921,
-                        17.499448
+                        -88.187324,
+                        17.496338
                     ],
                     [
-                        -88.189188,
-                        17.499194
+                        -88.187284,
+                        17.496293
                     ],
                     [
-                        -88.18936,
-                        17.498988
+                        -88.18678,
+                        17.495687
                     ],
                     [
-                        -88.188624,
-                        17.498418
+                        -88.186501,
+                        17.495484
+                    ],
+                    [
+                        -88.18613,
+                        17.495226
+                    ],
+                    [
+                        -88.185915,
+                        17.49511
+                    ],
+                    [
+                        -88.185827,
+                        17.495078
+                    ],
+                    [
+                        -88.18574,
+                        17.495051
+                    ],
+                    [
+                        -88.185621,
+                        17.495052
+                    ],
+                    [
+                        -88.185289,
+                        17.495119
+                    ],
+                    [
+                        -88.185081,
+                        17.495169
+                    ],
+                    [
+                        -88.184904,
+                        17.49519
+                    ],
+                    [
+                        -88.18477,
+                        17.495156
+                    ],
+                    [
+                        -88.184798,
+                        17.495112
+                    ],
+                    [
+                        -88.184821,
+                        17.494449
                     ]
                 ],
                 "type": "LineString"
@@ -3796,7 +3812,7 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744014066929,
+        "timestamp": 1756873467954,
         "query": {
             "coordinates": [
                 [
@@ -3804,8 +3820,8 @@
                     17.25
                 ],
                 [
-                    -88.188374,
-                    17.498711
+                    -88.18481,
+                    17.494329
                 ]
             ],
             "profile": "driving-car",
@@ -3813,9 +3829,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }

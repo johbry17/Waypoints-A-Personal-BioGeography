@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2025-04-12T09:14:01Z",
+  "timestamp": "2025-09-02T07:20:13Z",
   "features": [
     {
       "type": "Feature",
@@ -233,68 +233,6 @@
         ]
       },
       "id": "way/154141799"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "way/154144539",
-        "foot": "yes",
-        "hgv": "no",
-        "motorcar": "no",
-        "name": "La Paz - Espiritu Santo",
-        "operator": "Marlin Adventure Tours",
-        "route": "ferry"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -110.3415885,
-            24.3150979
-          ],
-          [
-            -110.3417446,
-            24.298724
-          ],
-          [
-            -110.3429895,
-            24.289306
-          ],
-          [
-            -110.3420558,
-            24.280171
-          ],
-          [
-            -110.3414956,
-            24.2719433
-          ],
-          [
-            -110.3408731,
-            24.2646229
-          ],
-          [
-            -110.3387567,
-            24.2478244
-          ],
-          [
-            -110.3366403,
-            24.2281854
-          ],
-          [
-            -110.3327809,
-            24.2046827
-          ],
-          [
-            -110.3279256,
-            24.1879898
-          ],
-          [
-            -110.3265118,
-            24.182491
-          ]
-        ]
-      },
-      "id": "way/154144539"
     },
     {
       "type": "Feature",

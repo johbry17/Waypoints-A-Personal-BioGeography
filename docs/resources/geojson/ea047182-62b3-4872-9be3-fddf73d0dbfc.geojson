@@ -2,7 +2,7 @@
     "type": "FeatureCollection",
     "bbox": [
         -88.588625,
-        20.684029,
+        20.683742,
         -88.198132,
         20.745687
     ],
@@ -10,7 +10,7 @@
         {
             "bbox": [
                 -88.588625,
-                20.684029,
+                20.683742,
                 -88.198132,
                 20.745687
             ],
@@ -18,8 +18,8 @@
             "properties": {
                 "segments": [
                     {
-                        "distance": 54459.4,
-                        "duration": 2725.2,
+                        "distance": 53246.6,
+                        "duration": 2611.8,
                         "steps": [
                             {
                                 "distance": 92.9,
@@ -45,13 +45,13 @@
                             },
                             {
                                 "distance": 1652.3,
-                                "duration": 173.5,
+                                "duration": 176.6,
                                 "type": 1,
                                 "instruction": "Turn right onto Calle 40, MEX 295",
                                 "name": "Calle 40, MEX 295",
                                 "way_points": [
                                     8,
-                                    36
+                                    37
                                 ]
                             },
                             {
@@ -61,8 +61,8 @@
                                 "instruction": "Keep right onto Avenida Zaci-Hual, MEX 295",
                                 "name": "Avenida Zaci-Hual, MEX 295",
                                 "way_points": [
-                                    36,
-                                    55
+                                    37,
+                                    56
                                 ]
                             },
                             {
@@ -73,8 +73,8 @@
                                 "name": "Carretera Valladolid - R\u00edo Lagartos, MEX 295",
                                 "exit_number": 2,
                                 "way_points": [
-                                    55,
-                                    80
+                                    56,
+                                    81
                                 ]
                             },
                             {
@@ -84,30 +84,30 @@
                                 "instruction": "Turn sharp left",
                                 "name": "-",
                                 "way_points": [
-                                    80,
-                                    164
+                                    81,
+                                    165
                                 ]
                             },
                             {
                                 "distance": 151.7,
-                                "duration": 18.4,
+                                "duration": 26.6,
                                 "type": 13,
                                 "instruction": "Keep right",
                                 "name": "-",
                                 "way_points": [
-                                    164,
-                                    167
+                                    165,
+                                    168
                                 ]
                             },
                             {
                                 "distance": 243.6,
-                                "duration": 29.2,
+                                "duration": 25.1,
                                 "type": 13,
                                 "instruction": "Keep right",
                                 "name": "-",
                                 "way_points": [
-                                    167,
-                                    177
+                                    168,
+                                    178
                                 ]
                             },
                             {
@@ -117,8 +117,8 @@
                                 "instruction": "Keep right",
                                 "name": "-",
                                 "way_points": [
-                                    177,
-                                    183
+                                    178,
+                                    184
                                 ]
                             },
                             {
@@ -128,8 +128,8 @@
                                 "instruction": "Continue straight onto YUC 79",
                                 "name": "YUC 79",
                                 "way_points": [
-                                    183,
-                                    194
+                                    184,
+                                    195
                                 ]
                             },
                             {
@@ -139,63 +139,41 @@
                                 "instruction": "Continue straight onto Calle 10, YUC 13",
                                 "name": "Calle 10, YUC 13",
                                 "way_points": [
-                                    194,
-                                    213
+                                    195,
+                                    215
                                 ]
                             },
                             {
-                                "distance": 3300.3,
-                                "duration": 291.5,
+                                "distance": 1582.6,
+                                "duration": 191.4,
                                 "type": 0,
                                 "instruction": "Turn left onto Calle 15, MEX 180",
                                 "name": "Calle 15, MEX 180",
                                 "way_points": [
-                                    213,
-                                    254
+                                    215,
+                                    233
                                 ]
                             },
                             {
-                                "distance": 161.0,
-                                "duration": 38.6,
-                                "type": 0,
-                                "instruction": "Turn left",
+                                "distance": 767.4,
+                                "duration": 42.5,
+                                "type": 13,
+                                "instruction": "Keep right",
                                 "name": "-",
                                 "way_points": [
-                                    254,
-                                    256
-                                ]
-                            },
-                            {
-                                "distance": 53.5,
-                                "duration": 12.8,
-                                "type": 0,
-                                "instruction": "Turn left",
-                                "name": "-",
-                                "way_points": [
-                                    256,
-                                    257
-                                ]
-                            },
-                            {
-                                "distance": 48.0,
-                                "duration": 11.5,
-                                "type": 1,
-                                "instruction": "Turn right",
-                                "name": "-",
-                                "way_points": [
-                                    257,
-                                    258
+                                    233,
+                                    245
                                 ]
                             },
                             {
                                 "distance": 0.0,
                                 "duration": 0.0,
                                 "type": 10,
-                                "instruction": "Arrive at your destination, on the left",
+                                "instruction": "Arrive at your destination, on the right",
                                 "name": "-",
                                 "way_points": [
-                                    258,
-                                    258
+                                    245,
+                                    245
                                 ]
                             }
                         ]
@@ -203,11 +181,11 @@
                 ],
                 "way_points": [
                     0,
-                    258
+                    245
                 ],
                 "summary": {
-                    "distance": 54459.4,
-                    "duration": 2725.2
+                    "distance": 53246.6,
+                    "duration": 2611.8
                 }
             },
             "geometry": {
@@ -221,8 +199,8 @@
                         20.690842
                     ],
                     [
-                        -88.198586,
-                        20.690843
+                        -88.199124,
+                        20.690826
                     ],
                     [
                         -88.199398,
@@ -247,6 +225,10 @@
                     [
                         -88.201134,
                         20.690791
+                    ],
+                    [
+                        -88.20115,
+                        20.690998
                     ],
                     [
                         -88.201227,
@@ -1001,6 +983,10 @@
                         20.706288
                     ],
                     [
+                        -88.586857,
+                        20.70542
+                    ],
+                    [
                         -88.586863,
                         20.705394
                     ],
@@ -1077,8 +1063,8 @@
                         20.698447
                     ],
                     [
-                        -88.587799,
-                        20.697936
+                        -88.587782,
+                        20.697954
                     ],
                     [
                         -88.587308,
@@ -1141,112 +1127,52 @@
                         20.689004
                     ],
                     [
-                        -88.576818,
-                        20.688703
+                        -88.57648,
+                        20.688236
                     ],
                     [
-                        -88.57634,
-                        20.68849
+                        -88.576277,
+                        20.688072
                     ],
                     [
-                        -88.576089,
-                        20.688403
+                        -88.574574,
+                        20.686631
                     ],
                     [
-                        -88.575669,
-                        20.688272
+                        -88.57446,
+                        20.686489
                     ],
                     [
-                        -88.575306,
-                        20.688193
+                        -88.574365,
+                        20.686351
                     ],
                     [
-                        -88.574607,
-                        20.688115
+                        -88.574265,
+                        20.686037
                     ],
                     [
-                        -88.574119,
-                        20.688114
+                        -88.574238,
+                        20.685365
                     ],
                     [
-                        -88.573459,
-                        20.688169
+                        -88.574217,
+                        20.685178
                     ],
                     [
-                        -88.572408,
-                        20.688305
+                        -88.574151,
+                        20.685003
                     ],
                     [
-                        -88.569094,
-                        20.689068
+                        -88.574008,
+                        20.684817
                     ],
                     [
-                        -88.5688,
-                        20.689114
+                        -88.573589,
+                        20.684338
                     ],
                     [
-                        -88.568488,
-                        20.689151
-                    ],
-                    [
-                        -88.56815,
-                        20.689138
-                    ],
-                    [
-                        -88.567783,
-                        20.689081
-                    ],
-                    [
-                        -88.567443,
-                        20.688977
-                    ],
-                    [
-                        -88.567128,
-                        20.68884
-                    ],
-                    [
-                        -88.566787,
-                        20.688654
-                    ],
-                    [
-                        -88.566537,
-                        20.688474
-                    ],
-                    [
-                        -88.566317,
-                        20.688282
-                    ],
-                    [
-                        -88.565946,
-                        20.687832
-                    ],
-                    [
-                        -88.565814,
-                        20.687582
-                    ],
-                    [
-                        -88.565706,
-                        20.687319
-                    ],
-                    [
-                        -88.564623,
-                        20.684029
-                    ],
-                    [
-                        -88.564047,
-                        20.684054
-                    ],
-                    [
-                        -88.563076,
-                        20.684033
-                    ],
-                    [
-                        -88.563003,
-                        20.684509
-                    ],
-                    [
-                        -88.562564,
-                        20.684376
+                        -88.573016,
+                        20.683742
                     ]
                 ],
                 "type": "LineString"
@@ -1256,7 +1182,7 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744069094517,
+        "timestamp": 1756798596457,
         "query": {
             "coordinates": [
                 [
@@ -1264,8 +1190,8 @@
                     20.690007
                 ],
                 [
-                    -88.5625,
-                    20.68444
+                    -88.57257,
+                    20.683086
                 ]
             ],
             "profile": "driving-car",
@@ -1273,9 +1199,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-03-31T15:18:10Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }

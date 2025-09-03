@@ -1,57 +1,68 @@
 {
     "type": "FeatureCollection",
     "bbox": [
-        -89.899451,
+        -89.893524,
         16.897504,
         -89.671154,
-        17.117427
+        17.117347
     ],
     "features": [
         {
             "bbox": [
-                -89.899451,
+                -89.893524,
                 16.897504,
                 -89.671154,
-                17.117427
+                17.117347
             ],
             "type": "Feature",
             "properties": {
                 "segments": [
                     {
-                        "distance": 47943.1,
-                        "duration": 4685.9,
+                        "distance": 48174.2,
+                        "duration": 4792.4,
                         "steps": [
                             {
-                                "distance": 56.1,
-                                "duration": 6.7,
+                                "distance": 11.4,
+                                "duration": 2.7,
                                 "type": 11,
-                                "instruction": "Head southeast on 10a Calle",
-                                "name": "10a Calle",
+                                "instruction": "Head north on Calle Litoral Flores",
+                                "name": "Calle Litoral Flores",
                                 "way_points": [
                                     0,
                                     1
                                 ]
                             },
                             {
-                                "distance": 179.6,
-                                "duration": 12.9,
-                                "type": 0,
-                                "instruction": "Turn left onto 0 Avenida",
-                                "name": "0 Avenida",
+                                "distance": 276.3,
+                                "duration": 66.3,
+                                "type": 3,
+                                "instruction": "Turn sharp right onto Calle Playa Sur",
+                                "name": "Calle Playa Sur",
                                 "way_points": [
                                     1,
-                                    5
+                                    11
                                 ]
                             },
                             {
-                                "distance": 1899.0,
-                                "duration": 80.4,
-                                "type": 3,
-                                "instruction": "Turn sharp right onto 4a Calle, CA-13",
+                                "distance": 830.8,
+                                "duration": 85.7,
+                                "type": 5,
+                                "instruction": "Turn slight right onto 6a Avenida",
+                                "name": "6a Avenida",
+                                "way_points": [
+                                    11,
+                                    31
+                                ]
+                            },
+                            {
+                                "distance": 1142.5,
+                                "duration": 48.4,
+                                "type": 0,
+                                "instruction": "Turn left onto 4a Calle, CA-13",
                                 "name": "4a Calle, CA-13",
                                 "way_points": [
-                                    5,
-                                    33
+                                    31,
+                                    47
                                 ]
                             },
                             {
@@ -62,8 +73,8 @@
                                 "name": "Calle Principal, CA-13",
                                 "exit_number": 2,
                                 "way_points": [
-                                    33,
-                                    48
+                                    47,
+                                    62
                                 ]
                             },
                             {
@@ -73,8 +84,8 @@
                                 "instruction": "Turn slight right onto Carretera Flores - Melchor, CA-13",
                                 "name": "Carretera Flores - Melchor, CA-13",
                                 "way_points": [
-                                    48,
-                                    79
+                                    62,
+                                    93
                                 ]
                             },
                             {
@@ -84,8 +95,8 @@
                                 "instruction": "Continue straight onto Carretera Flores - Melchor, CA-13",
                                 "name": "Carretera Flores - Melchor, CA-13",
                                 "way_points": [
-                                    79,
-                                    223
+                                    93,
+                                    237
                                 ]
                             },
                             {
@@ -95,8 +106,8 @@
                                 "instruction": "Keep left onto RD PET-03",
                                 "name": "RD PET-03",
                                 "way_points": [
-                                    223,
-                                    227
+                                    237,
+                                    241
                                 ]
                             },
                             {
@@ -106,41 +117,30 @@
                                 "instruction": "Turn slight left onto RD-PET-3, RD PET-03",
                                 "name": "RD-PET-3, RD PET-03",
                                 "way_points": [
-                                    227,
-                                    258
+                                    241,
+                                    272
                                 ]
                             },
                             {
-                                "distance": 16553.5,
-                                "duration": 1684.3,
+                                "distance": 16698.0,
+                                "duration": 1697.3,
                                 "type": 6,
                                 "instruction": "Continue straight onto RD-PET-3, RD PET-03",
                                 "name": "RD-PET-3, RD PET-03",
                                 "way_points": [
-                                    258,
-                                    443
-                                ]
-                            },
-                            {
-                                "distance": 39.9,
-                                "duration": 9.6,
-                                "type": 0,
-                                "instruction": "Turn left",
-                                "name": "-",
-                                "way_points": [
-                                    443,
-                                    445
+                                    272,
+                                    458
                                 ]
                             },
                             {
                                 "distance": 0.0,
                                 "duration": 0.0,
                                 "type": 10,
-                                "instruction": "Arrive at your destination, on the right",
+                                "instruction": "Arrive at RD-PET-3, RD PET-03, on the right",
                                 "name": "-",
                                 "way_points": [
-                                    445,
-                                    445
+                                    458,
+                                    458
                                 ]
                             }
                         ]
@@ -148,82 +148,138 @@
                 ],
                 "way_points": [
                     0,
-                    445
+                    458
                 ],
                 "summary": {
-                    "distance": 47943.1,
-                    "duration": 4685.9
+                    "distance": 48174.2,
+                    "duration": 4792.4
                 }
             },
             "geometry": {
                 "coordinates": [
                     [
-                        -89.899451,
-                        16.922526
+                        -89.893521,
+                        16.928491
                     ],
                     [
-                        -89.899023,
-                        16.922231
+                        -89.893524,
+                        16.928593
                     ],
                     [
-                        -89.898983,
-                        16.922291
+                        -89.893497,
+                        16.928565
                     ],
                     [
-                        -89.89893,
-                        16.922371
+                        -89.893461,
+                        16.928555
                     ],
                     [
-                        -89.898581,
-                        16.922893
+                        -89.893294,
+                        16.928536
                     ],
                     [
-                        -89.898115,
-                        16.923593
+                        -89.893194,
+                        16.928542
                     ],
                     [
-                        -89.897445,
-                        16.922808
+                        -89.892528,
+                        16.928528
                     ],
                     [
-                        -89.896887,
-                        16.92216
+                        -89.891919,
+                        16.928491
                     ],
                     [
-                        -89.896694,
-                        16.92193
+                        -89.891399,
+                        16.928457
                     ],
                     [
-                        -89.896414,
-                        16.921683
+                        -89.891266,
+                        16.928436
                     ],
                     [
-                        -89.896286,
-                        16.921589
+                        -89.891165,
+                        16.928393
                     ],
                     [
-                        -89.895592,
-                        16.921181
+                        -89.891012,
+                        16.928257
                     ],
                     [
-                        -89.895405,
-                        16.921102
+                        -89.890937,
+                        16.928111
                     ],
                     [
-                        -89.894966,
-                        16.920983
+                        -89.890911,
+                        16.928029
                     ],
                     [
-                        -89.894679,
-                        16.920958
+                        -89.890902,
+                        16.927933
                     ],
                     [
-                        -89.893953,
-                        16.920956
+                        -89.890953,
+                        16.927461
                     ],
                     [
-                        -89.893096,
-                        16.920939
+                        -89.890989,
+                        16.927229
+                    ],
+                    [
+                        -89.89111,
+                        16.926911
+                    ],
+                    [
+                        -89.891124,
+                        16.926839
+                    ],
+                    [
+                        -89.891173,
+                        16.926552
+                    ],
+                    [
+                        -89.891234,
+                        16.9262
+                    ],
+                    [
+                        -89.891311,
+                        16.925563
+                    ],
+                    [
+                        -89.891486,
+                        16.924433
+                    ],
+                    [
+                        -89.891536,
+                        16.924178
+                    ],
+                    [
+                        -89.891613,
+                        16.923766
+                    ],
+                    [
+                        -89.891626,
+                        16.923695
+                    ],
+                    [
+                        -89.891675,
+                        16.923427
+                    ],
+                    [
+                        -89.891714,
+                        16.923181
+                    ],
+                    [
+                        -89.891815,
+                        16.922689
+                    ],
+                    [
+                        -89.891883,
+                        16.922233
+                    ],
+                    [
+                        -89.891968,
+                        16.921721
                     ],
                     [
                         -89.89212,
@@ -1934,12 +1990,8 @@
                         17.117319
                     ],
                     [
-                        -89.676529,
-                        17.117287
-                    ],
-                    [
-                        -89.676758,
-                        17.117427
+                        -89.676442,
+                        17.117347
                     ]
                 ],
                 "type": "LineString"
@@ -1949,16 +2001,16 @@
     "metadata": {
         "attribution": "openrouteservice.org | OpenStreetMap contributors",
         "service": "routing",
-        "timestamp": 1744461744504,
+        "timestamp": 1756873473860,
         "query": {
             "coordinates": [
                 [
-                    -89.89941,
-                    16.92258
+                    -89.893485,
+                    16.928492
                 ],
                 [
-                    -89.677315,
-                    17.119694
+                    -89.676419,
+                    17.117355
                 ]
             ],
             "profile": "driving-car",
@@ -1966,9 +2018,10 @@
             "format": "geojson"
         },
         "engine": {
-            "version": "9.1.1",
-            "build_date": "2025-03-14T11:07:03Z",
-            "graph_date": "2025-04-07T14:38:47Z"
+            "version": "9.3.0",
+            "build_date": "2025-06-06T15:39:25Z",
+            "graph_date": "2025-08-31T11:45:10Z",
+            "osm_date": "2025-08-24T23:59:58Z"
         }
     }
 }
