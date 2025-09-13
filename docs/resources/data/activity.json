@@ -724,5 +724,20 @@
       "PXL_20230328_160959577.jpg",
       "z-IMG-20230328-WA0012.jpg"
     ]
+  },
+  {
+    "activity_id":"68a59f7b-5e51-408d-a8ae-d6cbfb2ba359",
+    "name":"Acadia",
+    "location":"Acadia",
+    "lat":44.344659,
+    "lng":-68.207598,
+    "activity_type":"hiking",
+    "route_path":"hike_acadia.geojson",
+    "description":"Beehive & Precipice",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
   }
 ]
