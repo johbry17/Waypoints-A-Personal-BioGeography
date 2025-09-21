@@ -27,6 +27,7 @@ $formatted-activity-type-color: #ff8c00;
 $school-icon-color: #ffb400;
 $home-icon-color: #ff5733;
 $legend-border-color: #ffd700;
+$earth-ocean-color: #009dc4;
 $text-color: #333333;
 $icon-hover-transform: scale(1.2);
 $transition-duration: 0.3s;
@@ -605,7 +606,7 @@ h4 {
         margin-bottom: 0px;
 
         .earth-ocean {
-          color: #009dc4;
+          color: $earth-ocean-color;
           // color: $activity-color;
         }
 
@@ -667,6 +668,10 @@ h4 {
 #aboutModal a:focus {
   color: $activity-hover-color !important;
   text-decoration: underline;
+}
+
+#aboutModal .earth-ocean {
+  color: $earth-ocean-color;
 }
 
 /////////////////////////////////////////////////////////////////////////////
