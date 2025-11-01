@@ -731,6 +731,23 @@ h4 {
   color: $activity-color !important;
   text-decoration: underline;
 }
+.site-footer .footer-tagline {
+  display: block;
+  flex-basis: 100%; /* forces its own row in the flex container */
+  order: 999;       /* ensures it appears after other children */
+  align-self: center; /* center it in the cross axis */
+  width: 100%;
+  text-align: center;
+  font-size: 1.05em;
+  color: #444;
+  margin-bottom: 0.4em;
+  margin-top: 0.2em;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  line-height: 1.4;
+}
 @media (max-width: 600px) {
   .site-footer {
     flex-direction: column;
@@ -741,6 +758,11 @@ h4 {
   .site-footer .footer-links {
     flex-direction: column;
     gap: 0.5em;
+  }
+  .site-footer .footer-tagline {
+    font-size: 0.98em;
+    margin-bottom: 0.4em;
+    color: #555;
   }
 }
 
