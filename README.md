@@ -98,7 +98,7 @@ To update the data:
 - **Code**: MIT License – see [LICENSE](LICENSE)
 - **Images**: Personal content not for reuse – see [LICENSE_IMAGES](LICENSE_IMAGES)
 
-> **If you're in a photo and want it removed, contact me: bryan.johns.official@gmail.com**
+> **If you're in a photo and want it removed, contact me: bryan.johns@informedwanderer.com**
 
 ## Acknowledgements
 
