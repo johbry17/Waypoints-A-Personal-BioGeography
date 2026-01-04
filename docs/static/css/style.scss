@@ -734,7 +734,7 @@ h4 {
 .site-footer .footer-tagline {
   display: block;
   flex-basis: 100%; /* forces its own row in the flex container */
-  order: 999;       /* ensures it appears after other children */
+  order: 999; /* ensures it appears after other children */
   align-self: center; /* center it in the cross axis */
   width: 100%;
   text-align: center;

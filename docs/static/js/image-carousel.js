@@ -1,6 +1,4 @@
-// Description: This file contains the code for displaying a carousel of images or videos in a popup.
-// It includes functions to create the carousel, display the media, and handle play/pause and prev/next functionality.
-// It also includes an event listener for the fullscreen button to toggle fullscreen mode.
+// Description: Carousel for images/videos in Leaflet popups with autoplay and fullscreen support
 
 // carousel for multiple photos, with controls
 function displayMultiplePhotos(photoSet, carouselId) {
@@ -51,19 +49,22 @@ function displayMultiplePhotos(photoSet, carouselId) {
 
   const showMedia = (newIndex) => {
     // turn off previous photo or video
-    mediaElements[index].style.display = "none";
-    if (mediaElements[index].tagName === "VIDEO") mediaElements[index].pause();
+    const current = mediaElements[index];
+    current.style.display = "none";
+    if (current.tagName === "VIDEO") current.pause();
 
     // turn on new photo or video
     index = newIndex;
-    mediaElements[index].style.display = "block";
-    clearInterval(intervalId); // clear any previous interval
+    const next = mediaElements[index];
+    next.style.display = "block";
+
+    // clear any previous interval
+    clearInterval(intervalId);
 
     // if video, autoplay, restart interval on video end
-    const currentMedia = mediaElements[index];
-    if (currentMedia.tagName === "VIDEO") {
-      currentMedia.play();
-      currentMedia.onended = () => isPlaying && startCarousel();
+    if (next.tagName === "VIDEO") {
+      next.play();
+      next.onended = () => isPlaying && startCarousel();
     } else if (isPlaying) {
       // if image, restart interval
       startCarousel();
@@ -100,7 +101,7 @@ function displayMultiplePhotos(photoSet, carouselId) {
   };
 
   // toggle play/pause state
-  const togglePlayPause = (e) => {
+  const togglePlayPause = (event) => {
     // prevent event from propagating to parent elements
     // (or else hitting pause closes the popup)
     event.stopPropagation();
@@ -131,36 +132,31 @@ function displayMultiplePhotos(photoSet, carouselId) {
 document.addEventListener("click", (event) => {
   const fullscreenButton = document.querySelector("#fullscreen-button");
   const carouselContainer = document.querySelector(".carousel-container"); // entire carousel container
-  // check if clicked element is fullscreen button
-  if (event.target.closest("#fullscreen-button")) {
-    if (document.fullscreenElement) {
-      // if in fullscreen, exit fullscreen, change button to enter fullscreen
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen(); // Safari
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen(); // IE/Edge
-      }
-      carouselContainer.classList.remove("fullscreen");
-      fullscreenButton.innerHTML = `
+
+  // if not fullscreen button, exit early (safeguard)
+  if (!event.target.closest("#fullscreen-button")) return;
+
+  // if in fullscreen, exit fullscreen, change button to enter fullscreen
+  if (document.fullscreenElement) {
+    document.exitFullscreen?.();
+    document.webkitExitFullscreen?.(); // Safari
+    document.msExitFullscreen?.(); // IE/Edge
+
+    carouselContainer.classList.remove("fullscreen");
+    fullscreenButton.innerHTML = `
         <i class="fas fa-circle fa-stack-2x"></i>
         <i class="fas fa-expand fa-stack-1x fa-inverse"></i>
       `;
-    } else {
-      // if not, enter fullscreen, change button to exit fullscreen
-      if (carouselContainer.requestFullscreen) {
-        carouselContainer.requestFullscreen();
-      } else if (carouselContainer.webkitRequestFullscreen) {
-        carouselContainer.webkitRequestFullscreen(); // Safari
-      } else if (carouselContainer.msRequestFullscreen) {
-        carouselContainer.msRequestFullscreen(); // IE/Edge
-      }
-      carouselContainer.classList.add("fullscreen");
-      fullscreenButton.innerHTML = `
+    // if not, enter fullscreen, change button to exit fullscreen
+  } else {
+    carouselContainer.requestFullscreen?.();
+    carouselContainer.webkitRequestFullscreen?.(); // Safari
+    carouselContainer.msRequestFullscreen?.(); // IE/Edge
+
+    carouselContainer.classList.add("fullscreen");
+    fullscreenButton.innerHTML = `
         <i class="fas fa-circle fa-stack-2x"></i>
         <i class="fas fa-compress fa-stack-1x fa-inverse"></i>
       `;
-    }
   }
 });
