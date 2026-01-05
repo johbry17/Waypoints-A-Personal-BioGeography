@@ -345,6 +345,8 @@ function addAboutButton(map) {
 function openModal() {
   // display About modal, add route legend styles
   document.getElementById("aboutModal").style.display = "flex";
+  // set modal to open at top
+  document.querySelector("#aboutModal .modal-content").scrollTop = 0;
 }
 
 // closes About modal with the 'X' button
