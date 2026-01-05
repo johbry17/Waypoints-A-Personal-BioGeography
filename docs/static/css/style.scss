@@ -468,6 +468,21 @@ h4 {
   }
 }
 
+// panzoom styling
+// hide inactive photos/videos without breaking layout
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute; // keep images stacked for Panzoom
+  inset: 0; // fill parent container
+}
+
+// ensure carousel-photo can pan/zoom
+.carousel-photo {
+  touch-action: none;
+  cursor: grab !important;
+}
+
 /////////////////////////////////////////////////////////////////////////////
 
 // zoom button in popups

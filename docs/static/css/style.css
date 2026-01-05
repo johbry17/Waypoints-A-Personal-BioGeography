@@ -343,6 +343,18 @@ h4 {
   object-position: center;
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-photo {
+  touch-action: none;
+  cursor: grab !important;
+}
+
 .zoom-button {
   background-color: #008a51;
   color: white;

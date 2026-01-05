@@ -164,6 +164,7 @@ function initializeMainMap(baseMaps, markers, originalBounds) {
   });
   setupCustomPanes();
   mainMap.fitBounds(originalBounds);
+  bindCarouselPanzoomResets(mainMap);
 }
 
 // custom panes for stacking overlays
