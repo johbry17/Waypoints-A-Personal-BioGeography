@@ -5,7 +5,6 @@
 
 // photo carousel
 // fullscreen button event listener
-// reset panzoom on popup open
 // reset panzoom on fullscreen toggle
 
 // carousel for multiple photos, with controls
@@ -26,8 +25,35 @@ function displayMultiplePhotos(photoSet, carouselId) {
   let intervalId = null;
   let isPlaying = true;
 
+  /* ---------- panzoom logic ---------- */
+
+  // panzoom - attach / detach to images as they are shown/hidden
+  const attachPanzoom = (img) => {
+    if (img.panzoom) return;
+
+    const panzoom = Panzoom(img, {
+      maxScale: 4,
+      minScale: 1,
+      contain: "outside",
+    });
+    img.panzoom = panzoom;
+    // enable zooming with mouse wheel
+    img._wheel = panzoom.zoomWithWheel;
+    img.parentElement.addEventListener("wheel", img._wheel, { passive: false });
+  };
+
+  const detachPanzoom = (img) => {
+    if (!img.panzoom) return;
+    img.parentElement.removeEventListener("wheel", img._wheel);
+    img.panzoom.destroy();
+    delete img.panzoom;
+    delete img._wheel;
+  };
+
+  /* ---------- setup photo/video media elements ---------- */
+
   // create photo or video element and set attributes
-  const createMediaElement = (src, i) => {
+  const createMedia = (src, i) => {
     // create video or image element based on file type
     const isVideo = src.endsWith(".mp4");
     const el = document.createElement(isVideo ? "video" : "img");
@@ -38,7 +64,10 @@ function displayMultiplePhotos(photoSet, carouselId) {
     if (i !== 0) el.classList.add("hidden");
 
     // conditional attributes for images vs videos
-    if (!isVideo) {
+    if (isVideo) {
+      // add controls, autoplay, mute to videos
+      el.controls = el.autoplay = el.muted = true;
+    } else {
       // lazy loading for images
       // lazy loading only works for images, not videos
       el.loading = "lazy";
@@ -48,11 +77,6 @@ function displayMultiplePhotos(photoSet, carouselId) {
           passive: false,
         });
       });
-      // add controls, autoplay, mute to videos
-    } else {
-      el.controls = true;
-      el.autoplay = true;
-      el.muted = true;
     }
 
     // add photo or video to carousel
@@ -61,58 +85,24 @@ function displayMultiplePhotos(photoSet, carouselId) {
   };
 
   // add photos and videos to carousel
-  const mediaElements = photoSet.map(createMediaElement);
+  const media = photoSet.map(createMedia);
 
-  // initialize panzoom on the first image
-  const first = mediaElements[0];
-  if (first.tagName === "IMG") {
-    first.panzoom?.destroy?.(); // destroy just in case
-    first.panzoom = Panzoom(first, {
-      maxScale: 4,
-      minScale: 1,
-      contain: "outside",
-    });
-    // enable zooming with mouse wheel
-    first.parentElement.addEventListener("wheel", first.panzoom.zoomWithWheel, {
-      passive: false,
-    });
-  }
+  /* ---------- playback ---------- */
 
   // slideshow/hide logic
   const showMedia = (newIndex) => {
     // declare currently shown and next media elements
-    const current = mediaElements[index];
-    const next = mediaElements[newIndex];
+    const current = media[index];
+    const next = media[newIndex];
 
-    // turn off current photo or video (and pause if video)
+    // turn off current video (pause) or image (destroy panzoom)
     current.classList.add("hidden");
     if (current.tagName === "VIDEO") current.pause();
-
-    // destroy panzoom on current image
-    if (current.tagName === "IMG" && current.panzoom) {
-      current.panzoom.destroy();
-      delete current.panzoom;
-    }
+    if (current.tagName === "IMG") detachPanzoom(current);
 
     // turn on next photo or video
     index = newIndex;
     next.classList.remove("hidden");
-
-    // create panzoom on next image after layout stabilizes
-    if (next.tagName === "IMG") {
-      requestAnimationFrame(() => {
-        const panzoom = Panzoom(next, {
-          maxScale: 4,
-          minScale: 1,
-          contain: "outside",
-        });
-        next.panzoom = panzoom;
-        // enable zooming with mouse wheel
-        next.parentElement.addEventListener("wheel", panzoom.zoomWithWheel, {
-          passive: false,
-        });
-      });
-    }
 
     // clear any previous interval
     clearInterval(intervalId);
@@ -121,18 +111,19 @@ function displayMultiplePhotos(photoSet, carouselId) {
     if (next.tagName === "VIDEO") {
       next.play();
       next.onended = () => isPlaying && startCarousel();
-    } else if (isPlaying) {
-      // if image, restart interval
-      startCarousel();
+    } else {
+      // else img, add panzoom (after layout stabilizes) and restart interval
+      requestAnimationFrame(() => attachPanzoom(next));
+      isPlaying && startCarousel();
     }
   };
 
-  // increment index, show next photo or video
+  // increment / decrement index, show next / previous photo or video
   const showNext = () => showMedia((index + 1) % photoSet.length);
-
-  // decrement index, show previous photo or video
   const showPrev = () =>
     showMedia((index - 1 + photoSet.length) % photoSet.length);
+
+  /* ---------- controls ---------- */
 
   // update play/pause button icon based on playing state
   const updatePlayPauseBtn = (playing) => {
@@ -165,7 +156,8 @@ function displayMultiplePhotos(photoSet, carouselId) {
     isPlaying = !isPlaying;
   };
 
-  // add event listeners to buttons
+  /* ---------- event listeners ---------- */
+
   prevBtn.addEventListener("click", () => {
     stopCarousel();
     showPrev();
@@ -177,6 +169,13 @@ function displayMultiplePhotos(photoSet, carouselId) {
   });
 
   playPauseBtn.addEventListener("click", togglePlayPause);
+
+  /* ---------- initialize ---------- */
+
+  // add panzoom to first image if applicable
+  if (media[0].tagName === "IMG") {
+    requestAnimationFrame(() => attachPanzoom(media[0]));
+  }
 
   // initial play
   startCarousel();
@@ -219,68 +218,30 @@ document.addEventListener("click", (event) => {
 
 //////////////////////////////////////////////////////////
 
-// reset and re-initialize panzoom on popup open
-function bindCarouselPanzoomResets(mainMap) {
-  // wait until mainMap exists (safety check)
-  if (!mainMap) return;
-
-  // on popup open event
-  mainMap.on("popupopen", (e) => {
-    // get all images in popup
-    const imgs = e.popup.getElement()?.querySelectorAll(".carousel-photo");
-
-    // if no images, exit
-    // not all popups have images
-    if (!imgs) return;
-
-    // destroy previous panzoom if any
-    imgs.forEach((img) => {
-      if (img.panzoom) {
-        img.panzoom.destroy();
-        delete img.panzoom;
-      }
-
-      // recreate panzoom after layout stabilizes
-      requestAnimationFrame(() => {
-        const panzoom = Panzoom(img, {
-          maxScale: 4,
-          minScale: 1,
-          contain: "outside",
-        });
-        img.panzoom = panzoom;
-        // enable zooming with mouse wheel
-        img.parentElement.addEventListener("wheel", panzoom.zoomWithWheel, {
-          passive: false,
-        });
-      });
-    });
-  });
-}
-
-//////////////////////////////////////////////////////////
-
 // reset panzoom on fullscreen toggle
 document.addEventListener("fullscreenchange", () => {
-  // for each image with panzoom
-  document.querySelectorAll(".carousel-photo").forEach((img) => {
-    // if no panzoom, exit
-    if (!img.panzoom) return;
+  // get currently visible image
+  const img = document.querySelector(".carousel-photo:not(.hidden)");
+  if (!img) return;
 
-    // destroy panzoom and...
+  // destroy panzoom
+  if (img.panzoom) {
+    img.parentElement.removeEventListener("wheel", img._wheel);
     img.panzoom.destroy();
     delete img.panzoom;
+    delete img._wheel;
+  }
 
-    // ...recreate panzoom to reset properly (after layout stabilizes)
-    requestAnimationFrame(() => {
-      const panzoom = Panzoom(img, {
-        maxScale: 4,
-        minScale: 1,
-        contain: "outside",
-      });
-      img.panzoom = panzoom;
-      img.parentElement.addEventListener("wheel", panzoom.zoomWithWheel, {
-        passive: false,
-      });
+  // recreate panzoom to reset properly (after layout stabilizes)
+  requestAnimationFrame(() => {
+    const panzoom = Panzoom(img, {
+      maxScale: 4,
+      minScale: 1,
+      contain: "outside",
     });
+    img.panzoom = panzoom;
+    // enable zooming with mouse wheel
+    img._wheel = panzoom.zoomWithWheel;
+    img.parentElement.addEventListener("wheel", img._wheel, { passive: false });
   });
 });
