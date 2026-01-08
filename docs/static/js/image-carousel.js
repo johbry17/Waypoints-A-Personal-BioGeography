@@ -29,7 +29,9 @@ function displayMultiplePhotos(photoSet, carouselId) {
 
   // panzoom - attach / detach to images as they are shown/hidden
   const attachPanzoom = (img) => {
-    if (img.panzoom) return;
+    if (!img || img.panzoom) return; // not an image or already attached
+    if (!img.isConnected) return; // in the DOM
+    if (img.offsetParent === null) return; // hidden or not laid out
 
     const panzoom = Panzoom(img, {
       maxScale: 4,
@@ -111,7 +113,7 @@ function displayMultiplePhotos(photoSet, carouselId) {
     if (next.tagName === "VIDEO") {
       next.play();
       next.onended = () => isPlaying && startCarousel();
-    } else {
+    } else if (next && next.tagName === "IMG") {
       // else img, add panzoom (after layout stabilizes) and restart interval
       requestAnimationFrame(() => attachPanzoom(next));
       isPlaying && startCarousel();
