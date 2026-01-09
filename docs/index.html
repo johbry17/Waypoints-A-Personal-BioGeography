@@ -47,30 +47,26 @@
     <!-- favicon -->
     <link rel="icon" href="static/images/favicon.ico" type="image/ico" />
     <!-- Leaflet CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/> -->
+    <link rel="stylesheet" href="static/vendor/css/leaflet.css" />
     <!-- Leaflet marker cluster CSS -->
-    <link rel="stylesheet" href="static/css/MarkerCluster.css" />
-    <link rel="stylesheet" href="static/css/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="static/vendor/css/MarkerCluster.css" />
+    <link rel="stylesheet" href="static/vendor/css/MarkerCluster.Default.css" />
     <!-- Font Awesome Icons -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/> -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      href="static/vendor/fontawesome.v6.7.2/css/all.min.css"
     />
     <!-- Material Design Icons -->
+    <!-- <link href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css" rel="stylesheet"/> -->
     <link
-      href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css"
       rel="stylesheet"
+      href="static/vendor/materialdesign.v6.5.95/css/materialdesignicons.min.css"
     />
     <!-- Shepherd.js CSS (v7.1.2) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/7.1.2/css/shepherd.min.css"
-    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/7.1.2/css/shepherd.min.css"/> -->
+    <link rel="stylesheet" href="static/vendor/css/shepherd.min.css" />
     <!-- main CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css" />
   </head>
@@ -453,23 +449,24 @@
     </div>
 
     <!-- Leaflet -->
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
+    <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> -->
+    <script src="static/vendor/js/leaflet.v1.9.4.js"></script>
     <!-- Leaflet marker cluster -->
-    <script src="static/js/leaflet.markercluster.js"></script>
+    <script src="static/vendor/js/leaflet.markercluster.js"></script>
     <!-- D3 -->
     <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
     <!-- ESRI plugin for base layers -->
-    <script src="https://cdn.jsdelivr.net/npm/esri-leaflet@2.3.3/dist/esri-leaflet.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/esri-leaflet@2.3.3/dist/esri-leaflet.js"></script> -->
+    <script src="static/vendor/js/esri-leaflet.v2.3.3.js"></script>
     <!-- PapaParse for CSV parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script> -->
+    <script src="static/vendor/js/papaparse.v5.3.2.min.js"></script>
     <!-- Shepherd.js for guided tour -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/7.1.2/js/shepherd.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/7.1.2/js/shepherd.min.js"></script> -->
+    <script src="static/vendor/js/shepherd.v7.1.2.min.js"></script>
     <!-- Panzoom for image pinch/zoom in carousel -->
-    <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
+    <!-- <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script> -->
+    <script src="static/vendor/js/panzoom.v4.6.1.min.js"></script>
     <!-- style settings for overlays -->
     <script
       type="text/javascript"
@@ -485,3 +482,31 @@
     <script type="text/javascript" src="static/js/app.js"></script>
   </body>
 </html>
+
+<!-- <div style="display: flex; flex-wrap: wrap; gap: 2em; align-items: center;">
+  <div>
+    <strong>Activity Icons</strong><br>
+    <i class="fas fa-skiing"></i> skiing<br>
+    <i class="fas fa-swimmer"></i> snorkeling<br>
+    <i class="mdi mdi-kayaking"></i> whitewater rafting<br>
+    <i class="fas fa-hiking"></i> hiking<br>
+    <i class="fas fa-parachute-box"></i> paragliding<br>
+    <i class="mdi mdi-kayaking"></i> kayaking<br>
+    <i class="fas fa-life-ring"></i> tubing<br>
+    <i class="mdi mdi-meditation"></i> meditation<br>
+    <i class="fas fa-paw"></i> safari<br>
+    <i class="mdi mdi-airplane"></i> scenic flight<br>
+  </div>
+  <div>
+    <strong>Location Icons</strong><br>
+    <i class="fas fa-mountain"></i> mountain<br>
+    <i class="fas fa-umbrella-beach"></i> beach<br>
+    <i class="fas fa-city"></i> city<br>
+    <i class="fa-solid fa-house-chimney-window"></i> town<br>
+    <i class="fas fa-tractor"></i> rural<br>
+    <i class="fas fa-sun"></i> desert<br>
+    <i class="fas fa-leaf"></i> jungle<br>
+    <i class="fa-solid fa-volcano"></i> volcano<br>
+    <i class="fas fa-hot-tub"></i> hot springs<br>
+  </div>
+</div> -->
