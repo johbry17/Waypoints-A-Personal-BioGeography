@@ -1,10 +1,10 @@
 # Waypoints: A Personal BioGeography
  
-![GitHub last commit](https://img.shields.io/github/last-commit/johbry17/waypoints-a-personal-biogeography)
+![GitHub last commit](https://img.shields.io/github/last-commit/johbry17/waypoints)
 
 *Mapping memories: An interactive travelogue handcrafted with Leaflet.js, Python, and open-source geospatial resources.*
 
-🌍 [Live Site](https://johbry17.github.io/Waypoints-A-Personal-BioGeography/)
+🌍 [Live Site](https://johbry17.github.io/Waypoints/)
 
 > ⚠️ This project is under active development.
 
@@ -52,7 +52,7 @@ At its core is a flexible geospatial engine powered by GeoJSON and open-source A
 
 ## Usage
 
-The project is live at [johbry17.github.io/Waypoints-A-Personal-BioGeography.](https://johbry17.github.io/Waypoints-A-Personal-BioGeography/).
+The project is live at [johbry17.github.io/Waypoints](https://johbry17.github.io/Waypoints/).
 
 To explore:
 1. Navigate the map to explore custom markers
