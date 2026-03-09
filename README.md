@@ -107,7 +107,7 @@ Thanks to everyone who’s shared this beautiful world with me. And to the open-
 ## Author
 
 Bryan Johns  
-Last updated: <!-- START_DATE -->January 2026<!-- END_DATE -->  
+Last updated: <!-- START_DATE -->March 2026<!-- END_DATE -->  
 [bryan.johns@informedwanderer.com](mailto:bryan.johns@informedwanderer.com) | [LinkedIn](https://www.linkedin.com/in/b-johns/) | [GitHub](https://github.com/johbry17) | [Portfolio](https://informedwanderer.com)  
 — Fluent in Data. Fluent in Human.
 
