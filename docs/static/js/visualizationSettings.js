@@ -35,6 +35,7 @@ const activityIcons = {
   meditation: "mdi mdi-meditation",
   safari: "fas fa-paw",
   "scenic flight": "mdi mdi-airplane",
+  ziplining: "fas fa-tree",
 };
 
 // icon mapping for location overlay
