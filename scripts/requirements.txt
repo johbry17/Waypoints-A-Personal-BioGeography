@@ -1,0 +1,8 @@
+gspread
+oauth2client
+gspread-dataframe
+pandas
+geopy
+geographiclib
+openrouteservice
+geojson
