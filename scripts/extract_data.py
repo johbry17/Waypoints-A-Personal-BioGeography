@@ -27,6 +27,8 @@ except Exception:
 from geopy.geocoders import Nominatim
 import openrouteservice
 
+from manual_locations import LOCATIONS
+
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS_DATA = ROOT / "docs" / "resources" / "data"
@@ -410,10 +412,9 @@ def main(argv=None):
 
     # routes
     routes_sheet = spreadsheet.worksheet("Routes") if spreadsheet else None
-    # manual locations map (empty here; copy from notebook if desired)
-    manual_locations = {}
+    # manual locations source: scripts/manual_locations.py
     if routes_sheet:
-        process_routes(routes_sheet, activity_df, upload=not args.no_upload, manual_locations=manual_locations, api_keys=api_keys)
+        process_routes(routes_sheet, activity_df, upload=not args.no_upload, manual_locations=LOCATIONS, api_keys=api_keys)
 
     logging.info("Done")
 
