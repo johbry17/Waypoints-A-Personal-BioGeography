@@ -57,6 +57,7 @@ def auth_google_sheets(creds_path: Path, key: str):
     if gspread is None:
         logging.warning("gspread not installed or failed to import")
         return None
+    # OAuth scopes required to read/write Google Sheets
     scope = [
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive",
@@ -86,7 +87,7 @@ def process_overview(sheet):
     overview_data = sheet.get_all_records()
     for entry in overview_data:
         raw_photos = entry.get("photos", "")
-        entry["photos"] = [p.strip('[]"\' ') for p in parse_photo_list(raw_photos)]
+        entry["photos"] = [p.strip("[]\"' ") for p in parse_photo_list(raw_photos)]
         raw_zoom = entry.get("zoomBounds", "")
         entry["zoomBounds"] = parse_zoom_bounds(raw_zoom)
 
@@ -149,9 +150,9 @@ def format_photos_column(series):
             try:
                 parsed = json.loads(v)
                 if isinstance(parsed, list):
-                    return [str(x).strip(' "\'[]') for x in parsed]
+                    return [str(x).strip(" \"'[]") for x in parsed]
             except Exception:
-                return [x.strip(' "\'[]') for x in v.split(",")]
+                return [x.strip(" \"'[]") for x in v.split(",")]
         return []
 
     return series.apply(_fmt)
@@ -246,7 +247,9 @@ def process_location(sheet, upload=True, geolocator=None):
 def calculate_great_circle(start_coords, end_coords, num_points=100):
     # start_coords and end_coords are (lat, lon)
     geod = Geodesic.WGS84
-    line = geod.InverseLine(start_coords[0], start_coords[1], end_coords[0], end_coords[1])
+    line = geod.InverseLine(
+        start_coords[0], start_coords[1], end_coords[0], end_coords[1]
+    )
     points = []
     for i in range(num_points + 1):
         s = i * line.s13 / num_points
@@ -262,7 +265,10 @@ def calculate_great_circle(start_coords, end_coords, num_points=100):
 
 
 def save_great_circle_as_geojson(route_coords, output_file):
-    feature = geojson.Feature(geometry=geojson.LineString(route_coords), properties={"transport_mode": "plane"})
+    feature = geojson.Feature(
+        geometry=geojson.LineString(route_coords),
+        properties={"transport_mode": "plane"},
+    )
     fc = geojson.FeatureCollection([feature])
     with open(output_file, "w", encoding="utf8") as f:
         geojson.dump(fc, f)
@@ -285,15 +291,21 @@ def geocode_route_location_ors(ors_client, cache, location):
 
 def fetch_route_ors(ors_client, start_coords, end_coords, transport_mode):
     try:
-        profile = {"auto": "driving-car", "train": "driving-car"}.get(transport_mode, "driving-car")
-        r = ors_client.directions(coordinates=[start_coords, end_coords], profile=profile, format="geojson")
+        profile = {"auto": "driving-car", "train": "driving-car"}.get(
+            transport_mode, "driving-car"
+        )
+        r = ors_client.directions(
+            coordinates=[start_coords, end_coords], profile=profile, format="geojson"
+        )
         return r
     except Exception as e:
         logging.warning("ORS directions failed: %s", e)
     return None
 
 
-def process_routes(sheet, activity_df, upload=True, manual_locations=None, api_keys=None):
+def process_routes(
+    sheet, activity_df, upload=True, manual_locations=None, api_keys=None
+):
     logging.info("Processing Routes sheet...")
     df = pd.DataFrame(sheet.get_all_records())
     if "route_id" not in df.columns:
@@ -302,8 +314,17 @@ def process_routes(sheet, activity_df, upload=True, manual_locations=None, api_k
 
     # add hikes from activities that have a route_path
     for _, a in activity_df.iterrows():
-        if a.get("activity_type") == "hiking" and a.get("route_path") and a.get("route_path") not in df.get("filename", []):
-            new = {"start_location": a.get("name"), "end_location": a.get("name"), "transport_mode": "hike", "filename": a.get("route_path")}
+        if (
+            a.get("activity_type") == "hiking"
+            and a.get("route_path")
+            and a.get("route_path") not in df.get("filename", [])
+        ):
+            new = {
+                "start_location": a.get("name"),
+                "end_location": a.get("name"),
+                "transport_mode": "hike",
+                "filename": a.get("route_path"),
+            }
             df = pd.concat([df, pd.DataFrame([new])], ignore_index=True)
 
     CACHE_ROUTES = load_cache(CACHE_GEOCODE_ROUTES)
@@ -346,7 +367,12 @@ def process_routes(sheet, activity_df, upload=True, manual_locations=None, api_k
             df.at[idx, "filename"] = fname
         elif mode in ("auto", "train") and start_coords and end_coords and ors_client:
             # ORS expects (lon, lat)
-            r = fetch_route_ors(ors_client, (start_coords[0], start_coords[1]), (end_coords[0], end_coords[1]), mode)
+            r = fetch_route_ors(
+                ors_client,
+                (start_coords[0], start_coords[1]),
+                (end_coords[0], end_coords[1]),
+                mode,
+            )
             if r:
                 fname = f"{row['route_id']}.geojson"
                 DOCS_GEOJSON.mkdir(parents=True, exist_ok=True)
@@ -371,8 +397,14 @@ def process_routes(sheet, activity_df, upload=True, manual_locations=None, api_k
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--no-upload", action="store_true", help="Do not upload updates back to Google Sheets")
-    parser.add_argument("--sheet-key", help="Google Sheets key to open (overrides api_keys.json)" )
+    parser.add_argument(
+        "--no-upload",
+        action="store_true",
+        help="Do not upload updates back to Google Sheets",
+    )
+    parser.add_argument(
+        "--sheet-key", help="Google Sheets key to open (overrides api_keys.json)"
+    )
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args(argv)
 
@@ -414,7 +446,13 @@ def main(argv=None):
     routes_sheet = spreadsheet.worksheet("Routes") if spreadsheet else None
     # manual locations source: scripts/manual_locations.py
     if routes_sheet:
-        process_routes(routes_sheet, activity_df, upload=not args.no_upload, manual_locations=LOCATIONS, api_keys=api_keys)
+        process_routes(
+            routes_sheet,
+            activity_df,
+            upload=not args.no_upload,
+            manual_locations=LOCATIONS,
+            api_keys=api_keys,
+        )
 
     logging.info("Done")
 
