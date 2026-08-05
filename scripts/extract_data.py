@@ -228,7 +228,7 @@ def process_activity(sheet, upload=True, geolocator=None):
     # load cache of lat/lng and initialize geolocator if not provided (which is standard operating procedure)
     cache = load_cache(CACHE_GEOCODE)
     if geolocator is None:
-        # Nominatim likes custom user agents
+        # Nominatim requires a descriptive user_agent per its usage policy
         geolocator = Nominatim(user_agent="waypoints_extract", timeout=10)
 
     # loop through each row and geocode missing lat/lng values
@@ -261,11 +261,9 @@ def process_activity(sheet, upload=True, geolocator=None):
     if upload and gspread is not None:
         logging.info("Uploading Activity back to Google Sheets")
         df_upload = df.fillna("")  # for Google Sheets compatibility
-        # convert df to lists of lists (values = [header] + rows) for gspread update
-        values = [df_upload.columns.values.tolist()] + df_upload.values.tolist()
         try:
-            sheet.clear()
-            sheet.update(values=values, range_name="A1")  # upload new data
+            # upload the updated activity DataFrame back to Google Sheets
+            set_with_dataframe(sheet, df_upload)
             logging.info("Activity sheet updated")
         except Exception as e:
             logging.warning("Failed to upload Activity sheet: %s", e)
@@ -288,7 +286,7 @@ def process_location(sheet, upload=True, geolocator=None):
     # load cache of lat/lng and initialize geolocator if not provided (which is standard operating procedure)
     cache = load_cache(CACHE_GEOCODE)
     if geolocator is None:
-        # Nominatim likes custom user agents
+        # Nominatim requires a descriptive user_agent per its usage policy
         geolocator = Nominatim(user_agent="waypoints_extract", timeout=10)
 
     # loop through each row and geocode missing lat/lng values
@@ -321,11 +319,9 @@ def process_location(sheet, upload=True, geolocator=None):
     if upload and gspread is not None:
         logging.info("Uploading Location back to Google Sheets")
         df_upload = df.fillna("")  # for Google Sheets compatibility
-        # convert df to lists of lists (values = [header] + rows) for g
-        values = [df_upload.columns.values.tolist()] + df_upload.values.tolist()
         try:
-            sheet.clear()
-            sheet.update(values=values, range_name="A1")  # upload new data
+            # upload the updated location DataFrame back to Google Sheets
+            set_with_dataframe(sheet, df_upload)
             logging.info("Location sheet updated")
         except Exception as e:
             logging.warning("Failed to upload Location sheet: %s", e)
