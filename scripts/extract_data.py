@@ -270,6 +270,9 @@ def process_activity(sheet, upload=True, geolocator=None):
         except Exception as e:
             logging.warning("Failed to upload Activity sheet: %s", e)
 
+    # return the processed DataFrame for use in routes processing
+    return df
+
 
 def process_location(sheet, upload=True, geolocator=None):
     # process the Location sheet, add UUIDs, geocode missing lat/lng,
@@ -326,6 +329,10 @@ def process_location(sheet, upload=True, geolocator=None):
             logging.info("Location sheet updated")
         except Exception as e:
             logging.warning("Failed to upload Location sheet: %s", e)
+
+    # return the processed DataFrame, 
+    # in theory for use in other processing, really for consistency with process_activity
+    return df
 
 
 ###############################################################################
@@ -548,6 +555,10 @@ def process_routes(
         except Exception as e:
             logging.warning("Failed to upload routes: %s", e)
 
+    # return the processed DataFrame,
+    # in theory for use in other processing, really for consistency with process_activity
+    return df
+
 
 ###############################################################################
 # Main
@@ -595,8 +606,7 @@ def main(argv=None):
     # process Activity (save activity_df for later use in routes)
     activity_sheet = spreadsheet.worksheet("Activity") if spreadsheet else None
     if activity_sheet:
-        process_activity(activity_sheet, upload=not args.no_upload)
-        activity_df = pd.DataFrame(activity_sheet.get_all_records())
+        activity_df = process_activity(activity_sheet, upload=not args.no_upload)
     else:
         # guard clause: if no activity sheet, create an empty DataFrame to avoid errors later
         activity_df = pd.DataFrame()
