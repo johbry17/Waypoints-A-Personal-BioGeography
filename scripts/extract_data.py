@@ -50,6 +50,7 @@ CACHE_GEOCODE_ROUTES = ROOT / "scripts" / "geocode_cache_routes.json"
 
 
 def setup_logging(level=logging.INFO):
+    """Configure root logger with a standard timestamp format."""
     # format: timestamp, log level, message
     logging.basicConfig(
         level=level,
@@ -59,6 +60,10 @@ def setup_logging(level=logging.INFO):
 
 
 def load_api_keys(path: Path = Path("api_keys.json")):
+    """Load and return API keys from *path*.
+
+    Logs a warning and returns an empty dict if the file is absent.
+    """
     # load API keys from a JSON file; return as a dictionary
     if not path.exists():
         logging.warning("api_keys.json not found — some features may be disabled")
@@ -68,8 +73,10 @@ def load_api_keys(path: Path = Path("api_keys.json")):
 
 
 def ensure_uuid_series(series):
-    # preserve existing IDs while generating UUIDs for new rows;
-    # allows repeated runs of the script without changing object identities
+    """Return a list mirroring *series* with blank/NaN entries replaced by new UUIDs.
+
+    Existing IDs are preserved so repeated script runs do not regenerate identifiers.
+    """
     vals = []
     for v in series:
         # missing or empty values are replaced with a new UUID
@@ -82,8 +89,8 @@ def ensure_uuid_series(series):
 
 
 def load_cache(path: Path):
-    # load persistent cache to avoid repeated geocoding requests across script runs;
-    # return an empty dictionary if not
+    """Load a JSON cache from *path*, returning an empty dict if absent or unreadable."""
+    # load persistent cache to avoid repeated geocoding requests across script runs
     if path.exists():
         try:
             with open(path) as f:
@@ -95,6 +102,7 @@ def load_cache(path: Path):
 
 
 def save_cache(data, path: Path):
+    """Persist *data* to *path* as JSON, logging a warning on failure."""
     # save the persistent cache to avoid repeated geocoding requests across script runs
     try:
         with open(path, "w") as f:
@@ -110,6 +118,10 @@ def save_cache(data, path: Path):
 
 
 def auth_google_sheets(creds_path: Path, key: str):
+    """Authenticate with Google Sheets and return the spreadsheet for *key*.
+
+    Returns None if gspread is unavailable.
+    """
     if gspread is None:
         # gspread not installed; cannot authenticate; skip Google Sheets operations
         logging.warning("gspread not installed or failed to import")
@@ -131,14 +143,14 @@ def auth_google_sheets(creds_path: Path, key: str):
 
 
 def parse_photo_list(value):
-    # convert a string of photo filenames into a list of cleaned strings
+    """Split a comma-separated photo string into a list of stripped filenames."""
     if isinstance(value, str) and value.strip():
         return [item.strip() for item in value.split(",")]
     return []
 
 
 def parse_zoom_bounds(value):
-    # convert a JSON string representing zoom bounds into a Python dictionary
+    """Parse a JSON string into a zoom-bounds dict, returning None if absent or invalid."""
     if isinstance(value, str) and value.strip():
         try:
             return json.loads(value)
@@ -148,7 +160,7 @@ def parse_zoom_bounds(value):
 
 
 def process_overview(sheet):
-    # process the Overview sheet, convert photo and zoomBounds fields, and save as JSON
+    """Read the Overview worksheet, clean photo and zoomBounds fields, and write overview.json."""
     logging.info("Processing Overview sheet...")
     overview_data = sheet.get_all_records()
     # convert photo and zoomBounds strings stored in Google Sheets into proper Python lists/dicts
@@ -159,7 +171,7 @@ def process_overview(sheet):
         entry["zoomBounds"] = parse_zoom_bounds(raw_zoom)
 
     # save the processed overview data as a JSON file in the designated output directory
-    DOCS_DATA.mkdir(parents=True, exist_ok=True)  # ensure the output directory exists
+    DOCS_DATA.mkdir(parents=True, exist_ok=True)
     out = DOCS_DATA / "overview.json"
     with open(out, "w", encoding="utf8") as fh:
         # indent=2 for readability, ensure_ascii=False to preserve non-ASCII characters
@@ -173,7 +185,12 @@ def process_overview(sheet):
 
 
 def geocode_with_nominatim(geolocator, cache, location_name, sleep_time=1):
-    # geocode a location name, with caching to avoid repeated requests
+    """Return (lat, lng) for *location_name* via Nominatim with in-memory caching
+    to avoid repeated requests.
+
+    Sleeps *sleep_time* seconds after each live request to respect rate limits.
+    Returns (None, None) if geocoding fails.
+    """
     if not location_name:
         # guard clause
         return None, None
@@ -198,7 +215,8 @@ def geocode_with_nominatim(geolocator, cache, location_name, sleep_time=1):
 
 
 def format_photos_column(series):
-    # convert a pandas Series of photo strings into lists of cleaned photo filenames
+    """Parse a Series of raw photo strings into lists of clean filenames."""
+
     def _fmt(v):
         if isinstance(v, str) and v.strip():
             try:
@@ -216,22 +234,24 @@ def format_photos_column(series):
 
 
 def process_activity(sheet, upload=True, geolocator=None):
-    # process the Activity sheet, add UUIDs, geocode missing lat/lng,
-    # format photos, and save as JSON
+    """Load the Activity worksheet, assign UUIDs, geocode missing coordinates, format photos, and write activity.json.
+
+    Optionally uploads the enriched DataFrame back to Google Sheets when *upload* is True.
+    Returns the processed DataFrame for use by process_routes.
+    """
     logging.info("Processing Activity sheet...")
     records = sheet.get_all_records()
     df = pd.DataFrame(records)
-    if "activity_id" not in df.columns:  # defensive, this should never happen
+    if "activity_id" not in df.columns:  # overly defensive for a personal project
         df["activity_id"] = ""
     df["activity_id"] = ensure_uuid_series(df["activity_id"])  # add IDs if missing
 
-    # load cache of lat/lng and initialize geolocator if not provided (which is standard operating procedure)
+    # load cache of lat/lng and initialize geolocator if not provided
     cache = load_cache(CACHE_GEOCODE)
     if geolocator is None:
         # Nominatim requires a descriptive user_agent per its usage policy
         geolocator = Nominatim(user_agent="waypoints_extract", timeout=10)
 
-    # loop through each row and geocode missing lat/lng values
     for idx, row in df.iterrows():
         lat = row.get("lat")
         lng = row.get("lng")
@@ -240,29 +260,25 @@ def process_activity(sheet, upload=True, geolocator=None):
             location_name = row.get("location")
             logging.info("Geocoding Activity %s (%s)", row.get("name"), location_name)
             glat, glng = geocode_with_nominatim(geolocator, cache, location_name)
-            # update the df with the geocoded lat/lng values
             df.at[idx, "lat"] = glat
             df.at[idx, "lng"] = glng
 
-    # write the cache file with any new geocoded locations
     save_cache(cache, CACHE_GEOCODE)
 
     # format the photos column to ensure it's a list of cleaned photo filenames for web display
     df["photos"] = format_photos_column(df.get("photos", pd.Series([""] * len(df))))
 
     # save the processed activity data as a JSON file in the designated output directory
-    DOCS_DATA.mkdir(parents=True, exist_ok=True)  # ensure the output directory exists
+    DOCS_DATA.mkdir(parents=True, exist_ok=True)
     out = DOCS_DATA / "activity.json"
-    # orient="records" and indent=2 for readability, force_ascii=False to preserve non-ASCII characters
     df.to_json(out, orient="records", indent=2, force_ascii=False)
     logging.info("Wrote %s", out)
 
-    # should we upload, and can we upload? (gspread must be available)
+    # should we upload to Google Sheets, and can we upload?
     if upload and gspread is not None:
         logging.info("Uploading Activity back to Google Sheets")
         df_upload = df.fillna("")  # for Google Sheets compatibility
         try:
-            # upload the updated activity DataFrame back to Google Sheets
             set_with_dataframe(sheet, df_upload)
             logging.info("Activity sheet updated")
         except Exception as e:
@@ -273,23 +289,24 @@ def process_activity(sheet, upload=True, geolocator=None):
 
 
 def process_location(sheet, upload=True, geolocator=None):
-    # process the Location sheet, add UUIDs, geocode missing lat/lng,
-    # format photos, and save as JSON
+    """Load the Location worksheet, assign UUIDs, geocode missing coordinates, format photos, and write location.json.
+
+    Optionally uploads the enriched DataFrame back to Google Sheets when *upload* is True.
+    """
     # yes, it's the same as process_activity, left for clarity and potential future divergence
     logging.info("Processing Location sheet...")
     records = sheet.get_all_records()
     df = pd.DataFrame(records)
-    if "location_id" not in df.columns:  # defensive, this should never happen
+    if "location_id" not in df.columns:  # overly defensive for a personal project
         df["location_id"] = ""
     df["location_id"] = ensure_uuid_series(df["location_id"])  # add IDs if missing
 
-    # load cache of lat/lng and initialize geolocator if not provided (which is standard operating procedure)
+    # load cache of lat/lng and initialize geolocator if not provided
     cache = load_cache(CACHE_GEOCODE)
     if geolocator is None:
         # Nominatim requires a descriptive user_agent per its usage policy
         geolocator = Nominatim(user_agent="waypoints_extract", timeout=10)
 
-    # loop through each row and geocode missing lat/lng values
     for idx, row in df.iterrows():
         lat = row.get("lat")
         lng = row.get("lng")
@@ -298,35 +315,31 @@ def process_location(sheet, upload=True, geolocator=None):
             location_name = row.get("location")
             logging.info("Geocoding Location %s", location_name)
             glat, glng = geocode_with_nominatim(geolocator, cache, location_name)
-            # update the df with the geocoded lat/lng values
             df.at[idx, "lat"] = glat
             df.at[idx, "lng"] = glng
 
-    # write the cache file with any new geocoded locations
     save_cache(cache, CACHE_GEOCODE)
 
     # format the photos column to ensure it's a list of cleaned photo filenames for web display
     df["photos"] = format_photos_column(df.get("photos", pd.Series([""] * len(df))))
 
     # save the processed location data as a JSON file in the designated output directory
-    DOCS_DATA.mkdir(parents=True, exist_ok=True)  # ensure the output directory exists
+    DOCS_DATA.mkdir(parents=True, exist_ok=True)
     out = DOCS_DATA / "location.json"
-    # orient="records" and indent=2 for readability, force_ascii=False to preserve non-ASCII characters
     df.to_json(out, orient="records", indent=2, force_ascii=False)
     logging.info("Wrote %s", out)
 
-    # should we upload, and can we upload? (gspread must be available)
+    # should we upload to Google Sheets, and can we upload?
     if upload and gspread is not None:
         logging.info("Uploading Location back to Google Sheets")
         df_upload = df.fillna("")  # for Google Sheets compatibility
         try:
-            # upload the updated location DataFrame back to Google Sheets
             set_with_dataframe(sheet, df_upload)
             logging.info("Location sheet updated")
         except Exception as e:
             logging.warning("Failed to upload Location sheet: %s", e)
 
-    # return the processed DataFrame, 
+    # return the processed DataFrame,
     # in theory for use in other processing, really for consistency with process_activity
     return df
 
@@ -337,9 +350,16 @@ def process_location(sheet, upload=True, geolocator=None):
 
 
 def calculate_great_circle(start_coords, end_coords, num_points=100):
-    # generate intermediate points along the shortest path on Earth's surface
-    # used for flights because straight lines on flat maps are incorrect
-    # calculate a list of points along the great circle path between two coordinates
+    """Return a list of (lon, lat) points along the WGS84 great-circle path between two locations.
+
+    Handles antimeridian crossing by shifting longitudes so the resulting
+    LineString does not wrap across the map.
+
+    Args:
+        start_coords: (lat, lon) of the start point.
+        end_coords: (lat, lon) of the end point.
+        num_points: number of intermediate sample points.
+    """
     geod = (
         Geodesic.WGS84
     )  # WGS84 coordinate reference system (CRS) is the standard for GPS / GIS
@@ -358,7 +378,7 @@ def calculate_great_circle(start_coords, end_coords, num_points=100):
         lon, lat = (
             position["lon2"],
             position["lat2"],
-        )  # get the longitude and latitude of the position
+        )
         # handle crossing the International Date Line
         if points and abs(lon - points[-1][0]) > 180:
             if lon > 0:
@@ -370,7 +390,10 @@ def calculate_great_circle(start_coords, end_coords, num_points=100):
 
 
 def save_great_circle_as_geojson(route_coords, output_file):
-    # save the great circle route as a GeoJSON file with a LineString geometry
+    """Write a GeoJSON FeatureCollection with a single LineString to *output_file*.
+
+    The feature's ``transport_mode`` property is set to ``"plane"``.
+    """
     feature = geojson.Feature(
         # creates a GIS Feature (with LineString geometry and metadata properties)
         geometry=geojson.LineString(route_coords),
@@ -378,15 +401,17 @@ def save_great_circle_as_geojson(route_coords, output_file):
     )
     # wrap the feature in a FeatureCollection for GeoJSON compliance
     fc = geojson.FeatureCollection([feature])
-    # write it
     with open(output_file, "w", encoding="utf8") as f:
         geojson.dump(fc, f)
     logging.info("Saved great circle %s", output_file)
 
 
 def geocode_route_location_ors(ors_client, cache, location):
-    # geocode a location using OpenRouteService (ORS) Pelias search,
-    # with caching to avoid repeated requests
+    """Return (lon, lat) for *location* via ORS Pelias search, with cache
+    to avoid repeated requests.
+
+    Returns (None, None) on failure.
+    """
     if location in cache:
         return cache[location]
     try:
@@ -402,8 +427,11 @@ def geocode_route_location_ors(ors_client, cache, location):
 
 
 def fetch_route_ors(ors_client, start_coords, end_coords, transport_mode):
-    # fetch a route from OpenRouteService (ORS) Directions API
-    # for the given start and end coordinates and transport mode
+    """Request a driving route from the ORS Directions API and return the GeoJSON response.
+
+    Maps ``"train"`` to the ``driving-car`` profile (ORS has no train support).
+    Returns None on failure.
+    """
     try:
         # translate transport mode to ORS's API profile names;
         # train is not supported (must be manually routed), so defaults to driving-car in interim;
@@ -429,17 +457,16 @@ def fetch_route_ors(ors_client, start_coords, end_coords, transport_mode):
 def process_routes(
     sheet, activity_df, upload=True, manual_locations=None, api_keys=None
 ):
-    # Build route geometries.
-    #
-    # Existing route files are preserved.
-    # Add UUIDs and geocode missing start/end locations.
-    # Hiking routes already have recorded GPS tracks.
-    # Flights generate great-circle GeoJSON.
-    # Driving/train routes are requested from ORS.
-    # Save as CSV.
+    """Build, geocode, and export all route geometries to GeoJSON and routes.csv.
+
+    - Hiking routes from *activity_df* are added if not already present.
+    - Existing filenames are skipped to avoid overwriting manual edits.
+    - Flights are rendered as great-circle arcs; driving/train routes use ORS Directions.
+    - Optionally uploads the updated DataFrame back to Google Sheets when *upload* is True.
+    """
     logging.info("Processing Routes sheet...")
     df = pd.DataFrame(sheet.get_all_records())
-    if "route_id" not in df.columns:  # defensive, this should never happen
+    if "route_id" not in df.columns:  # overly defensive for a personal project
         df["route_id"] = ""
     df["route_id"] = ensure_uuid_series(df["route_id"])  # add IDs if missing
 
@@ -473,7 +500,7 @@ def process_routes(
     # use manual locations mapping if provided; otherwise, default to empty dict
     manual_locations = manual_locations or {}
 
-    # loop through each row in df to process start/end locations and fetch routes
+    # process start/end locations and fetch routes
     for idx, row in df.iterrows():
         filename = str(row.get("filename") or "").strip()
         # guard clause; skip extant routes to avoid overwriting
@@ -512,9 +539,7 @@ def process_routes(
             gc = calculate_great_circle(s_latlon, e_latlon)
             fname = f"great_circle_route_{idx}.geojson"
             # save the plane route as a geojson and add the filename to the df
-            DOCS_GEOJSON.mkdir(
-                parents=True, exist_ok=True
-            )  # ensure the output directory exists
+            DOCS_GEOJSON.mkdir(parents=True, exist_ok=True)
             save_great_circle_as_geojson(gc, DOCS_GEOJSON / fname)
             df.at[idx, "filename"] = fname
         elif mode in ("auto", "train") and start_coords and end_coords and ors_client:
@@ -542,10 +567,9 @@ def process_routes(
     df.to_csv(csv_out, index=False)
     logging.info("Wrote %s", csv_out)
 
-    # should we upload, and can we upload? (gspread must be available)
+    # should we upload to Google Sheets, and can we upload?
     if upload and gspread is not None:
         try:
-            # upload the updated routes DataFrame back to Google Sheets
             set_with_dataframe(sheet, df)
             logging.info("Uploaded routes to Google Sheets")
         except Exception as e:
@@ -562,7 +586,7 @@ def process_routes(
 
 
 def main(argv=None):
-    # parse command-line arguments
+    """Parse CLI arguments and run the full extract pipeline."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--no-upload",
@@ -575,7 +599,6 @@ def main(argv=None):
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args(argv)
 
-    # set up logging based on verbosity flag
     setup_logging(logging.DEBUG if args.verbose else logging.INFO)
 
     # load API keys from the JSON file (with empty dict fallback if not found)
