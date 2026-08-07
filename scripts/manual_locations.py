@@ -1,4 +1,5 @@
 # manually set lng/lat here, for use in extract_data.py
+# format: "Routes spreadsheet location name": (longitude, latitude)
 LOCATIONS = {
     "Fish River Canyon": (17.614818, -27.589350),  # Fish River Canyon
     "N7 to Noordoewer Border Post": (17.830023, -29.020174),
