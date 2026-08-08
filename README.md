@@ -61,7 +61,7 @@ To explore:
 4. (Optional) Take the interactive guided tour to get oriented with the map interface
 
 To update the data:
-- Run `extract_data.ipynb` inside the `resources/` directory to regenerate from source sheets and GeoJSON files.
+- Update the Google Sheets spreadsheet and run `scripts/extract_data.py` to regenerate from source sheets and GeoJSON files. See `scripts/README.md` for details.
 
 ## Gallery
 
