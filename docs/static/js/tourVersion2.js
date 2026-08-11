@@ -28,7 +28,6 @@
 //   route sublayers         — _getRouteSublayers(), _showOnlyRouteSublayer(),
 //                              _restoreAllRoutes(), _restoreAllRoutesIfActive(),
 //                              _openRouteLegend(), _closeRouteLegend()
-//   marker highlight        — _removeMarkerHighlight()
 //   waypoint listener       — _cleanupWaypointListener()
 //   cleanup                 — _cleanupTourState()
 //   main tour               — _runTour()
@@ -355,19 +354,6 @@ function _closeRouteLegend() {
 }
 
 /////////////////////////////////////////////////////////////////////////////
-// Marker highlight cleanup
-
-// // Removes any .tour-marker class/inline styles from a previous tour run.
-// function _removeMarkerHighlight() {
-//   document.querySelectorAll(".tour-marker").forEach((el) => {
-//     el.classList.remove("tour-marker");
-//     el.style.stroke = "";
-//     el.style.strokeWidth = "";
-//     el.style.filter = "";
-//   });
-// }
-
-/////////////////////////////////////////////////////////////////////////////
 // Waypoint popup listener
 
 // Removes the popupopen listener installed for the waypoint-choice step.
@@ -387,7 +373,6 @@ function _cleanupTourState() {
   _clearTourTimers();
   _removeInteractionBlocker();
   _removeDimOverlay();
-  // _removeMarkerHighlight();
   _closeLayersControl();
   _cleanupWaypointListener();
   _restoreAllRoutesIfActive(); // restore routes if cancelled mid-demo
