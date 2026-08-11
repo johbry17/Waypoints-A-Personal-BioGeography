@@ -22,7 +22,7 @@
 //   map reset               — resetMapForTour()
 //   timer helpers           — _tourTimeout(), _nextStep(), _clearTourTimers()
 //   interaction blocking    — _addInteractionBlocker(), _removeInteractionBlocker()
-//   dim overlay             — _addDimOverlay(), _removeDimOverlay()
+//   dim overlay             — _addDimOverlay(), _removeDimOverlay(), setLayerToggleEnabled()
 //   layer control           — _openLayersControl(), _closeLayersControl()
 //   basemap / overlay       — _switchBasemap(), _setOverlay()
 //   route sublayers         — _getRouteSublayers(), _showOnlyRouteSublayer(),
@@ -173,7 +173,7 @@ function _removeInteractionBlocker() {
 }
 
 /////////////////////////////////////////////////////////////////////////////
-// Dim overlay (waypoint-choice step only)
+// Dim overlay & layer toggle (waypoint-choice step only)
 
 // Semi-transparent dark overlay at z-index 550 — purely visual.
 // pointer-events: none so clicks pass through to the map.
@@ -202,6 +202,22 @@ function _removeDimOverlay() {
   if (dimOverlay) {
     dimOverlay.remove();
     dimOverlay = null;
+  }
+}
+
+// Enable or disable the checkbox for a named overlay in the main layer control.
+// Used to disable the Waypoints checkbox during the waypoint-choice step so
+// the user cannot turn off the required layer.
+function setLayerToggleEnabled(layerLabel, enabled = true) {
+  const labels = document.querySelectorAll(
+    ".leaflet-control-layers-overlays label",
+  );
+
+  for (const label of labels) {
+    if (label.textContent.trim().includes(layerLabel)) {
+      const input = label.querySelector("input[type='checkbox']");
+      if (input) input.disabled = !enabled;
+    }
   }
 }
 
@@ -641,6 +657,8 @@ function _runTour() {
       "<strong>Every marker opens a little story.</strong>",
       "<br><br>",
       "Let's visit one.",
+      "<br><br>",
+      "<em>Click any Waypoint to continue.</em>",
     ].join(""),
     when: {
       show: () => {
@@ -652,6 +670,9 @@ function _runTour() {
         // Remove the blocker — the user must click a marker
         _removeInteractionBlocker();
 
+        // Waypoints must remain available for the required interaction.
+        setLayerToggleEnabled("Waypoints", false);
+
         // Advance on the first waypoint popup
         const onAnyPopup = () => {
           _waypointPopupHandler = null;
@@ -659,6 +680,7 @@ function _runTour() {
           if (tourCancelled) return;
 
           _removeDimOverlay();
+          setLayerToggleEnabled("Waypoints", true);
 
           _addInteractionBlocker(); // re-block for remaining automated steps
           _nextStep(stepId);
@@ -671,6 +693,7 @@ function _runTour() {
         // Clean up if the step exits before the user clicks
         _cleanupWaypointListener();
         _removeDimOverlay();
+        setLayerToggleEnabled("Waypoints", true);
       },
     },
   });
