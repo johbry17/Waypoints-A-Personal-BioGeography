@@ -48,7 +48,7 @@ function tripledMarkers(data) {
     const clone1 = { ...place, lng: lng + 360, lat };
     const clone2 = { ...place, lng: lng - 360, lat };
 
-    base._isCanonical = true; // tag the main one (for shepherd tour)
+    // base._isCanonical = true; // tag the main one (for shepherd tour - legacy, v1)
     return [base, clone1, clone2];
   });
 }
@@ -61,10 +61,10 @@ function addMarker(place) {
   marker.bindTooltip(createTooltipContent(place));
   marker.bindPopup(createPopupContent(place), { pane: "popupsPane" });
   initializePhotoCarousel(marker, place);
-  // store marker in placeData for shepherd tour
-  if (place._isCanonical) {
-    placeData[place.id].marker = marker;
-  }
+  // // store marker in placeData for shepherd tour (legacy, v1)
+  // if (place._isCanonical) {
+  //   placeData[place.id].marker = marker;
+  // }
   return marker;
 }
 
@@ -275,7 +275,7 @@ function createRouteLayers(routeData) {
         });
       })
       .catch((error) =>
-        console.error(`Failed to load GeoJSON file: ${route.filename}`, error)
+        console.error(`Failed to load GeoJSON file: ${route.filename}`, error),
       );
   });
 
@@ -315,11 +315,11 @@ function shiftGeoJSON(geojson, offset) {
   shiftedGeoJSON.features.forEach((feature) => {
     if (feature.geometry.type === "LineString") {
       feature.geometry.coordinates = feature.geometry.coordinates.map(
-        ([lng, lat]) => [lng + offset, lat]
+        ([lng, lat]) => [lng + offset, lat],
       );
     } else if (feature.geometry.type === "MultiLineString") {
       feature.geometry.coordinates = feature.geometry.coordinates.map((line) =>
-        line.map(([lng, lat]) => [lng + offset, lat])
+        line.map(([lng, lat]) => [lng + offset, lat]),
       );
     }
   });
@@ -350,7 +350,7 @@ function initializePhotoCarousel(marker, place) {
         : [place.photos];
       // create photo paths
       const photoSet = photos.map(
-        (photo) => `static/images/${place.photo_album}/${photo}`
+        (photo) => `static/images/${place.photo_album}/${photo}`,
       );
       displayMultiplePhotos(photoSet, `carousel-${place.id}`);
     }
@@ -396,8 +396,8 @@ function createPopupContent(place) {
   const icons = isActivity
     ? `<i class="${activityIcon} activity-icon-stack"></i>`
     : isLocation
-    ? `<i class="${locationIcon} location-icon-stack"></i>`
-    : `<i class="fas fa-globe globe-icon"></i> ${homeIcon} ${schoolIcon}`;
+      ? `<i class="${locationIcon} location-icon-stack"></i>`
+      : `<i class="fas fa-globe globe-icon"></i> ${homeIcon} ${schoolIcon}`;
 
   // add zoom button to the popup
   const placeId = place.activity_id || place.id || place.location_id;
@@ -416,8 +416,8 @@ function createPopupContent(place) {
   const borderColor = isActivity
     ? colors.activityColor
     : isLocation
-    ? colors.locationColor
-    : colors.primaryColor;
+      ? colors.locationColor
+      : colors.primaryColor;
 
   return `
         <style>
@@ -471,7 +471,7 @@ function zoomToArea(placeId) {
     // zoom to specified zoom level if defined
     mainMap.setView(
       [place.lat, place.lng],
-      place.zoomLevel || 12 // default zoom level
+      place.zoomLevel || 12, // default zoom level
     );
     ensureRouteLayer();
   } else if (place.lat && place.lng) {
