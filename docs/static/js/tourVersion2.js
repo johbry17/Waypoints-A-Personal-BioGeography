@@ -311,18 +311,26 @@ function _restoreAllRoutesIfActive() {
 // Toggle the routes legend popup via its "?" checkbox in routeControls.
 function _openRouteLegend() {
   const legendLink = document.getElementById("legend-link");
+  const legendPopup = document.getElementById("routes-legend-popup");
   const checkbox = legendLink
     ?.closest("label")
     ?.querySelector("input[type=checkbox]");
-  if (checkbox && !checkbox.checked) checkbox.click();
+  if (checkbox && !checkbox.checked) {
+    legendPopup.classList.remove("hidden"); // show legend
+    checkbox.click();
+  }
 }
 
 function _closeRouteLegend() {
   const legendLink = document.getElementById("legend-link");
+  const legendPopup = document.getElementById("routes-legend-popup");
   const checkbox = legendLink
     ?.closest("label")
     ?.querySelector("input[type=checkbox]");
-  if (checkbox && checkbox.checked) checkbox.click();
+  if (checkbox && checkbox.checked) {
+    legendPopup.classList.add("hidden"); // hide legend
+    checkbox.click();
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////
