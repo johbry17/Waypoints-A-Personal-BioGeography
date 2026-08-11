@@ -5,6 +5,7 @@ Convert the notebook `resources/extract_data.ipynb` into a runnable script.
 Functions: overview, activity, location, routes. Saves JSON/CSV outputs and
 optionally updates Google Sheets.
 """
+
 # standard library imports
 from pathlib import Path
 import argparse
@@ -35,7 +36,6 @@ import openrouteservice
 # local module for manual locations mapping
 from manual_locations import LOCATIONS
 
-
 # constants for file paths
 ROOT = Path(__file__).resolve().parent.parent
 DOCS_DATA = ROOT / "docs" / "resources" / "data"
@@ -59,7 +59,7 @@ def setup_logging(level=logging.INFO):
     )
 
 
-def load_api_keys(path: Path = Path("api_keys.json")):
+def load_api_keys(path: Path = ROOT / "scripts" / "api_keys.json"):
     """Load and return API keys from *path*.
 
     Logs a warning and returns an empty dict if the file is absent.
@@ -466,25 +466,28 @@ def process_routes(
     """
     logging.info("Processing Routes sheet...")
     df = pd.DataFrame(sheet.get_all_records())
-    if "route_id" not in df.columns:  # overly defensive for a personal project
-        df["route_id"] = ""
-    df["route_id"] = ensure_uuid_series(df["route_id"])  # add IDs if missing
 
     # add hikes from activities that have a route_path
     for _, a in activity_df.iterrows():
+        route_path = a.get("route_path")
         # if not already in df, add a new row for the hike
         if (
             a.get("activity_type") == "hiking"
-            and a.get("route_path")
-            and a.get("route_path") not in df.get("filename", [])
+            and route_path
+            and route_path not in df["filename"].values
         ):
             new = {
                 "start_location": a.get("name"),
                 "end_location": a.get("name"),
                 "transport_mode": "hike",
-                "filename": a.get("route_path"),
+                "filename": route_path,
             }
             df = pd.concat([df, pd.DataFrame([new])], ignore_index=True)
+
+    # add IDs if missing
+    if "route_id" not in df.columns:  # overly defensive for a personal project
+        df["route_id"] = ""
+    df["route_id"] = ensure_uuid_series(df["route_id"])
 
     # load cache of geocoded routes (start/end locations) to avoid repeated requests
     CACHE_ROUTES = load_cache(CACHE_GEOCODE_ROUTES)
@@ -608,7 +611,7 @@ def main(argv=None):
     # defensive: if gspread is not installed, skip Google Sheets operations
     spreadsheet = None
     if gspread is not None:
-        creds_path = Path("api_keys.json")
+        creds_path = ROOT / "scripts" / "api_keys.json"
         sheet_key = args.sheet_key or api_keys.get("google_sheets_key")
         if sheet_key:
             spreadsheet = auth_google_sheets(creds_path, sheet_key)
