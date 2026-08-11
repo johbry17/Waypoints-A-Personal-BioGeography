@@ -48,7 +48,6 @@ function tripledMarkers(data) {
     const clone1 = { ...place, lng: lng + 360, lat };
     const clone2 = { ...place, lng: lng - 360, lat };
 
-    // base._isCanonical = true; // tag the main one (for shepherd tour - legacy, v1)
     return [base, clone1, clone2];
   });
 }
@@ -61,10 +60,6 @@ function addMarker(place) {
   marker.bindTooltip(createTooltipContent(place));
   marker.bindPopup(createPopupContent(place), { pane: "popupsPane" });
   initializePhotoCarousel(marker, place);
-  // // store marker in placeData for shepherd tour (legacy, v1)
-  // if (place._isCanonical) {
-  //   placeData[place.id].marker = marker;
-  // }
   return marker;
 }
 

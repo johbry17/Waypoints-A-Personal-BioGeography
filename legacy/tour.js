@@ -1,3 +1,16 @@
+// Shepherd.js tour setup (legacy, v1)
+// Version 1, far too click-click-click-click-click for good UX
+//
+// Relied on this in tripledMarkers(data) in overlays.js:
+// // base._isCanonical = true; // tag the main one (for shepherd tour - legacy, v1)
+// And this in addMarker(place) in overlays.js:
+// // // store marker in placeData for shepherd tour (legacy, v1)
+// // if (place._isCanonical) {
+// //   placeData[place.id].marker = marker;
+// // }
+
+/////////////////////////////////////////////////////
+
 // Description: This script sets up a guided tour using Shepherd.js
 // It demonstrates features like layer toggling, marker interaction, and popups.
 // It toggles certain UI elements to prevent user interactions...
@@ -233,7 +246,7 @@ function observeClassToggle(el, className, callback) {
   layerToggleObserver = new MutationObserver((mutations) => {
     if (
       [...mutations].some(
-        (m) => m.type === "attributes" && el.classList.contains(className)
+        (m) => m.type === "attributes" && el.classList.contains(className),
       )
     ) {
       layerToggleObserver.disconnect();
@@ -257,7 +270,7 @@ function highlightMarker(name) {
 
   // find marker by name
   const place = Object.values(placeData).find((p) =>
-    p.name?.toLowerCase().includes(name.toLowerCase())
+    p.name?.toLowerCase().includes(name.toLowerCase()),
   );
 
   // add class to marker SVG path
@@ -288,7 +301,7 @@ function toggleLayerControl(open = true) {
   const control = document.querySelector(".leaflet-control-layers");
   if (toggle && control) {
     const isOpen = control.classList.contains(
-      "leaflet-control-layers-expanded"
+      "leaflet-control-layers-expanded",
     );
     if ((open && !isOpen) || (!open && isOpen)) toggle.click();
   }
@@ -297,7 +310,7 @@ function toggleLayerControl(open = true) {
 // enables or disables a layer toggle by label (Waypoints layer)
 function setLayerToggleEnabled(layerLabel, enabled = true) {
   const labels = document.querySelectorAll(
-    ".leaflet-control-layers-overlays label"
+    ".leaflet-control-layers-overlays label",
   );
   for (const label of labels) {
     if (label.textContent.trim().includes(layerLabel)) {
