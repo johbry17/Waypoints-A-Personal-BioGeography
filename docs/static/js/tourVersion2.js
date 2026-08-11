@@ -505,7 +505,7 @@ function _runTour() {
       show: () => {
         _openLayersControl(); // safety: ensure expanded
         _tourTimeout("basemaps", () => _switchBasemap("Street Map"), 3000);
-        _tourTimeout("basemaps", () => _switchBasemap("Physical"), 6000);
+        _tourTimeout("basemaps", () => _switchBasemap("Nat Geo"), 6000);
         _tourTimeout("basemaps", () => _switchBasemap("Satellite"), 9000);
         _tourTimeout("basemaps", () => _nextStep("basemaps"), 12000);
       },
@@ -521,7 +521,7 @@ function _runTour() {
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "The Layers menu also controls <em><strong>what</strong></em> appears on the map.",
+    text: "The <strong>Layers</strong> menu also controls <em><strong>what</strong></em> appears on the map.",
     when: {
       show: () => {
         _tourTimeout("layers-intro", () => _nextStep("layers-intro"), 3500);
@@ -756,7 +756,7 @@ function _runTour() {
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 24] } }],
     },
-    text: "<strong>Want a closer look?</strong><br><br>Zoom brings you closer to the place.",
+    text: "<strong>Want a closer look?</strong><br><br><strong>Zoom</strong> brings you closer to the place.",
     when: {
       show: () => {
         _tourTimeout(
@@ -807,7 +807,7 @@ function _runTour() {
     text: [
       "<strong>Want the story behind the map?</strong>",
       "<br><br>",
-      "About explains where Waypoints came from—and how it was built.",
+      "<strong>About</strong> explains where Waypoints came from—and how it was built.",
       "<br><br>",
       "You can also restart the tour from there.",
     ].join(""),
