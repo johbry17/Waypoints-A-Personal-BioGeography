@@ -85,10 +85,31 @@ function resetMapForTour() {
   // Restore Satellite basemap via the layer control radio button
   _switchBasemap("Satellite");
 
-  // Turn off Activities and Routes (fires Leaflet overlay events,
-  // which drives handleOverlayAdd/Remove in app.js for proper cleanup)
+  // Turn off Activities and Routes through the layer control first.
+  // This keeps the UI and application state synchronized.
   _setOverlay("Activities", false);
   _setOverlay("Routes", false);
+
+  // Defensive cleanup: popup zoom can add routeLayer directly without
+  // updating the Routes checkbox. Make absolutely certain no routes remain.
+  if (routeLayer && mainMap.hasLayer(routeLayer)) {
+    mainMap.removeLayer(routeLayer);
+  }
+
+  // Make sure all individual route sublayers are also off.
+  const routeSubs = _getRouteSublayers();
+  Object.values(routeSubs).forEach((layer) => {
+    if (layer && mainMap.hasLayer(layer)) {
+      mainMap.removeLayer(layer);
+    }
+  });
+
+  // Reset route legend state (turn off).
+  isLegendChecked = false;
+  const legendPopup = document.getElementById("routes-legend-popup");
+  if (legendPopup) {
+    legendPopup.classList.add("hidden");
+  }
 
   // Ensure Waypoints layer is present
   if (markers && !mainMap.hasLayer(markers)) mainMap.addLayer(markers);
@@ -336,15 +357,15 @@ function _closeRouteLegend() {
 /////////////////////////////////////////////////////////////////////////////
 // Marker highlight cleanup
 
-// Removes any .tour-marker class/inline styles from a previous tour run.
-function _removeMarkerHighlight() {
-  document.querySelectorAll(".tour-marker").forEach((el) => {
-    el.classList.remove("tour-marker");
-    el.style.stroke = "";
-    el.style.strokeWidth = "";
-    el.style.filter = "";
-  });
-}
+// // Removes any .tour-marker class/inline styles from a previous tour run.
+// function _removeMarkerHighlight() {
+//   document.querySelectorAll(".tour-marker").forEach((el) => {
+//     el.classList.remove("tour-marker");
+//     el.style.stroke = "";
+//     el.style.strokeWidth = "";
+//     el.style.filter = "";
+//   });
+// }
 
 /////////////////////////////////////////////////////////////////////////////
 // Waypoint popup listener
@@ -366,7 +387,7 @@ function _cleanupTourState() {
   _clearTourTimers();
   _removeInteractionBlocker();
   _removeDimOverlay();
-  _removeMarkerHighlight();
+  // _removeMarkerHighlight();
   _closeLayersControl();
   _cleanupWaypointListener();
   _restoreAllRoutesIfActive(); // restore routes if cancelled mid-demo
