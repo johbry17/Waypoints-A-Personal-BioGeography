@@ -91,10 +91,10 @@ function createMap(markers, originalBounds, activities, locations, routes) {
 
   initializeMainMap(baseMaps, markers, originalBounds);
   setupLayerControls(baseMaps, overlayMaps, routes);
+  addAttribution(); // before setupMapUI to ensure attribution is not awkwardly above legend
   setupMapUI(originalBounds);
   setupLocationsZoomVisibility(locations);
   setupEventListeners(locations, routes);
-  addAttribution();
 }
 
 //////////////////////////////////////////////////////////
@@ -135,7 +135,7 @@ function createBaseMaps() {
   return {
     Satellite: L.esri.basemapLayer("Imagery"),
     "Street Map": L.tileLayer(
-      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     ),
     "Nat Geo": L.esri.basemapLayer("NationalGeographic"),
     Physical: L.esri.basemapLayer("Physical"),
@@ -200,6 +200,8 @@ function setupMapUI(originalBounds) {
   addResetButton(mainMap, originalBounds);
   legend = addLegend();
   legend.addTo(mainMap);
+  updateLegendPosition(); // position on load, listener below to update on resize
+  window.addEventListener("resize", updateLegendPosition);
 }
 
 // zoom-based visibility for locations layer
@@ -225,10 +227,10 @@ function setupLocationsZoomVisibility(locations) {
 // event listeners for overlay add and remove
 function setupEventListeners(locations, routes) {
   mainMap.on("overlayadd", (e) =>
-    handleOverlayAdd(e, legend, routeControls, mainMap)
+    handleOverlayAdd(e, legend, routeControls, mainMap),
   );
   mainMap.on("overlayremove", (e) =>
-    handleOverlayRemove(e, legend, routeControls, mainMap)
+    handleOverlayRemove(e, legend, routeControls, mainMap),
   );
 }
 
@@ -237,7 +239,7 @@ function addAttribution() {
   mainMap.attributionControl
     .setPosition("bottomleft")
     .addAttribution(
-      `&copy; ${new Date().getFullYear()} Bryan Johns. All rights reserved. Images may not be used without explicit permission.`
+      `&copy; ${new Date().getFullYear()} Bryan Johns. All rights reserved. Images may not be used without explicit permission.`,
     );
 }
 
@@ -378,12 +380,24 @@ document.addEventListener("DOMContentLoaded", () => {
 function addLegend() {
   const legend = L.control({ position: "bottomright" });
   legend.onAdd = () => {
-    const legendElement = document.getElementById("map-legend");
+    const legendElement = document.getElementById("map-legend"); // hidden in css
     const clonedLegend = legendElement.cloneNode(true); // clone hidden legend
-    clonedLegend.style.display = "block"; // display cloned legend
+    clonedLegend.removeAttribute("id"); // remove id to avoid duplicates
+    clonedLegend.classList.add("map-legend-control"); // add class for styling, displayed in css
     return clonedLegend;
   };
   return legend;
+}
+
+// update legend position based on orientation and screen width
+function updateLegendPosition() {
+  if (!legend) return;
+
+  const landscapeMobile = window.matchMedia(
+    "(orientation: landscape) and (max-width: 1024px)",
+  ).matches;
+
+  legend.setPosition(landscapeMobile ? "bottomleft" : "bottomright");
 }
 
 // route legend - colors and adds dash styles
@@ -415,7 +429,7 @@ function applyLegendStyles(routeStyles) {
       // create the line
       const line = document.createElementNS(
         "http://www.w3.org/2000/svg",
-        "line"
+        "line",
       );
       line.setAttribute("x1", "0");
       line.setAttribute("y1", "5");
@@ -430,7 +444,7 @@ function applyLegendStyles(routeStyles) {
           .split(",")
           .map(
             (value, index) =>
-              index % 2 === 0 ? parseFloat(value) * 4 : parseFloat(value) // skips the gaps
+              index % 2 === 0 ? parseFloat(value) * 4 : parseFloat(value), // skips the gaps
           )
           .join(",");
         line.setAttribute("stroke-dasharray", scaledDashArray);

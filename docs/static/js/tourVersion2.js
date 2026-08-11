@@ -643,7 +643,7 @@ function _runTour() {
   // Colors match the application's marker color scheme.
   tour.addStep({
     id: "legend",
-    attachTo: { element: ".leaflet-bottom.leaflet-right", on: "left" },
+    attachTo: { element: ".map-legend-control", on: "left" },
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },

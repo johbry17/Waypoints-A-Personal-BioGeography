@@ -105,6 +105,10 @@ html,
   display: none;
 }
 
+.map-legend-control {
+  display: block;
+}
+
 .custom-legend {
   background-color: white;
   font-size: 12px;
@@ -157,14 +161,6 @@ html,
 @media (max-width: 768px) {
   .custom-legend {
     font-size: 10px;
-  }
-}
-@media (orientation: landscape) and (max-width: 1024px) {
-  #map-legend {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    z-index: 1000;
   }
 }
 .school-icon {

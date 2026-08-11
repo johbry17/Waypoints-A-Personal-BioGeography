@@ -148,7 +148,8 @@ html,
   border: none;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-  transition: background-color $transition-duration,
+  transition:
+    background-color $transition-duration,
     transform $transition-duration;
 
   i {
@@ -169,6 +170,9 @@ html,
 // legend(s)
 #map-legend {
   display: none; // hide initial main legend
+}
+.map-legend-control {
+  display: block; // cloned legend is displayed (.map-legend-control)
 }
 
 // legend styles
@@ -239,16 +243,6 @@ html,
   }
 }
 
-// move main legend to bottom-left for landscape orientation on mobile devices
-@media (orientation: landscape) and (max-width: 1024px) {
-  #map-legend {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    z-index: 1000;
-  }
-}
-
 /////////////////////////////////////////////////////////////////////////////
 
 // icons
@@ -273,7 +267,9 @@ html,
   .fa-circle,
   & {
     color: $activity-color;
-    transition: transform $transition-duration, color $transition-duration;
+    transition:
+      transform $transition-duration,
+      color $transition-duration;
 
     // on hover, slightly enlarge and change color
     &:hover .fa-circle {
@@ -300,7 +296,9 @@ html,
   width: 25px;
   height: 25px;
   box-shadow: $box-shadow;
-  transition: transform $transition-duration, color $transition-duration;
+  transition:
+    transform $transition-duration,
+    color $transition-duration;
   // z-index: 700;
 
   // on hover, change background color
@@ -434,7 +432,9 @@ h4 {
       margin: 0 10px;
       cursor: pointer;
       font-size: 20px;
-      transition: transform $transition-duration, color $transition-duration;
+      transition:
+        transform $transition-duration,
+        color $transition-duration;
 
       // enlarge and color change on hover
       &:hover {
@@ -499,7 +499,8 @@ h4 {
   justify-content: center;
   gap: 5px; // spacing between icon and text
   box-shadow: $box-shadow;
-  transition: background-color $transition-duration,
+  transition:
+    background-color $transition-duration,
     transform $transition-duration;
 
   // icon
@@ -825,7 +826,7 @@ h4 {
   }
 }
 
-// for button-less tour stops
+// for button-less tour stops (or there's a weird gap above and none below the text)
 .shepherd-element:not(:has(.shepherd-footer)) .shepherd-text {
   padding-bottom: 15px;
 }
@@ -850,7 +851,8 @@ h4 {
   font-family: Arial, sans-serif;
   cursor: pointer;
   box-shadow: $box-shadow;
-  transition: background-color $transition-duration,
+  transition:
+    background-color $transition-duration,
     transform $transition-duration;
 
   &:hover {
