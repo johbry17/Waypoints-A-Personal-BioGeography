@@ -22,7 +22,7 @@
 //   map reset               — resetMapForTour()
 //   timer helpers           — _tourTimeout(), _nextStep(), _clearTourTimers()
 //   interaction blocking    — _addInteractionBlocker(), _removeInteractionBlocker()
-//   dim overlay             — _addDimOverlay(), _removeDimOverlay(), setLayerToggleEnabled()
+//   dim overlay             — _addDimOverlay(), _updateDimPosition(), _removeDimOverlay(), setLayerToggleEnabled()
 //   layer control           — _openLayersControl(), _closeLayersControl()
 //   basemap / overlay       — _switchBasemap(), _setOverlay()
 //   route sublayers         — _getRouteSublayers(), _showOnlyRouteSublayer(),
@@ -173,33 +173,63 @@ function _removeInteractionBlocker() {
 }
 
 /////////////////////////////////////////////////////////////////////////////
-// Dim overlay & layer toggle (waypoint-choice step only)
+// Dim overlay & UI layer toggle (waypoint-choice step only)
+//
+// Architecture: a Leaflet pane at z-index 450, sitting between
+// routesPane (400) and waypointsPane (600) INSIDE leaflet-map-pane.
+//
+// This is the only reliable way to dim tiles/routes while keeping waypoint
+// markers visible above the dim — sibling divs cannot "split" the stacking
+// context created by leaflet-map-pane's CSS transform.
+//
+// Leaflet panes have no intrinsic size (all content is absolutely positioned
+// with pixel offsets). The dim element must use pixel dimensions from the map
+// container and counter-apply the mapPane transform so it stays fixed over
+// the visible viewport even when the map is panned.
 
-// Semi-transparent dark overlay at z-index 550 — purely visual.
-// pointer-events: none so clicks pass through to the map.
-// waypointsPane zIndex is 600 so all markers appear above the dim.
 function _addDimOverlay() {
   if (dimOverlay || !mainMap) return;
+
+  // Lazily create the pane once; it persists for the map's lifetime.
+  let dimPane = mainMap.getPane("tourDimPane");
+  if (!dimPane) {
+    dimPane = mainMap.createPane("tourDimPane");
+    dimPane.style.zIndex = "450";
+    dimPane.style.pointerEvents = "none";
+  }
 
   dimOverlay = document.createElement("div");
   dimOverlay.id = "tour-v2-dim";
 
   Object.assign(dimOverlay.style, {
     position: "absolute",
-    top: "0",
-    left: "0",
-    width: "100%",
-    height: "100%",
-    zIndex: "550",
     background: "rgba(0,0,0,0.58)",
     pointerEvents: "none",
   });
 
-  mainMap.getContainer().appendChild(dimOverlay);
+  dimPane.appendChild(dimOverlay);
+
+  // Size and position on first paint, then keep in sync with panning.
+  _updateDimPosition();
+  mainMap.on("move", _updateDimPosition);
+}
+
+// Keeps the dim element covering the visible viewport as the map pans.
+// Leaflet translates leaflet-map-pane by (px, py); the dim element counters
+// that offset so it stays stationary over the map container.
+function _updateDimPosition() {
+  if (!dimOverlay || !mainMap) return;
+  const container = mainMap.getContainer();
+  const pos = L.DomUtil.getPosition(mainMap._mapPane);
+  dimOverlay.style.left = -pos.x + "px";
+  dimOverlay.style.top = -pos.y + "px";
+  dimOverlay.style.width = container.offsetWidth + "px";
+  dimOverlay.style.height = container.offsetHeight + "px";
 }
 
 function _removeDimOverlay() {
   if (dimOverlay) {
+    mainMap?.off("move", _updateDimPosition);
     dimOverlay.remove();
     dimOverlay = null;
   }
@@ -642,7 +672,7 @@ function _runTour() {
   // STEP 8 — WAYPOINT CHOICE (the one required user interaction)
   //
   // Visual hierarchy:
-  //   dimmed map background  (z-index 550, pointer-events: none)
+  //   dimmed map background  (z-index 450, pointer-events: none)
   //   waypoint markers       (waypointsPane 600 — fully visible)
   //   Shepherd dialog        (z-index 9999)
   //
