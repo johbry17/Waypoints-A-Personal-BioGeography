@@ -616,7 +616,7 @@ function _runTour() {
 
         // Train OFF
         _tourTimeout("route-types", () => _toggleRouteSublayer("train"), 6750);
-        
+
         // Train ON
         _tourTimeout("route-types", () => _toggleRouteSublayer("train"), 9000);
 
