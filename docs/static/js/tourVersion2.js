@@ -448,7 +448,7 @@ function _runTour() {
     text: [
       "<strong>Want a quick guided tour?</strong>",
       "<br><br>",
-      "I'll show you how Waypoints works in about a minute and a half.",
+      "I'll show you how Waypoints works in two minutes.",
     ].join(""),
     buttons: [
       {
@@ -504,10 +504,10 @@ function _runTour() {
     when: {
       show: () => {
         _openLayersControl(); // safety: ensure expanded
-        _tourTimeout("basemaps", () => _switchBasemap("Street Map"), 1500);
-        _tourTimeout("basemaps", () => _switchBasemap("Physical"), 3500);
-        _tourTimeout("basemaps", () => _switchBasemap("Satellite"), 5500);
-        _tourTimeout("basemaps", () => _nextStep("basemaps"), 7500);
+        _tourTimeout("basemaps", () => _switchBasemap("Street Map"), 3000);
+        _tourTimeout("basemaps", () => _switchBasemap("Physical"), 6000);
+        _tourTimeout("basemaps", () => _switchBasemap("Satellite"), 9000);
+        _tourTimeout("basemaps", () => _nextStep("basemaps"), 12000);
       },
     },
   });
@@ -609,30 +609,30 @@ function _runTour() {
         // All routes begin ON.
 
         // Plane OFF
-        _tourTimeout("route-types", () => _toggleRouteSublayer("plane"), 1500);
+        _tourTimeout("route-types", () => _toggleRouteSublayer("plane"), 2250);
 
         // Plane ON
-        _tourTimeout("route-types", () => _toggleRouteSublayer("plane"), 3000);
+        _tourTimeout("route-types", () => _toggleRouteSublayer("plane"), 4500);
 
         // Train OFF
-        _tourTimeout("route-types", () => _toggleRouteSublayer("train"), 4500);
-
+        _tourTimeout("route-types", () => _toggleRouteSublayer("train"), 6750);
+        
         // Train ON
-        _tourTimeout("route-types", () => _toggleRouteSublayer("train"), 6000);
+        _tourTimeout("route-types", () => _toggleRouteSublayer("train"), 9000);
 
         // Auto OFF
-        _tourTimeout("route-types", () => _toggleRouteSublayer("auto"), 7500);
+        _tourTimeout("route-types", () => _toggleRouteSublayer("auto"), 11250);
 
         // Auto ON
-        _tourTimeout("route-types", () => _toggleRouteSublayer("auto"), 9000);
+        _tourTimeout("route-types", () => _toggleRouteSublayer("auto"), 13500);
 
         // Route legend ON
-        _tourTimeout("route-types", () => _openRouteLegend(), 10500);
+        _tourTimeout("route-types", () => _openRouteLegend(), 15750);
 
         // Route legend OFF
-        _tourTimeout("route-types", () => _closeRouteLegend(), 12000);
+        _tourTimeout("route-types", () => _closeRouteLegend(), 18000);
 
-        _tourTimeout("route-types", () => _nextStep("route-types"), 13500);
+        _tourTimeout("route-types", () => _nextStep("route-types"), 20250);
       },
     },
   });
@@ -663,7 +663,7 @@ function _runTour() {
         _setOverlay("Activities", false);
         _closeLayersControl();
         if (markers && !mainMap.hasLayer(markers)) mainMap.addLayer(markers);
-        _tourTimeout("legend", () => _nextStep("legend"), 9000);
+        _tourTimeout("legend", () => _nextStep("legend"), 13500);
       },
     },
   });
@@ -766,7 +766,7 @@ function _runTour() {
           },
           2000,
         );
-        _tourTimeout("zoom", () => _nextStep("zoom"), 5000);
+        _tourTimeout("zoom", () => _nextStep("zoom"), 7500);
       },
     },
   });
@@ -813,7 +813,7 @@ function _runTour() {
     ].join(""),
     when: {
       show: () => {
-        _tourTimeout("about", () => _nextStep("about"), 5500);
+        _tourTimeout("about", () => _nextStep("about"), 8250);
       },
     },
   });
