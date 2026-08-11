@@ -484,64 +484,36 @@ function _runTour() {
   // Phase 2: Activities layer appears; dialog text adds explanatory sentence.
   //          The second line is introduced because the second layer arrived.
   tour.addStep({
-    id: "activities-intro",
-    attachTo: {
-      element: ".leaflet-control-layers",
-      on: "left",
-    },
-    popperOptions: {
-      modifiers: [
-        {
-          name: "offset",
-          options: { offset: [0, 16] },
-        },
-      ],
-    },
-    text: "<strong>Places tell one story.</strong>",
-    when: {
-      show: () => {
-        _tourTimeout(
-          "activities-intro",
-          () => {
-            _nextStep("activities-intro");
-          },
-          4000,
-        );
-      },
-    },
-  });
-
-  // Complete the dialog now that Activities are visible
-  tour.addStep({
     id: "activities",
     attachTo: {
       element: ".leaflet-control-layers",
       on: "left",
     },
     popperOptions: {
-      modifiers: [
-        {
-          name: "offset",
-          options: { offset: [0, 16] },
-        },
-      ],
+      modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: [
-      "Places tell one story.",
-      "<br>",
-      "<strong>Activities reveal another.</strong>",
-    ].join(""),
+    text: "<strong>Places tell one story.</strong>",
     when: {
       show: () => {
-        _setOverlay("Activities", true);
-
         _tourTimeout(
           "activities",
           () => {
-            _nextStep("activities");
+            _setOverlay("Activities", true);
+
+            const step = window.tour?.getById("activities");
+
+            if (step) {
+              step.updateStepOptions({
+                text:
+                  "Places tell one story.<br>" +
+                  "<strong>Activities reveal another.</strong>",
+              });
+            }
           },
-          5000,
+          4000,
         );
+
+        _tourTimeout("activities", () => _nextStep("activities"), 9000);
       },
     },
   });
@@ -602,10 +574,10 @@ function _runTour() {
         // Auto ON
         _tourTimeout("route-types", () => _toggleRouteSublayer("auto"), 9000);
 
-        // Route legend/menu ON
+        // Route legend ON
         _tourTimeout("route-types", () => _openRouteLegend(), 10500);
 
-        // Route legend/menu OFF
+        // Route legend OFF
         _tourTimeout("route-types", () => _closeRouteLegend(), 12000);
 
         _tourTimeout("route-types", () => _nextStep("route-types"), 13500);
