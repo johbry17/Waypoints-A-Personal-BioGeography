@@ -469,7 +469,7 @@ function _runTour() {
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "The Layers menu also controls <em>what</em> appears on the map.",
+    text: "The Layers menu also controls <em><strong>what</strong></em> appears on the map.",
     when: {
       show: () => {
         _tourTimeout("layers-intro", () => _nextStep("layers-intro"), 3500);
@@ -481,33 +481,67 @@ function _runTour() {
   // STEP 4 — ACTIVITIES OVERLAY (incremental two-phase reveal)
   //
   // Phase 1: Waypoints-only map with "Places tell one story."
-  // Phase 2: Activities layer appears; dialog text completes the sentence.
+  // Phase 2: Activities layer appears; dialog text adds explanatory sentence.
   //          The second line is introduced because the second layer arrived.
   tour.addStep({
-    id: "activities",
-    attachTo: { element: ".leaflet-control-layers", on: "left" },
+    id: "activities-intro",
+    attachTo: {
+      element: ".leaflet-control-layers",
+      on: "left",
+    },
     popperOptions: {
-      modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
+      modifiers: [
+        {
+          name: "offset",
+          options: { offset: [0, 16] },
+        },
+      ],
     },
     text: "<strong>Places tell one story.</strong>",
     when: {
       show: () => {
         _tourTimeout(
-          "activities",
+          "activities-intro",
           () => {
-            _setOverlay("Activities", true);
-            // Complete the sentence now that Activities are visible
-            const textEl = document.querySelector(
-              ".shepherd-element .shepherd-text",
-            );
-            if (textEl) {
-              textEl.innerHTML =
-                "<strong>Places tell one story.</strong><br>Activities reveal another.";
-            }
+            _nextStep("activities-intro");
           },
           4000,
         );
-        _tourTimeout("activities", () => _nextStep("activities"), 9000);
+      },
+    },
+  });
+
+  // Complete the dialog now that Activities are visible
+  tour.addStep({
+    id: "activities",
+    attachTo: {
+      element: ".leaflet-control-layers",
+      on: "left",
+    },
+    popperOptions: {
+      modifiers: [
+        {
+          name: "offset",
+          options: { offset: [0, 16] },
+        },
+      ],
+    },
+    text: [
+      "Places tell one story.",
+      "<br>",
+      "<strong>Activities reveal another.</strong>",
+    ].join(""),
+    when: {
+      show: () => {
+        _setOverlay("Activities", true);
+
+        _tourTimeout(
+          "activities",
+          () => {
+            _nextStep("activities");
+          },
+          5000,
+        );
       },
     },
   });
@@ -545,7 +579,7 @@ function _runTour() {
     popperOptions: {
       modifiers: [{ name: "offset", options: { offset: [0, 16] } }],
     },
-    text: "Routes can be explored by <em>how</em> I traveled.",
+    text: "Routes can be explored by <em><strong>how</strong></em> I traveled.",
     when: {
       show: () => {
         // All routes begin ON.
@@ -596,7 +630,7 @@ function _runTour() {
       '<span style="color:#FFB400"><i class="fas fa-graduation-cap"></i></span>&nbsp;Academic — places connected to school or study<br>',
       '<span style="color:#008A51"><i class="fas fa-globe"></i></span>&nbsp;Other — places that left their mark in other ways',
       "<br><br>",
-      "<em>Marker size reflects how deeply each place is woven into the story.</em>",
+      "<em>Marker size reflects how deeply each place is woven into my life story.</em>",
     ].join(""),
     when: {
       show: () => {
