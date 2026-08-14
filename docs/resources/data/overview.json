@@ -2646,5 +2646,26 @@
     "home": "",
     "zoomBounds": null,
     "zoomLevel": ""
+  },
+  {
+    "id": 47,
+    "name": "Aruba",
+    "lat": 12.566477,
+    "lng": -70.037417,
+    "start_date": "05-2026",
+    "end_date": "05-2026",
+    "photo_album": "Aruba",
+    "photos": [
+      "IMG_20260811_204549.jpg",
+      "IMG_20260811_204543.jpg",
+      "IMG_20260811_204554.jpg"
+    ],
+    "description": "<i>One Happy Island</i>",
+    "notes": "",
+    "importance": 3,
+    "visit_type": "friends",
+    "home": "",
+    "zoomBounds": null,
+    "zoomLevel": ""
   }
 ]

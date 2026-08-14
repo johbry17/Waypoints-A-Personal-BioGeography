@@ -754,5 +754,35 @@
     "photos":[
 
     ]
+  },
+  {
+    "activity_id":"7eaebe02-5d7c-4f7e-9d67-7d384f5e4532",
+    "name":"Aruba",
+    "location":"Aruba",
+    "lat":12.585062,
+    "lng":-70.057826,
+    "activity_type":"snorkeling",
+    "route_path":"boat_aruba.geojson",
+    "description":"Tres Trapi",
+    "notes":"",
+    "photo_album":"",
+    "photos":[
+
+    ]
+  },
+  {
+    "activity_id":"5213ac89-56d7-461f-84f7-9f412e672b3c",
+    "name":"Arikok National Park",
+    "location":"Arikok National Park",
+    "lat":12.4931388,
+    "lng":-69.9254772,
+    "activity_type":"hiking",
+    "route_path":"hike_aruba.geojson",
+    "description":"",
+    "notes":"My favorite part of the Aruba trip. After a late-morning hike through the semi-desert wilds, we hid from the midday Caribbean sun in the shade with park staff, \"talking shit\" until it earned us a ride out of the park.",
+    "photo_album":"Aruba",
+    "photos":[
+      "IMG_20260811_204554.jpg"
+    ]
   }
 ]
