@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
 """extract_data.py
 
-Convert the notebook `resources/extract_data.ipynb` into a runnable script.
-Functions: overview, activity, location, routes. Saves JSON/CSV outputs and
-optionally updates Google Sheets.
+Export Waypoints Google Sheets data to website-ready JSON, CSV, and GeoJSON.
+
+The pipeline processes the Overview, Activity, Location, and Routes sheets;
+assigns UUIDs to new records; geocodes missing coordinates; generates route
+geometries where applicable; writes the resulting files to docs/resources/;
+and, by default, uploads enriched coordinates and IDs back to Google Sheets.
+
+Manual coordinates in manual_locations.py take precedence over external
+geocoding for route endpoints. Route coordinates use (longitude, latitude)
+order for compatibility with GeoJSON and OpenRouteService, while Activity
+and Location records store separate lat/lng fields.
 """
 
 # standard library imports
@@ -380,6 +388,8 @@ def calculate_great_circle(start_coords, end_coords, num_points=100):
             position["lat2"],
         )
         # handle crossing the International Date Line
+        # Unwrap longitude differences so flights crossing the Date Line take
+        # the short path rather than drawing a line across most of the globe.
         if points and abs(lon - points[-1][0]) > 180:
             if lon > 0:
                 lon -= 360  # shift longitude from +180 to -180
@@ -468,6 +478,8 @@ def process_routes(
     df = pd.DataFrame(sheet.get_all_records())
 
     # add hikes from activities that have a route_path
+    # Hike geometry is supplied externally (typically from Overpass Turbo);
+    # the script records the GeoJSON reference rather than generating a route.
     for _, a in activity_df.iterrows():
         route_path = a.get("route_path")
         # if not already in df, add a new row for the hike
@@ -490,6 +502,8 @@ def process_routes(
     df["route_id"] = ensure_uuid_series(df["route_id"])
 
     # load cache of geocoded routes (start/end locations) to avoid repeated requests
+    # Route cache coordinates are stored as (longitude, latitude), matching
+    # OpenRouteService and GeoJSON coordinate order.
     CACHE_ROUTES = load_cache(CACHE_GEOCODE_ROUTES)
 
     # prepare ORS client if possible (for auto/train routes)
@@ -501,6 +515,8 @@ def process_routes(
             logging.warning("Failed to init openrouteservice client")
 
     # use manual locations mapping if provided; otherwise, default to empty dict
+    # Prefer curated coordinates over external geocoding because place names
+    # such as "Fish River Canyon" or "Dune 45" can resolve to the wrong place.
     manual_locations = manual_locations or {}
 
     # process start/end locations and fetch routes
