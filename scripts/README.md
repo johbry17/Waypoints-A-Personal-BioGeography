@@ -14,7 +14,7 @@
 ## Typical workflow
 
 1. Edit the Google Sheet for the relevant tab.
-2. If a new auto/train route has an unusual location name, add it to the `manual_locations` dict in `extract_data.py` (see [Manual coordinates](#manual-coordinates) below).
+2. If a new auto/train route has an unusual location name, add it to the `manual_locations` dict in `scripts/manual_locations.py` (see [Manual coordinates](#manual-coordinates) below).
 3. Run the script from the project root:
 
 ```bash
@@ -131,7 +131,7 @@ Routes are linear features drawn on the map (flights, drives, hikes, etc.). The 
 | `route_id` | Auto-generated UUID. Do not edit once set. |
 | `start_location` / `end_location` | Used for geocoding and route generation. For finicky locations, add manual coordinates — see [Manual coordinates](#manual-coordinates). |
 | `transport_mode` | Controls route generation and map styling. Accepted values: `auto`, `plane`, `boat`, `train`, `hike`. |
-| `filename` | GeoJSON filename. Auto-generated for `auto`, `plane`, and `hike`. Must be set manually for `boat` and `train` (if providing a real route). |
+| `filename` | GeoJSON filename. Generated for `auto`, `plane`, and blank `train` routes; `hike` filenames come from Activity `route_path`. Must be set manually for `boat` and externally supplied `train` routes. |
 
 #### Transport modes
 
