@@ -51,6 +51,9 @@ DOCS_GEOJSON = ROOT / "docs" / "resources" / "geojson"
 CACHE_GEOCODE = ROOT / "scripts" / "geocode_cache.json"
 CACHE_GEOCODE_ROUTES = ROOT / "scripts" / "geocode_cache_routes.json"
 
+# custom logger (see setup_logging function below)
+logger = logging.getLogger("waypoints")
+
 
 ###############################################################################
 # General Utilities
@@ -61,10 +64,11 @@ def setup_logging(level=logging.INFO):
     """Configure root logger with a standard timestamp format."""
     # format: timestamp, log level, message
     logging.basicConfig(
-        level=level,
+        level=logging.INFO,  # suppress third-party debug logs by default
         format="%(asctime)s %(levelname)s: %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
+    logger.setLevel(level)
 
 
 def load_api_keys(path: Path = ROOT / "scripts" / "api_keys.json"):
@@ -74,7 +78,7 @@ def load_api_keys(path: Path = ROOT / "scripts" / "api_keys.json"):
     """
     # load API keys from a JSON file; return as a dictionary
     if not path.exists():
-        logging.warning("api_keys.json not found — some features may be disabled")
+        logger.warning("api_keys.json not found — some features may be disabled")
         return {}
     with open(path) as f:
         return json.load(f)
@@ -105,7 +109,7 @@ def load_cache(path: Path):
                 return json.load(f)
         except Exception:
             # over-broad catch-all for any issues reading/parsing the cache file
-            logging.warning("Failed to read cache %s", path)
+            logger.warning("Failed to read cache %s", path)
     return {}
 
 
@@ -117,7 +121,7 @@ def save_cache(data, path: Path):
             json.dump(data, f)
     except Exception as e:
         # over-broad catch-all for any issues writing the cache file
-        logging.warning("Failed to write cache %s: %s", path, e)
+        logger.warning("Failed to write cache %s: %s", path, e)
 
 
 ###############################################################################
@@ -132,7 +136,8 @@ def auth_google_sheets(creds_path: Path, key: str):
     """
     if gspread is None:
         # gspread not installed; cannot authenticate; skip Google Sheets operations
-        logging.warning("gspread not installed or failed to import")
+        logger.warning("gspread not installed or failed to import")
+        logger.warning("Skipping Google Sheets operations")
         return None
     # OAuth scopes required to read/write Google Sheets
     scope = [
@@ -163,13 +168,13 @@ def parse_zoom_bounds(value):
         try:
             return json.loads(value)
         except json.JSONDecodeError:
-            logging.debug("Invalid zoomBounds format: %s", value)
+            logger.debug("Invalid zoomBounds format: %s", value)
     return None  # if parsing fails or value is empty
 
 
 def process_overview(sheet):
     """Read the Overview worksheet, clean photo and zoomBounds fields, and write overview.json."""
-    logging.info("Processing Overview sheet...")
+    logger.info("Processing Overview sheet...")
     overview_data = sheet.get_all_records()
     # convert photo and zoomBounds strings stored in Google Sheets into proper Python lists/dicts
     for entry in overview_data:
@@ -184,7 +189,7 @@ def process_overview(sheet):
     with open(out, "w", encoding="utf8") as fh:
         # indent=2 for readability, ensure_ascii=False to preserve non-ASCII characters
         json.dump(overview_data, fh, indent=2, ensure_ascii=False)
-    logging.info("Wrote %s", out)
+    logger.info("Overview: %d records → overview.json", len(overview_data))
 
 
 ###############################################################################
@@ -205,20 +210,28 @@ def geocode_with_nominatim(geolocator, cache, location_name, sleep_time=1):
     # return cached coordinates if available (Nominatim has rate limits)
     if location_name in cache:
         lat, lng = cache[location_name]["lat"], cache[location_name]["lng"]
+        # log cache hits for debugging
+        logger.debug("Geocode cache hit: %s", location_name)
         return lat, lng
     try:
         loc = geolocator.geocode(location_name)
         # update the cache and return the coordinates if found
         if loc:
             cache[location_name] = {"lat": loc.latitude, "lng": loc.longitude}
-            sleep(
-                sleep_time
-            )  # for Nominatim rate limits, sleep a bit after each request
+            # log successful geocoding, the thing I'm actually interested in
+            logger.info(
+                "  Geocoded %s → (%.6f, %.6f)",
+                location_name,
+                loc.latitude,
+                loc.longitude,
+            )
+            # for Nominatim rate limits, sleep a bit after each request
+            sleep(sleep_time)
             return loc.latitude, loc.longitude
-        logging.warning("No lat/lng for %s", location_name)
+        logger.warning("No lat/lng for %s", location_name)
     except Exception as e:
         # over-broad catch-all for any geocoding errors (network issues, rate limits, etc.)
-        logging.warning("Geocoding failed for %s: %s", location_name, e)
+        logger.warning("Geocoding failed for %s: %s", location_name, e)
     return None, None  # if geocoding fails
 
 
@@ -247,7 +260,7 @@ def process_activity(sheet, upload=True, geolocator=None):
     Optionally uploads the enriched DataFrame back to Google Sheets when *upload* is True.
     Returns the processed DataFrame for use by process_routes.
     """
-    logging.info("Processing Activity sheet...")
+    logger.info("Processing Activity sheet...")
     records = sheet.get_all_records()
     df = pd.DataFrame(records)
     if "activity_id" not in df.columns:  # overly defensive for a personal project
@@ -266,7 +279,6 @@ def process_activity(sheet, upload=True, geolocator=None):
         # if missing or NaN, attempt to geocode using the location name
         if not lat or not lng or pd.isna(lat) or pd.isna(lng):
             location_name = row.get("location")
-            logging.info("Geocoding Activity %s (%s)", row.get("name"), location_name)
             glat, glng = geocode_with_nominatim(geolocator, cache, location_name)
             df.at[idx, "lat"] = glat
             df.at[idx, "lng"] = glng
@@ -280,17 +292,16 @@ def process_activity(sheet, upload=True, geolocator=None):
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
     out = DOCS_DATA / "activity.json"
     df.to_json(out, orient="records", indent=2, force_ascii=False)
-    logging.info("Wrote %s", out)
+    logger.info("Activity: %d records → activity.json", len(df))
 
     # should we upload to Google Sheets, and can we upload?
     if upload and gspread is not None:
-        logging.info("Uploading Activity back to Google Sheets")
-        df_upload = df.fillna("")  # for Google Sheets compatibility
+        # fill NaNs and infer object types for Google Sheets compatibility
+        df_upload = df.fillna("").infer_objects(copy=False)
         try:
             set_with_dataframe(sheet, df_upload)
-            logging.info("Activity sheet updated")
         except Exception as e:
-            logging.warning("Failed to upload Activity sheet: %s", e)
+            logger.warning("Failed to upload Activity sheet: %s", e)
 
     # return the processed DataFrame for use in routes processing
     return df
@@ -302,7 +313,7 @@ def process_location(sheet, upload=True, geolocator=None):
     Optionally uploads the enriched DataFrame back to Google Sheets when *upload* is True.
     """
     # yes, it's the same as process_activity, left for clarity and potential future divergence
-    logging.info("Processing Location sheet...")
+    logger.info("Processing Location sheet...")
     records = sheet.get_all_records()
     df = pd.DataFrame(records)
     if "location_id" not in df.columns:  # overly defensive for a personal project
@@ -321,7 +332,6 @@ def process_location(sheet, upload=True, geolocator=None):
         # if missing or NaN, attempt to geocode using the location name
         if not lat or not lng or pd.isna(lat) or pd.isna(lng):
             location_name = row.get("location")
-            logging.info("Geocoding Location %s", location_name)
             glat, glng = geocode_with_nominatim(geolocator, cache, location_name)
             df.at[idx, "lat"] = glat
             df.at[idx, "lng"] = glng
@@ -335,20 +345,19 @@ def process_location(sheet, upload=True, geolocator=None):
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
     out = DOCS_DATA / "location.json"
     df.to_json(out, orient="records", indent=2, force_ascii=False)
-    logging.info("Wrote %s", out)
+    logger.info("Location: %d records → location.json", len(df))
 
     # should we upload to Google Sheets, and can we upload?
     if upload and gspread is not None:
-        logging.info("Uploading Location back to Google Sheets")
-        df_upload = df.fillna("")  # for Google Sheets compatibility
+        # fill NaNs and infer object types for Google Sheets compatibility
+        df_upload = df.fillna("").infer_objects(copy=False)
         try:
             set_with_dataframe(sheet, df_upload)
-            logging.info("Location sheet updated")
         except Exception as e:
-            logging.warning("Failed to upload Location sheet: %s", e)
+            logger.warning("Failed to upload Location sheet: %s", e)
 
     # return the processed DataFrame,
-    # in theory for use in other processing, really for consistency with process_activity
+    # in theory for use in other processing, actually for consistency with process_activity
     return df
 
 
@@ -413,7 +422,6 @@ def save_great_circle_as_geojson(route_coords, output_file):
     fc = geojson.FeatureCollection([feature])
     with open(output_file, "w", encoding="utf8") as f:
         geojson.dump(fc, f)
-    logging.info("Saved great circle %s", output_file)
 
 
 def geocode_route_location_ors(ors_client, cache, location):
@@ -423,16 +431,24 @@ def geocode_route_location_ors(ors_client, cache, location):
     Returns (None, None) on failure.
     """
     if location in cache:
+        # log cache hits for debugging
+        logger.debug("Route geocode cache hit: %s", location)
         return cache[location]
+    # note that ORS returns (lon, lat) order, which is standard for GeoJSON and ORS APIs
     try:
         # call the ORS Pelias search API to get coordinates for the location
         res = ors_client.pelias_search(text=location)
         if res.get("features"):
             coords = res["features"][0]["geometry"]["coordinates"]
             cache[location] = (coords[0], coords[1])  # store (lon, lat) in cache
+            # log successful geocoding - note the order of coordinates:
+            # ORS returns (lon, lat), but we log as (lat, lon) for clarity
+            logger.info(
+                "  ORS geocoded %s → (%.6f, %.6f)", location, coords[1], coords[0]
+            )
             return coords[0], coords[1]  # return (lon, lat) for ORS
     except Exception as e:
-        logging.warning("ORS geocode failed for %s: %s", location, e)
+        logger.warning("ORS geocode failed for %s: %s", location, e)
     return None, None
 
 
@@ -455,7 +471,7 @@ def fetch_route_ors(ors_client, start_coords, end_coords, transport_mode):
         )
         return r
     except Exception as e:
-        logging.warning("ORS directions failed: %s", e)
+        logger.warning("ORS directions failed: %s", e)
     return None
 
 
@@ -474,7 +490,7 @@ def process_routes(
     - Flights are rendered as great-circle arcs; driving/train routes use ORS Directions.
     - Optionally uploads the updated DataFrame back to Google Sheets when *upload* is True.
     """
-    logging.info("Processing Routes sheet...")
+    logger.info("Processing Routes sheet...")
     df = pd.DataFrame(sheet.get_all_records())
 
     # add hikes from activities that have a route_path
@@ -495,6 +511,8 @@ def process_routes(
                 "filename": route_path,
             }
             df = pd.concat([df, pd.DataFrame([new])], ignore_index=True)
+            # log successful addition of hike route
+            logger.info("  Added hike: %s", a.get("name"))
 
     # add IDs if missing
     if "route_id" not in df.columns:  # overly defensive for a personal project
@@ -512,7 +530,7 @@ def process_routes(
         try:
             ors_client = openrouteservice.Client(key=api_keys["openrouteservice"])
         except Exception:
-            logging.warning("Failed to init openrouteservice client")
+            logger.warning("Failed to init openrouteservice client")
 
     # use manual locations mapping if provided; otherwise, default to empty dict
     # Prefer curated coordinates over external geocoding because place names
@@ -530,6 +548,16 @@ def process_routes(
         start = row.get("start_location")
         end = row.get("end_location")
 
+        # log any hikes or boats that lack a filename, as they are expected to be manually supplied
+        if mode in ("hike", "boat") and not filename:
+            logger.info(
+                "No filename for %s route: %s → %s (expected for manual routes)",
+                mode,
+                start,
+                end,
+            )
+            continue
+
         # geocode start/end using manual map first
         start_coords = manual_locations.get(start)
         end_coords = manual_locations.get(end)
@@ -537,18 +565,8 @@ def process_routes(
         # if not found in manual map, try ORS geocoding
         if not start_coords and ors_client:
             start_coords = geocode_route_location_ors(ors_client, CACHE_ROUTES, start)
-            logging.debug(
-                "Manual location not found for %s, falling back to ORS geocode: %s",
-                start,
-                start_coords,
-            )
         if not end_coords and ors_client:
             end_coords = geocode_route_location_ors(ors_client, CACHE_ROUTES, end)
-            logging.debug(
-                "Manual location not found for %s, falling back to ORS geocode: %s",
-                end,
-                end_coords,
-            )
 
         # if we have coordinates, fetch the route or calculate great circle based on transport mode
         if mode == "plane" and start_coords and end_coords:
@@ -561,6 +579,8 @@ def process_routes(
             DOCS_GEOJSON.mkdir(parents=True, exist_ok=True)
             save_great_circle_as_geojson(gc, DOCS_GEOJSON / fname)
             df.at[idx, "filename"] = fname
+            # log successful great circle route generation
+            logger.info("  Generated plane route: %s → %s", start, end)
         elif mode in ("auto", "train") and start_coords and end_coords and ors_client:
             # ORS expects (lon, lat)
             r = fetch_route_ors(
@@ -576,6 +596,24 @@ def process_routes(
                 with open(DOCS_GEOJSON / fname, "w", encoding="utf8") as f:
                     json.dump(r, f, indent=2)
                 df.at[idx, "filename"] = fname
+                # log successful ORS route generation
+                logger.info("  Generated %s route: %s → %s", mode, start, end)
+            else:
+                logger.warning(
+                    "Could not generate %s route: %s → %s",
+                    mode,
+                    start,
+                    end,
+                )
+        else:
+            # unknown clause: log a warning for anything that doesn't work
+            logger.warning(
+                "Could not generate %s route: %s → %s "
+                "(unsupported mode or missing routing information)",
+                mode,
+                start,
+                end,
+            )
 
     # save the updated cache of geocoded routes
     save_cache(CACHE_ROUTES, CACHE_GEOCODE_ROUTES)
@@ -584,18 +622,17 @@ def process_routes(
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
     csv_out = DOCS_DATA / "routes.csv"
     df.to_csv(csv_out, index=False)
-    logging.info("Wrote %s", csv_out)
+    logger.info("Routes: %d records → routes.csv", len(df))
 
     # should we upload to Google Sheets, and can we upload?
     if upload and gspread is not None:
         try:
             set_with_dataframe(sheet, df)
-            logging.info("Uploaded routes to Google Sheets")
         except Exception as e:
-            logging.warning("Failed to upload routes: %s", e)
+            logger.warning("Failed to upload routes: %s", e)
 
     # return the processed DataFrame,
-    # in theory for use in other processing, really for consistency with process_activity
+    # in theory for use in other processing, actually for consistency with process_activity
     return df
 
 
@@ -632,14 +669,14 @@ def main(argv=None):
         if sheet_key:
             spreadsheet = auth_google_sheets(creds_path, sheet_key)
         else:
-            logging.warning("No sheet key provided; skipping Google Sheets operations")
+            logger.warning("No sheet key provided; skipping Google Sheets operations")
 
     # process Overview
     if spreadsheet:
         overview_sheet = spreadsheet.worksheet("Overview")
         process_overview(overview_sheet)
     else:
-        logging.warning("Spreadsheet unavailable: skipping Overview")
+        logger.warning("Spreadsheet unavailable: skipping Overview")
 
     # process Activity (save activity_df for later use in routes)
     activity_sheet = spreadsheet.worksheet("Activity") if spreadsheet else None
@@ -648,12 +685,14 @@ def main(argv=None):
     else:
         # guard clause: if no activity sheet, create an empty DataFrame to avoid errors later
         activity_df = pd.DataFrame()
-        logging.warning("Spreadsheet unavailable: skipping Activity")
+        logger.warning("Spreadsheet unavailable: skipping Activity")
 
     # process Location
     location_sheet = spreadsheet.worksheet("Location") if spreadsheet else None
     if location_sheet:
         process_location(location_sheet, upload=not args.no_upload)
+    else:
+        logger.warning("Spreadsheet unavailable: skipping Location")
 
     # routes
     routes_sheet = spreadsheet.worksheet("Routes") if spreadsheet else None
@@ -666,8 +705,16 @@ def main(argv=None):
             manual_locations=LOCATIONS,
             api_keys=api_keys,
         )
+    else:
+        logger.warning("Spreadsheet unavailable: skipping Routes")
 
-    logging.info("Done")
+    # log the final status of Google Sheets updates
+    if args.no_upload:
+        logger.info("Google Sheets: not updated (--no-upload)")
+    elif spreadsheet is not None:
+        logger.info("Google Sheets: updates completed (see warnings above, if any)")
+    else:
+        logger.info("Google Sheets: not updated (unavailable)")
 
 
 if __name__ == "__main__":
