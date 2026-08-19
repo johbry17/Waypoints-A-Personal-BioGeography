@@ -14,7 +14,7 @@ function displayMultiplePhotos(photoSet, carouselId) {
   const prevBtn = document.querySelector(`#${carouselId} #prev-button`);
   const nextBtn = document.querySelector(`#${carouselId} #next-button`);
   const playPauseBtn = document.querySelector(
-    `#${carouselId} #play-pause-button`
+    `#${carouselId} #play-pause-button`,
   );
 
   // clear previous photo
@@ -179,8 +179,18 @@ function displayMultiplePhotos(photoSet, carouselId) {
     requestAnimationFrame(() => attachPanzoom(media[0]));
   }
 
-  // initial play
-  startCarousel();
+  // hide controls if only one photo/video in the set
+  if (photoSet.length <= 1) {
+    prevBtn.style.display = "none";
+    nextBtn.style.display = "none";
+    playPauseBtn.style.display = "none";
+  }
+
+  // initial play only when there is more than one photo/video
+  // (else a single image visually "jumps" in time to the carousel interval)
+  if (photoSet.length > 1) {
+    startCarousel();
+  }
 }
 
 //////////////////////////////////////////////////////////
