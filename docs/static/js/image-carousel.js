@@ -70,9 +70,6 @@ function displayMultiplePhotos(photoSet, carouselId) {
       // add controls, autoplay, mute to videos
       el.controls = el.autoplay = el.muted = true;
     } else {
-      // lazy loading for images
-      // lazy loading only works for images, not videos
-      el.loading = "lazy";
       // stop Leaflet/map touch interference
       ["touchstart", "touchmove", "touchend"].forEach((evt) => {
         el.addEventListener(evt, (e) => e.stopPropagation(), {
@@ -91,6 +88,17 @@ function displayMultiplePhotos(photoSet, carouselId) {
 
   /* ---------- playback ---------- */
 
+  // preload the next image in the background
+  const preloadNextImage = () => {
+    const nextIndex = (index + 1) % media.length;
+    const next = media[nextIndex];
+
+    if (next?.tagName !== "IMG") return;
+
+    const preload = new Image();
+    preload.src = next.src;
+  };
+
   // slideshow/hide logic
   const showMedia = (newIndex) => {
     // declare currently shown and next media elements
@@ -102,9 +110,10 @@ function displayMultiplePhotos(photoSet, carouselId) {
     if (current.tagName === "VIDEO") current.pause();
     if (current.tagName === "IMG") detachPanzoom(current);
 
-    // turn on next photo or video
+    // turn on next photo or video, load following photo in background
     index = newIndex;
     next.classList.remove("hidden");
+    preloadNextImage();
 
     // clear any previous interval
     clearInterval(intervalId);
@@ -186,9 +195,11 @@ function displayMultiplePhotos(photoSet, carouselId) {
     playPauseBtn.style.display = "none";
   }
 
-  // initial play only when there is more than one photo/video
-  // (else a single image visually "jumps" in time to the carousel interval)
+  // preload the next image in the background and start the carousel
+  // only when there is more than one photo/video
+  // (else a single image visually "jumps" with the timer)
   if (photoSet.length > 1) {
+    preloadNextImage();
     startCarousel();
   }
 }
