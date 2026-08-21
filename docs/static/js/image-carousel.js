@@ -22,7 +22,7 @@ function displayMultiplePhotos(photoSet, carouselId) {
 
   // declare variables
   let index = 0;
-  let intervalId = null;
+  let timeoutId = null;
   let isPlaying = true;
 
   /* ---------- panzoom logic ---------- */
@@ -115,15 +115,15 @@ function displayMultiplePhotos(photoSet, carouselId) {
     next.classList.remove("hidden");
     preloadNextImage();
 
-    // clear any previous interval
-    clearInterval(intervalId);
+    // clear any previous timer
+    clearTimeout(timeoutId);
 
-    // if video, autoplay, restart interval on video end
+    // if video, autoplay, restart timer on video end
     if (next.tagName === "VIDEO") {
       next.play();
       next.onended = () => isPlaying && startCarousel();
     } else if (next && next.tagName === "IMG") {
-      // else img, add panzoom (after layout stabilizes) and restart interval
+      // else img, add panzoom (after layout stabilizes) and restart timer
       requestAnimationFrame(() => attachPanzoom(next));
       isPlaying && startCarousel();
     }
@@ -146,15 +146,16 @@ function displayMultiplePhotos(photoSet, carouselId) {
     `;
   };
 
-  // play carousel, set interval, change button to pause
+  // play carousel, start timer, change button to pause
   const startCarousel = () => {
-    intervalId = setInterval(showNext, 5000);
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(showNext, 7000);
     updatePlayPauseBtn(true);
   };
 
-  // pause carousel, clear interval, change button to play
+  // pause carousel, clear timer, change button to play
   const stopCarousel = () => {
-    clearInterval(intervalId);
+    clearTimeout(timeoutId);
     updatePlayPauseBtn(false);
   };
 
